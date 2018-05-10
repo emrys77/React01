@@ -3,6 +3,7 @@ import BJBS from './components/GetData';
 import BJBSData from './components/GetData';
 import logo from './logo.svg';
 import './App.css';
+import Question from './components/Question';
 
 class App extends Component {
   constructor(props) {
@@ -21,10 +22,9 @@ class App extends Component {
           
           <p>De dooh dooh dooh de dah dah dah</p>
 
-          
-            <p>You are on question: {this.state.question}</p>
-          <BJBSData />
-          <span>{BJBSData.id}</span>
+          <BJBS />
+
+           <Question number={this.state.question} data={BJBSData} />
         </div>
       );
   }

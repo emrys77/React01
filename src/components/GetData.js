@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-//const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
-const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
+const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
+//const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
 
 
 // {JSON.parse(this.state.BJBSData)}
@@ -29,6 +29,7 @@ class BJBS extends Component {
 
         // Examine the text in the response
         response.json().then(function(data) {
+            console.log('fired');
             console.log(data);
             currentComponent.setState({BJBSData:data});
         });
@@ -44,14 +45,18 @@ class BJBS extends Component {
     if (this.state.requestFailed) return <p>Failed!</p>
     if (!this.state.BJBSData) return <p>Loading...</p>
    
+    var data = JSON.stringify( this.state.BJBSData )
+
     return (
+      
       <div>
-        we have been called
+       <p> we have been called now what the f are we gonna do?</p>
+        { data }
       </div>
     )
   }
 }
 
-export default BJBS
+export default BJBS;
 
 

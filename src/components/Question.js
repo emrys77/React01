@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BJBS from './GetData.js';
+import BJBSData from './GetData.js';
 
 
 /* const questionData = SARCourse.SARarray.find( item => item.acf.question_number === 1 ); */
@@ -10,21 +10,23 @@ function getQuestionData( responseArray, questionNumber ) {
         .find( item => item.acf.question_number === 1 );
 }
 
-/* var myQuestion = getQuestionData( questionData,1); */
+/* var myQuestion = getQuestionData( questionData,1); 
+var data= this.props.data; */
 
 function Question(props) {
+
   return  (
     
     <div>
-      <h2 className="question">{props.number}</h2> 
-      <div>{ props.json.title }</div>
+      <h2 className="question">Question { props.number }</h2>
+      <div>Data: { props.data }</div>
     </div>
   );
 }
 
 Question.propTypes = {
   number: PropTypes.number.isRequired,
-  json: PropTypes.any
+  data: PropTypes.any
 };
 
 export default Question;
