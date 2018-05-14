@@ -19,19 +19,29 @@ const Child = (props) => {
     <div style={{backgroundColor: props.eyeColor}} />
   )
 }
+responseArray = the array json with the 14 elements
 
-  const questionData = data.find( item => item.acf.question_number === 1 );
+const courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
+const questionData = courseItemsArray.find( item => item.acf.question_number === 1 );
+
+
+function getQuestionData( responseArray, questionNumber ) {
+    return responseArray.filter( item => item.type === 'the_course' )
+        .find( item => item.acf.question_number === 1 );
+}
+
 */
 function Question(props) {
-  const myData = JSON.parse(props.data);
+  //const myData = JSON.parse();
   //const questionData = myData.find( item => item.acf.question_number === 1 );
 
-  
+  //var json = JSON.stringify( data );
+  //console.log('json: ' + data);
   return  (
     
     <div>
       <h2 className="question">Question { props.number }</h2>
-      <div>Data: { myData }</div>
+      <div>Data: {  }</div>
     </div>
 
   );

@@ -5,7 +5,15 @@ const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page
 
 
 // {JSON.parse(this.state.BJBSData)}
-
+/*
+const Test = ({ data }) => (
+              <div>
+                {data.map(piece => (
+                  <div className="station" key={piece.call}>{piece.call}</div>
+                ))}
+              </div>
+            )
+          */
 
 class BJBS extends Component {
   constructor(props) {
@@ -30,7 +38,7 @@ class BJBS extends Component {
         // Examine the text in the response
         response.json().then(function(data) {
             console.log('fired');
-            console.log(data);
+            console.log( 'data v1: ' + data);
             currentComponent.setState({BJBSData:data});
         });
         }
@@ -45,13 +53,28 @@ class BJBS extends Component {
     if (this.state.requestFailed) return <p>Failed!</p>
     if (!this.state.BJBSData) return <p>Loading...</p>
    
-    var data = JSON.stringify( this.state.BJBSData )
+    var data = this.state.BJBSData
+
+    for(var member of data){
+      console.log(member.acf.question_number + ' ' + member.acf.type); 
+    }
+
+    var result = Object.keys(data).map(function(key) {
+      return [Number(key), data[key]];
+    });
+
+    //console.log(this.state.BJBSData);
+
+    console.log('json: ', data, typeof data, Array.isArray(data));
+    
+
+    
 
     return (
       
       <div>
-       <p> we have been called now what the f are we gonna do?</p>
-        { data }
+        <p> we have been called now what the f are we gonna do?</p>
+                
       </div>
     )
   }

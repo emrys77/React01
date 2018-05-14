@@ -24,7 +24,7 @@ class App extends Component {
 
           <BJBS />
 
-           <Question number={this.state.question} data={BJBSData} />
+           <Question number={this.state.question} data={BJBS} />
         </div>
       );
   }
