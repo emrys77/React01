@@ -54,29 +54,10 @@ class BJBS extends Component {
     if (!this.state.BJBSData) return <p>Loading...</p>
    
     var data = this.state.BJBSData
-
-    for(var member of data){
-      console.log(member.acf.question_number + ' ' + member.acf.type); 
-    }
-
-    var result = Object.keys(data).map(function(key) {
-      return [Number(key), data[key]];
-    });
-
     //console.log(this.state.BJBSData);
 
     console.log('json: ', data, typeof data, Array.isArray(data));
-    
-
-    
-
-    return (
-      
-      <div>
-        <p> we have been called now what the f are we gonna do?</p>
-                
-      </div>
-    )
+  
   }
 }
 

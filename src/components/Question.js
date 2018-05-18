@@ -32,16 +32,21 @@ function getQuestionData( responseArray, questionNumber ) {
 
 */
 function Question(props) {
-  //const myData = JSON.parse();
-  //const questionData = myData.find( item => item.acf.question_number === 1 );
 
-  //var json = JSON.stringify( data );
-  //console.log('json: ' + data);
+  for(var member of data){
+    console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
+  }
+
+  //var result = Object.keys(data).map(function(key) {
+  //  return [Number(key), data[key]];
+  //});
+
+
   return  (
     
     <div>
       <h2 className="question">Question { props.number }</h2>
-      <div>Data: {  }</div>
+      <div>Section: { member.acf.section }</div>
     </div>
 
   );
