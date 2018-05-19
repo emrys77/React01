@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BJBSData from './GetData.js';
+import BJBS from './GetData.js';
 
 
 /* const questionData = SARCourse.SARarray.find( item => item.acf.question_number === 1 ); */
 
 
-function getQuestionData( responseArray, questionNumber ) {
+/*function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
         .find( item => item.acf.question_number === 1 );
 }
@@ -32,21 +32,23 @@ function getQuestionData( responseArray, questionNumber ) {
 
 */
 function Question(props) {
-
+  var data = props.data;
   for(var member of data){
-    console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
+    console.log('this is from question function: ' + member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
   }
 
   //var result = Object.keys(data).map(function(key) {
   //  return [Number(key), data[key]];
   //});
 
+//  console.log('Qjson: ', data, typeof data, Array.isArray(data));
+
+
 
   return  (
     
     <div>
       <h2 className="question">Question { props.number }</h2>
-      <div>Section: { member.acf.section }</div>
     </div>
 
   );
