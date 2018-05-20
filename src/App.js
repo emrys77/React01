@@ -12,15 +12,10 @@ class App extends Component {
     }
   }
     render() {
+
+      //console.log('json: ', data, typeof data, Array.isArray(data));
+
       
-      //turn js object into array we can pass to the question
-      var data = Object.keys(BJBS).map(function(key) {
-        return [Number(key), BJBS[key]];
-      });
-
-      console.log('json: ', data, typeof data, Array.isArray(data));
-
-
       return (
         
         <div className="App">
@@ -30,9 +25,11 @@ class App extends Component {
           </header>
           <div>
             
-            <Question number={this.state.question} data={data} />
-            
+            <BJBS />
+            <Question number={this.state.question} test="x" data={BJBS} />
+
           </div>
+          
         </div>
       );
   }

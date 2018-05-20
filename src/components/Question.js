@@ -33,9 +33,6 @@ function getQuestionData( responseArray, questionNumber ) {
 */
 function Question(props) {
   var data = props.data;
-  for(var member of data){
-    console.log('this is from question function: ' + member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
-  }
 
   //var result = Object.keys(data).map(function(key) {
   //  return [Number(key), data[key]];
@@ -49,6 +46,7 @@ function Question(props) {
     
     <div>
       <h2 className="question">Question { props.number }</h2>
+      <p>xxxx{ props.data}</p>
     </div>
 
   );

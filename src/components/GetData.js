@@ -41,11 +41,25 @@ class BJBS extends Component {
     if (this.state.requestFailed) return <p>Failed!</p>
     if (!this.state.BJBSData) return <p>Loading...</p>
    
-    var data = this.state.BJBSData
-    //console.log(this.state.BJBSData);
+    var MyFuckingData = this.state.BJBSData;
+
+    if (typeof MyFuckingData !== 'undefined' && MyFuckingData.length > 0) {
+      console.log('MyFuckingData: ' + MyFuckingData.length );
+      // the array is defined and has at least one element
+      // turn js object into array we can pass to the question
+    var data = Object.keys(MyFuckingData).map(function(key) {
+      return [Number(key), MyFuckingData[key]];
+    });
+    console.log('data: ' + data.length );
+    /*for(var member of data){
+      console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
+    }*/
+
+    }
 
     
-    return null
+    return null;
+
   }
 }
 
