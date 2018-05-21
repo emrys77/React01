@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BJBS from './components/GetData';
+import BJBS, {MyFuckingData} from './components/GetData';
 import logo from './logo.svg';
 import './App.css';
 import Question from './components/Question';
@@ -26,7 +26,7 @@ class App extends Component {
           <div>
             
             <BJBS />
-            <Question number={this.state.question} test="x" data={BJBS} />
+            <Question number={this.state.question} test="x" data={MyFuckingData} />
 
           </div>
           

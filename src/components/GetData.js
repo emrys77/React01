@@ -3,17 +3,21 @@ import React, { Component } from 'react';
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 //const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
 
+var MyFuckingData= [];
+
 class BJBS extends Component {
   constructor(props) {
+    
     super(props)
     this.state = {
       requestFailed: false,
       BJBSData: [],
     }
   }
-
+  
   componentDidMount() {
     let currentComponent = this;
+    
     fetch(apiUrl)
       .then(
         function(response) {
@@ -36,12 +40,14 @@ class BJBS extends Component {
     });
   }
   
+  
+
   render() {
 
     if (this.state.requestFailed) return <p>Failed!</p>
     if (!this.state.BJBSData) return <p>Loading...</p>
    
-    var MyFuckingData = this.state.BJBSData;
+    MyFuckingData = this.state.BJBSData;
 
     if (typeof MyFuckingData !== 'undefined' && MyFuckingData.length > 0) {
       console.log('MyFuckingData: ' + MyFuckingData.length );
@@ -51,16 +57,16 @@ class BJBS extends Component {
       return [Number(key), MyFuckingData[key]];
     });
     console.log('data: ' + data.length );
+   
     /*for(var member of data){
       console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
     }*/
 
     }
-
     
     return null;
 
   }
 }
-
+export {MyFuckingData};
 export default BJBS;
