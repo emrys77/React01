@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 //const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
 
-var MyFuckingData= [];
+var data=[];
+var emrys = "emrys";
 
 class BJBS extends Component {
   constructor(props) {
@@ -47,13 +48,13 @@ class BJBS extends Component {
     if (this.state.requestFailed) return <p>Failed!</p>
     if (!this.state.BJBSData) return <p>Loading...</p>
    
-    MyFuckingData = this.state.BJBSData;
+    var MyFuckingData = this.state.BJBSData;
 
     if (typeof MyFuckingData !== 'undefined' && MyFuckingData.length > 0) {
       console.log('MyFuckingData: ' + MyFuckingData.length );
       // the array is defined and has at least one element
       // turn js object into array we can pass to the question
-    var data = Object.keys(MyFuckingData).map(function(key) {
+    data = Object.keys(MyFuckingData).map(function(key) {
       return [Number(key), MyFuckingData[key]];
     });
     console.log('data: ' + data.length );
@@ -68,5 +69,8 @@ class BJBS extends Component {
 
   }
 }
-export {MyFuckingData};
+//var MyFuckingData = data;
+
+export {emrys};
+export {data};
 export default BJBS;

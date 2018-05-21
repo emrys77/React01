@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BJBS from './GetData.js';
+//import BJBS from './GetData.js';
 
 
 /* const questionData = SARCourse.SARarray.find( item => item.acf.question_number === 1 ); */
@@ -32,7 +32,6 @@ function getQuestionData( responseArray, questionNumber ) {
 
 */
 function Question(props) {
-  var data = props.data;
 
   //var result = Object.keys(data).map(function(key) {
   //  return [Number(key), data[key]];
@@ -46,7 +45,7 @@ function Question(props) {
     
     <div>
       <h2 className="question">Question { props.number }</h2>
-      <p>xxxx{ props.data}</p>
+      <p>{ props.emrys }</p>
     </div>
 
   );
@@ -54,7 +53,8 @@ function Question(props) {
 
 Question.propTypes = {
   number: PropTypes.number.isRequired,
-  data: PropTypes.any
+  data: PropTypes.any,
+  emrys: PropTypes.string
 };
 
 export default Question;
