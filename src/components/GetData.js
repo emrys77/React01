@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 //const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
 
-var data=[];
+var data={};
+var MyFuckingData ={};
 var emrys = "emrys";
+
+
 
 class BJBS extends Component {
   constructor(props) {
@@ -17,6 +20,7 @@ class BJBS extends Component {
   }
   
   componentDidMount() {
+   // console.log('componentDidMount fired');
     let currentComponent = this;
     
     fetch(apiUrl)
@@ -30,7 +34,7 @@ class BJBS extends Component {
 
         // Examine the text in the response
         response.json().then(function(data) {
-           // console.log('fired');
+            console.log('json response fired');
            // console.log( 'data v1: ' + data);
             currentComponent.setState({BJBSData:data});
         });
@@ -72,5 +76,5 @@ class BJBS extends Component {
 //var MyFuckingData = data;
 
 export {emrys};
-export {data};
+export {MyFuckingData};
 export default BJBS;

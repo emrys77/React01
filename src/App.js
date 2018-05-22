@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import BJBS from './components/GetData';
-import {data} from './components/GetData';
+import {MyFuckingData} from './components/GetData';
 import {emrys} from './components/GetData';
 import logo from './logo.svg';
 import './App.css';
 import Question from './components/Question';
 
 var myEmrys = emrys;
+var myData = MyFuckingData;
+var data;
 
 class App extends Component {
   constructor(props) {
@@ -14,17 +16,20 @@ class App extends Component {
     this.state = {
       question: 1,
       emrys: myEmrys,
-      data: data
+      data: MyFuckingData
     }
   }
     render() {
+     
+      console.log('json: ', myData, typeof myData, Array.isArray(myData));
+
       
-      //console.log('json: ', data, typeof data, Array.isArray(data));
       
       return (
         
+
         <div className="App">
-        
+          <BJBS />
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">Welcome to React</h1>
