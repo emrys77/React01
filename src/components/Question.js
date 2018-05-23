@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 //import BJBS from './GetData.js';
 
-var data;
 /* const questionData = SARCourse.SARarray.find( item => item.acf.question_number === 1 ); */
 
 
@@ -39,15 +39,17 @@ function Question(props) {
 
   //console.log('Qjson: ', data, typeof data, Array.isArray(data));
 
-  data = props.data;
+  var myData = props.data;
+  console.log('myData: ', myData, typeof myData, Array.isArray(myData));
 
-  console.log( data.length );
 
-  var myFuckingData = Object.keys(data).map(function(key) {
-    return [Number(key), data[key]];
+  console.log( myData.length );
+
+  var myFuckingData = Object.keys(myData).map(function(key) {
+    return [Number(key), myData[key]];
   });
 
-  console.log('json: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
+  console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
 
   return  (
     

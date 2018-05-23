@@ -36,7 +36,7 @@ class App extends Component {
           </header>
           <div>
             
-            <Question number={this.state.question} emrys={this.state.emrys} data={this.state.data} />
+            <Question number={this.state.question} emrys={this.state.emrys} data={MyFuckingData} />
 
           </div>
           
