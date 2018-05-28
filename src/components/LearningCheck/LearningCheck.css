@@ -1,0 +1,32 @@
+
+.container {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 45.5%;
+    min-height: 300px;
+    margin:10px;
+    border: 1px solid #bbb;
+    vertical-align: top;
+}
+
+.container.pen {
+    width: 100%;
+}
+.container .pen div {
+    width: auto;
+}
+.container div {
+    display: block;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+.container div, .gu-mirror {
+    margin: 10px;
+    padding: 10px;
+    list-style-type: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease-in-out;
+}
