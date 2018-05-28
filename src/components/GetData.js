@@ -68,7 +68,7 @@ class BJBS extends Component {
     }*/
     console.log(data);
     //console.log(1.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
-    console.log(data[2][1]['acf']['section']);
+    console.log(data[2][1]['acf']['section'] +data[2][1]['acf']['number'] );
 
     }
     
