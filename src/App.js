@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BJBS from './components/GetData';
-import {data} from './components/GetData';
+import {MyFuckingData} from './components/GetData';
 import {emrys} from './components/GetData';
 import logo from './logo.svg';
 import './App.css';
@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
       question: 1,
       emrys: myEmrys,
-      data: data
+      data: MyFuckingData
     }
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
   
     render() {
      
-      //console.log('json: ', myData, typeof myData, Array.isArray(myData));
+      console.log('json: ', MyFuckingData, typeof MyFuckingData, Array.isArray(MyFuckingData));
 
       
       
@@ -41,7 +41,7 @@ class App extends Component {
           </header>
           <div>
             
-            <Question number={this.state.question} emrys={this.state.emrys} data={this.state.data} />
+            <Question number={this.state.question} emrys={this.state.emrys} data={MyFuckingData} />
 
             <button onClick={this.IncrementQuestion}>Click to increment by 1</button>
 

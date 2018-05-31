@@ -59,10 +59,13 @@ LearningCheck: intro, box1hd, box2hd, options (array)
   //console.log('Qjson: ', data, typeof data, Array.isArray(data));
 
   var myData = props.data;
+
+  //var MySection =  myData[2][1]['acf']['section'];
+
   console.log('myData: ', myData, typeof myData, Array.isArray(myData));
 
 
-  console.log( myData.length );
+  console.log( 'myData length: ' + myData.length );
 
   var myFuckingData = Object.keys(myData).map(function(key) {
     return [Number(key), myData[key]];
@@ -70,13 +73,14 @@ LearningCheck: intro, box1hd, box2hd, options (array)
 
   console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
 
-  var MySection = myData[2][1]['acf']['section'] + myData[2][1]['acf']['number'];
+  //var MySection = myData[2][1]['acf']['section'] + myData[2][1]['acf']['number'];
   
   return  (
     
     <div>
       <h2 className="question">Question { props.number }</h2>
       <p>{ props.emrys }</p>
+     
     </div>
 
   );
