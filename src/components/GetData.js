@@ -72,9 +72,9 @@ make this available
     /*for(var member of data){
       console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
     }*/
-    console.log(data);
+    //console.log(data);
     //console.log(1.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
-    console.log(data[2][1]['acf']['section'] +data[2][1]['acf']['number'] );
+    console.log(data[2][1]['slug'] + '  ' + data[2][1]['acf']['section'] + '  ' + data[2][1]['menu_order'] );
 
     }
     
