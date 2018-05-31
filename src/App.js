@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import BJBS from './components/GetData';
-import {MyFuckingData} from './components/GetData';
+import {data} from './components/GetData';
 import {emrys} from './components/GetData';
 import logo from './logo.svg';
 import './App.css';
 import Question from './components/Question';
 
 var myEmrys = emrys;
-var myData = MyFuckingData;
-var data;
+
 
 class App extends Component {
   constructor(props) {
@@ -16,12 +15,18 @@ class App extends Component {
     this.state = {
       question: 1,
       emrys: myEmrys,
-      data: MyFuckingData
+      data: data
     }
   }
+
+  IncrementQuestion = () => {
+    this.setState({ question: this.state.question + 1 });
+  }
+
+  
     render() {
      
-      console.log('json: ', myData, typeof myData, Array.isArray(myData));
+      //console.log('json: ', myData, typeof myData, Array.isArray(myData));
 
       
       
@@ -36,7 +41,9 @@ class App extends Component {
           </header>
           <div>
             
-            <Question number={this.state.question} emrys={this.state.emrys} data={MyFuckingData} />
+            <Question number={this.state.question} emrys={this.state.emrys} data={this.state.data} />
+
+            <button onClick={this.IncrementQuestion}>Click to increment by 1</button>
 
           </div>
           

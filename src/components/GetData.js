@@ -55,20 +55,21 @@ class BJBS extends Component {
     var MyFuckingData = this.state.BJBSData;
 
     if (typeof MyFuckingData !== 'undefined' && MyFuckingData.length > 0) {
-      console.log('MyFuckingData: ' + MyFuckingData.length );
+      console.log('*MyFuckingData: ' + MyFuckingData.length + MyFuckingData.type);
       // the array is defined and has at least one element
       // turn js object into array we can pass to the question
     data = Object.keys(MyFuckingData).map(function(key) {
       return [Number(key), MyFuckingData[key]];
     });
-    console.log('data: ' + data.length );
+    
+    //console.log('data: ' + data.length );
    
     /*for(var member of data){
       console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
     }*/
     console.log(data);
     //console.log(1.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
-    console.log(data[2][1]['acf']['section'] +data[2][1]['acf']['number'] );
+    
 
     }
     
@@ -79,5 +80,5 @@ class BJBS extends Component {
 //var MyFuckingData = data;
 
 export {emrys};
-export {MyFuckingData};
+export {data};
 export default BJBS;

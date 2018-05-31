@@ -70,6 +70,8 @@ LearningCheck: intro, box1hd, box2hd, options (array)
 
   console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
 
+  var MySection = myData[2][1]['acf']['section'] + myData[2][1]['acf']['number'];
+  
   return  (
     
     <div>
