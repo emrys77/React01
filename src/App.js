@@ -7,6 +7,7 @@ import './App.css';
 import Question from './components/Question';
 
 var myEmrys = emrys;
+console.log('xxMyFuckingData: ' + MyFuckingData.length );
 
 
 class App extends Component {

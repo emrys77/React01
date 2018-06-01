@@ -9,6 +9,7 @@ var emrys = "emrys";
 
 /*
 https://stackoverflow.com/questions/47649637/export-a-dynamic-array-from-a-react-component-to-another-component?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+https://stackoverflow.com/questions/11922383/access-process-nested-objects-arrays-or-json
 */
 
 class BJBS extends Component {
