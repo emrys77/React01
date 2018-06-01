@@ -6,16 +6,16 @@ import logo from './logo.svg';
 import './App.css';
 import Question from './components/Question';
 
-var myEmrys = emrys;
 
+console.log('MyFuckingData: ', MyFuckingData, typeof MyFuckingData, Array.isArray(MyFuckingData));
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       question: 1,
-      emrys: myEmrys,
-      data: MyFuckingData
+      emrys: emrys,
+      data: {MyFuckingData}
     }
   }
 
@@ -23,16 +23,10 @@ class App extends Component {
     this.setState({ question: this.state.question + 1 });
   }
 
-  
     render() {
      
-      console.log('json: ', MyFuckingData, typeof MyFuckingData, Array.isArray(MyFuckingData));
-
-      
-      
       return (
         
-
         <div className="App">
           <BJBS />
           <header className="App-header">
@@ -41,7 +35,7 @@ class App extends Component {
           </header>
           <div>
             
-            <Question number={this.state.question} emrys={this.state.emrys} data={MyFuckingData} />
+            <Question number={this.state.question} emrys={this.state.emrys} data={this.state.data} />
 
             <button onClick={this.IncrementQuestion}>Click to increment by 1</button>
 

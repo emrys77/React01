@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 //const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
 
-var data={};
+var data=[];
 var MyFuckingData ={};
 var emrys = "emrys";
 
@@ -67,8 +67,8 @@ make this available
     data = Object.keys(MyFuckingData).map(function(key) {
       return [Number(key), MyFuckingData[key]];
     });
-    console.log('data: ' + data.length );
-   
+    console.log('BJBSData: ' + this.state.BJBSData.length );
+    console.log( this.state.BJBSData );
     /*for(var member of data){
       console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
     }*/
@@ -85,5 +85,9 @@ make this available
 //var MyFuckingData = data;
 
 export {emrys};
-export {MyFuckingData}
+export {MyFuckingData};
+
+/*export default {
+  "topbarLinks": []
+} */
 export default BJBS;
