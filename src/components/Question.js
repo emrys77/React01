@@ -64,14 +64,23 @@ LearningCheck: intro, box1hd, box2hd, options (array)
 
   console.log('myData: ', myData, typeof myData, Array.isArray(myData));
 
-
   console.log( 'myData length: ' + myData.length );
 
-  console.log ( myData );
+
 
   var myFuckingData = Object.keys(myData).map(function(key) {
     return [Number(key), myData[key]];
   });
+
+  var data = Object.keys(myData).map(function(key) {
+    return [Number(key), myData[key]];
+  });
+  
+  console.log ( myFuckingData );
+
+  console.log( data[2][1]['acf']['section']);
+
+  //data[2][1]['acf']['section']
 
   //console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
 
