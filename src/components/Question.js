@@ -67,14 +67,18 @@ LearningCheck: intro, box1hd, box2hd, options (array)
 
   console.log( 'myData length: ' + myData.length );
 
+  console.log ( myData );
+
   var myFuckingData = Object.keys(myData).map(function(key) {
     return [Number(key), myData[key]];
   });
 
-  console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
+  //console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
 
-  //var MySection = myData[2][1]['acf']['section'] + myData[2][1]['acf']['number'];
+ // var MySection = myData[2]['acf']['section'];
   
+ // console.log( MySection );
+ 
   return  (
     
     <div>

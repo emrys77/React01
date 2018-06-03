@@ -4,7 +4,7 @@ const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page
 //const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
 
 var data={};
-var MyFuckingData ={};
+var MyFuckingData=[];
 var emrys = "emrys";
 
 /*
@@ -37,9 +37,9 @@ class BJBS extends Component {
 
         // Examine the text in the response
         response.json().then(function(data) {
-            console.log('json response fired');
+           // console.log('json response fired');
             currentComponent.setState({BJBSData:data});
-            console.log( 'data v1: ' + data);
+           // console.log( 'data v1: ' + data);
         });
         }
     )
@@ -59,7 +59,14 @@ make this available
     if (this.state.requestFailed) return <p>Failed!</p>
     if (!this.state.BJBSData) return <p>Loading...</p>
    
-    MyFuckingData = this.state.BJBSData;
+    var MyFuckingData = this.state.BJBSData;
+
+    console.log( MyFuckingData);
+
+     MyFuckingData = MyFuckingData.reduce(function(acc, cur, i) {
+      acc[i] = cur;
+      return acc;
+    }, {});
 
     if (typeof MyFuckingData !== 'undefined' && MyFuckingData.length > 0) {
       console.log('xMyFuckingData: ' + MyFuckingData.length );
@@ -68,7 +75,8 @@ make this available
     data = Object.keys(MyFuckingData).map(function(key) {
       return [Number(key), MyFuckingData[key]];
     });
-    console.log('data: ' + data.length );
+    //console.log('data: ' + data.length );
+    //console.log( this.state.BJBSData);
    
     /*for(var member of data){
       console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
@@ -86,5 +94,9 @@ make this available
 //var MyFuckingData = data;
 
 export {emrys};
-export {MyFuckingData}
+export {MyFuckingData};
+export {data};
+export const mydata = MyFuckingData;
+
+//export const mydata = [];
 export default BJBS;
