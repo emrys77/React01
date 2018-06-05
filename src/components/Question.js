@@ -20,18 +20,10 @@ responseArray = the array json with the 14 elements
 const courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
 const questionData = courseItemsArray.find( item => item.acf.question_number === 1 );
 
-<<<<<<< HEAD
-
-*/
-function getQuestionData( responseArray, questionNumber ) {
-  return responseArray.filter( item => item.type === 'the_course' )
-      .find( item => item.acf.question_number === questionNumber );
-=======
 */
 function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
         .find( item => item.menu_order ===  questionNumber );
->>>>>>> e726b2ef554421bb72f45e1ac8868068f306267a
 }
 
 
@@ -70,23 +62,13 @@ LearningCheck: intro, box1hd, box2hd, options (array)
       return [Number(key), myData[key]];
     });
 
-<<<<<<< HEAD
-    var myQuestionRow = getQuestionData( myFuckingData, props.number);
-    console.log( props.number );
-    console.log( myQuestionRow );
-
-   // mySection = myFuckingData[2][ + this.props.question + ]['acf']['section'];
-    //questionData = myFuckingData.find( item => item.acf.question_number === 1 );
-  }
-
-=======
-    console.log(myFuckingData[2][1]['acf']['section']);
-
-    console.log(myFuckingData[2][1]['menu_order']);
+    //console.log(myFuckingData[2][1]['acf']['section']);
+    //console.log(myFuckingData[2][1]['menu_order']);
 
     var whatImGoingToShow = getQuestionData( myFuckingData, props.number);
 
-    console.log(whatImGoingToShow);
+    
+    console.log('whatImGoingToShow: ', whatImGoingToShow, typeof whatImGoingToShow, Array.isArray(whatImGoingToShow));
   }
 
   //var MySection =  myData[2][1]['acf']['section'];
@@ -96,7 +78,6 @@ LearningCheck: intro, box1hd, box2hd, options (array)
   //console.log( data[2][1]['acf']['section']);
   //data[2][1]['acf']['section']
   //console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
->>>>>>> e726b2ef554421bb72f45e1ac8868068f306267a
 
   //console.log('myData: ', myData, typeof myData, Array.isArray(myData));
  
@@ -106,7 +87,7 @@ LearningCheck: intro, box1hd, box2hd, options (array)
     <div>
       <h2 className="question">Question { props.number }</h2>
       <p>{ props.emrys }</p>
-      <p>{ mySection }</p>
+      
     </div>
 
   );
