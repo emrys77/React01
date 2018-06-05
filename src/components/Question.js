@@ -24,13 +24,13 @@ responseArray = the array json with the 14 elements
 const courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
 const questionData = courseItemsArray.find( item => item.acf.question_number === 1 );
 
-
+*/
 function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
-        .find( item => item.acf.question_number === 1 );
+        .find( item => item.menu_order ===  questionNumber );
 }
 
-*/
+
 function Question(props) {
 
   /*
@@ -67,30 +67,20 @@ LearningCheck: intro, box1hd, box2hd, options (array)
     });
 
     console.log(myFuckingData[2][1]['acf']['section']);
+
+    console.log(myFuckingData[2][1]['menu_order']);
+
+    var whatImGoingToShow = getQuestionData( myFuckingData, props.number);
+
+    console.log(whatImGoingToShow);
   }
 
   //var MySection =  myData[2][1]['acf']['section'];
-
-  console.log('myData: ', myData, typeof myData, Array.isArray(myData));
-
-  console.log( 'myData length: ' + myData.length );
-
-
-
-  
-
-  var data = Object.keys(myData).map(function(key) {
-    return [Number(key), myData[key]];
-  });
-  
-  console.log ( data );
-
+ // console.log('myData: ', myData, typeof myData, Array.isArray(myData));
+  //console.log( 'myData length: ' + myData.length );
   //var section = data[0][1]['acf']['section'];
-
   //console.log( data[2][1]['acf']['section']);
-
   //data[2][1]['acf']['section']
-
   //console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
 
  
