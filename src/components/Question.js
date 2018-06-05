@@ -14,23 +14,20 @@ import PropTypes from 'prop-types';
 /* var myQuestion = getQuestionData( questionData,1); 
 var data= this.props.data; */
 /*
-const Child = (props) => {
-  return (
-    <div style={{backgroundColor: props.eyeColor}} />
-  )
-}
+
 responseArray = the array json with the 14 elements
 
 const courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
 const questionData = courseItemsArray.find( item => item.acf.question_number === 1 );
 
 
+*/
 function getQuestionData( responseArray, questionNumber ) {
-    return responseArray.filter( item => item.type === 'the_course' )
-        .find( item => item.acf.question_number === 1 );
+  return responseArray.filter( item => item.type === 'the_course' )
+      .find( item => item.acf.question_number === questionNumber );
 }
 
-*/
+
 function Question(props) {
 
   /*
@@ -59,6 +56,8 @@ LearningCheck: intro, box1hd, box2hd, options (array)
   //console.log('Qjson: ', data, typeof data, Array.isArray(data));
 
   var myData = props.data;
+  var mySection;
+  var questionData;
 
   if (myData.length > 0) {
     console.log( myData );
@@ -66,33 +65,16 @@ LearningCheck: intro, box1hd, box2hd, options (array)
       return [Number(key), myData[key]];
     });
 
-    console.log(myFuckingData[2][1]['acf']['section']);
+    var myQuestionRow = getQuestionData( myFuckingData, props.number);
+    console.log( props.number );
+    console.log( myQuestionRow );
+
+   // mySection = myFuckingData[2][ + this.props.question + ]['acf']['section'];
+    //questionData = myFuckingData.find( item => item.acf.question_number === 1 );
   }
 
-  //var MySection =  myData[2][1]['acf']['section'];
 
-  console.log('myData: ', myData, typeof myData, Array.isArray(myData));
-
-  console.log( 'myData length: ' + myData.length );
-
-
-
-  
-
-  var data = Object.keys(myData).map(function(key) {
-    return [Number(key), myData[key]];
-  });
-  
-  console.log ( data );
-
-  //var section = data[0][1]['acf']['section'];
-
-  //console.log( data[2][1]['acf']['section']);
-
-  //data[2][1]['acf']['section']
-
-  //console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
-
+  //console.log('myData: ', myData, typeof myData, Array.isArray(myData));
  
  
   return  (
@@ -100,7 +82,7 @@ LearningCheck: intro, box1hd, box2hd, options (array)
     <div>
       <h2 className="question">Question { props.number }</h2>
       <p>{ props.emrys }</p>
-     
+      <p>{ mySection }</p>
     </div>
 
   );
