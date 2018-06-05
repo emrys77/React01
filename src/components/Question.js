@@ -26,6 +26,13 @@ function getQuestionData( responseArray, questionNumber ) {
         .find( item => item.menu_order ===  questionNumber );
 }
 
+/* let newArr = oldArr.filter(callback);
+let even = arr.filter(val => {
+  return val % 2 === 0;
+});
+// even = [2,4,6]
+*/
+
 
 function Question(props) {
 
@@ -55,6 +62,7 @@ LearningCheck: intro, box1hd, box2hd, options (array)
   //console.log('Qjson: ', data, typeof data, Array.isArray(data));
 
   var myData = props.data;
+  var myNumber = props.number;
 
   if (myData.length > 0) {
     console.log( myData );
@@ -65,10 +73,14 @@ LearningCheck: intro, box1hd, box2hd, options (array)
     //console.log(myFuckingData[2][1]['acf']['section']);
     //console.log(myFuckingData[2][1]['menu_order']);
 
-    var whatImGoingToShow = getQuestionData( myFuckingData, props.number);
-
+    var whatImGoingToShow = getQuestionData( myFuckingData, myNumber);
     
     console.log('whatImGoingToShow: ', whatImGoingToShow, typeof whatImGoingToShow, Array.isArray(whatImGoingToShow));
+
+    var rah = getQuestionData( [1,2,3,4,5], myNumber );
+
+    
+    console.log( myNumber );
   }
 
   //var MySection =  myData[2][1]['acf']['section'];
