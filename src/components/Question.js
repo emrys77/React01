@@ -56,13 +56,13 @@ LearningCheck: intro, box1hd, box2hd, options (array)
    
     var myData = props.data;
     var myNumber = props.number;
-    if (myData.length > 0) {
-      let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
-    }
+    
+    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+    
     console.log(myQuestion);
 
   
-  }
+  
 
  
   return  (
