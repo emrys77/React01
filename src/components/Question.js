@@ -72,7 +72,8 @@ LearningCheck: intro, box1hd, box2hd, options (array)
     });
 
     //console.log(myFuckingData[2][1]['acf']['section']);
-    //console.log(myFuckingData[2][1]['menu_order']);
+
+    console.log(myFuckingData[2][1]['menu_order']);
 
     var whatImGoingToShow = getQuestionData( myFuckingData, myNumber);
     
@@ -83,11 +84,24 @@ LearningCheck: intro, box1hd, box2hd, options (array)
         return [Number(key), rah[key]];
       });
     console.log( rah );
+
+    const numbers = [1,2,3,4];
     
     console.log( myNumber );
     console.log( myFuckingData[2][1]['menu_order']);
 
-    console.log( whatImGoingToShow );
+//parseInt()
+
+//menu_order
+
+    let even = myFuckingData.filter(val => {
+      return val === myNumber;
+    });
+    console.log( 'even: ' + even );
+
+    
+
+  
   }
 
   //var MySection =  myData[2][1]['acf']['section'];
