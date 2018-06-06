@@ -22,8 +22,9 @@ const questionData = courseItemsArray.find( item => item.acf.question_number ===
 
 */
 function getQuestionData( responseArray, questionNumber ) {
-    return responseArray.filter( item => item.type === 'the_course' )
-        .find( item => item.menu_order ===  questionNumber );
+ //   return responseArray.filter( item => item.type === 'the_course' )
+ //       .find( item => item.menu_order ===  questionNumber );
+      return responseArray.filter( item => item.menu_order ===  questionNumber );
 }
 
 /* let newArr = oldArr.filter(callback);
@@ -78,9 +79,15 @@ LearningCheck: intro, box1hd, box2hd, options (array)
     console.log('whatImGoingToShow: ', whatImGoingToShow, typeof whatImGoingToShow, Array.isArray(whatImGoingToShow));
 
     var rah = getQuestionData( [1,2,3,4,5], myNumber );
-
+    rah = Object.keys(rah).map(function(key) {
+        return [Number(key), rah[key]];
+      });
+    console.log( rah );
     
     console.log( myNumber );
+    console.log( myFuckingData[2][1]['menu_order']);
+
+    console.log( whatImGoingToShow );
   }
 
   //var MySection =  myData[2][1]['acf']['section'];
