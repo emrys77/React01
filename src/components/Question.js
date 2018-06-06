@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-//import BJBS from './GetData.js';
-
-/* const questionData = SARCourse.SARarray.find( item => item.acf.question_number === 1 ); */
-
 
 /*function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
@@ -20,19 +16,22 @@ responseArray = the array json with the 14 elements
 const courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
 const questionData = courseItemsArray.find( item => item.acf.question_number === 1 );
 
-*/
+
 function getQuestionData( responseArray, questionNumber ) {
  //   return responseArray.filter( item => item.type === 'the_course' )
  //       .find( item => item.menu_order ===  questionNumber );
       return responseArray.filter( item => item.menu_order ===  questionNumber );
 }
-
-/* let newArr = oldArr.filter(callback);
-let even = arr.filter(val => {
-  return val % 2 === 0;
-});
-// even = [2,4,6]
 */
+
+function findObjectByKey(array, key, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            return array[i];
+        }
+    }
+    return null;
+}
 
 
 function Question(props) {
@@ -52,68 +51,19 @@ work out how many questions there are in section
  PopUp: intro, box1, box2
  MultipleChoice: question, options (array), correct
 LearningCheck: intro, box1hd, box2hd, options (array)
-
-
-  */
-
-  //var result = Object.keys(data).map(function(key) {
-  //  return [Number(key), data[key]];
-  //});
-
-  //console.log('Qjson: ', data, typeof data, Array.isArray(data));
-
-  var myData = props.data;
-  var myNumber = props.number;
-
-  if (myData.length > 0) {
-    console.log( myData );
-    var myFuckingData = Object.keys(myData).map(function(key) {
-      return [Number(key), myData[key]];
-    });
-
-    //console.log(myFuckingData[2][1]['acf']['section']);
-
-    console.log(myFuckingData[2][1]['menu_order']);
-
-    var whatImGoingToShow = getQuestionData( myFuckingData, myNumber);
-    
-    console.log('whatImGoingToShow: ', whatImGoingToShow, typeof whatImGoingToShow, Array.isArray(whatImGoingToShow));
-
-    var rah = getQuestionData( [1,2,3,4,5], myNumber );
-    rah = Object.keys(rah).map(function(key) {
-        return [Number(key), rah[key]];
-      });
-    console.log( rah );
-
-    const numbers = [1,2,3,4];
-    
-    console.log( myNumber );
-    console.log( myFuckingData[2][1]['menu_order']);
-
-//parseInt()
-
-//menu_order
-
-    let even = myFuckingData.filter(val => {
-      return val === myNumber;
-    });
-    console.log( 'even: ' + even );
-
-    
+*/
+  
+   
+    var myData = props.data;
+    var myNumber = props.number;
+    if (myData.length > 0) {
+      let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+    }
+    console.log(myQuestion);
 
   
   }
 
-  //var MySection =  myData[2][1]['acf']['section'];
- // console.log('myData: ', myData, typeof myData, Array.isArray(myData));
-  //console.log( 'myData length: ' + myData.length );
-  //var section = data[0][1]['acf']['section'];
-  //console.log( data[2][1]['acf']['section']);
-  //data[2][1]['acf']['section']
-  //console.log('myFuckingData: ', myFuckingData, typeof myFuckingData, Array.isArray(myFuckingData));
-
-  //console.log('myData: ', myData, typeof myData, Array.isArray(myData));
- 
  
   return  (
     
