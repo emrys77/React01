@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 class Question extends Component {
@@ -8,40 +8,46 @@ class Question extends Component {
     this.state = {
       question: 1
     }
-    this.onChange = this.onChange.bind(this);
+    let currentComponent = this;
+    this.findObjectByKey = this.findObjectByKey.bind(this);
   }
 
-  onChange(state) {
-    this.setState(state);
+  incrementQuestion = () => {
+    this.setState({ question: this.state.question + 1 })
   }
+
+  findObjectByKey = (array, key, value) => {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            return array[i];
+        }
+    }
+    return null;
+  }
+
+  myData = this.props.data;
+  myNumber = this.state.question;
+  myQuestion = this.findObjectByKey(this.props.data,'menu_order', this.state.question);
 
   render() {
 
-    const IncrementQuestion = () => {
+ /*   const IncrementQuestion = () => {
       this.setState({ question: this.state.question + 1 });
     }
-  
-    const findObjectByKey = (array, key, value) => {
-      for (var i = 0; i < array.length; i++) {
-          if (array[i][key] === value) {
-              return array[i];
-          }
-      }
-      return null;
-    }
+*/  
+    
 
-    let myData = this.props.data;
-    let myNumber = this.state.question;
-    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+    
 
-    console.log(myQuestion);
+    //console.log(myQuestion);
 
     return  (
     
       <div>
         <h2 className="question">Question { this.state.question }</h2>
         <p>{ this.props.emrys }</p>
-        <button onClick={this.IncrementQuestion}>Click to increment by 1</button>
+        <button onClick={this.incrementQuestion}>Click to increment by 1</button>
+        
       </div>
 
     );

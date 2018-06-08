@@ -49,26 +49,24 @@ class App extends Component {
      .catch(function(err) {
          console.log('Fetch Error :-S', err);
      });
-   }
+  }
   
-    render() {
+  render() {
       
-      return (  
+    return (  
 
-        <div className="App">
+      <div className="App">
           
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <div>
-            
-            <Question emrys={this.state.emrys} data={this.state.data} />
-
-          </div>
-          
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <div>
+          <Question emrys={this.state.emrys} data={this.state.data} />
         </div>
-      );
+          
+      </div>
+    );
   }
 }
 
