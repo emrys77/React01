@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 
 class Question extends Component {
@@ -8,12 +8,16 @@ class Question extends Component {
     this.state = {
       question: 1
     }
+    this.onChange = this.onChange.bind(this);
   }
 
+  onChange(state) {
+    this.setState(state);
+  }
 
   render() {
 
-    var IncrementQuestion = () => {
+    const IncrementQuestion = () => {
       this.setState({ question: this.state.question + 1 });
     }
   
@@ -45,6 +49,9 @@ class Question extends Component {
 
 }
 
+export default Question;
+
+
 /*function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
         .find( item => item.acf.question_number === 1 );
@@ -68,11 +75,11 @@ function getQuestionData( responseArray, questionNumber ) {
 */
 
 
-
+/*
 
 function Question(props) {
 
-  /*
+  
   what do i do?
 get all data from getdata
 grab question number prop
@@ -87,7 +94,7 @@ work out how many questions there are in section
  PopUp: intro, box1, box2
  MultipleChoice: question, options (array), correct
 LearningCheck: intro, box1hd, box2hd, options (array)
-*/
+
 
   
 }
@@ -98,5 +105,6 @@ Question.propTypes = {
   emrys: PropTypes.string
 };
 
-export default Question;
 
+
+*/
