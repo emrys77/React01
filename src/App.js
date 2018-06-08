@@ -19,16 +19,12 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      question: 1,
       emrys: 'emrys',
       data: []
     }
   }
 
-  IncrementQuestion = () => {
-    this.setState({ question: this.state.question + 1 });
-  }
-
+  
   componentDidMount() {
      console.log('componentDidMount fired');
      let currentComponent = this;
@@ -67,9 +63,7 @@ class App extends Component {
           </header>
           <div>
             
-            <Question number={this.state.question} emrys={this.state.emrys} data={this.state.data} />
-
-            <button onClick={this.IncrementQuestion}>Click to increment by 1</button>
+            <Question emrys={this.state.emrys} data={this.state.data} />
 
           </div>
           

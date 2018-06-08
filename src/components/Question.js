@@ -1,6 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
+class Question extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      question: 1
+    }
+  }
+
+
+  render() {
+
+    var IncrementQuestion = () => {
+      this.setState({ question: this.state.question + 1 });
+    }
+  
+    const findObjectByKey = (array, key, value) => {
+      for (var i = 0; i < array.length; i++) {
+          if (array[i][key] === value) {
+              return array[i];
+          }
+      }
+      return null;
+    }
+
+    let myData = this.props.data;
+    let myNumber = this.state.question;
+    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+
+    console.log(myQuestion);
+
+    return  (
+    
+      <div>
+        <h2 className="question">Question { this.state.question }</h2>
+        <p>{ this.props.emrys }</p>
+        <button onClick={this.IncrementQuestion}>Click to increment by 1</button>
+      </div>
+
+    );
+  }
+
+}
 
 /*function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
@@ -24,14 +67,7 @@ function getQuestionData( responseArray, questionNumber ) {
 }
 */
 
-function findObjectByKey(array, key, value) {
-    for (var i = 0; i < array.length; i++) {
-        if (array[i][key] === value) {
-            return array[i];
-        }
-    }
-    return null;
-}
+
 
 
 function Question(props) {
@@ -52,28 +88,8 @@ work out how many questions there are in section
  MultipleChoice: question, options (array), correct
 LearningCheck: intro, box1hd, box2hd, options (array)
 */
-  
-   
-    var myData = props.data;
-    var myNumber = props.number;
-    
-    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
-    
-    console.log(myQuestion);
 
   
-  
-
- 
-  return  (
-    
-    <div>
-      <h2 className="question">Question { props.number }</h2>
-      <p>{ props.emrys }</p>
-      
-    </div>
-
-  );
 }
 
 Question.propTypes = {
