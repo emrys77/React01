@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-//import PropTypes from 'prop-types';
-
 
 class Question extends Component {
   constructor(props) {
@@ -8,18 +6,17 @@ class Question extends Component {
     this.state = {
       question: 1
     }
-    this.onChange = this.onChange.bind(this);
+    
   }
 
-  onChange(state) {
-    this.setState(state);
+  incrementQuestion = () => {
+    this.setState({ question: this.state.question + 1 });
   }
+
+  
+
 
   render() {
-
-    const IncrementQuestion = () => {
-      this.setState({ question: this.state.question + 1 });
-    }
   
     const findObjectByKey = (array, key, value) => {
       for (var i = 0; i < array.length; i++) {
@@ -30,27 +27,80 @@ class Question extends Component {
       return null;
     }
 
-    let myData = this.props.data;
+    const objectToArray = obj => {
+    /*  Object.keys(obj).map(function(key) {
+        return [Number(key), obj[key]];
+      }); */
+      //var output = Object.entries(obj).map(([key, value]) => ({key,value}));
+      var dataArray = Object.keys(obj).map(function(k){return obj[k]});
+
+      return [
+        dataArray
+      ]
+    };
+/*    
+    var result = [];
+
+result = data.map(function (el) {
+    var key = Object.keys(el).pop()
+
+    return [
+        key, +el[key]
+    ]
+});
+
+console.log(result);
+
+*/
+    const myData = this.props.data;
+    const myDataCount = myData.length;
     let myNumber = this.state.question;
     let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+    //var myQuestionArray = myQuestion.keys(obj).map((k) => obj[k])
+
+
+    
+    if ( myQuestion) {
+      
+      console.log('convert this putanna into an array');
+      //var myQuestionArray = Object.values(myQuestion); 
+      //var myQuestionArray = objectToArray(myQuestion);
+      var myQuestionArray = Object.entries(myQuestion);
+      var myType = myQuestionArray[16][1]['type'];
+
+
+
+      //console.log( myQuestionArray);
+     // var myQuestionType = myQuestionArray[16]['type'];
+      
+    } else {
+      console.log('myQuestion is elsewhere');
+    }
+
+
 
     console.log(myQuestion);
+    console.log( myQuestionArray);
+
+  //  console.log(myQuestionArray);
+   // console.log(result);
+    console.log( myDataCount );
+
+    
 
     return  (
     
       <div>
         <h2 className="question">Question { this.state.question }</h2>
         <p>{ this.props.emrys }</p>
-        <button onClick={this.IncrementQuestion}>Click to increment by 1</button>
+        <button onClick={this.incrementQuestion}>Click to increment by 1</button>
+        <p>{myType}</p>
       </div>
 
     );
   }
 
 }
-
-export default Question;
-
 
 /*function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
@@ -75,8 +125,8 @@ function getQuestionData( responseArray, questionNumber ) {
 */
 
 
-/*
 
+/*
 function Question(props) {
 
   
@@ -104,7 +154,6 @@ Question.propTypes = {
   data: PropTypes.any,
   emrys: PropTypes.string
 };
-
-
-
 */
+export default Question;
+
