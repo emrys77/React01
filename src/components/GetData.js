@@ -14,6 +14,17 @@ class GetData extends Component {
     }
   }
 
+  getQuestionData = (array, key, value) => {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][key] === value) {
+            return array[i];
+        }
+    }
+    return null;
+  }
+
+  myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+
   render() {
   
     const findObjectByKey = (array, key, value) => {
@@ -30,7 +41,7 @@ class GetData extends Component {
     const myDataCount = myData.length;
 
     let myNumber = this.state.question;
-    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+    
 
     console.log('myQuestion: ' + myQuestion);
     
@@ -39,7 +50,9 @@ class GetData extends Component {
 
 }
 
-export var myQuestion;
+
+export var getQuestionData; // -> function , takes array key value
+export var myQuestion; // -> should be an object
 export default GetData;
 
 /*function getQuestionData( responseArray, questionNumber ) {

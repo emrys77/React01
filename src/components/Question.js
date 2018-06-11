@@ -14,6 +14,10 @@ question    --> converts object to js array
 import React, { Component } from 'react';
 import GetData from './GetData';
 import myQuestion from './GetData';
+import getQuestionData from './GetData';
+
+// (myData,'menu_order',myNumber);
+
 
 if ( myQuestion){ 
   console.log('we have myquestion, and it looks a little like this: ' + myQuestion); 
@@ -27,6 +31,8 @@ class Question extends Component {
       questionData: myQuestion
     }
   }
+
+  data = getQuestionData(this.state.questionData,'menu_order',this.state.question);
   
   objectToArray = obj => {
     var dataArray = Object.keys(obj).map(function(k){return obj[k]});
