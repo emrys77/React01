@@ -1,100 +1,78 @@
+/*
+question    --> converts object to js array
+            --> works out what type we are, does a conditional fork
+            --> passes props to question type
+
+            -->     multiple choice
+                    text
+                    etc
+
+            --|->   pass response and answer? answer test should be above?
+            -->     right/wrong here what happens? 
+*/
+
 import React, { Component } from 'react';
+import GetData from './GetData';
+import myQuestion from './GetData';
+
+if ( myQuestion){ 
+  console.log('we have myquestion, and it looks a little like this: ' + myQuestion); 
+}
 
 class Question extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      question: 1
+      question: 1,
+      questionData: myQuestion
     }
-    
   }
+  
+  objectToArray = obj => {
+    var dataArray = Object.keys(obj).map(function(k){return obj[k]});
+    return [
+      dataArray
+    ]
+  };
 
   incrementQuestion = () => {
     this.setState({ question: this.state.question + 1 });
   }
 
-  
 
 
   render() {
-  
-    const findObjectByKey = (array, key, value) => {
-      for (var i = 0; i < array.length; i++) {
-          if (array[i][key] === value) {
-              return array[i];
-          }
-      }
-      return null;
-    }
 
     const objectToArray = obj => {
-    /*  Object.keys(obj).map(function(key) {
-        return [Number(key), obj[key]];
-      }); */
-      //var output = Object.entries(obj).map(([key, value]) => ({key,value}));
       var dataArray = Object.keys(obj).map(function(k){return obj[k]});
-
       return [
         dataArray
       ]
     };
-/*    
-    var result = [];
 
-result = data.map(function (el) {
-    var key = Object.keys(el).pop()
-
-    return [
-        key, +el[key]
-    ]
-});
-
-console.log(result);
-
-*/
-    const myData = this.props.data;
-    const myDataCount = myData.length;
     let myNumber = this.state.question;
-    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
-    //var myQuestionArray = myQuestion.keys(obj).map((k) => obj[k])
 
-
-    
-    if ( myQuestion) {
+    //console.log( this.state.questionData);
+        
+    if ( this.state.questionData ) {
       
-      console.log('convert this putanna into an array');
-      //var myQuestionArray = Object.values(myQuestion); 
-      //var myQuestionArray = objectToArray(myQuestion);
-      var myQuestionArray = Object.entries(myQuestion);
-      var myType = myQuestionArray[16][1]['type'];
-
-
-
-      //console.log( myQuestionArray);
-     // var myQuestionType = myQuestionArray[16]['type'];
+      var questionDataArray = Object.entries(this.state.question);
+      //var myType = questionDataArray[16][1]['type'];
       
     } else {
       console.log('myQuestion is elsewhere');
     }
 
-
-
-    console.log(myQuestion);
-    console.log( myQuestionArray);
-
-  //  console.log(myQuestionArray);
-   // console.log(result);
-    console.log( myDataCount );
-
-    
+    //console.log(myQuestion);
+    //console.log( questionDataArray);
 
     return  (
     
       <div>
         <h2 className="question">Question { this.state.question }</h2>
-        <p>{ this.props.emrys }</p>
+
         <button onClick={this.incrementQuestion}>Click to increment by 1</button>
-        <p>{myType}</p>
+        <p>{this.props.emrys}</p>
       </div>
 
     );

@@ -1,119 +1,99 @@
-import React, { Component } from 'react';
-
-const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
-//const apiUrl = "http://localhost/wp-json/wp/v2/posts?per_page=100";
-
-<<<<<<< HEAD
-var data=[];
-var MyFuckingData ={};
-=======
-var data={};
-var MyFuckingData=[];
->>>>>>> 7ac94a736aee35dabcdd485876865e82ac18d93c
-var emrys = "emrys";
-
 /*
-https://stackoverflow.com/questions/47649637/export-a-dynamic-array-from-a-react-component-to-another-component?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-https://stackoverflow.com/questions/11922383/access-process-nested-objects-arrays-or-json
+getdata     --> returns array depending on question number 
+            --> holds question number in state
+            --> passes to question
 */
 
-class BJBS extends Component {
+import React, { Component } from 'react';
+
+class GetData extends Component {
   constructor(props) {
-    
-    super(props)
+    super(props);
     this.state = {
-      requestFailed: false,
-      BJBSData: [],
+      question: 1
     }
   }
-  
-  componentDidMount() {
-   // console.log('componentDidMount fired');
-    let currentComponent = this;
-    
-    fetch(apiUrl)
-      .then(
-        function(response) {
-        if (response.status !== 200) {
-            console.log('Looks like there was a problem. Status Code: ' +
-            response.status);
-            return;
-        }
-
-        // Examine the text in the response
-        response.json().then(function(data) {
-           // console.log('json response fired');
-            currentComponent.setState({BJBSData:data});
-           // console.log( 'data v1: ' + data);
-        });
-        }
-    )
-    .catch(function(err) {
-        console.log('Fetch Error :-S', err);
-    });
-  }
-  
-  /*
-what do i do?
-get all dats from website
-make this available 
-  */
 
   render() {
-
-    if (this.state.requestFailed) return <p>Failed!</p>
-    if (!this.state.BJBSData) return <p>Loading...</p>
-   
-    var MyFuckingData = this.state.BJBSData;
-
-    console.log( MyFuckingData);
-
-     MyFuckingData = MyFuckingData.reduce(function(acc, cur, i) {
-      acc[i] = cur;
-      return acc;
-    }, {});
-
-    if (typeof MyFuckingData !== 'undefined' && MyFuckingData.length > 0) {
-      console.log('xMyFuckingData: ' + MyFuckingData.length );
-      // the array is defined and has at least one element
-      // turn js object into array we can pass to the question
-    data = Object.keys(MyFuckingData).map(function(key) {
-      return [Number(key), MyFuckingData[key]];
-    });
-<<<<<<< HEAD
-    console.log('BJBSData: ' + this.state.BJBSData.length );
-    console.log( this.state.BJBSData );
-=======
-    //console.log('data: ' + data.length );
-    //console.log( this.state.BJBSData);
-   
->>>>>>> 7ac94a736aee35dabcdd485876865e82ac18d93c
-    /*for(var member of data){
-      console.log(member.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
-    }*/
-    //console.log(data);
-    //console.log(1.acf.question_number + ' ' + member.acf.section + ' '+ member.acf.type); 
-    console.log(data[2][1]['slug'] + '  ' + data[2][1]['acf']['section'] + '  ' + data[2][1]['menu_order'] );
-
+  
+    const findObjectByKey = (array, key, value) => {
+      for (var i = 0; i < array.length; i++) {
+          if (array[i][key] === value) {
+              return array[i];
+          }
+      }
+      return null;
     }
+
+    // this is all the data from WP
+    const myData = this.props.data;
+    const myDataCount = myData.length;
+
+    let myNumber = this.state.question;
+    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+
+    console.log('myQuestion: ' + myQuestion);
     
     return null;
-
   }
+
 }
-//var MyFuckingData = data;
 
-export {emrys};
-export {MyFuckingData};
-<<<<<<< HEAD
+export var myQuestion;
+export default GetData;
 
-/*export default {
-  "topbarLinks": []
-} */
-=======
-export {data};
-export const mydata = MyFuckingData;
+/*function getQuestionData( responseArray, questionNumber ) {
+    return responseArray.filter( item => item.type === 'the_course' )
+        .find( item => item.acf.question_number === 1 );
+}
 
-//export const mydata = [];
->>>>>>> 7ac94a736aee35dabcdd485876865e82ac18d93c
-export default BJBS;
+/* var myQuestion = getQuestionData( questionData,1); 
+var data= this.props.data; */
+/*
+
+responseArray = the array json with the 14 elements
+
+const courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
+const questionData = courseItemsArray.find( item => item.acf.question_number === 1 );
+
+
+function getQuestionData( responseArray, questionNumber ) {
+ //   return responseArray.filter( item => item.type === 'the_course' )
+ //       .find( item => item.menu_order ===  questionNumber );
+      return responseArray.filter( item => item.menu_order ===  questionNumber );
+}
+*/
+
+
+
+/*
+function Question(props) {
+
+  
+  what do i do?
+get all data from getdata
+grab question number prop
+get section from prop
+work out how many questions there are in section
+ work out question details question number in section
+ work out question type
+ work out what props to pass to question type and pass
+
+ text: title, content
+ video: vimeo_code, video_intro_text
+ PopUp: intro, box1, box2
+ MultipleChoice: question, options (array), correct
+LearningCheck: intro, box1hd, box2hd, options (array)
+
+
+  
+}
+
+Question.propTypes = {
+  number: PropTypes.number.isRequired,
+  data: PropTypes.any,
+  emrys: PropTypes.string
+};
+*/
+
+
