@@ -78,9 +78,12 @@ console.log(result);
       var QType = myQuestionArray[16][1]['type'];
       var QContent = myQuestionArray[16][1]['content'];
 
-      var cContent = QType => {
-        if (QType==='Text') {
+      console.log('QContent: ' + QContent);
+
+      if (QType==='Text') {
+        var cContent = QType => {
           var myQContent = createMarkup(QContent);
+          console.log('myQContent: ' + myQContent);
           return {
             myQContent
           }
@@ -121,7 +124,7 @@ console.log(result);
         <p>{ this.props.emrys }</p>
         
         <p>{QType}</p>
-        <div>{myStuff}</div>
+        {myStuff}
 
         <button className="forward" onClick={this.incrementQuestion}>Forward</button>
 
