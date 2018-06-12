@@ -71,7 +71,7 @@ console.log(result);
       var QType = myQuestionArray[16][1]['type'];
 
       if (QType==='Text') {
-        content = myQuestionArray[16][1]['content'];
+        var content = myQuestionArray[16][1]['content'];
       }
 
 
@@ -92,7 +92,13 @@ console.log(result);
    // console.log(result);
     console.log( myDataCount );
 
+    function createMarkup() {
+      return {__html: 'First &middot; Second'};
+    }
     
+    function MyComponent() {
+      return <div dangerouslySetInnerHTML={createMarkup()} />;
+    }
 
     return  (
     
@@ -101,7 +107,7 @@ console.log(result);
         <p>{ this.props.emrys }</p>
         <button onClick={this.incrementQuestion}>Click to increment by 1</button>
         <p>{QType}</p>
-        <p>{content}</p>
+        <div dangerouslySetInnerHTML={content}></div>
       </div>
 
     );
