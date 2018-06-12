@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Text from './Text/Text.js'
+import Video from './Video/Video.js'
 
 class Question extends Component {
   constructor(props) {
@@ -59,7 +60,13 @@ console.log(result);
     let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
     //var myQuestionArray = myQuestion.keys(obj).map((k) => obj[k])
 
-
+    var createMarkup = html => {
+      return {__html: html};
+    }
+    
+    var QSafeHTML = () => {
+      return <div dangerouslySetInnerHTML={createMarkup()} />;
+    }
     
     if ( myQuestion) {
       
@@ -69,10 +76,23 @@ console.log(result);
       var myQuestionArray = Object.entries(myQuestion);
 
       var QType = myQuestionArray[16][1]['type'];
+      var QContent = myQuestionArray[16][1]['content'];
 
-      if (QType==='Text') {
-        var content = myQuestionArray[16][1]['content'];
+      var cContent = QType => {
+        if (QType==='Text') {
+          var myQContent = createMarkup(QContent);
+          return {
+            myQContent
+          }
+        }
       }
+      
+      var myStuff = cContent(QType);
+      console.log('myStuff: ' + myStuff);
+      
+
+//      vimeo_code: PropTypes.string,
+//      video_intro_text: PropTypes.string.isRequired
 
 
 
@@ -92,22 +112,19 @@ console.log(result);
    // console.log(result);
     console.log( myDataCount );
 
-    function createMarkup() {
-      return {__html: 'First &middot; Second'};
-    }
     
-    function MyComponent() {
-      return <div dangerouslySetInnerHTML={createMarkup()} />;
-    }
 
     return  (
     
       <div>
         <h2 className="question">Question { this.state.question }</h2>
         <p>{ this.props.emrys }</p>
-        <button onClick={this.incrementQuestion}>Click to increment by 1</button>
+        
         <p>{QType}</p>
-        <div dangerouslySetInnerHTML={content}></div>
+        <div>{myStuff}</div>
+
+        <button className="forward" onClick={this.incrementQuestion}>Forward</button>
+
       </div>
 
     );
