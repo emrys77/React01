@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Text from './Text/Text.js'
 
 class Question extends Component {
   constructor(props) {
@@ -66,7 +67,12 @@ console.log(result);
       //var myQuestionArray = Object.values(myQuestion); 
       //var myQuestionArray = objectToArray(myQuestion);
       var myQuestionArray = Object.entries(myQuestion);
-      var myType = myQuestionArray[16][1]['type'];
+
+      var QType = myQuestionArray[16][1]['type'];
+
+      if (QType==='Text') {
+        content = myQuestionArray[16][1]['content'];
+      }
 
 
 
@@ -94,7 +100,8 @@ console.log(result);
         <h2 className="question">Question { this.state.question }</h2>
         <p>{ this.props.emrys }</p>
         <button onClick={this.incrementQuestion}>Click to increment by 1</button>
-        <p>{myType}</p>
+        <p>{QType}</p>
+        <p>{content}</p>
       </div>
 
     );
