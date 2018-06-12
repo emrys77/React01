@@ -69,10 +69,6 @@ console.log(result);
     }
     
     if ( myQuestion) {
-      
-      console.log('convert this putanna into an array');
-      //var myQuestionArray = Object.values(myQuestion); 
-      //var myQuestionArray = objectToArray(myQuestion);
       var myQuestionArray = Object.entries(myQuestion);
 
       var QType = myQuestionArray[16][1]['type'];
@@ -81,41 +77,16 @@ console.log(result);
       console.log('QContent: ' + QContent);
 
       if (QType==='Text') {
-        var cContent = QType => {
-          var myQContent = createMarkup(QContent);
-          console.log('myQContent: ' + myQContent);
-          return {
-            myQContent
-          }
-        }
-      }
-      
-      var myStuff = cContent(QType);
-      console.log('myStuff: ' + myStuff);
-      
-
+        var sContent = QSafeHTML(QContent); 
+        console.log('sContent: ' + sContent );         
 //      vimeo_code: PropTypes.string,
 //      video_intro_text: PropTypes.string.isRequired
 
+      }
 
-
-      //console.log( myQuestionArray);
-     // var myQuestionType = myQuestionArray[16]['type'];
-      
     } else {
       console.log('myQuestion is elsewhere');
     }
-
-
-
-    console.log(myQuestion);
-    console.log( myQuestionArray);
-
-  //  console.log(myQuestionArray);
-   // console.log(result);
-    console.log( myDataCount );
-
-    
 
     return  (
     
@@ -124,7 +95,7 @@ console.log(result);
         <p>{ this.props.emrys }</p>
         
         <p>{QType}</p>
-        {myStuff}
+        <div dangerouslySetInnerHTML={{ __html: QContent }}></div>
 
         <button className="forward" onClick={this.incrementQuestion}>Forward</button>
 
