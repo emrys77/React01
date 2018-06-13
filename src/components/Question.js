@@ -60,12 +60,12 @@ console.log(result);
     let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
     //var myQuestionArray = myQuestion.keys(obj).map((k) => obj[k])
 
-    var createMarkup = html => {
-      return {__html: html};
+    let createMarkup = myhtml => {
+      return {__html: myhtml};
     }
     
-    var QSafeHTML = () => {
-      return <div dangerouslySetInnerHTML={createMarkup()} />;
+    let QSafeHTML = (myContent) => {
+      return <div dangerouslySetInnerHTML={createMarkup( myContent )} />;
     }
     
     if ( myQuestion) {
@@ -74,11 +74,17 @@ console.log(result);
       var QType = myQuestionArray[16][1]['type'];
       var QContent = myQuestionArray[16][1]['content'];
 
-      console.log('QContent: ' + QContent);
+      if (QContent) {
+        console.log('QContent: ' + QContent);
+        //QSafeHTML();
+        console.log(QSafeHTML({QContent}));
+      }
+
+      
 
       if (QType==='Text') {
         var sContent = QSafeHTML(QContent); 
-        console.log('sContent: ' + sContent );         
+        console.log('sContent: ' + sContent['__html'] );         
 //      vimeo_code: PropTypes.string,
 //      video_intro_text: PropTypes.string.isRequired
 
