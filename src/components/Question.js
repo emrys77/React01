@@ -87,7 +87,8 @@ console.log(result);
       }
 
       var match = "title"
-      var val = myQuestionArray.find( function(item) { return item.key == match } );
+      let shitArray = [{id: 101, crap: "Johnny", title: "fark you"}]
+      var val = shitArray.find( function(item) { return item.key === match } );
       console.log('mymatch: ' + val);
 
       // function getQuestion( responseArray ) {
