@@ -63,7 +63,7 @@ console.log(result);
     let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
     //var myQuestionArray = myQuestion.keys(obj).map((k) => obj[k])
 
-    console.log( myQuestion );
+    //console.log( myQuestion );
 
     let createMarkup = myhtml => {
       return {__html: myhtml};
@@ -76,9 +76,9 @@ console.log(result);
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
 
-      var QType = myQuestionArray[16][1]['type'];
+      console.log(myQuestionArray);
 
-      
+      var QType = myQuestionArray[16][1]['type'];
 
       if (QContent) {
         console.log('QContent: ' + QContent);
@@ -86,26 +86,8 @@ console.log(result);
         console.log(QSafeHTML({QContent}));
       }
 
-      var match = "title"
-      let shitArray = [{id: 101, crap: "Johnny", title: "fark you"}]
-      var val = shitArray.find( function(item) { return item.key === match } );
-      console.log('mymatch: ' + val);
+   
 
-      // function getQuestion( responseArray ) {
-      //   return responseArray.filter( item => item.type === 'the_course' )
-      //       .find( item => item.menu_order ===  questionNumber );
-      // }
-      var title = myQuestionArray.find( item => item.title );
-      console.log('question: ' + title )
-      // var question = myQuestionArray[16][2]['date']
-      // console.log('date: ' + question)
-      
-
-      // var title = myQuestionArray.find(function(element) {
-      //   return element === 'date';
-      // });
-
-      //console.log('question: ' + title )
 
       if (QType==='Text') {
         var QContent = myQuestionArray[16][1]['content'];
@@ -118,8 +100,6 @@ console.log(result);
         var vimeo_code = myQuestionArray[16][1]['vimeo_code']
         var video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
 
-        // src="https://player.vimeo.com/video/245558041?api=1&player_id=player1" 
-
         var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
         //console.log('v code: ' + vimeo_code);
         //console.log('intro: ' + video_intro_text);
@@ -130,31 +110,37 @@ console.log(result);
         </div>
       }
       if (QType==='Multiple Choice') {
+        var question_text = myQuestionArray[10][1]['rendered'];
+        var options = myQuestionArray[16][1]['multiple_choice_question']; 
+        
+        // create an array for the render list
+        var rOptions = [];
+        var correct = 
+        options.forEach(function(element) {
+          rOptions.push(element.choice);
+          if (rOptions.is_this_the_correct_answer == true ) {
+            console.log('true')
+          }
+        });
+
+        /*
+        multiple_choice_question [
+          {choice: "gambler", is_this_the_correct_answer: false}
+          {choice: "drug user", is_this_the_correct_answer: true}
+          {choice: "recently released criminal", is_this_the_correct_answer: false}
+          {choice: "recovering alcoholic", is_this_the_correct_answer: false}
+        ]
+        
+        */
+        var QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
+
         
         /*
        
          question: PropTypes.string.isRequired,
   options: PropTypes.array,
   correct: PropTypes.string
-}
-
-       title
-:
-rendered
-:
-"Q1: Who is most likely to commit an armed robbery?"
-
-acf
-multiple_choice_question
-
-Array(4)
-0   {choice: "gambler", is_this_the_correct_answer: false}
-1   {choice: "drug user", is_this_the_correct_answer: true}
-2   {choice: "recently released criminal", is_this_the_correct_answer: false}
-3   {choice: "recovering alcoholic", is_this_the_correct_answer: false}
-*/// question: PropTypes.string.isRequired,
-        // options: PropTypes.array,
-        // correct: PropTypes.string
+*/
 
       }
     } else {
@@ -170,8 +156,6 @@ Array(4)
         <p>{QType}</p>
 
         {QRender}
-
-        
 
         <button className="forward" onClick={this.incrementQuestion}>Forward</button>
 
