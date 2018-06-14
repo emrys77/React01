@@ -4,8 +4,8 @@ import styles from './MultipleChoice.css';
 
 function MultipleChoice(props) {
     var items = props.options;
-    var itemsList = items.map(function(item){
-      return <label className="radioBox"><input type="radio" name="Q3" value={item} />{item}</label>
+    var itemsList = items.map(function(item,i){
+      return <label className="radioBox" key={i}><input type="radio" name="Q3" value={item} />{item}</label>
     })
     return  (
         <div className="multipleChoice wrapper">

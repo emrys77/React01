@@ -115,13 +115,19 @@ console.log(result);
         
         // create an array for the render list
         var rOptions = [];
-        var correct = 
+        
         options.forEach(function(element) {
           rOptions.push(element.choice);
-          if (rOptions.is_this_the_correct_answer == true ) {
-            console.log('true')
+          console.log(element.is_this_the_correct_answer)
+          // and a function to find who is right
+          function findCorrect() {
+            return element == true;
           }
+          var correct = options.findIndex(findCorrect);
+          console.log(correct);
         });
+        
+        
 
         /*
         multiple_choice_question [
