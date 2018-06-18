@@ -73,44 +73,19 @@ class Question extends Component {
         var question_text = myQuestionArray[10][1]['rendered'];
         var options = myQuestionArray[16][1]['multiple_choice_question']; 
         
-        console.log(options)
-        console.log('options: ', options, typeof options, Array.isArray(options));
-      //  var myOptionsArray = Object.entries(options);
-        var myOptionsArray = Object.entries(options);
-        console.log(myOptionsArray)
-        console.log('myOptionsArray: ', myOptionsArray, typeof myOptionsArray, Array.isArray(myOptionsArray));
-        console.log(myOptionsArray.indexOf('true'))
-        //console.log(options.entries(3))
-        //console.log(Object.entries(options));
-
-        //var index = options.indexOf('true'); 
-       // var index = myOptionsArray.findIndex(k => k===true);
-        //console.log(index);
-
-        //console.log('work mofo: ' + myOptionsArray.indexOf(true));
-
-        
-
-
-        //options.indexOf(searchElement[, fromIndex]);
         // create an array for the question options list
         var rOptions = [];
-        
+
         options.forEach(function(element) {
           rOptions.push(element.choice);
-          //console.log(element.is_this_the_correct_answer)
 
-        
-
-          
-          // and a function to find which one is right
-         
-
-          //var a = options.indexOf(true);
-          //if(arry[x].value === true){
-          //console.log('a: ' + a);
-          //var correct = options.findIndex(findCorrect);
-          //console.log(correct);
+          for (let [index, val] of options.entries()) {
+            //console.log('index: ' + index)
+            //console.log('val: ' + val.is_this_the_correct_answer)
+            if ( val.is_this_the_correct_answer == true ) {
+              console.log('correct: ' + index)
+            }
+          }
         });
         
         
@@ -126,7 +101,6 @@ class Question extends Component {
         */
         var QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
 
-        
         /*
        
          question: PropTypes.string.isRequired,
@@ -143,14 +117,9 @@ class Question extends Component {
     
       <div>
         <h2 className="question">Question { this.state.question }</h2>
-        <p>{ this.props.emrys }</p>
-        
         <p>{QType}</p>
-
         {QRender}
-
         <button className="forward" onClick={this.incrementQuestion}>Forward</button>
-
       </div>
 
     );
