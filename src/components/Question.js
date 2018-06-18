@@ -87,26 +87,8 @@ class Question extends Component {
             }
           }
         });
-        
-        
 
-        /*
-        multiple_choice_question [
-          {choice: "gambler", is_this_the_correct_answer: false}
-          {choice: "drug user", is_this_the_correct_answer: true}
-          {choice: "recently released criminal", is_this_the_correct_answer: false}
-          {choice: "recovering alcoholic", is_this_the_correct_answer: false}
-        ]
-        
-        */
         var QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
-
-        /*
-       
-         question: PropTypes.string.isRequired,
-  options: PropTypes.array,
-  correct: PropTypes.string
-*/
 
       }
     } else {
