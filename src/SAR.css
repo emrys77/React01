@@ -1,0 +1,17 @@
+.App {
+  background: url(images/Background_01.jpg); }
+  .App .content {
+    position: absolute;
+    top: 25%;
+    width: 80%;
+    max-width: 600px;
+    background: #ffffff; }
+
+#first,
+#second {
+  width: 40%; }
+
+#first div,
+#second div {
+  padding: 4px;
+  border: 1px solid #bbbbbb; }

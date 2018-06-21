@@ -75,7 +75,6 @@ class Question extends Component {
         
         // create an array for the question options list
         var rOptions = [];
-
         options.forEach(function(element) {
           rOptions.push(element.choice);
 
@@ -84,6 +83,7 @@ class Question extends Component {
             //console.log('val: ' + val.is_this_the_correct_answer)
             if ( val.is_this_the_correct_answer == true ) {
               console.log('correct: ' + index)
+              var a = index 
             }
           }
         });

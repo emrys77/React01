@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-//import BJBS from './components/GetData';
-//import {MyFuckingData} from './components/GetData';
-//import {emrys} from './components/GetData';
-//import {mydata} from './components/GetData';
-import logo from './logo.svg';
+
 import './App.css';
 import Question from './components/Question';
 
@@ -19,16 +15,17 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      emrys: 'emrys',
       data: []
     }
   }
 
   
   componentDidMount() {
-     console.log('componentDidMount fired');
+//     console.log('componentDidMount fired');
      let currentComponent = this;
      
+     
+
      fetch(apiUrl)
        .then(
          function(response) {
@@ -42,7 +39,7 @@ class App extends Component {
          response.json().then(function(data) {
             // console.log('json response fired');
              currentComponent.setState({data:data});
-            // console.log( 'data v1: ' + data);
+            console.log( 'data v1: ' + data);
          });
          }
      )
@@ -52,18 +49,15 @@ class App extends Component {
    }
   
     render() {
-      
+      var section = 'The Offender'
       return (  
 
         <div className="App">
           
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <div>
-            
-            <Question emrys={this.state.emrys} data={this.state.data} />
+          <div className="content">
+            <header>Survive Armed Robbery | {section}</header>
+
+            <Question data={this.state.data} />
 
           </div>
           
