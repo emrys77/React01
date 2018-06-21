@@ -1,11 +1,42 @@
+
 .App {
-  background: url(images/Background_01.jpg);
-  
-  .content {
-    position:absolute;
-    top:25%;
-    width: 80%;
-    max-width: 600px;
-    background: #ffffff;
-  }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/Background_01.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .content {
+        position:absolute;
+        top:25%;
+        left:50%;
+        margin-left: -500px;
+        width: 80%;
+        max-width: 1000px;
+        background: $SAR-white;
+        header {
+            font-size: 1.1rem;
+            padding: 1rem 1rem;
+            background: $SAR-dark-blue;
+            color: $SAR-white;
+        }
+        div {
+            img {
+                //position: absolute;
+                //top: 0;
+                //right: 0;
+                float: right;
+            }
+            .QContent {
+                padding: 40px;
+                &.bg {
+                    width: 50%;
+                    
+                    
+                }
+            }
+        }
+        
+    }
 }

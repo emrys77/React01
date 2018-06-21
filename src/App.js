@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './SAR.css';
 import Question from './components/Question';
 
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
-
-/*
-var result = Object.keys({MyFuckingData}).map(function(key) {
-  return [Number(key), {MyFuckingData}[key]];
-});
-*/
 
 class App extends Component {
   constructor(props) {
@@ -24,8 +18,6 @@ class App extends Component {
 //     console.log('componentDidMount fired');
      let currentComponent = this;
      
-     
-
      fetch(apiUrl)
        .then(
          function(response) {
@@ -49,13 +41,11 @@ class App extends Component {
    }
   
     render() {
-      var section = 'The Offender'
       return (  
 
         <div className="App">
           
           <div className="content">
-            <header>Survive Armed Robbery | {section}</header>
 
             <Question data={this.state.data} />
 

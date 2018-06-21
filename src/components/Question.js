@@ -38,18 +38,44 @@ class Question extends Component {
 
     const myData = this.props.data;
     const myDataCount = myData.length;
-    let myNumber = this.state.question;
+
+    // create array of the images that appear on the side
+    // section : image
+  /*  var sideImages = new Map([
+      ['Survive Armed Robbery','378x572_Image.jpg'],
+      ['The Crime','378x572_ArmedRobbery.jpg'],
+      ['New Crims, new ways,''],
+      ['The Robbery,''],
+      ['Conclusion,'']
+    ]); */
+   // m.get('a'); // 'b'
+// trish and bernie served time Q8 VideoImg_01
+// new crims new ways what weapons are used 378x572_Trish
+    let QNumber = this.state.question;
     
     // get the data for the question we are on
-    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
+    let myQuestion = findObjectByKey(myData,'menu_order',QNumber);
+
 
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
 
       console.log(myQuestionArray);
 
+      // work out which section we are in
+      var section = myQuestionArray[16][1]['section'];
+
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
+
+      // get the background image if there is one
+      var bg = myQuestionArray[16][1]['image'];
+
+      if (bg) {
+        var bgClass = 'bg'
+        var imgRender = <img src={bg} />
+      } else bgClass;
+      
 
       if (QContent) {
         console.log('QContent: ' + QContent);
@@ -98,10 +124,17 @@ class Question extends Component {
     return  (
     
       <div>
-        <h2 className="question">Question { this.state.question }</h2>
-        <p>{QType}</p>
-        {QRender}
-        <button className="forward" onClick={this.incrementQuestion}>Forward</button>
+        <header>Survive Armed Robbery | {section}</header>
+        <div>
+          {imgRender}
+          <div className={ bgClass + " QContent question" + this.state.question  }>
+
+            {QRender}
+            
+          
+          </div>
+          <button className="forward" onClick={this.incrementQuestion}>Forward</button>
+        </div>
       </div>
 
     );
