@@ -128,12 +128,13 @@ class Question extends Component {
         <div>
           {imgRender}
           <div className={ bgClass + " QContent question" + this.state.question  }>
-
             {QRender}
-            
-          
           </div>
-          <button className="forward" onClick={this.incrementQuestion}>Forward</button>
+          <footer>
+            <i class="fas fa-angle-right" onClick={this.incrementQuestion}></i>
+            <button className="forward" onClick={this.incrementQuestion}>f105</button>
+          </footer>
+          
         </div>
       </div>
 
