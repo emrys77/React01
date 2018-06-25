@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
 import Text from './Text/Text.js'
 import Video from './Video/Video.js'
 import MultipleChoice from './MultipleChoice/MultipleChoice.js'
@@ -39,44 +38,18 @@ class Question extends Component {
 
     const myData = this.props.data;
     const myDataCount = myData.length;
-
-    // create array of the images that appear on the side
-    // section : image
-  /*  var sideImages = new Map([
-      ['Survive Armed Robbery','378x572_Image.jpg'],
-      ['The Crime','378x572_ArmedRobbery.jpg'],
-      ['New Crims, new ways,''],
-      ['The Robbery,''],
-      ['Conclusion,'']
-    ]); */
-   // m.get('a'); // 'b'
-// trish and bernie served time Q8 VideoImg_01
-// new crims new ways what weapons are used 378x572_Trish
-    let QNumber = this.state.question;
+    let myNumber = this.state.question;
     
     // get the data for the question we are on
-    let myQuestion = findObjectByKey(myData,'menu_order',QNumber);
-
+    let myQuestion = findObjectByKey(myData,'menu_order',myNumber);
 
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
 
       console.log(myQuestionArray);
 
-      // work out which section we are in
-      var section = myQuestionArray[16][1]['section'];
-
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
-
-      // get the background image if there is one
-      var bg = myQuestionArray[16][1]['image'];
-
-      if (bg) {
-        var bgClass = 'bg'
-        var imgRender = <img src={bg} />
-      } else bgClass;
-      
 
       if (QContent) {
         console.log('QContent: ' + QContent);
@@ -102,6 +75,7 @@ class Question extends Component {
         
         // create an array for the question options list
         var rOptions = [];
+
         options.forEach(function(element) {
           rOptions.push(element.choice);
 
@@ -110,7 +84,6 @@ class Question extends Component {
             //console.log('val: ' + val.is_this_the_correct_answer)
             if ( val.is_this_the_correct_answer == true ) {
               console.log('correct: ' + index)
-              var a = index 
             }
           }
         });
@@ -125,19 +98,9 @@ class Question extends Component {
     return  (
     
       <div>
-        <header>Survive Armed Robbery | {section}</header>
-        <div>
-          {imgRender}
-          <div className={ bgClass + " QContent question" + this.state.question  }>
-            {QRender}
-          </div>
-          <footer>
-            <button className="forward" onClick={this.incrementQuestion}>
-              <FontAwesome name='fa-angle-right' />&nbsp;
-            </button>
-          </footer>
-          
-        </div>
+        <h2 className="question">Question { this.state.question }</h2>
+        {QRender}
+        <button className="forward" onClick={this.incrementQuestion}>Forward</button>
       </div>
 
     );
