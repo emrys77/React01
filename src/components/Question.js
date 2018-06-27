@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
+
 import Text from './Text/Text.js'
 import Video from './Video/Video.js'
+import Footer from './Footer.js'
 import MultipleChoice from './MultipleChoice/MultipleChoice.js'
 import ReactPlayer from 'react-player'
 
@@ -14,9 +15,7 @@ class Question extends Component {
     }
   }
 
-  incrementQuestion = () => {
-    this.setState({ question: this.state.question + 1 });
-  }
+  
 
   render() {
   
@@ -131,12 +130,8 @@ class Question extends Component {
           <div className={ bgClass + " QContent question" + this.state.question  }>
             {QRender}
           </div>
-          <footer>
-            <button className="forward" onClick={this.incrementQuestion}>
-              <FontAwesome name='fa-angle-right' />&nbsp;
-            </button>
-          </footer>
-          
+          <Footer />
+                    
         </div>
       </div>
 
@@ -145,7 +140,10 @@ class Question extends Component {
 
 }
 
-/*function getQuestionData( responseArray, questionNumber ) {
+/*
+<FontAwesome name='fa-angle-right' />
+
+function getQuestionData( responseArray, questionNumber ) {
     return responseArray.filter( item => item.type === 'the_course' )
         .find( item => item.acf.question_number === 1 );
 }

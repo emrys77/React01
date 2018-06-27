@@ -52,6 +52,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/components\/Footer.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/components\/Footer-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/components\/GetData.js": {
 		"ft": 64,
 		"ma": 0,
@@ -167,6 +177,16 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/components\/Question.1.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/components\/Question.1-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"\/components\/Question.js": {
 		"ft": 64,
