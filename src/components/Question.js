@@ -15,8 +15,13 @@ class Question extends Component {
     }
   }
 
+  increment = () => {
+    this.setState({
+      question: this.state.question + 1
+    });
+    console.log('2. Received click in App');
+  }
   
-
   render() {
   
     const findObjectByKey = (array, key, value) => {
