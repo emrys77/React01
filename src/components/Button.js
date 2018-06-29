@@ -2,21 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FontAwesome from 'react-fontawesome'
 
+
+const handleClick = (direction) => {
+  console.log(' Received' + {direction} + ' click in Button');
+ //this.props.passClick();
+}
+
+
+
 function Button(props) {
-  if (direction=='backward') {
-    var fa = angle-left
-  } else {
-    var fa = angle-right
-  }
-  handleClick = () => {
-    console.log(' Received' + direction + ' click in Button');
-    this.props.passClick();
-  }
+
+    if (props.direction=='backward') {
+      var fa = 'angle-left'
+    } else {
+      var fa = 'angle-right'
+    }
+  
   return  (
-    <button className={direction} onClick={this.handleClick}>
+    <button className={props.direction} onClick={handleClick()}>
       <FontAwesome name={fa} />
     </button>
   );
+
+  
+
 }
 
 Button.propTypes = {

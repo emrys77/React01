@@ -52,21 +52,11 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/App.test.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/App.test-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/components\/Button.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/components\/Button-min.js",
 		"oF": 0,
 		"sC": 3,

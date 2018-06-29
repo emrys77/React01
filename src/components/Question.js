@@ -21,7 +21,7 @@ class Question extends Component {
     });
     console.log('2. Received click in App');
   }
-  
+
   render() {
   
     const findObjectByKey = (array, key, value) => {
@@ -69,6 +69,10 @@ class Question extends Component {
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
+
+      // how many stages are in this section?
+
+      // what number are we in the section?
 
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];

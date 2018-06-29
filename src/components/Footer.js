@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
+import PropTypes from 'prop-types'
+
+import Button from './Button.js'
 
 
 /* https://codepen.io/PiotrBerebecki/pen/NRdAON 
@@ -17,16 +19,14 @@ class Footer extends React.Component {
     incrementQuestion = () => {
         //this.setState({ question: this.state.question + 1 });
         console.log('1. Received click in Button');
-        this.props.passClick();
+       //this.props.passClick();
     }
 
     render() {
         return (
             <footer>
-            <button className="forward" onClick={this.incrementQuestion}>
-              <FontAwesome name='angle-right' />
-            </button>
-          </footer>
+                <Button direction="forward" />
+            </footer>
         )
     }
         
