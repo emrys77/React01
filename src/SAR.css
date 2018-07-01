@@ -33,6 +33,15 @@ h1 {
       padding: 40px; }
       .App .content div .QContent.bg {
         width: 50%; }
+    .App .content div footer {
+      font-size: 1.1rem;
+      padding: 1rem 1rem;
+      color: white;
+      background: #ce0000; }
+      .App .content div footer button {
+        font-size: 1.2rem;
+        border: none;
+        background: #ce0000; }
 
 #first,
 #second {

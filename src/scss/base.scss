@@ -32,16 +32,19 @@
                 padding: 40px;
                 &.bg {
                     width: 50%;
-                    
-                    
                 }
             }
-        }
-        footer {
-            font-size: 1.1rem;
-            padding: 1rem 1rem;
-            color: $SAR-white;
-            background: $SAR-burnt-orange;
+            footer {
+                font-size: 1.1rem;
+                padding: 1rem 1rem;
+                color: $SAR-white;
+                background: $SAR-burnt-orange;
+                button {
+                    font-size: 1.2rem;
+                    border: none;
+                    background: $SAR-burnt-orange;
+                }
+            }
         }
     }
 }
