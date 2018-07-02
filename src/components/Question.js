@@ -15,7 +15,9 @@ class Question extends Component {
     }
   }
 
-  
+  passClick = (step) => {
+    this.setState({step: step})
+  }
 
   render() {
   
@@ -60,7 +62,7 @@ class Question extends Component {
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
 
-      console.log(myQuestionArray);
+      // console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
@@ -93,7 +95,7 @@ class Question extends Component {
         
         QRender = <div className='video-papa'>
         <div dangerouslySetInnerHTML={{ __html: video_intro_text }}></div>
-        <ReactPlayer url={video_url} />
+          <ReactPlayer url={video_url} />
         </div>
       }
       if (QType==='Multiple Choice') {
@@ -120,9 +122,9 @@ class Question extends Component {
 
       }
 
-      if (QContent) {
+      /*if (QContent) {
         console.log('QContent: ' + QContent);
-      }
+      }*/
 
     } else {
       console.log('myQuestion is elsewhere');
@@ -137,7 +139,8 @@ class Question extends Component {
           <div className={ bgClass + " QContent question" + this.state.question  }>
             {QRender}
           </div>
-          <Footer QNumber={QNumber} />
+          
+          <Footer QNumber={QNumber} passClick={ this.passClick } />
         </div>
       </div>
 

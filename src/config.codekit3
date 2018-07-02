@@ -62,11 +62,31 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/components\/Footer.01.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/components\/Footer.01-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/components\/Footer.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
+		"oAP": "\/components\/Footer-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/components\/Footer.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
 		"oAP": "\/components\/Footer-min.js",
 		"oF": 0,
 		"sC": 3,
@@ -81,6 +101,16 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"\/components\/LearningCheck\/LearningCheck-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/LearningCheck\/LearningCheck-min-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"\/components\/LearningCheck\/LearningCheck.css": {
 		"aP": 1,
@@ -124,6 +154,16 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"\/components\/MultipleChoice\/MultipleChoice-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"\/components\/MultipleChoice\/MultipleChoice.css": {
 		"aP": 1,
@@ -428,6 +468,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/index-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/index-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/index.css": {
 		"aP": 1,
 		"bl": 0,
@@ -464,36 +514,6 @@
 		"oA": 0,
 		"oAP": "\/public\/.gitignore",
 		"oF": 0
-		},
-	"\/public\/App copy-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/public\/App copy-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/public\/App-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/public\/App-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/public\/css\/App.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/public\/css\/App-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"\/registerServiceWorker.js": {
 		"ft": 64,
