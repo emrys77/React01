@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import FontAwesome from 'react-fontawesome'
 
 const handleClick = (direction) => {
@@ -15,13 +14,14 @@ class Button extends Component {
   render() {
 
     var direction = this.props.direction;
-    
+    var fa;
+
     console.log('direction: ' + direction)
 
-    if (direction=='backward') {
-      var fa = 'angle-left'
-    } else {
-      var fa = 'angle-right'
+    if (direction==='backward') {
+      fa = 'angle-left'
+    } else if (direction==='forward') {
+      fa = 'angle-right'
     }
 
     return  (

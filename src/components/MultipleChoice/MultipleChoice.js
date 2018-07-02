@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './MultipleChoice.css';
 
 function MultipleChoice(props) {
     var items = props.options;

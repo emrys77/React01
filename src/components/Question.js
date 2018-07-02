@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import Text from './Text/Text.js'
-import Video from './Video/Video.js'
+//import Text from './Text/Text.js'
+//import Video from './Video/Video.js'
 import Footer from './Footer.js'
 import MultipleChoice from './MultipleChoice/MultipleChoice.js'
 import ReactPlayer from 'react-player'
@@ -11,16 +11,11 @@ class Question extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      question: 1
+      step: 1
     }
   }
 
-  increment = () => {
-    this.setState({
-      question: this.state.question + 1
-    });
-    console.log('2. Received click in App');
-  }
+  
 
   render() {
   
@@ -33,13 +28,13 @@ class Question extends Component {
       return null;
     }
 
-    // function to create an array from the js object so we can pull out what we need
+    /* function to create an array from the js object so we can pull out what we need
     const objectToArray = obj => {
       var dataArray = Object.keys(obj).map(function(k){return obj[k]});
       return [
         dataArray
       ]
-    };
+    }; */
 
     const myData = this.props.data;
     const myDataCount = myData.length;
@@ -56,11 +51,11 @@ class Question extends Component {
    // m.get('a'); // 'b'
 // trish and bernie served time Q8 VideoImg_01
 // new crims new ways what weapons are used 378x572_Trish
-    let QNumber = this.state.question;
+    let step = this.state.step;
     
     // get the data for the question we are on
-    let myQuestion = findObjectByKey(myData,'menu_order',QNumber);
-
+    let myQuestion = findObjectByKey(myData,'menu_order',step);
+    var QRender;
 
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
@@ -70,43 +65,41 @@ class Question extends Component {
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
 
-      // how many stages are in this section?
-
-      // what number are we in the section?
-
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
+
+      // question number to pass to the footer
+      var QNumber = myQuestionArray[16][1]['question_number'];
 
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
 
       if (bg) {
         var bgClass = 'bg'
-        var imgRender = <img src={bg} />
+        var imgRender = <img src={bg} alt="" />
       } else bgClass;
       
 
-      if (QContent) {
-        console.log('QContent: ' + QContent);
-      }
+      
 
       if (QType==='Text') {
         var QContent = myQuestionArray[16][1]['content'];
-        var QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
+        QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
       }
       if (QType==='Video') {
         var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
         var vimeo_code = myQuestionArray[16][1]['vimeo_code']
         var video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
         
-        var QRender = <div className='video-papa'>
+        QRender = <div className='video-papa'>
         <div dangerouslySetInnerHTML={{ __html: video_intro_text }}></div>
         <ReactPlayer url={video_url} />
         </div>
       }
       if (QType==='Multiple Choice') {
         var question_text = myQuestionArray[10][1]['rendered'];
-        var options = myQuestionArray[16][1]['multiple_choice_question']; 
+        var options = myQuestionArray[16][1]['multiple_choice_question'];
+
         
         // create an array for the question options list
         var rOptions = [];
@@ -116,16 +109,21 @@ class Question extends Component {
           for (let [index, val] of options.entries()) {
             //console.log('index: ' + index)
             //console.log('val: ' + val.is_this_the_correct_answer)
-            if ( val.is_this_the_correct_answer == true ) {
+            if ( val.is_this_the_correct_answer === true ) {
               console.log('correct: ' + index)
-              var a = index 
+              // var a = index 
             }
           }
         });
 
-        var QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
+        QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
 
       }
+
+      if (QContent) {
+        console.log('QContent: ' + QContent);
+      }
+
     } else {
       console.log('myQuestion is elsewhere');
     }
@@ -139,8 +137,7 @@ class Question extends Component {
           <div className={ bgClass + " QContent question" + this.state.question  }>
             {QRender}
           </div>
-          <Footer />
-                    
+          <Footer QNumber={QNumber} />
         </div>
       </div>
 

@@ -38,10 +38,13 @@ h1 {
       padding: 1rem 1rem;
       color: white;
       background: #ce0000; }
-      .App .content div footer button {
+      .App .content div footer nav button {
         font-size: 1.2rem;
+        font-weight: 500;
         border: none;
-        background: #ce0000; }
+        color: white;
+        background: #ce0000;
+        outline: none; }
 
 #first,
 #second {

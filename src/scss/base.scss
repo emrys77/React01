@@ -39,10 +39,15 @@
                 padding: 1rem 1rem;
                 color: $SAR-white;
                 background: $SAR-burnt-orange;
-                button {
-                    font-size: 1.2rem;
-                    border: none;
-                    background: $SAR-burnt-orange;
+                nav {
+                    button {
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                        border: none;
+                        color: $SAR-white;
+                        background: $SAR-burnt-orange;
+                        outline: none;
+                    }
                 }
             }
         }

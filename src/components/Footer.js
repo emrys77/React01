@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 
 import Button from './Button.js'
 
@@ -25,7 +24,10 @@ class Footer extends React.Component {
     render() {
         return (
             <footer>
-                <Button direction="forward" />
+                <nav>
+                    <Button direction="backward" />
+                    <Button direction="forward" />
+                </nav>
             </footer>
         )
     }
