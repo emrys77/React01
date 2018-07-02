@@ -1,6 +1,8 @@
 
 https://edemkumodzi.com/reactfornewbies-building-a-todo-app-with-create-react-app-part-2-f846e2d8b820
 
+https://medium.com/@ruthmpardee/passing-data-between-react-components-103ad82ebd17
+
     for(var member of data){
       console.log(member.acf.question_number + ' ' + member.acf.type); 
     }

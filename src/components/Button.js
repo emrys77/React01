@@ -4,7 +4,7 @@ import FontAwesome from 'react-fontawesome'
 
 const handleClick = (direction) => {
   console.log(' Received' + direction + ' click in Button');
-  this.props.passClick();
+ // this.props.passClick();
 }
 
 class Button extends Component {
@@ -25,7 +25,7 @@ class Button extends Component {
     }
 
     return  (
-      <button className={direction} onClick={handleClick()}>
+      <button className={direction} onClick={handleClick(direction)}>
         <FontAwesome name={fa} />
       </button>
     );
