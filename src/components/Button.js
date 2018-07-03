@@ -18,8 +18,7 @@ class Button extends Component {
   handleClick = (direction,step,event) => {
     event.preventDefault();
     console.log(direction + ' clicked' + step)
-    this.props.passClick( step );
-
+    //this.props.passClick( step );
   }
 
   render() {

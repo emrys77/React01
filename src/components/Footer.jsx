@@ -6,8 +6,8 @@ export default class Footer extends React.Component {
         return (
             <footer>
                 <nav>
-                    <Button direction="backward" />
-                    <Button direction="forward" />
+                    <Button direction="backward" onClick={this.passClick} />
+                    <Button direction="forward" onClick={this.passClick} />
                 </nav>
             </footer>
         )

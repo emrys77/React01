@@ -29,13 +29,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/App.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/App.css.map",
-		"oF": 0
-		},
 	"\/App.js": {
 		"ft": 64,
 		"ma": 0,
@@ -129,13 +122,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/components\/LearningCheck\/LearningCheck.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/LearningCheck\/LearningCheck.css.map",
-		"oF": 0
-		},
 	"\/components\/LearningCheck\/LearningCheck.js": {
 		"ft": 64,
 		"ma": 0,
@@ -189,13 +175,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/components\/MultipleChoice\/MultipleChoice.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/MultipleChoice\/MultipleChoice.css.map",
-		"oF": 0
-		},
 	"\/components\/MultipleChoice\/MultipleChoice.js": {
 		"ft": 64,
 		"ma": 0,
@@ -224,23 +203,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/components\/notepad",
-		"oF": 0
-		},
-	"\/components\/PopUp\/PopUp.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/PopUp\/PopUp-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/PopUp\/PopUp.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/PopUp\/PopUp.css.map",
 		"oF": 0
 		},
 	"\/components\/PopUp\/PopUp.js": {
@@ -276,23 +238,6 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"\/components\/Question.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/Question-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/Question.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/Question.css.map",
-		"oF": 0
-		},
 	"\/components\/Question.js": {
 		"ft": 64,
 		"ma": 0,
@@ -316,23 +261,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/components\/Text\/Text.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/Text\/Text-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/Text\/Text.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/Text\/Text.css.map",
-		"oF": 0
-		},
 	"\/components\/Text\/Text.js": {
 		"ft": 64,
 		"ma": 0,
@@ -355,23 +283,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/components\/Video\/Video.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/Video\/Video-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/Video\/Video.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/Video\/Video.css.map",
-		"oF": 0
 		},
 	"\/components\/Video\/Video.js": {
 		"ft": 64,
@@ -637,23 +548,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/scss\/typography.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/scss\/typography-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/scss\/typography.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/scss\/typography.css.map",
-		"oF": 0
-		},
 	"\/scss\/typography.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -666,23 +560,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/scss\/vars.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/scss\/vars-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/scss\/vars.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/scss\/vars.css.map",
-		"oF": 0
 		},
 	"\/scss\/vars.scss": {
 		"aP": 0,

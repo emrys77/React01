@@ -10,16 +10,13 @@ import ReactPlayer from 'react-player'
 class Question extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      step: 1
-    }
+    this.state = { step: 1 }
+    //this.passClick = this.passClick.bind(this);
   }
-
-  
 
   render() {
     
-    const passClick = (step) => {
+    const passClick = (e, step) => {
       this.setState({step: step})
     }
 
@@ -40,8 +37,11 @@ class Question extends Component {
       ]
     }; */
 
+    // all the data
     const myData = this.props.data;
     const myDataCount = myData.length;
+
+    
 
     // create array of the images that appear on the side
     // section : image
@@ -68,6 +68,15 @@ class Question extends Component {
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
+
+      // count how many steps in this section
+      var occurrences = myQuestionArray.reduce(function(obj, item) {
+        obj[item] = (obj[item] || 0) + 1;
+        return obj;
+      }, {});
+      
+      console.log(occurrences);        // {ab: 3, pq: 1, mn: 2}
+      console.log(occurrences[section]);  // 2
 
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
@@ -208,5 +217,6 @@ Question.propTypes = {
   emrys: PropTypes.string
 };
 */
+
 export default Question;
 
