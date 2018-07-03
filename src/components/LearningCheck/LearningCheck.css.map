@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM;AACN,AAAA,OAAO,CAAC;EACJ,KAAK,EAAE,GAAG;CACb;;AACD,AAAO,MAAD,CAAC,GAAG;AACV,AAAQ,OAAD,CAAC,GAAG,CAAC;EACR,OAAO,EAAE,GAAG;EACZ,MAAM,EAAE,iBAAiB;CAC5B",
+    "sources": [
+        "LearningCheck.scss"
+    ],
+    "names": [],
+    "file": "LearningCheck.css"
+}

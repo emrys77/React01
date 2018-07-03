@@ -3,21 +3,29 @@ import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome'
 
 class Button extends Component {
-  constructor(props) {
-    super(props);
+/*  
+  handleBackClick = event => {
+    event.preventDefault();
+    console.log('backward')
+    this.props.passClick( -1 );
   }
-  
-  handleClick = (direction) => {
-    console.log(' Received' + direction + ' click in Button');
-    this.props.passClick(direction);
+  handleNextClick = event => {
+      event.preventDefault();
+      console.log('forward')
+      this.props.passClick( 1 );
   }
-  
+*/
+  handleClick = (direction,step,event) => {
+    event.preventDefault();
+    console.log(direction + ' clicked' + step)
+    this.props.passClick( step );
+
+  }
+
   render() {
 
     var direction = this.props.direction
     var fa, step
-
-    console.log('direction: ' + direction)
 
     if (direction==='backward') {
       fa = 'angle-left'
@@ -28,7 +36,8 @@ class Button extends Component {
     }
 
     return  (
-      <button className={direction} onClick={this.handleClick(step)}>
+     // <button className={direction} onClick={ this.handleClick(direction) } >
+      <button className={direction} onClick={(e) => this.handleClick(direction,step, e)}>
         <FontAwesome name={fa} size="2x" />
       </button>
     );

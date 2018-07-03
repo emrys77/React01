@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 //import Text from './Text/Text.js'
 //import Video from './Video/Video.js'
-import Footer from './Footer.js'
+import Footer from './Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.js'
 import ReactPlayer from 'react-player'
 
@@ -15,12 +15,14 @@ class Question extends Component {
     }
   }
 
-  passClick = (step) => {
-    this.setState({step: step})
-  }
+  
 
   render() {
-  
+    
+    const passClick = (step) => {
+      this.setState({step: step})
+    }
+
     const findObjectByKey = (array, key, value) => {
       for (var i = 0; i < array.length; i++) {
           if (array[i][key] === value) {
@@ -79,7 +81,7 @@ class Question extends Component {
       if (bg) {
         var bgClass = 'bg'
         var imgRender = <img src={bg} alt="" />
-      } else bgClass;
+      }
       
 
       
@@ -140,7 +142,8 @@ class Question extends Component {
             {QRender}
           </div>
           
-          <Footer QNumber={QNumber} passClick={ this.passClick } />
+          <Footer QNumber={QNumber} passClick={ passClick } />
+          
         </div>
       </div>
 
