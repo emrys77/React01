@@ -30,19 +30,11 @@ class Question extends Component {
       return null;
     }
 
-    /* function to create an array from the js object so we can pull out what we need
-    const objectToArray = obj => {
-      var dataArray = Object.keys(obj).map(function(k){return obj[k]});
-      return [
-        dataArray
-      ]
-    }; */
-
     // all the data
     const myData = this.props.data;
     const myDataCount = myData.length;
 
-    console.log(myData)
+    //console.log(myData)
 
     //count the number in each section bung them in an array
     const accumulatedTotals = {}
@@ -54,19 +46,6 @@ class Question extends Component {
 /*    console.log( accumulatedTotals)
 {Survive Armed Robbery: 3, The Offender: 10, New Crims, new ways: 9, The Robbery: 14, Conclusion: 12}
 */
-
-    // create array of the images that appear on the side
-    // section : image
-  /*  var sideImages = new Map([
-      ['Survive Armed Robbery','378x572_Image.jpg'],
-      ['The Crime','378x572_ArmedRobbery.jpg'],
-      ['New Crims, new ways,''],
-      ['The Robbery,''],
-      ['Conclusion,'']
-    ]); */
-   // m.get('a'); // 'b'
-// trish and bernie served time Q8 VideoImg_01
-// new crims new ways what weapons are used 378x572_Trish
     let step = this.state.step;
     
     // get the data for the question we are on
@@ -76,11 +55,11 @@ class Question extends Component {
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
 
-      // console.log(myQuestionArray);
+      console.log('myQuestionArray: ');
+      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
-
       // get how many steps in this section
       var sectionCount = accumulatedTotals[section];
       // and where we are in that section to pass to the footer
@@ -88,20 +67,26 @@ class Question extends Component {
 
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
+      
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
 
       if (bg) {
         var bgClass = 'bg'
-        var imgRender = <img src={bg} alt="" />
+        var imgRender = <div className="imgHolder"><img src={bg} alt="" /></div>
+      } else {
+        var bgClass = 'nobg'
       }
       
 
       
 
       if (QType==='Text') {
+        var theTitle = myQuestionArray[10][1]['rendered'];
         var QContent = myQuestionArray[16][1]['content'];
-        QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
+        QRender = <div><h1>{theTitle}</h1>
+        <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
+        </div>
       }
       if (QType==='Video') {
         var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
@@ -114,6 +99,7 @@ class Question extends Component {
         </div>
       }
       if (QType==='Multiple Choice') {
+        var theTitle = myQuestionArray[10][1]['rendered'];
         var question_text = myQuestionArray[10][1]['rendered'];
         var options = myQuestionArray[16][1]['multiple_choice_question'];
 
@@ -133,7 +119,9 @@ class Question extends Component {
           }
         });
 
-        QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
+        QRender =<div><h1>{theTitle}</h1>
+        <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
+        </div>
 
       }
 
@@ -150,11 +138,11 @@ class Question extends Component {
       <div>
         <header>Survive Armed Robbery | {section}</header>
         <div>
-          {imgRender}
-          <div className={ bgClass + " QContent question" + this.state.question  }>
+          <div className={ bgClass + " QContent question" + this.state.step  }>
+
             {QRender}
           </div>
-          
+          {imgRender}
           <Footer QNumber={QNumber} passClick={ passClick } sectionStep={QNumber} sectionCount={sectionCount} />
           
         </div>

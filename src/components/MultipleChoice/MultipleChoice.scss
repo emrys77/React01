@@ -1,0 +1,32 @@
+ol.alpha {
+    list-style: none;
+    padding-left: 0;
+    li {
+        counter-increment: item;
+        margin-bottom: 5px;
+      }
+      li:before {
+        margin-right: 10px;
+        content: counter(item, upper-latin);
+        
+        background: $SAR-dark-blue;
+        border-radius: $round-corners;
+        padding: 8px;
+        color: white;
+        width: 1.2em;
+        text-align: center;
+        display: inline-block;
+      }
+      input {
+          position: absolute;
+          left: -10000px;
+      }
+      label {
+          color: white;
+          background: $SAR-burnt-orange;
+          border-radius: $round-corners;
+          display: inline-block;
+          padding: 8px 16px;
+          width: 86%;
+      }
+}

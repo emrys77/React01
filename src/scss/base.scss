@@ -8,10 +8,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     .content {
-        position:absolute;
+        /*position:absolute;
         top:25%;
         left:50%;
-        margin-left: -500px;
+        margin-left: -500px;*/
+        margin: 0px auto;
         width: 80%;
         max-width: 1000px;
         background: $SAR-white;
@@ -22,14 +23,19 @@
             color: $SAR-white;
         }
         div {
-            img {
-                //position: absolute;
-                //top: 0;
-                //right: 0;
-                float: right;
+            .imgHolder {
+                position: relative;
+                display: inline-block;
+                width: 42%;
+                img {
+                    float: right;
+                }
             }
             .QContent {
-                padding: 40px;
+                display: inline-block;
+                vertical-align: top;
+                padding: 4%;
+                width: 92%;
                 &.bg {
                     width: 50%;
                 }

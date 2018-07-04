@@ -4,7 +4,8 @@
   src: url("fonts/AachenStd-Bold.woff") format("woff"), url("fonts/AachenStd-Bold.ttf") format("truetype"); }
 
 h1 {
-  font-family: "AachenStd Bold", 'Times New Roman', Times, serif; }
+  font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
+  color: #ce0000; }
 
 .App {
   position: relative;
@@ -15,10 +16,11 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover; }
   .App .content {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-left: -500px;
+    /*position:absolute;
+        top:25%;
+        left:50%;
+        margin-left: -500px;*/
+    margin: 0px auto;
     width: 80%;
     max-width: 1000px;
     background: white; }
@@ -27,10 +29,17 @@ h1 {
       padding: 1rem 1rem;
       background: #002b54;
       color: white; }
-    .App .content div img {
-      float: right; }
+    .App .content div .imgHolder {
+      position: relative;
+      display: inline-block;
+      width: 42%; }
+      .App .content div .imgHolder img {
+        float: right; }
     .App .content div .QContent {
-      padding: 40px; }
+      display: inline-block;
+      vertical-align: top;
+      padding: 4%;
+      width: 92%; }
       .App .content div .QContent.bg {
         width: 50%; }
     .App .content div footer {
@@ -62,3 +71,30 @@ h1 {
 #second div {
   padding: 4px;
   border: 1px solid #bbbbbb; }
+
+ol.alpha {
+  list-style: none;
+  padding-left: 0; }
+  ol.alpha li {
+    counter-increment: item;
+    margin-bottom: 5px; }
+  ol.alpha li:before {
+    margin-right: 10px;
+    content: counter(item, upper-latin);
+    background: #002b54;
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
+    width: 1.2em;
+    text-align: center;
+    display: inline-block; }
+  ol.alpha input {
+    position: absolute;
+    left: -10000px; }
+  ol.alpha label {
+    color: white;
+    background: #ce0000;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 8px 16px;
+    width: 86%; }
