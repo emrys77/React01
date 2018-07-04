@@ -14,8 +14,8 @@ class Question extends Component {
     //this.passClick = this.passClick.bind(this);
   }
 
-  render() {
-    
+    render() {
+
     const passClick = (move) => {
       var nStep = (move === 1) ? this.state.step-1 : this.state.step+1;
       this.setState({step: nStep})
@@ -68,8 +68,13 @@ class Question extends Component {
       // and where we are in that section to pass to the footer
       var QNumber = myQuestionArray[16][1]['question_number'];
       // big fat h1 tag if it exists
-      var theTitle = myQuestionArray[16][1]['title']
-      
+      var QTitle = () => {
+        if ( myQuestionArray[16][1]['title'] != null) {
+          QTitle = '<h1>' + myQuestionArray[16][1]['title'] + '</h1>'
+        } else {
+          QTitle = ''
+        }
+      } 
       
 
       // what kind of question are we? text/video/multiple choice/
@@ -85,19 +90,13 @@ class Question extends Component {
         var bgClass = 'nobg'
       }
       
-      if (theTitle) {
-        var QRender = <h1>{theTitle}</h1>
-      } else {
-        var QRender;
-      }
-
-      
+      var QRender; 
 
       if (QType==='Text') {
         
         var QContent = myQuestionArray[16][1]['content'];
         
-        QRender =+ <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
+        QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
         
       }
       if (QType==='Video') {
@@ -105,7 +104,7 @@ class Question extends Component {
         var vimeo_code = myQuestionArray[16][1]['vimeo_code']
         var video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
         
-        QRender =+ <div className='video-papa'>
+        QRender = <div className='video-papa'>
         <div dangerouslySetInnerHTML={{ __html: video_intro_text }}></div>
           <ReactPlayer url={video_url} />
         </div>
@@ -130,8 +129,7 @@ class Question extends Component {
           }
         });
         
-        QRender =+
-        <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
+        QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
 
       }
 
@@ -149,7 +147,7 @@ class Question extends Component {
         <header>Survive Armed Robbery | {section}</header>
         <div>
           <div className={ bgClass + " QContent question" + this.state.step  }>
-            
+            {QTitle}
             {QRender}
           </div>
           {imgRender}
