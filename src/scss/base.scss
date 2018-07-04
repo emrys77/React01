@@ -39,7 +39,19 @@
                 padding: 1rem 1rem;
                 color: $SAR-white;
                 background: $SAR-burnt-orange;
+                position: relative;
+                .meter {
+                    
+                }
+                
                 nav {
+                    position: relative;
+                    left: 90%;
+                    .progress {
+                        display: inline-block;
+                        position: relative;
+                        bottom: 5px;
+                    }
                     button {
                         font-size: 1.2rem;
                         font-weight: 500;

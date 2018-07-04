@@ -37,14 +37,22 @@ h1 {
       font-size: 1.1rem;
       padding: 1rem 1rem;
       color: white;
-      background: #ce0000; }
-      .App .content div footer nav button {
-        font-size: 1.2rem;
-        font-weight: 500;
-        border: none;
-        color: white;
-        background: #ce0000;
-        outline: none; }
+      background: #ce0000;
+      position: relative; }
+      .App .content div footer nav {
+        position: relative;
+        left: 90%; }
+        .App .content div footer nav .progress {
+          display: inline-block;
+          position: relative;
+          bottom: 5px; }
+        .App .content div footer nav button {
+          font-size: 1.2rem;
+          font-weight: 500;
+          border: none;
+          color: white;
+          background: #ce0000;
+          outline: none; }
 
 #first,
 #second {

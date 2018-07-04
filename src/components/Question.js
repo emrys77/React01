@@ -16,8 +16,9 @@ class Question extends Component {
 
   render() {
     
-    const passClick = (e, step) => {
-      this.setState({step: step})
+    const passClick = (move) => {
+      var nStep = (move === 1) ? this.state.step-1 : this.state.step+1;
+      this.setState({step: nStep})
     }
 
     const findObjectByKey = (array, key, value) => {
@@ -50,7 +51,9 @@ class Question extends Component {
       accumulatedTotals[ p.acf.section ] = (accumulatedTotals[ p.acf.section ] || 0) + 1
     }
 
-    console.log( accumulatedTotals)
+/*    console.log( accumulatedTotals)
+{Survive Armed Robbery: 3, The Offender: 10, New Crims, new ways: 9, The Robbery: 14, Conclusion: 12}
+*/
 
     // create array of the images that appear on the side
     // section : image
@@ -78,17 +81,13 @@ class Question extends Component {
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
 
-      // count how many steps in this section
-
-
-
+      // get how many steps in this section
+      var sectionCount = accumulatedTotals[section];
+      // and where we are in that section to pass to the footer
+      var QNumber = myQuestionArray[16][1]['question_number'];
 
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
-
-      // question number to pass to the footer
-      var QNumber = myQuestionArray[16][1]['question_number'];
-
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
 
@@ -156,7 +155,7 @@ class Question extends Component {
             {QRender}
           </div>
           
-          <Footer QNumber={QNumber} passClick={ passClick } />
+          <Footer QNumber={QNumber} passClick={ passClick } sectionStep={QNumber} sectionCount={sectionCount} />
           
         </div>
       </div>
