@@ -50,7 +50,8 @@ class Question extends Component {
     
     // get the data for the question we are on
     let myQuestion = findObjectByKey(myData,'menu_order',step);
-    var QRender;
+
+    
 
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
@@ -58,12 +59,18 @@ class Question extends Component {
       console.log('myQuestionArray: ');
       console.log(myQuestionArray);
 
+
+
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
       // get how many steps in this section
       var sectionCount = accumulatedTotals[section];
       // and where we are in that section to pass to the footer
       var QNumber = myQuestionArray[16][1]['question_number'];
+      // big fat h1 tag if it exists
+      var theTitle = myQuestionArray[16][1]['title']
+      
+      
 
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
@@ -78,28 +85,32 @@ class Question extends Component {
         var bgClass = 'nobg'
       }
       
+      if (theTitle) {
+        var QRender = <h1>{theTitle}</h1>
+      } else {
+        var QRender;
+      }
 
       
 
       if (QType==='Text') {
-        var theTitle = myQuestionArray[10][1]['rendered'];
+        
         var QContent = myQuestionArray[16][1]['content'];
-        QRender = <div><h1>{theTitle}</h1>
-        <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
-        </div>
+        
+        QRender =+ <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
+        
       }
       if (QType==='Video') {
         var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
         var vimeo_code = myQuestionArray[16][1]['vimeo_code']
         var video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
         
-        QRender = <div className='video-papa'>
+        QRender =+ <div className='video-papa'>
         <div dangerouslySetInnerHTML={{ __html: video_intro_text }}></div>
           <ReactPlayer url={video_url} />
         </div>
       }
       if (QType==='Multiple Choice') {
-        var theTitle = myQuestionArray[10][1]['rendered'];
         var question_text = myQuestionArray[10][1]['rendered'];
         var options = myQuestionArray[16][1]['multiple_choice_question'];
 
@@ -118,10 +129,9 @@ class Question extends Component {
             }
           }
         });
-
-        QRender =<div><h1>{theTitle}</h1>
+        
+        QRender =+
         <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
-        </div>
 
       }
 
@@ -139,7 +149,7 @@ class Question extends Component {
         <header>Survive Armed Robbery | {section}</header>
         <div>
           <div className={ bgClass + " QContent question" + this.state.step  }>
-
+            
             {QRender}
           </div>
           {imgRender}
