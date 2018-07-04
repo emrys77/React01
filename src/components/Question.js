@@ -41,7 +41,16 @@ class Question extends Component {
     const myData = this.props.data;
     const myDataCount = myData.length;
 
-    
+    console.log(myData)
+
+    //count the number in each section bung them in an array
+    const accumulatedTotals = {}
+    for ( let i = 0; i < myData.length; i++ ) {
+      const p = myData[i]
+      accumulatedTotals[ p.acf.section ] = (accumulatedTotals[ p.acf.section ] || 0) + 1
+    }
+
+    console.log( accumulatedTotals)
 
     // create array of the images that appear on the side
     // section : image
@@ -70,13 +79,9 @@ class Question extends Component {
       var section = myQuestionArray[16][1]['section'];
 
       // count how many steps in this section
-      var occurrences = myQuestionArray.reduce(function(obj, item) {
-        obj[item] = (obj[item] || 0) + 1;
-        return obj;
-      }, {});
-      
-      console.log(occurrences);        // {ab: 3, pq: 1, mn: 2}
-      console.log(occurrences[section]);  // 2
+
+
+
 
       // what kind of question are we? text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];

@@ -19,6 +19,7 @@ class Button extends Component {
     event.preventDefault();
     console.log(direction + ' clicked' + step)
     //this.props.passClick( step );
+    this.passClick = this.passClick.bind(this);
   }
 
   render() {
