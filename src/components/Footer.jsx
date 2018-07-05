@@ -15,20 +15,21 @@ export default class Footer extends React.Component {
       }
 
     render() {
-        return (
-            <footer>
-                
-                <nav>
-                    <button className="backward" onClick={(e) => this.handleForwardClick(e)}>
-                        <FontAwesome name='angle-left' size="2x" />
-                    </button>
-                    <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>
-                    <button className="backward" onClick={(e) => this.handleBackwardClick(e)}>
-                        <FontAwesome name='angle-right' size="2x" />
-                    </button>
-                </nav>
-            </footer>
-        )
+        if (this.props.section != 'Intro') {
+            return (
+                <footer>
+                    <nav>
+                        <button className="backward" onClick={(e) => this.handleForwardClick(e)}>
+                            <FontAwesome name='angle-left' size="2x" />
+                        </button>
+                        <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>
+                        <button className="backward" onClick={(e) => this.handleBackwardClick(e)}>
+                            <FontAwesome name='angle-right' size="2x" />
+                        </button>
+                    </nav>
+                </footer>
+            )
+        } else return null 
     }
 }
 

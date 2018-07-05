@@ -46,11 +46,11 @@ class App extends Component {
 
         <div className="App">
           
-          <div className="content">
+          
 
             <Question data={this.state.data} />
 
-          </div>
+         
           
         </div>
       );

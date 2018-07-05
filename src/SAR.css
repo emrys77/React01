@@ -23,6 +23,8 @@ h1 {
     margin: 0px auto;
     width: 80%;
     max-width: 1000px;
+    height: 670px;
+    max-height: 670px;
     background: white; }
     .App .content header {
       font-size: 1.1rem;

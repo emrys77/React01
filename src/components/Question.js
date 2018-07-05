@@ -68,32 +68,43 @@ class Question extends Component {
       // and where we are in that section to pass to the footer
       var QNumber = myQuestionArray[16][1]['question_number'];
       // big fat h1 tag if it exists
-      var QTitle = () => {
-        if ( myQuestionArray[16][1]['title'] != null) {
-          QTitle = '<h1>' + myQuestionArray[16][1]['title'] + '</h1>'
-        } else {
-          QTitle = ''
-        }
-      } 
+      var title = myQuestionArray[16][1]['title']
+      var QTitle
+      console.log('title: ' + title)
+      if (title == null) {
+        QTitle = null 
+      } else {
+        QTitle = <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+      }
+      
       
 
-      // what kind of question are we? text/video/multiple choice/
+      // what kind of question are we? intro/text/video/multiple choice/
       var QType = myQuestionArray[16][1]['type'];
       
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
 
-      if (bg) {
-        var bgClass = 'bg'
-        var imgRender = <div className="imgHolder"><img src={bg} alt="" /></div>
+      var Header
+      if (QType != 'Intro'){
+        Header = <header>Survive Armed Robbery | {section}</header>
       } else {
-        var bgClass = 'nobg'
+        Header = null
       }
       
       var QRender; 
 
+      if ( QType === 'Intro') {
+        QRender = <img src={bg} alt={section} />
+      }
+
       if (QType==='Text') {
-        
+        if (bg) {
+          var bgClass = 'bg'
+          var imgRender = <div className="imgHolder"><img src={bg} alt="" /></div>
+        } else {
+          var bgClass = 'nobg'
+        }
         var QContent = myQuestionArray[16][1]['content'];
         
         QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
@@ -143,15 +154,15 @@ class Question extends Component {
 
     return  (
     
-      <div>
-        <header>Survive Armed Robbery | {section}</header>
+      <div className={'content ' + QType + ' Q' + QNumber}>
+        {Header}
         <div>
-          <div className={ bgClass + " QContent question" + this.state.step  }>
+          <div className={ "QContent question" + this.state.step  }>
             {QTitle}
             {QRender}
           </div>
           {imgRender}
-          <Footer QNumber={QNumber} passClick={ passClick } sectionStep={QNumber} sectionCount={sectionCount} />
+          <Footer QNumber={QNumber} passClick={ passClick } section={section} sectionStep={QNumber} sectionCount={sectionCount} />
           
         </div>
       </div>
