@@ -15,7 +15,7 @@ export default class Footer extends React.Component {
       }
 
     render() {
-        if (this.props.section != 'Intro') {
+        if (this.props.section !== 'Intro') {
             return (
                 <footer>
                     <nav>

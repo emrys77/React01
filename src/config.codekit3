@@ -59,45 +59,68 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/components\/01 unused\/Footer.01.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/Footer.01-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/components\/01 unused\/Footer.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/Footer-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/components\/01 unused\/Question.1.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/Question.1-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/components\/Button.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/components\/Button-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/components\/Footer.01.js": {
+	"\/components\/Footer\/Footer.jsx": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/components\/Footer.01-min.js",
+		"oAP": "\/components\/Footer\/Footer-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/components\/Footer.js": {
-		"ft": 64,
+	"\/components\/Footer\/Footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
 		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/components\/Footer-min.js",
+		"oA": 1,
+		"oAP": "\/components\/Footer\/SAR.css",
 		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/components\/Footer.jsx": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/components\/Footer-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
+		"oS": 0,
+		"uL": 1
 		},
 	"\/components\/GetData.js": {
 		"ft": 64,
@@ -265,16 +288,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/components\/Question.1.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/components\/Question.1-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"\/components\/Question.css": {
 		"aP": 1,

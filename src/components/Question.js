@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 //import Text from './Text/Text.js'
 //import Video from './Video/Video.js'
-import Footer from './Footer.jsx'
+import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.js'
 import ReactPlayer from 'react-player'
 
@@ -71,10 +71,10 @@ class Question extends Component {
       var title = myQuestionArray[16][1]['title']
       var QTitle
       console.log('title: ' + title)
-      if (title == null) {
-        QTitle = null 
-      } else {
+      if (title) {
         QTitle = <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
+      } else {
+        QTitle = null
       }
       
       
@@ -84,32 +84,36 @@ class Question extends Component {
       
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
-
+      if (bg) {
+          var bgClass = 'bg'
+      } else {
+        var bgClass = 'nobg'
+      }
+      // console.log(QType)
       var Header
-      if (QType != 'Intro'){
+      if (QType !== 'Intro'){
         Header = <header>Survive Armed Robbery | {section}</header>
       } else {
         Header = null
       }
       
-      var QRender; 
+      var styles, QRender; 
 
       if ( QType === 'Intro') {
         QRender = <img src={bg} alt={section} />
       }
 
-      if (QType==='Text') {
-        if (bg) {
-          var bgClass = 'bg'
-          var imgRender = <div className="imgHolder"><img src={bg} alt="" /></div>
-        } else {
-          var bgClass = 'nobg'
-        }
+      if ( QType === 'Text') {
+         if (bg) {
+           styles = {
+             background: 'url(' + bg + ') no-repeat right top',
+             height: '100%'
+           }
+         }
         var QContent = myQuestionArray[16][1]['content'];
-        
-        QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div> 
-        
+        QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div>  
       }
+
       if (QType==='Video') {
         var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
         var vimeo_code = myQuestionArray[16][1]['vimeo_code']
@@ -144,26 +148,21 @@ class Question extends Component {
 
       }
 
-      /*if (QContent) {
-        console.log('QContent: ' + QContent);
-      }*/
-
     } else {
       console.log('myQuestion is elsewhere');
     }
 
     return  (
     
-      <div className={'content ' + QType + ' Q' + QNumber}>
+      <div className={ bgClass + ' content ' + QType + ' Q' + QNumber}>
         {Header}
-        <div>
-          <div className={ "QContent question" + this.state.step  }>
+        <div style={styles}>
+          <div className={ "QContent Question" + this.state.step } >
             {QTitle}
             {QRender}
           </div>
-          {imgRender}
+       
           <Footer QNumber={QNumber} passClick={ passClick } section={section} sectionStep={QNumber} sectionCount={sectionCount} />
-          
         </div>
       </div>
 

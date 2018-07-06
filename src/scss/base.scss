@@ -8,8 +8,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     .content {
-        /*position:absolute;
-        top:25%;
+        position: relative;
+        /*top:25%;
         left:50%;
         margin-left: -500px;*/
         margin: 0px auto;
@@ -37,39 +37,19 @@
                 display: inline-block;
                 vertical-align: top;
                 padding: 4%;
-                width: 92%;
-                &.bg {
-                    width: 50%;
-                }
-            }
-            footer {
-                font-size: 1.1rem;
-                padding: 1rem 1rem;
-                color: $SAR-white;
-                background: $SAR-burnt-orange;
-                position: relative;
-                .meter {
-                    
-                }
-                
-                nav {
-                    position: relative;
-                    left: 90%;
-                    .progress {
-                        display: inline-block;
-                        position: relative;
-                        bottom: 5px;
-                    }
-                    button {
-                        font-size: 1.2rem;
-                        font-weight: 500;
-                        border: none;
-                        color: $SAR-white;
-                        background: $SAR-burnt-orange;
-                        outline: none;
-                    }
-                }
+                /*width: 92%;*/
             }
         }
+        &.bg {
+            .QContent {
+                width: 50%;
+            }
+        }   
+        &.Intro {
+            .QContent {
+                padding: 0;
+            }
+        }
+
     }
 }

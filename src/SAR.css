@@ -16,8 +16,8 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover; }
   .App .content {
-    /*position:absolute;
-        top:25%;
+    position: relative;
+    /*top:25%;
         left:50%;
         margin-left: -500px;*/
     margin: 0px auto;
@@ -41,29 +41,11 @@ h1 {
       display: inline-block;
       vertical-align: top;
       padding: 4%;
-      width: 92%; }
-      .App .content div .QContent.bg {
-        width: 50%; }
-    .App .content div footer {
-      font-size: 1.1rem;
-      padding: 1rem 1rem;
-      color: white;
-      background: #ce0000;
-      position: relative; }
-      .App .content div footer nav {
-        position: relative;
-        left: 90%; }
-        .App .content div footer nav .progress {
-          display: inline-block;
-          position: relative;
-          bottom: 5px; }
-        .App .content div footer nav button {
-          font-size: 1.2rem;
-          font-weight: 500;
-          border: none;
-          color: white;
-          background: #ce0000;
-          outline: none; }
+      /*width: 92%;*/ }
+    .App .content.bg .QContent {
+      width: 50%; }
+    .App .content.Intro .QContent {
+      padding: 0; }
 
 #first,
 #second {
@@ -100,3 +82,27 @@ ol.alpha {
     display: inline-block;
     padding: 8px 16px;
     width: 86%; }
+
+footer {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  color: white;
+  background: #ce0000;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  footer nav {
+    position: relative;
+    left: 89%;
+    margin-right: 1rem; }
+    footer nav .progress {
+      display: inline-block;
+      position: relative;
+      bottom: 5px; }
+    footer nav button {
+      font-size: 1.2rem;
+      font-weight: 500;
+      border: none;
+      color: white;
+      background: #ce0000;
+      outline: none; }
