@@ -132,6 +132,29 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/components\/Header\/Header.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/components\/Header\/Header-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/components\/Header\/Header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/components\/Header\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/components\/LearningCheck\/LearningCheck-min.css": {
 		"aP": 1,
 		"bl": 0,

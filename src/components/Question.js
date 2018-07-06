@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 //import Text from './Text/Text.js'
 //import Video from './Video/Video.js'
+import Header from './Header/Header.js'
 import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.js'
 import ReactPlayer from 'react-player'
@@ -13,8 +14,8 @@ class Question extends Component {
     this.state = { step: 1 }
     //this.passClick = this.passClick.bind(this);
   }
-
-    render() {
+  
+  render() {
 
     const passClick = (move) => {
       var nStep = (move === 1) ? this.state.step-1 : this.state.step+1;
@@ -161,12 +162,17 @@ class Question extends Component {
             {QTitle}
             {QRender}
           </div>
-       
           <Footer QNumber={QNumber} passClick={ passClick } section={section} sectionStep={QNumber} sectionCount={sectionCount} />
         </div>
       </div>
 
     );
+  }
+
+  componentDidMount() {
+ /*   if ( {QType === 'Intro' }) {
+      setTimeout(passClick(1), 5000)
+    }*/
   }
 
 }

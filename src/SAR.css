@@ -10,42 +10,38 @@ h1 {
 .App {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-image: url(/images/Background_01.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  padding-top: 5%; }
   .App .content {
     position: relative;
     /*top:25%;
         left:50%;
         margin-left: -500px;*/
-    margin: 0px auto;
+    margin: 0 auto;
     width: 80%;
     max-width: 1000px;
-    height: 670px;
-    max-height: 670px;
+    height: 672px;
+    max-height: 672px;
     background: white; }
-    .App .content header {
-      font-size: 1.1rem;
-      padding: 1rem 1rem;
-      background: #002b54;
-      color: white; }
-    .App .content div .imgHolder {
-      position: relative;
-      display: inline-block;
-      width: 42%; }
-      .App .content div .imgHolder img {
-        float: right; }
     .App .content div .QContent {
       display: inline-block;
       vertical-align: top;
       padding: 4%;
-      /*width: 92%;*/ }
+      width: 96%; }
     .App .content.bg .QContent {
       width: 50%; }
     .App .content.Intro .QContent {
       padding: 0; }
+
+header {
+  font-size: 1.1rem;
+  padding: 1rem 1rem;
+  background: #002b54;
+  color: white; }
 
 #first,
 #second {

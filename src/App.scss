@@ -1,8 +1,9 @@
 @import './scss/vars.scss';
 @import './scss/typography.scss';
 @import './scss/base.scss';
-@import './components/Question.scss';
-@import './components/LearningCheck/LearningCheck.scss',
+@import './components/Header/Header.scss',
+'./components/Question.scss',
+'./components/LearningCheck/LearningCheck.scss',
 './components/MultipleChoice/MultipleChoice.scss',
 './components/PopUp/PopUp.scss',
 './components/Text/Text.scss',
