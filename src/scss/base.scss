@@ -28,7 +28,7 @@
                 width: 96%;
             }
         }
-        &.bg {
+        &.bg:not(.Video) {
             .QContent {
                 width: 50%;
             }

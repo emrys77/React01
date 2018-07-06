@@ -32,7 +32,7 @@ h1 {
       vertical-align: top;
       padding: 4%;
       width: 96%; }
-    .App .content.bg .QContent {
+    .App .content.bg:not(.Video) .QContent {
       width: 50%; }
     .App .content.Intro .QContent {
       padding: 0; }
@@ -62,22 +62,43 @@ ol.alpha {
     margin-right: 10px;
     content: counter(item, upper-latin);
     background: #002b54;
-    border-radius: 4px;
     padding: 8px;
     color: white;
     width: 1.2em;
     text-align: center;
-    display: inline-block; }
+    display: inline-block;
+    border-radius: 4px; }
   ol.alpha input {
     position: absolute;
     left: -10000px; }
   ol.alpha label {
     color: white;
     background: #ce0000;
-    border-radius: 4px;
     display: inline-block;
     padding: 8px 16px;
-    width: 86%; }
+    width: 86%;
+    border-radius: 4px; }
+  ol.alpha.selected {
+    background: #002b54; }
+
+.video {
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 14%;
+  background: white;
+  padding: 0.4rem 1rem 1rem 1rem; }
+  .video button {
+    display: block;
+    width: 90%;
+    margin: 0px auto;
+    background: #ce0000;
+    padding: 5px 0;
+    color: white;
+    border-radius: 4px; }
+    .video button:focus, .video button:active {
+      background: #002b54; }
+    .video button .fa {
+      background: inherit; }
 
 footer {
   font-size: 1.1rem;

@@ -10,12 +10,13 @@ ol.alpha {
         content: counter(item, upper-latin);
         
         background: $SAR-dark-blue;
-        border-radius: $round-corners;
+        
         padding: 8px;
         color: white;
         width: 1.2em;
         text-align: center;
         display: inline-block;
+        @include round-corners;
       }
       input {
           position: absolute;
@@ -24,9 +25,12 @@ ol.alpha {
       label {
           color: white;
           background: $SAR-burnt-orange;
-          border-radius: $round-corners;
           display: inline-block;
           padding: 8px 16px;
           width: 86%;
+          @include round-corners;
+      }
+      &.selected {
+        background: $SAR-dark-blue;
       }
 }

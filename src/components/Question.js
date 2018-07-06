@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 
-//import Text from './Text/Text.js'
-//import Video from './Video/Video.js'
+import Video from './Video/Video.jsx'
 import Header from './Header/Header.js'
 import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.js'
-import ReactPlayer from 'react-player'
-
 
 class Question extends Component {
   constructor(props) {
@@ -87,9 +84,14 @@ class Question extends Component {
       var bg = myQuestionArray[16][1]['image'];
       if (bg) {
           var bgClass = 'bg'
+          styles = {
+            background: 'url(' + bg + ') no-repeat right top',
+            height: '100%'
+          }
       } else {
         var bgClass = 'nobg'
       }
+      
       // console.log(QType)
       var Header
       if (QType !== 'Intro'){
@@ -101,29 +103,25 @@ class Question extends Component {
       var styles, QRender; 
 
       if ( QType === 'Intro') {
-        QRender = <img src={bg} alt={section} />
+       // QRender = <img src={bg} alt={section} />
       }
 
       if ( QType === 'Text') {
-         if (bg) {
-           styles = {
-             background: 'url(' + bg + ') no-repeat right top',
-             height: '100%'
-           }
-         }
         var QContent = myQuestionArray[16][1]['content'];
         QRender = <div dangerouslySetInnerHTML={{ __html: QContent }}></div>  
       }
+/* <div className='video-papa'>
+          <ReactPlayer url={video_url} /> 
+        </div> */
 
       if (QType==='Video') {
         var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
         var vimeo_code = myQuestionArray[16][1]['vimeo_code']
         var video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
         
-        QRender = <div className='video-papa'>
-        <div dangerouslySetInnerHTML={{ __html: video_intro_text }}></div>
-          <ReactPlayer url={video_url} />
-        </div>
+        QRender = 
+        <Video video_intro_text={video_intro_text} video_url={video_url} />
+        
       }
       if (QType==='Multiple Choice') {
         var question_text = myQuestionArray[10][1]['rendered'];
@@ -176,63 +174,6 @@ class Question extends Component {
   }
 
 }
-
-/*
-<FontAwesome name='fa-angle-right' />
-
-function getQuestionData( responseArray, questionNumber ) {
-    return responseArray.filter( item => item.type === 'the_course' )
-        .find( item => item.acf.question_number === 1 );
-}
-
-/* var myQuestion = getQuestionData( questionData,1); 
-var data= this.props.data; */
-/*
-
-responseArray = the array json with the 14 elements
-
-const courseItemsArray = responseArray.filter( item => item.type === 'the_course' );
-const questionData = courseItemsArray.find( item => item.acf.question_number === 1 );
-
-
-function getQuestionData( responseArray, questionNumber ) {
- //   return responseArray.filter( item => item.type === 'the_course' )
- //       .find( item => item.menu_order ===  questionNumber );
-      return responseArray.filter( item => item.menu_order ===  questionNumber );
-}
-*/
-
-
-
-/*
-function Question(props) {
-
-  
-  what do i do?
-get all data from getdata
-grab question number prop
-get section from prop
-work out how many questions there are in section
- work out question details question number in section
- work out question type
- work out what props to pass to question type and pass
-
- text: title, content
- video: vimeo_code, video_intro_text
- PopUp: intro, box1, box2
- MultipleChoice: question, options (array), correct
-LearningCheck: intro, box1hd, box2hd, options (array)
-
-
-  
-}
-
-Question.propTypes = {
-  number: PropTypes.number.isRequired,
-  data: PropTypes.any,
-  emrys: PropTypes.string
-};
-*/
 
 export default Question;
 
