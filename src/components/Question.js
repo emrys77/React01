@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Video from './Video/Video.jsx'
 import Header from './Header/Header.js'
 import Footer from './Footer/Footer.jsx'
-import MultipleChoice from './MultipleChoice/MultipleChoice.js'
+import MultipleChoice from './MultipleChoice/MultipleChoice.jsx'
 
 class Question extends Component {
   constructor(props) {
@@ -49,15 +49,11 @@ class Question extends Component {
     // get the data for the question we are on
     let myQuestion = findObjectByKey(myData,'menu_order',step);
 
-    
-
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
 
       console.log('myQuestionArray: ');
       console.log(myQuestionArray);
-
-
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
@@ -124,10 +120,8 @@ class Question extends Component {
         
       }
       if (QType==='Multiple Choice') {
-        var question_text = myQuestionArray[10][1]['rendered'];
-        var options = myQuestionArray[16][1]['multiple_choice_question'];
-
-        
+        var question_text = myQuestionArray[10][1]['rendered']
+        var options = myQuestionArray[16][1]['multiple_choice_question']
         // create an array for the question options list
         var rOptions = [];
         options.forEach(function(element) {

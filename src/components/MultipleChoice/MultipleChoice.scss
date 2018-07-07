@@ -29,8 +29,12 @@ ol.alpha {
           padding: 8px 16px;
           width: 86%;
           @include round-corners;
+          &.selected {
+            background: $SAR-dark-blue;
+          }
+          &:hover {
+            background: $SAR-dark-blue;
+          }
       }
-      &.selected {
-        background: $SAR-dark-blue;
-      }
+      
 }

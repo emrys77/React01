@@ -14,3 +14,44 @@ https://medium.com/@ruthmpardee/passing-data-between-react-components-103ad82ebd
     //console.log(this.state.BJBSData);
 
     console.log('json: ', data, typeof data, Array.isArray(data));
+
+
+      var occurrences = myQuestionArray.reduce(function(obj, item) {
+        obj[item] = (obj[item] || 0) + 1;
+        return obj;
+      }, {});
+
+      console.log(occurrences);        // {ab: 3, pq: 1, mn: 2}
+      console.log(occurrences[section]);  // 2
+
+      for(var member of myQuestionArray){
+        console.log(member); 
+      }
+
+
+
+      class App extends React.Component {
+
+      constructor(props) {
+        super(props);    // When do we need to send props to the constructor
+        this.state = {
+           data: 'Initial data...'
+        }
+        this.updateState = this.updateState.bind(this);
+      };
+
+      updateState(e) {
+          this.setState({data: e.target.value});
+      }
+
+      render() {
+        return (
+           <div>
+             <input type = "text" value = {this.state.data} 
+              onChange = {this.updateState} />
+             <h4>{this.state.data}</h4>
+          </div>
+        );
+      }
+
+   }

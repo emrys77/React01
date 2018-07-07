@@ -89,6 +89,16 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/components\/01 unused\/Video.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/Video-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/components\/Button.js": {
 		"ft": 64,
 		"ma": 0,
@@ -246,7 +256,17 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
+		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/components\/MultipleChoice\/MultipleChoice.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
 		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min.js",
 		"oF": 0,
 		"sC": 3,
@@ -408,16 +428,6 @@
 		"oA": 0,
 		"oAP": "\/components\/Video\/Video.css.map",
 		"oF": 0
-		},
-	"\/components\/Video\/Video.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "\/components\/Video\/Video-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"\/components\/Video\/Video.jsx": {
 		"ft": 64,

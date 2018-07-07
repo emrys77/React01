@@ -36,6 +36,8 @@ h1 {
       width: 50%; }
     .App .content.Intro .QContent {
       padding: 0; }
+    .App .content.Video .QContent {
+      padding: 0; }
 
 header {
   font-size: 1.1rem;
@@ -78,8 +80,10 @@ ol.alpha {
     padding: 8px 16px;
     width: 86%;
     border-radius: 4px; }
-  ol.alpha.selected {
-    background: #002b54; }
+    ol.alpha label.selected {
+      background: #002b54; }
+    ol.alpha label:hover {
+      background: #002b54; }
 
 .video {
   width: 50%;
@@ -89,8 +93,8 @@ ol.alpha {
   padding: 0.4rem 1rem 1rem 1rem; }
   .video button {
     display: block;
-    width: 90%;
-    margin: 0px auto;
+    width: 100%;
+    margin: 10px auto;
     background: #ce0000;
     padding: 5px 0;
     color: white;

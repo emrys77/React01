@@ -29,7 +29,7 @@ export default class Video extends React.Component {
             )
         } else if (step===2) {
             return (
-                <ReactPlayer url={this.props.video_url} /> 
+                <ReactPlayer url={this.props.video_url} width="1000px" height="555px" /> 
             )
         }
     }

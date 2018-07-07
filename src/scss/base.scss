@@ -38,6 +38,10 @@
                 padding: 0;
             }
         }
-
+        &.Video {
+            .QContent {
+                padding: 0;
+            }
+        }
     }
 }
