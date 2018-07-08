@@ -169,7 +169,7 @@ class Question extends Component {
             {QTitle}
             {QRender}
           </div>
-          <Footer QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} />
+          <Footer QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
         </div>
       </div>
 

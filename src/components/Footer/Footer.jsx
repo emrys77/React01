@@ -6,18 +6,24 @@ export default class Footer extends React.Component {
 
     render() {
         console.log('this.props.sectionStep: ' + this.props.sectionStep)
-        if (this.props.step !== 1000) {
+        var BDisabled,FDisabled = null
+        if (this.props.step == 1) {
+            var Bdisabled=1
+        }
+        if (this.props.step == this.props.totalSteps) {
+            var Fdisabled=1
+        }
             return (
                 <footer>
                     <nav>
                     
-                        <Button direction="backward" onChange={ this.props.onChange } />
+                        <Button disabled={BDisabled} direction="backward" onChange={ this.props.onChange } />
                         <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>
-                        <Button direction="forward" onChange={ this.props.onChange } />
+                        <Button disabled={FDisabled} direction="forward" onChange={ this.props.onChange } />
 
                     </nav>
                 </footer>
             )
-        } else return null 
+        
     }
 }

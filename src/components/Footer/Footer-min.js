@@ -39,25 +39,31 @@ var Footer = function (_React$Component) {
         key: 'render',
         value: function render() {
             console.log('this.props.sectionStep: ' + this.props.sectionStep);
-            if (this.props.step !== 1000) {
-                return _react2.default.createElement(
-                    'footer',
+            var BDisabled,
+                FDisabled = null;
+            if (this.props.step == 1) {
+                var Bdisabled = 1;
+            }
+            if (this.props.step == this.props.totalSteps) {
+                var Fdisabled = 1;
+            }
+            return _react2.default.createElement(
+                'footer',
+                null,
+                _react2.default.createElement(
+                    'nav',
                     null,
+                    _react2.default.createElement(_Button2.default, { disabled: BDisabled, direction: 'backward', onChange: this.props.onChange }),
                     _react2.default.createElement(
-                        'nav',
-                        null,
-                        _react2.default.createElement(_Button2.default, { direction: 'backward', onChange: this.props.onChange }),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'progress' },
-                            this.props.sectionStep,
-                            ' / ',
-                            this.props.sectionCount
-                        ),
-                        _react2.default.createElement(_Button2.default, { direction: 'forward', onChange: this.props.onChange })
-                    )
-                );
-            } else return null;
+                        'div',
+                        { className: 'progress' },
+                        this.props.sectionStep,
+                        ' / ',
+                        this.props.sectionCount
+                    ),
+                    _react2.default.createElement(_Button2.default, { disabled: FDisabled, direction: 'forward', onChange: this.props.onChange })
+                )
+            );
         }
     }]);
 

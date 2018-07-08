@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome'
 
 class Button extends Component {
+  constructor() {
+    super();
+    this.state = { 
+      disabled: null,
+
+    }
+  }
 
   render() { 
 
@@ -17,7 +24,7 @@ class Button extends Component {
     }
 
     return  (
-      <button direction={direction} onClick={(e) => this.props.onChange(e)}>
+      <button disabled={this.props.disabled} direction={direction} onClick={(e) => this.props.onChange(e)}>
         <FontAwesome name={fa} size="2x" />
       </button>
     );
