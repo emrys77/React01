@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome'
 
 class Button extends Component {
@@ -7,24 +6,24 @@ class Button extends Component {
     super();
     this.state = { 
       disabled: null,
-
     }
   }
 
   render() { 
 
-    var fa
+    var fa, step
     var direction = this.props.direction
-    let passClick = this.props.passClick
     
     if (direction==='backward') {
       fa = 'angle-left'
+      step = -1
     } else if (direction==='forward') {
       fa = 'angle-right'
+      step = 1
     }
 
     return  (
-      <button disabled={this.props.disabled} direction={direction} onClick={(e) => this.props.onChange(e)}>
+      <button disabled={this.state.disabled} direction={direction} onClick={(e) => this.props.onChange(e,direction)}>
         <FontAwesome name={fa} size="2x" />
       </button>
     );

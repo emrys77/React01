@@ -10,7 +10,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Button = require('../Button.jsx');
+var _Button = require('../Button/Button.jsx');
 
 var _Button2 = _interopRequireDefault(_Button);
 
@@ -39,13 +39,12 @@ var Footer = function (_React$Component) {
         key: 'render',
         value: function render() {
             console.log('this.props.sectionStep: ' + this.props.sectionStep);
-            var BDisabled,
-                FDisabled = null;
+            var disabled = null;
             if (this.props.step == 1) {
-                var Bdisabled = 1;
+                var disabled = 1;
             }
             if (this.props.step == this.props.totalSteps) {
-                var Fdisabled = 1;
+                var disabled = 1;
             }
             return _react2.default.createElement(
                 'footer',
@@ -53,7 +52,7 @@ var Footer = function (_React$Component) {
                 _react2.default.createElement(
                     'nav',
                     null,
-                    _react2.default.createElement(_Button2.default, { disabled: BDisabled, direction: 'backward', onChange: this.props.onChange }),
+                    _react2.default.createElement(_Button2.default, { disabled: disabled, direction: 'backward', onChange: this.props.onChange }),
                     _react2.default.createElement(
                         'div',
                         { className: 'progress' },
@@ -61,7 +60,7 @@ var Footer = function (_React$Component) {
                         ' / ',
                         this.props.sectionCount
                     ),
-                    _react2.default.createElement(_Button2.default, { disabled: FDisabled, direction: 'forward', onChange: this.props.onChange })
+                    _react2.default.createElement(_Button2.default, { disabled: disabled, direction: 'forward', onChange: this.props.onChange })
                 )
             );
         }

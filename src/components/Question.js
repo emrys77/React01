@@ -13,8 +13,10 @@ class Question extends Component {
     this.QType = 'qwe'
   }
   
-  moveQuestion = move => {
-    var nStep = (move === 1) ? this.state.step-1 : this.state.step+1;
+  moveQuestion = (e,move) => {
+    var direction= ''
+    console.log('move: ' + direction)
+    var nStep = (move == 1) ? this.state.step-1 : this.state.step+1;
     this.setState({step: nStep})
   }
 

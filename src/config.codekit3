@@ -99,22 +99,22 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/Button-min.js": {
+	"\/components\/Button\/Button-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
-		"oAP": "\/components\/Button-min-min.js",
+		"oAP": "\/components\/Button\/Button-min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/Button.jsx": {
+	"\/components\/Button\/Button.jsx": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
-		"oAP": "\/components\/Button-min.js",
+		"oAP": "\/components\/Button\/Button-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 1

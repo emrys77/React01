@@ -10,10 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 var _reactFontawesome = require('react-fontawesome');
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
@@ -36,7 +32,6 @@ var Button = function (_Component) {
 
     _this.state = {
       disabled: null
-
     };
     return _this;
   }
@@ -46,20 +41,21 @@ var Button = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var fa;
+      var fa, step;
       var direction = this.props.direction;
-      var passClick = this.props.passClick;
 
       if (direction === 'backward') {
         fa = 'angle-left';
+        step = -1;
       } else if (direction === 'forward') {
         fa = 'angle-right';
+        step = 1;
       }
 
       return _react2.default.createElement(
         'button',
-        { disabled: this.props.disabled, direction: direction, onClick: function onClick(e) {
-            return _this2.props.onChange(e);
+        { disabled: this.state.disabled, direction: direction, onClick: function onClick(e) {
+            return _this2.props.onChange(e, direction);
           } },
         _react2.default.createElement(_reactFontawesome2.default, { name: fa, size: '2x' })
       );
