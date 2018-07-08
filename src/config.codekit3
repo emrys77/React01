@@ -39,12 +39,12 @@
 	"\/App.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 1,
 		"oAP": "\/App-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/App.scss": {
 		"aP": 0,
@@ -62,62 +62,82 @@
 	"\/components\/01 unused\/Footer.01.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/01 unused\/Footer.01-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/01 unused\/Footer.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/01 unused\/Footer-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/01 unused\/Question.1.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/01 unused\/Question.1-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/01 unused\/Video.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/01 unused\/Video-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
-	"\/components\/Button.js": {
+	"\/components\/Button-min.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 1,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Button-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/Button.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
 		"oAP": "\/components\/Button-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
+		},
+	"\/components\/Footer\/Footer-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Footer\/Footer-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
 		},
 	"\/components\/Footer\/Footer.jsx": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/Footer\/Footer-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/Footer\/Footer.scss": {
 		"aP": 0,
@@ -135,22 +155,22 @@
 	"\/components\/GetData.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 1,
+		"mi": 0,
+		"oA": 0,
 		"oAP": "\/components\/GetData-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/Header\/Header.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 1,
 		"oAP": "\/components\/Header\/Header-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/Header\/Header.scss": {
 		"aP": 0,
@@ -195,12 +215,12 @@
 	"\/components\/LearningCheck\/LearningCheck.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/LearningCheck\/LearningCheck-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/LearningCheck\/LearningCheck.scss": {
 		"aP": 0,
@@ -218,12 +238,12 @@
 	"\/components\/LogData.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/LogData-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/MultipleChoice\/MultipleChoice-min.css": {
 		"aP": 1,
@@ -234,6 +254,16 @@
 		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/components\/MultipleChoice\/MultipleChoice-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
 		},
 	"\/components\/MultipleChoice\/MultipleChoice.css": {
 		"aP": 1,
@@ -255,22 +285,22 @@
 	"\/components\/MultipleChoice\/MultipleChoice.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/MultipleChoice\/MultipleChoice.jsx": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/MultipleChoice\/MultipleChoice.scss": {
 		"aP": 0,
@@ -312,12 +342,12 @@
 	"\/components\/PopUp\/PopUp.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/PopUp\/PopUp-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/PopUp\/PopUp.scss": {
 		"aP": 0,
@@ -352,12 +382,12 @@
 	"\/components\/Question.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 1,
 		"oAP": "\/components\/Question-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/Question.scss": {
 		"aP": 0,
@@ -371,6 +401,16 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/components\/Text\/Text-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Text\/Text-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
 		},
 	"\/components\/Text\/Text.css": {
 		"aP": 1,
@@ -392,12 +432,12 @@
 	"\/components\/Text\/Text.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
-		"oA": 0,
+		"mi": 0,
+		"oA": 1,
 		"oAP": "\/components\/Text\/Text-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/Text\/Text.scss": {
 		"aP": 0,
@@ -432,12 +472,12 @@
 	"\/components\/Video\/Video.jsx": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/Video\/Video-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/components\/Video\/Video.scss": {
 		"aP": 0,
@@ -536,138 +576,6 @@
 		"oAP": "\/fonts\/Univers-Light-Normal.woff",
 		"oF": 0
 		},
-	"\/images\/378x572_ArmedRobbery.jpg": {
-		"ft": 16384,
-		"iS": 71285,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/378x572_ArmedRobbery.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/378x572_Door.jpg": {
-		"ft": 16384,
-		"iS": 53367,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/378x572_Door.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/378x572_Image.jpg": {
-		"ft": 16384,
-		"iS": 51010,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/378x572_Image.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/378x572_Trish.jpg": {
-		"ft": 16384,
-		"iS": 35636,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/378x572_Trish.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/Background_01.jpg": {
-		"ft": 16384,
-		"iS": 1512914,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/Background_01.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
-	"\/images\/Splash_01.jpg": {
-		"ft": 16384,
-		"iS": 20040,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/Splash_01.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/title-conclusion.jpg": {
-		"ft": 16384,
-		"iS": 65922,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/title-conclusion.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/title-new-crims-new-ways.jpg": {
-		"ft": 16384,
-		"iS": 70647,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/title-new-crims-new-ways.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/title-survive-armed-robbery.jpg": {
-		"ft": 16384,
-		"iS": 89677,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/title-survive-armed-robbery.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/title-the-offender.jpg": {
-		"ft": 16384,
-		"iS": 64506,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/title-the-offender.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/title-the-robbery.jpg": {
-		"ft": 16384,
-		"iS": 64436,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/title-the-robbery.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/images\/VideoImg_01.jpg": {
-		"ft": 16384,
-		"iS": 40565,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/images\/VideoImg_01.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"\/index-min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -677,6 +585,16 @@
 		"oAP": "\/index-min-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/index-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/index-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
 		},
 	"\/index.css": {
 		"aP": 1,
@@ -691,12 +609,12 @@
 	"\/index.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 0,
 		"oAP": "\/index-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/logo.svg": {
 		"ft": 2097152,
@@ -718,12 +636,12 @@
 	"\/registerServiceWorker.js": {
 		"ft": 64,
 		"ma": 0,
-		"mi": 1,
+		"mi": 0,
 		"oA": 1,
 		"oAP": "\/registerServiceWorker-min.js",
 		"oF": 0,
 		"sC": 3,
-		"tS": 0
+		"tS": 1
 		},
 	"\/SAR.css": {
 		"aP": 1,
@@ -1065,7 +983,7 @@
 			"active": 0
 			}
 		},
-	"babelPresetType": 193,
+	"babelPresetType": 225,
 	"babelRetainLines": 0,
 	"bowerAbbreviatedPath": "bower_components",
 	"bowerAutoCreateInfoFile": 1,
@@ -1216,8 +1134,8 @@
 			}
 		},
 	"esLintConfigFileHandlingType": 0,
-	"esLintECMAVersion": 7,
-	"esLintEnvironmentsMask": 1,
+	"esLintECMAVersion": 6,
+	"esLintEnvironmentsMask": 21,
 	"esLintRules": {
 		"accessor-pairs": {
 			"active": 0,
@@ -2533,11 +2451,11 @@
 			"flagValue": -1
 			},
 		"devel": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"es6": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"eval": {
@@ -2557,7 +2475,7 @@
 			"flagValue": -1
 			},
 		"this": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"white": {
@@ -2632,9 +2550,9 @@
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"createSourceMap": 0,
-		"minifyOutput": 1,
+		"minifyOutput": 0,
 		"syntaxCheckerStyle": 3,
-		"transpilerStyle": 0
+		"transpilerStyle": 1
 		},
 	"languageDefaultsJSON": {
 		"autoOutputAction": 1,
@@ -2834,7 +2752,7 @@
 			"flagValue": -1
 			},
 		"compress": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"conditionals": {
