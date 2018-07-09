@@ -23,7 +23,7 @@ class Button extends Component {
     }
 
     return  (
-      <button disabled={this.state.disabled} direction={direction} onClick={(e) => this.props.onChange(e,direction)}>
+      <button disabled={this.state.disabled} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
         <FontAwesome name={fa} size="2x" />
       </button>
     );

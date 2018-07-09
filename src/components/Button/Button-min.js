@@ -55,7 +55,7 @@ var Button = function (_Component) {
       return _react2.default.createElement(
         'button',
         { disabled: this.state.disabled, direction: direction, onClick: function onClick(e) {
-            return _this2.props.onChange(e, direction);
+            return _this2.props.onChange(e, step);
           } },
         _react2.default.createElement(_reactFontawesome2.default, { name: fa, size: '2x' })
       );

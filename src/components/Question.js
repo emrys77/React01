@@ -12,11 +12,16 @@ class Question extends Component {
     this.state = { step: 1 }
     this.QType = 'qwe'
   }
-  
+/*
+const passClick = (move) => {
+      var nStep = (move === 1) ? this.state.step-1 : this.state.step+1;
+      this.setState({step: nStep})
+    }
+*/  
   moveQuestion = (e,move) => {
-    var direction= ''
-    console.log('move: ' + direction)
-    var nStep = (move == 1) ? this.state.step-1 : this.state.step+1;
+    //var nStep = (move === 'forward') ? this.state.step-1 : this.state.step+1;
+    var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
+    console.log('moveQuestion: ' + move + ' nStep: ' + nStep)
     this.setState({step: nStep})
   }
 
@@ -95,15 +100,16 @@ class Question extends Component {
       
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
-      if (bg) {
-          var bgClass = 'bg'
-          /*styles = {
+      var bgClass = 'nobg'
+
+      bg = bgClass ? 'bg' : 'nobg' 
+     /* if (bg) {
+           bgClass = 'bg'
+          styles = {
             background: 'url(' + bg + ') no-repeat right top',
             height: '100%'
-          }*/
-      } else {
-        var bgClass = 'nobg'
-      }
+          }
+    } */
       
       // console.log(QType)
       var Header

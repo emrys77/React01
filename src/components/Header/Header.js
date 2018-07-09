@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-var Header = ( {QType},{section}) => {
+export var Header = ( {QType},{section}) => {
     if ({QType} !== 'Intro'){
         Header = <header>Survive Armed Robbery | {section}</header>
     } else {

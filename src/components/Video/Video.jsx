@@ -16,7 +16,6 @@ export default class Video extends React.Component {
     render() {
 
         const step = this.state.step;
-        let content;
 
         if (step===1) {
             return (

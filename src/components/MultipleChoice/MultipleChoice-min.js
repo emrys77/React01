@@ -38,11 +38,9 @@ var MultipleChoice = function (_React$Component) {
     _createClass(MultipleChoice, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
 
             var handleClick = function handleClick(e) {
                 console.log(e.target.value);
-                _this2.addClass;
                 //this.setState({step: 2})
             };
 

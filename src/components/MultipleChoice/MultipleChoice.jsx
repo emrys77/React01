@@ -15,7 +15,6 @@ do we need state? yes so we can re-render on change */
 
         var handleClick = (e) => {
             console.log(e.target.value);
-            this.addClass
             //this.setState({step: 2})
         }
 

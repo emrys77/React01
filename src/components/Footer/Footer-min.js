@@ -14,10 +14,6 @@ var _Button = require('../Button/Button.jsx');
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _reactFontawesome = require('react-fontawesome');
-
-var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40,11 +36,11 @@ var Footer = function (_React$Component) {
         value: function render() {
             console.log('this.props.sectionStep: ' + this.props.sectionStep);
             var disabled = null;
-            if (this.props.step == 1) {
-                var disabled = 1;
+            if (this.props.step === 1) {
+                disabled = 1;
             }
-            if (this.props.step == this.props.totalSteps) {
-                var disabled = 1;
+            if (this.props.step === this.props.totalSteps) {
+                disabled = 1;
             }
             return _react2.default.createElement(
                 'footer',
