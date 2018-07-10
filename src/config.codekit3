@@ -99,6 +99,16 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/components\/Button.2.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Button.2-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
 	"\/components\/Button\/Button-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -119,12 +129,45 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/components\/Button\/Button.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/components\/Button\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/components\/Button\/SAR.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/Button\/SAR-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/components\/Footer\/Footer-min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/Footer\/Footer-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/Footer\/Footer.2.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Footer\/Footer.2-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
@@ -286,7 +329,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min.js",
 		"oF": 0,
 		"sC": 3,
@@ -361,6 +404,26 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/components\/Question.1.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Question.1-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/Question.2.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Question.2-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
 		},
 	"\/components\/Question.css": {
 		"aP": 1,

@@ -28,12 +28,7 @@ var Button = function (_Component) {
   function Button() {
     _classCallCheck(this, Button);
 
-    var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
-
-    _this.state = {
-      disabled: null
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this));
   }
 
   _createClass(Button, [{
@@ -54,7 +49,7 @@ var Button = function (_Component) {
 
       return _react2.default.createElement(
         'button',
-        { disabled: this.state.disabled, direction: direction, onClick: function onClick(e) {
+        { className: direction, direction: direction, onClick: function onClick(e) {
             return _this2.props.onChange(e, step);
           } },
         _react2.default.createElement(_reactFontawesome2.default, { name: fa, size: '2x' })

@@ -12,16 +12,9 @@ class Question extends Component {
     this.state = { step: 1 }
     this.QType = 'qwe'
   }
-/*
-const passClick = (move) => {
-      var nStep = (move === 1) ? this.state.step-1 : this.state.step+1;
-      this.setState({step: nStep})
-    }
-*/  
+
   moveQuestion = (e,move) => {
-    //var nStep = (move === 'forward') ? this.state.step-1 : this.state.step+1;
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
-    console.log('moveQuestion: ' + move + ' nStep: ' + nStep)
     this.setState({step: nStep})
   }
 
@@ -33,7 +26,7 @@ const passClick = (move) => {
   }
 
   componentDidMount() {
-    console.log('componentDidMount fired, QTYPE: ' + this.QType)
+   // console.log('componentDidMount fired, QTYPE: ' + this.QType)
     if ( this.QType === 'Intro' ) {
         this.introPause(5000)
     }
@@ -74,8 +67,8 @@ const passClick = (move) => {
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
 
-      console.log('myQuestionArray: ');
-      console.log(myQuestionArray);
+//      console.log('myQuestionArray: ');
+//      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
@@ -100,9 +93,10 @@ const passClick = (move) => {
       
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
-      var bgClass = 'nobg'
+      //var bgClass = 'nobg'
 
-      bg = bgClass ? 'bg' : 'nobg' 
+      var bgClass = bg ? 'bg' : 'nobg' 
+
      /* if (bg) {
            bgClass = 'bg'
           styles = {
@@ -127,7 +121,7 @@ const passClick = (move) => {
 
       if ( this.QType === 'Text') {
         var QContent = myQuestionArray[16][1]['content'];
-        QRender = <Text content={QContent} passClick={ this.moveQuestion } />
+        QRender = <Text content={QContent} />
       }
 /* <div className='video-papa'>
           <ReactPlayer url={video_url} /> 
@@ -177,7 +171,7 @@ const passClick = (move) => {
             {QTitle}
             {QRender}
           </div>
-          <Footer QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
+          <Footer className={'Step'+this.state.step} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
         </div>
       </div>
 

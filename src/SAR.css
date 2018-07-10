@@ -47,7 +47,7 @@ h1 {
     .App .content.Conclusion.Intro.Q1 {
       background: url(/images/title-conclusion.jpg) right top no-repeat;
       height: 100%; }
-    .App .content.Video {
+    .App .content.Video .QContent {
       background: url(/images/VideoImg_01.jpg) right top no-repeat;
       height: 100%; }
     .App .content.bg.Text.Q2, .App .content.bg.Text.Q3 {
@@ -144,10 +144,19 @@ footer {
       display: inline-block;
       position: relative;
       bottom: 5px; }
-    footer nav button {
-      font-size: 1.2rem;
-      font-weight: 500;
-      border: none;
-      color: white;
-      background: #ce0000;
-      outline: none; }
+
+button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  color: white;
+  background: #ce0000;
+  outline: none; }
+
+.Step1 nav .backward {
+  pointer-events: none;
+  opacity: 0.4; }
+
+.Step48 nav .forward {
+  pointer-events: none;
+  opacity: 0.4; }

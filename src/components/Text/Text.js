@@ -12,9 +12,6 @@ function Text(props) {
   return  (
     <div>
       <div dangerouslySetInnerHTML={{ __html: props.content }}></div>
-      <button className="forward" onClick={(e) => handleForwardClick(e)}>
-          <FontAwesome name='angle-right' size="2x" />
-      </button>
     </div>
   );
 }

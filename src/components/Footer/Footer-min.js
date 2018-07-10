@@ -34,21 +34,14 @@ var Footer = function (_React$Component) {
     _createClass(Footer, [{
         key: 'render',
         value: function render() {
-            console.log('this.props.sectionStep: ' + this.props.sectionStep);
-            var disabled = null;
-            if (this.props.step === 1) {
-                disabled = 1;
-            }
-            if (this.props.step === this.props.totalSteps) {
-                disabled = 1;
-            }
+
             return _react2.default.createElement(
                 'footer',
-                null,
+                { className: this.props.className },
                 _react2.default.createElement(
                     'nav',
                     null,
-                    _react2.default.createElement(_Button2.default, { disabled: disabled, direction: 'backward', onChange: this.props.onChange }),
+                    _react2.default.createElement(_Button2.default, { direction: 'backward', onChange: this.props.onChange }),
                     _react2.default.createElement(
                         'div',
                         { className: 'progress' },
@@ -56,7 +49,7 @@ var Footer = function (_React$Component) {
                         ' / ',
                         this.props.sectionCount
                     ),
-                    _react2.default.createElement(_Button2.default, { disabled: disabled, direction: 'forward', onChange: this.props.onChange })
+                    _react2.default.createElement(_Button2.default, { direction: 'forward', onChange: this.props.onChange })
                 )
             );
         }

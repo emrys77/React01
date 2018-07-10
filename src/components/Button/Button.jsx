@@ -4,9 +4,6 @@ import FontAwesome from 'react-fontawesome'
 class Button extends Component {
   constructor() {
     super();
-    this.state = { 
-      disabled: null,
-    }
   }
 
   render() { 
@@ -23,7 +20,7 @@ class Button extends Component {
     }
 
     return  (
-      <button disabled={this.state.disabled} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
+      <button className={direction} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
         <FontAwesome name={fa} size="2x" />
       </button>
     );
