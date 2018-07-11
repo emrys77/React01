@@ -24,8 +24,8 @@ h1 {
     margin: 0 auto;
     width: 80%;
     max-width: 1000px;
-    height: 652px;
-    max-height: 652px;
+    height: 664px;
+    max-height: 664px;
     background: white;
     /* &.Intro {
             .QContent {
@@ -47,12 +47,11 @@ h1 {
     .App .content.Conclusion.Intro.Q1 {
       background: url(/images/title-conclusion.jpg) right top no-repeat;
       height: 100%; }
-    .App .content.Video .QContent {
+    .App .content.Video {
       background: url(/images/VideoImg_01.jpg) right top no-repeat;
       height: 100%; }
     .App .content.bg.Text.Q2, .App .content.bg.Text.Q3 {
-      background: url(/images/378x572_Image.jpg) right top no-repeat white;
-      height: 100%; }
+      background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
     .App .content .QContent {
       display: inline-block;
       vertical-align: top;
@@ -112,7 +111,7 @@ ol.alpha {
 .video {
   width: 50%;
   margin: 0px auto;
-  margin-top: 14%;
+  margin-top: 10%;
   background: white;
   padding: 0.4rem 1rem 1rem 1rem; }
   .video button {
@@ -152,11 +151,8 @@ button {
   color: white;
   background: #ce0000;
   outline: none; }
-
-.Step1 nav .backward {
-  pointer-events: none;
-  opacity: 0.4; }
-
-.Step48 nav .forward {
-  pointer-events: none;
-  opacity: 0.4; }
+  button:hover, button:active {
+    color: #ffa64c; }
+  button.disabled {
+    pointer-events: none;
+    opacity: 0.4; }

@@ -5,20 +5,13 @@ button {
     color: $SAR-white;
     background: $SAR-burnt-orange;
     outline: none;
-}
-.Step1 {
-    nav {
-        .backward { 
-            pointer-events: none;
-            opacity: 0.4;
-        }
+    
+    &:hover,
+    &:active {
+        color: $SAR-light-orange;
     }
-}
-.Step48 {
-    nav {
-        .forward { 
-            pointer-events: none;
-            opacity: 0.4;
-        }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.4;
     }
 }

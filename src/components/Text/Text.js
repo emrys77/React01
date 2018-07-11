@@ -2,12 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FontAwesome from 'react-fontawesome'
 
-var handleForwardClick = event => {
-  event.preventDefault();
-  console.log('forward')
-  this.props.passClick( 1 );
-}
-
 function Text(props) {
   return  (
     <div>

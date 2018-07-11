@@ -16,8 +16,8 @@
         margin: 0 auto;
         width: 80%;
         max-width: 1000px;
-        height: 652px;
-        max-height: 652px;
+        height: 664px;
+        max-height: 664px;
         
         background: $SAR-white;
         
@@ -41,7 +41,7 @@
             background: url(/images/title-conclusion.jpg) right top no-repeat; 
             height: 100%;
         }
-        &.Video .QContent{
+        &.Video {
             background: url(/images/VideoImg_01.jpg) right top no-repeat; 
             height: 100%;
             
@@ -49,8 +49,8 @@
 
         &.bg.Text.Q2,
         &.bg.Text.Q3 {
-            background: url(/images/378x572_Image.jpg) right top no-repeat white; 
-            height: 100%;
+            background: url(/images/378x572_Image.jpg) right 53px no-repeat white; 
+            
         }
         .QContent {
             display: inline-block;

@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _ListItem = require('./ListItem.jsx');
+
+var _ListItem2 = _interopRequireDefault(_ListItem);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27,7 +31,6 @@ var MultipleChoice = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (MultipleChoice.__proto__ || Object.getPrototypeOf(MultipleChoice)).call(this, props));
 
         _this.state = { selected: '' };
-
         return _this;
     }
 
@@ -41,20 +44,15 @@ var MultipleChoice = function (_React$Component) {
 
             var handleClick = function handleClick(e) {
                 console.log(e.target.value);
+
+                // add class
+                // show submit button
                 //this.setState({step: 2})
             };
 
             var itemsList = this.props.options.map(function (item, i) {
-                return _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement(
-                        'label',
-                        { className: 'radioBox', key: i },
-                        _react2.default.createElement('input', { type: 'radio', name: 'Q3', value: item }),
-                        item
-                    )
-                );
+                //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
+                return _react2.default.createElement(_ListItem2.default, { i: i, value: item });
             });
 
             return _react2.default.createElement(

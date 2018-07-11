@@ -33,15 +33,22 @@ var Footer = function (_React$Component) {
 
     _createClass(Footer, [{
         key: 'render',
+
+        // pass 2 props to handle the two buttons: fbState bbState
+
         value: function render() {
 
+            var bbState = this.props.step !== 1 ? "disabled" : "active";
+            var fbState = this.props.step === this.props.totalSteps ? "disabled" : "active";
+
+            console.log('bbState' + bbState);
             return _react2.default.createElement(
                 'footer',
                 { className: this.props.className },
                 _react2.default.createElement(
                     'nav',
                     null,
-                    _react2.default.createElement(_Button2.default, { direction: 'backward', onChange: this.props.onChange }),
+                    _react2.default.createElement(_Button2.default, { bState: bbState, direction: 'backward', onChange: this.props.onChange }),
                     _react2.default.createElement(
                         'div',
                         { className: 'progress' },
@@ -49,7 +56,7 @@ var Footer = function (_React$Component) {
                         ' / ',
                         this.props.sectionCount
                     ),
-                    _react2.default.createElement(_Button2.default, { direction: 'forward', onChange: this.props.onChange })
+                    _react2.default.createElement(_Button2.default, { bState: fbState, direction: 'forward', onChange: this.props.onChange })
                 )
             );
         }
