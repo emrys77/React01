@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "AachenStd Bold";
+  src: url("fonts/AachenStd-Bold.eot");
+  src: url("fonts/AachenStd-Bold.woff") format("woff"), url("fonts/AachenStd-Bold.ttf") format("truetype"); }
+
+h1 {
+  font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
+  color: #ce0000; }
+
+.App {
+  position: relative;
+  width: 100%;
+  height: 90%;
+  background-image: url(/images/Background_01.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 5%; }
+  .App .content {
+    position: relative;
+    /*top:25%;
+        left:50%;
+        margin-left: -500px;*/
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+    height: 664px;
+    max-height: 664px;
+    background: white;
+    /* &.Intro {
+            .QContent {
+                padding: 0;
+            }
+        }*/ }
+    .App .content.Survive-Armed-Robbery.Intro.Q1 {
+      background-image: url(/images/title-survive-armed-robbery.jpg);
+      height: 100%; }
+    .App .content.The-Offender.Intro.Q1 {
+      background: url(/images/title-the-offender.jpg) right top no-repeat;
+      height: 100%; }
+    .App .content.New-Crims-new-ways.Intro.Q1 {
+      background: url(/images/title-the-robbery.jpg) right top no-repeat;
+      height: 100%; }
+    .App .content.The-Robbery.Intro.Q1 {
+      background: url(/images/title-the-robbery.jpg) right top no-repeat;
+      height: 100%; }
+    .App .content.Conclusion.Intro.Q1 {
+      background: url(/images/title-conclusion.jpg) right top no-repeat;
+      height: 100%; }
+    .App .content.Video {
+      background: url(/images/VideoImg_01.jpg) right top no-repeat;
+      height: 100%; }
+    .App .content.bg.Text.Q2, .App .content.bg.Text.Q3 {
+      background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
+    .App .content .QContent {
+      display: inline-block;
+      vertical-align: top;
+      padding: 4%;
+      width: 96%; }
+    .App .content.bg:not(.Video) .QContent {
+      width: 50%; }
+    .App .content.Video .QContent {
+      padding: 0; }
+
+header {
+  font-size: 1.1rem;
+  padding: 1rem 1rem;
+  background: #002b54;
+  color: white; }
+
+#first,
+#second {
+  width: 40%; }
+
+#first div,
+#second div {
+  padding: 4px;
+  border: 1px solid #bbbbbb; }
+
+ol.alpha {
+  list-style: none;
+  padding-left: 0; }
+  ol.alpha li {
+    counter-increment: item;
+    margin-bottom: 5px; }
+  ol.alpha li:before {
+    margin-right: 10px;
+    content: counter(item, upper-latin);
+    background: #002b54;
+    padding: 8px;
+    color: white;
+    width: 1.2em;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px; }
+  ol.alpha input {
+    position: absolute;
+    left: -10000px; }
+  ol.alpha label {
+    color: white;
+    background: #ce0000;
+    display: inline-block;
+    padding: 8px 16px;
+    width: 86%;
+    border-radius: 4px; }
+    ol.alpha label.selected {
+      background: #002b54; }
+    ol.alpha label:hover {
+      background: #002b54; }
+
+.video {
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 10%;
+  background: white;
+  padding: 0.4rem 1rem 1rem 1rem; }
+  .video button {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    background: #ce0000;
+    padding: 5px 0;
+    color: white;
+    border-radius: 4px; }
+    .video button:focus, .video button:active {
+      background: #002b54; }
+    .video button .fa {
+      background: inherit; }
+
+footer {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  color: white;
+  background: #ce0000;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  footer nav {
+    position: relative;
+    left: 89%;
+    margin-right: 1rem; }
+    footer nav .progress {
+      display: inline-block;
+      position: relative;
+      bottom: 5px; }
+
+button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  color: white;
+  background: #ce0000;
+  outline: none; }
+  button:hover, button:active {
+    color: #ffa64c; }
+  button.disabled {
+    pointer-events: none;
+    opacity: 0.4; }

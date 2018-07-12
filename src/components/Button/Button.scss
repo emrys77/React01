@@ -1,0 +1,17 @@
+button {
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: none;
+    color: $SAR-white;
+    background: $SAR-burnt-orange;
+    outline: none;
+    
+    &:hover,
+    &:active {
+        color: $SAR-light-orange;
+    }
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.4;
+    }
+}

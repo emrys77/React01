@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "AachenStd Bold";
+  src: url("fonts/AachenStd-Bold.eot");
+  src: url("fonts/AachenStd-Bold.woff") format("woff"), url("fonts/AachenStd-Bold.ttf") format("truetype");
+}
+
+h1 {
+  font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
+}
+/*# sourceMappingURL=typography.css.map */

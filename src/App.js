@@ -1,34 +1,56 @@
 import React, { Component } from 'react';
-import BJBS from './components/GetData';
-import logo from './logo.svg';
-import './App.css';
+
+import './SAR.css';
+import 'font-awesome/css/font-awesome.css';
 import Question from './components/Question';
+
+const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      question: 1
+      data: []
     }
   }
+
+  
+  componentDidMount() {
+//     console.log('componentDidMount fired');
+     let currentComponent = this;
+     
+     fetch(apiUrl)
+       .then(
+         function(response) {
+         if (response.status !== 200) {
+             console.log('Looks like there was a problem. Status Code: ' +
+             response.status);
+             return;
+         }
+ 
+         // Examine the text in the response
+         response.json().then(function(data) {
+            // console.log('json response fired');
+             currentComponent.setState({data:data});
+            //console.log( 'data v1: ' + data);
+         });
+         }
+     )
+     .catch(function(err) {
+         console.log('Fetch Error :-S', err);
+     });
+   }
+  
     render() {
+      return (  
 
-      //console.log('json: ', data, typeof data, Array.isArray(data));
-
-      
-      return (
-        
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <div>
-            
-            <BJBS />
-            <Question number={this.state.question} test="x" data={BJBS} />
+          
+          
 
-          </div>
+            <Question data={this.state.data} />
+
+         
           
         </div>
       );
