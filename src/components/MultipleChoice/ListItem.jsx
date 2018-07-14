@@ -1,14 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 export default class ListItem extends React.Component {
     constructor(props) {
       super(props);
       this.state = { selected: '' }
+      var value = props.item;
+      var liN = props.i;
     }
-
+    // capitalize
+    jsUcfirst = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     render() {
+        var label = this.jsUcfirst(this.props.value);
         return (
-            <li><label className={this.state.selected + "radioBox"} key={this.props.i}><input type="radio" name="Q3" value={this.props.item}  />{this.props.item}</label></li>
+            <li><label className={this.state.selected + " radioBox"} key={this.props.liN}><input type="radio" name="Q3" value={this.props.value}  />{label}</label></li>
         )
     }
 

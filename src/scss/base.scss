@@ -16,8 +16,8 @@
         margin: 0 auto;
         width: 80%;
         max-width: 1000px;
-        height: 664px;
-        max-height: 664px;
+        min-height: 664px;
+        //max-height: 664px;
         
         background: $SAR-white;
         

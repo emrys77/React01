@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27,20 +31,23 @@ var ListItem = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (ListItem.__proto__ || Object.getPrototypeOf(ListItem)).call(this, props));
 
         _this.state = { selected: '' };
+        var value = props.item;
+        var liN = props.i;
         return _this;
     }
 
     _createClass(ListItem, [{
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
                 'li',
                 null,
                 _react2.default.createElement(
                     'label',
-                    { className: this.state.selected + "radioBox", key: this.props.i },
-                    _react2.default.createElement('input', { type: 'radio', name: 'Q3', value: this.props.item }),
-                    this.props.item
+                    { className: this.state.selected + " radioBox", key: this.props.liN },
+                    _react2.default.createElement('input', { type: 'radio', name: 'Q3', value: this.props.value }),
+                    this.props.value
                 )
             );
         }

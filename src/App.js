@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './SAR.css';
 import 'font-awesome/css/font-awesome.css';
-import Question from './components/Question';
+import Question from './components/Question.jsx';
 
 const apiUrl = "http://staging7.emrysmedia.com/wp-json/wp/v2/questions/?per_page=100";
 
