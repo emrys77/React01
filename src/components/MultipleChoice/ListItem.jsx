@@ -8,6 +8,16 @@ export default class ListItem extends React.Component {
       var value = props.item;
       var liN = props.i;
     }
+    handleClick = (item) => {
+        console.log(  item + 'was clicked.');
+        this.setState({
+            selected: item
+        });
+    }
+
+    // <button type="submit" onClick={() => { this.props.removeTaskFunction(todo) }}>Submit</button>
+
+
     // capitalize
     jsUcfirst = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -15,7 +25,7 @@ export default class ListItem extends React.Component {
     render() {
         var label = this.jsUcfirst(this.props.value);
         return (
-            <li><label className={this.state.selected + " radioBox"} key={this.props.liN}><input type="radio" name="Q3" value={this.props.value}  />{label}</label></li>
+            <li onClick={() => { this.handleClick(this.props.value)}}><label className={this.state.selected + " radioBox"} key={this.props.liN}><input type="radio" name="Q3" value={this.props.value}  />{label}</label></li>
         )
     }
 
