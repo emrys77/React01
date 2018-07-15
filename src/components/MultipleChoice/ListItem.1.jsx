@@ -24,7 +24,11 @@ export default class ListItem extends React.Component {
     // <button onClick={(e) => this.showVideo()}>
 
     // onClick={(e) => this.handleDelete(e, i)}
-
+    /*
+    <button className={this.state.disabled + ' ' + direction} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
+        <FontAwesome name={fa} size="2x" />
+      </button>
+      */
 
     // capitalize
     jsUcfirst = (string) => {
@@ -33,18 +37,11 @@ export default class ListItem extends React.Component {
     render() {
         var label = this.jsUcfirst(this.props.value);
         return (
-            <li onClick={(e) => this.props.onChange(e,this.props.i)}><label className={this.state.selected + " radioBox"} key={this.props.i}><input type="radio" name="Q3" value={this.props.value} />{label}</label></li>
+            <li onClick={(e) => { this.handleClick(e,this.props.value)}}><label className={this.state.selected + " radioBox"} key={this.props.liN}><input type="radio" name="Q3" value={this.props.value}  />{label}</label></li>
         )
     }
 
 }
-
-/** 
-onClick={(e) => { this.handleClick(e,this.props.value)}}
-onClick={(e) => this.props.onChange(e,step)}
-
-https://stackoverflow.com/questions/47231559/react-component-function-returning-jsx-causes-error-when-used-in-render-method-o
+// *** https://stackoverflow.com/questions/47231559/react-component-function-returning-jsx-causes-error-when-used-in-render-method-o
 // http://react.tips/radio-buttons-in-reactjs/
 // https://github.com/yannickcr/eslint-plugin-react/issues/578
-
-*/

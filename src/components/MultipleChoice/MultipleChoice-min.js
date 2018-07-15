@@ -41,18 +41,21 @@ var MultipleChoice = function (_React$Component) {
     _createClass(MultipleChoice, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
 
-            var handleClick = function handleClick(e) {
-                console.log(e.target.value);
-
-                // add class
-                // show submit button
-                //this.setState({step: 2})
+            var onChange = function onChange(e, select) {
+                //console.log('Clicked: ' + e.target.value);
+                e.preventDefault();
+                console.log('Clicked: ' + select);
+                _this2.setState({
+                    //selected: item
+                    selected: select
+                });
             };
 
             var itemsList = this.props.options.map(function (item, i) {
                 //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
-                return _react2.default.createElement(_ListItem2.default, { i: i, value: item });
+                return _react2.default.createElement(_ListItem2.default, { i: i, value: item, onChange: onChange });
             });
 
             return _react2.default.createElement(
@@ -65,7 +68,7 @@ var MultipleChoice = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'ol',
-                    { className: 'alpha', onChange: handleClick.bind(this) },
+                    { className: 'alpha' },
                     itemsList
                 )
             );

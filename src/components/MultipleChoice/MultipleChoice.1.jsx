@@ -13,26 +13,23 @@ do we need state? yes so we can re-render on change */
 
     render() {
 
-        var onChange = (e,select) => {
-            //console.log('Clicked: ' + e.target.value);
-            e.preventDefault();
-            console.log('Clicked: ' + select)
-            this.setState({
-                //selected: item
-                selected: select
-            });
-
+        var handleClick = (e) => {
+            console.log('Clicked: ' + e.target.value);
+            
+            // add class
+            // show submit button
+            //this.setState({step: 2})
         }
 
         var itemsList = this.props.options.map(function(item,i){
             //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
-            return <ListItem i={i} value={item} onChange={ onChange }/>
+            return <ListItem i={i} value={item} />
         })
  
         return  (
             <div className="multipleChoice wrapper">
                 <p className="question">{this.props.question}</p>
-                <ol className="alpha">
+                <ol className="alpha" onChange={handleClick.bind(this)}>
                 { itemsList }
                 </ol>
             </div>
@@ -40,6 +37,9 @@ do we need state? yes so we can re-render on change */
     }
 }
 /*
+<button className={this.state.disabled + ' ' + direction} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
+        <FontAwesome name={fa} size="2x" />
+      </button>
 MultipleChoice.propTypes = {
   question: PropTypes.string.isRequired,
   options: PropTypes.array,

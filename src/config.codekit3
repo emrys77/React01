@@ -328,6 +328,16 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/components\/MultipleChoice\/ListItem.1.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/MultipleChoice\/ListItem.1-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
 	"\/components\/MultipleChoice\/ListItem.jsx": {
 		"ft": 64,
 		"ma": 0,
@@ -354,6 +364,16 @@
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/MultipleChoice\/MultipleChoice-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/MultipleChoice\/MultipleChoice.1.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/MultipleChoice\/MultipleChoice.1-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
