@@ -30,7 +30,7 @@ var MultipleChoice = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (MultipleChoice.__proto__ || Object.getPrototypeOf(MultipleChoice)).call(this, props));
 
-        _this.state = { selected: '' };
+        _this.state = { selected: -1 };
         return _this;
     }
 
@@ -52,10 +52,11 @@ var MultipleChoice = function (_React$Component) {
                     selected: select
                 });
             };
+            var selKey = this.state.selected; // hoisted var
 
             var itemsList = this.props.options.map(function (item, i) {
                 //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
-                return _react2.default.createElement(_ListItem2.default, { i: i, value: item, onChange: onChange });
+                return _react2.default.createElement(_ListItem2.default, { i: i, value: item, activeItem: selKey, onChange: onChange });
             });
 
             return _react2.default.createElement(

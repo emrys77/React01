@@ -32,14 +32,18 @@ export default class ListItem extends React.Component {
     }
     render() {
         var label = this.jsUcfirst(this.props.value);
+        
         return (
-            <li onClick={(e) => this.props.onChange(e,this.props.i)}><label className={this.state.selected + " radioBox"} key={this.props.i}><input type="radio" name="Q3" value={this.props.value} />{label}</label></li>
+            <li onClick={(e) => this.props.onChange(e,this.props.i)}><label className={this.props.activeItem === this.props.i ? 'selected radiobox' : 'radiobox'} key={this.props.i}><input type="radio" name="Q3" value={this.props.value} />{label}</label></li>
         )
     }
 
 }
 
 /** 
+ * className={this.props.activeItem === index ? 'selected' : ''}
+ * 
+ * 
 onClick={(e) => { this.handleClick(e,this.props.value)}}
 onClick={(e) => this.props.onChange(e,step)}
 
