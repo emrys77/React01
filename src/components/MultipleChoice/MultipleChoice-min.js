@@ -52,12 +52,15 @@ var MultipleChoice = function (_React$Component) {
                     selected: select
                 });
             };
-            var selKey = this.state.selected; // hoisted var
-
+            /* var selKey = this.state.selected; // hoisted var
+              var itemsList = this.props.options.map(function(item,i){
+                 //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
+                 return <ListItem i={i} value={item} activeItem={ selKey } onChange={ onChange }/>
+             })
+            */
             var itemsList = this.props.options.map(function (item, i) {
-                //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
-                return _react2.default.createElement(_ListItem2.default, { i: i, value: item, activeItem: selKey, onChange: onChange });
-            });
+                return _react2.default.createElement(_ListItem2.default, { i: i, value: item, activeItem: _this2.state.selected, onChange: onChange });
+            }, this);
 
             return _react2.default.createElement(
                 'div',

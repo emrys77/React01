@@ -23,12 +23,16 @@ do we need state? yes so we can re-render on change */
             });
 
         }
-        var selKey = this.state.selected; // hoisted var
+       /* var selKey = this.state.selected; // hoisted var
 
         var itemsList = this.props.options.map(function(item,i){
             //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
             return <ListItem i={i} value={item} activeItem={ selKey } onChange={ onChange }/>
         })
+*/
+        var itemsList = this.props.options.map((item,i) => {
+            return <ListItem i={i} value={item} activeItem={ this.state.selected } onChange={ onChange }/>
+        }, this)
  
         return  (
             <div className="multipleChoice wrapper">
