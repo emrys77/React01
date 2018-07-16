@@ -61,7 +61,16 @@ var MultipleChoice = function (_React$Component) {
             var itemsList = this.props.options.map(function (item, i) {
                 return _react2.default.createElement(_ListItem2.default, { i: i, value: item, activeItem: _this2.state.selected, onChange: onChange });
             }, this);
-
+            /*    
+                 var submitButton = (() => {
+                        (this.state.selected != -1) ?  '<button />' : 'bleh';
+                   }, this)
+                 setInterval(()=>{
+             this.setState({
+               currentTime: (new Date()).toLocaleString()
+             })
+            }, 1000)
+            */
             return _react2.default.createElement(
                 'div',
                 { className: 'multipleChoice wrapper' },
@@ -87,6 +96,12 @@ MultipleChoice.propTypes = {
   options: PropTypes.array,
   correct: PropTypes.string
 }
+have a submit button appear when an item is selected
+submit button component
+onClick test answer
+2 functions to show messages
+and make forward button active
+
 */
 
 

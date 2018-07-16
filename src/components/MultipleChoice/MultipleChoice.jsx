@@ -33,7 +33,17 @@ do we need state? yes so we can re-render on change */
         var itemsList = this.props.options.map((item,i) => {
             return <ListItem i={i} value={item} activeItem={ this.state.selected } onChange={ onChange }/>
         }, this)
- 
+ /*    
+      var submitButton = (() => {
+             (this.state.selected != -1) ?  '<button />' : 'bleh';
+        }, this)
+
+     setInterval(()=>{
+  this.setState({
+    currentTime: (new Date()).toLocaleString()
+  })
+}, 1000)
+ */
         return  (
             <div className="multipleChoice wrapper">
                 <p className="question">{this.props.question}</p>
@@ -50,4 +60,10 @@ MultipleChoice.propTypes = {
   options: PropTypes.array,
   correct: PropTypes.string
 }
+have a submit button appear when an item is selected
+submit button component
+onClick test answer
+2 functions to show messages
+and make forward button active
+
 */
