@@ -32,17 +32,32 @@ do we need state? yes so we can re-render on change */
 */
         var itemsList = this.props.options.map((item,i) => {
             return <ListItem i={i} value={item} activeItem={ this.state.selected } onChange={ onChange }/>
-        }, this)
- /*    
-      var submitButton = (() => {
-             (this.state.selected != -1) ?  '<button />' : 'bleh';
-        }, this)
+        }, this);
 
+
+        var selected = this.state.selected;
+        console.log ('selected: ' + selected );
+        var submitButton = (selected) => {
+            if (selected != -1) {
+                return <span>submit</span>
+            }
+            return <span>no me submit</span>
+        };
+    
+      /*var submitButton = (selected)  => {
+             (selected != -1) ?  return '<button />' : return 'bleh';
+        }, this)
+    */
+
+/*
      setInterval(()=>{
   this.setState({
     currentTime: (new Date()).toLocaleString()
   })
 }, 1000)
+
+                <submitButton state={this.state.selected} />
+
  */
         return  (
             <div className="multipleChoice wrapper">
@@ -50,6 +65,7 @@ do we need state? yes so we can re-render on change */
                 <ol className="alpha">
                 { itemsList }
                 </ol>
+                { submitButton }
             </div>
         );
     }

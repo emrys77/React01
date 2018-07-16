@@ -61,16 +61,39 @@ var MultipleChoice = function (_React$Component) {
             var itemsList = this.props.options.map(function (item, i) {
                 return _react2.default.createElement(_ListItem2.default, { i: i, value: item, activeItem: _this2.state.selected, onChange: onChange });
             }, this);
-            /*    
-                 var submitButton = (() => {
-                        (this.state.selected != -1) ?  '<button />' : 'bleh';
-                   }, this)
-                 setInterval(()=>{
-             this.setState({
-               currentTime: (new Date()).toLocaleString()
-             })
-            }, 1000)
+
+            var selected = this.state.selected;
+            console.log('selected: ' + selected);
+            var submitButton = function submitButton(selected) {
+                if (selected != -1) {
+                    return _react2.default.createElement(
+                        'span',
+                        null,
+                        'submit'
+                    );
+                }
+                return _react2.default.createElement(
+                    'span',
+                    null,
+                    'no me submit'
+                );
+            };
+
+            /*var submitButton = (selected)  => {
+                   (selected != -1) ?  return '<button />' : return 'bleh';
+              }, this)
             */
+
+            /*
+                 setInterval(()=>{
+              this.setState({
+                currentTime: (new Date()).toLocaleString()
+              })
+            }, 1000)
+            
+                            <submitButton state={this.state.selected} />
+            
+             */
             return _react2.default.createElement(
                 'div',
                 { className: 'multipleChoice wrapper' },
@@ -83,7 +106,8 @@ var MultipleChoice = function (_React$Component) {
                     'ol',
                     { className: 'alpha' },
                     itemsList
-                )
+                ),
+                submitButton
             );
         }
     }]);
