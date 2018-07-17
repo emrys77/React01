@@ -59,41 +59,29 @@ var MultipleChoice = function (_React$Component) {
              })
             */
             var itemsList = this.props.options.map(function (item, i) {
-                return _react2.default.createElement(_ListItem2.default, { i: i, value: item, activeItem: _this2.state.selected, onChange: onChange });
+                return _react2.default.createElement(_ListItem2.default, { key: i, value: item, activeItem: _this2.state.selected, onChange: onChange });
             }, this);
 
             var selected = this.state.selected;
+
             console.log('selected: ' + selected);
-            var submitButton = function submitButton(selected) {
+            var submitButton = function submitButton() {
                 if (selected != -1) {
                     return _react2.default.createElement(
                         'span',
                         null,
                         'submit'
                     );
+                    console.log('show submit');
                 }
                 return _react2.default.createElement(
                     'span',
                     null,
                     'no me submit'
                 );
+                console.log('no show submit');
             };
 
-            /*var submitButton = (selected)  => {
-                   (selected != -1) ?  return '<button />' : return 'bleh';
-              }, this)
-            */
-
-            /*
-                 setInterval(()=>{
-              this.setState({
-                currentTime: (new Date()).toLocaleString()
-              })
-            }, 1000)
-            
-                            <submitButton state={this.state.selected} />
-            
-             */
             return _react2.default.createElement(
                 'div',
                 { className: 'multipleChoice wrapper' },
