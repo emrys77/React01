@@ -15,8 +15,8 @@ export default class ListItem extends React.Component {
         e.preventDefault();
         console.log(  item + 'was clicked.');
         this.setState({
-            //selected: item
-            selected: 'selected'
+            selected: item
+            //selected: 'selected'
         });
     }
 
@@ -34,7 +34,7 @@ export default class ListItem extends React.Component {
         var label = this.jsUcfirst(this.props.value);
         
         return (
-            <li onClick={(e) => this.props.onChange(e,this.props.i)}><label className={this.props.activeItem === this.props.i ? 'selected radiobox' : 'radiobox'} key={this.props.i}><input type="radio" name="Q3" value={this.props.value} />{label}</label></li>
+            <li onClick={(e) => this.props.onChange(e,this.props.i)}><label className={this.props.activeItem === this.props.i ? ' radiobox' : 'radiobox'} key={this.props.i}><input type="radio" name="Q3" value={this.props.value} />{label}</label></li>
         )
     }
 

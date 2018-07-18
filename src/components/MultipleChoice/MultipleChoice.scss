@@ -8,9 +8,7 @@ ol.alpha {
       li:before {
         margin-right: 10px;
         content: counter(item, upper-latin);
-        
-        background: $SAR-dark-blue;
-        
+        background: $SAR-dark-blue;     
         padding: 8px;
         color: white;
         width: 1.2em;

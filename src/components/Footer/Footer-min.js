@@ -41,7 +41,7 @@ var Footer = function (_React$Component) {
             var bbState = this.props.step !== 1 ? "disabled" : "active";
             var fbState = this.props.step === this.props.totalSteps ? "disabled" : "active";
 
-            console.log('bbState' + bbState);
+            //console.log('bbState' + bbState)
             return _react2.default.createElement(
                 'footer',
                 { className: this.props.className },

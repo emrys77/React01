@@ -24,7 +24,7 @@ h1 {
     margin: 0 auto;
     width: 80%;
     max-width: 1000px;
-    min-height: 664px;
+    height: 680px;
     background: white;
     /* &.Intro {
             .QContent {
@@ -32,23 +32,17 @@ h1 {
             }
         }*/ }
     .App .content.Survive-Armed-Robbery.Intro.Q1 {
-      background-image: url(/images/title-survive-armed-robbery.jpg);
-      height: 100%; }
+      background-image: url(/images/title-survive-armed-robbery.jpg); }
     .App .content.The-Offender.Intro.Q1 {
-      background: url(/images/title-the-offender.jpg) right top no-repeat;
-      height: 100%; }
+      background: url(/images/title-the-offender.jpg) right top no-repeat; }
     .App .content.New-Crims-new-ways.Intro.Q1 {
-      background: url(/images/title-the-robbery.jpg) right top no-repeat;
-      height: 100%; }
+      background: url(/images/title-the-robbery.jpg) right top no-repeat; }
     .App .content.The-Robbery.Intro.Q1 {
-      background: url(/images/title-the-robbery.jpg) right top no-repeat;
-      height: 100%; }
+      background: url(/images/title-the-robbery.jpg) right top no-repeat; }
     .App .content.Conclusion.Intro.Q1 {
-      background: url(/images/title-conclusion.jpg) right top no-repeat;
-      height: 100%; }
+      background: url(/images/title-conclusion.jpg) right top no-repeat; }
     .App .content.Video {
-      background: url(/images/VideoImg_01.jpg) right top no-repeat;
-      height: 100%; }
+      background: url(/images/VideoImg_01.jpg) right 54px no-repeat; }
     .App .content.bg.Text.Q2, .App .content.bg.Text.Q3 {
       background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
     .App .content .QContent {

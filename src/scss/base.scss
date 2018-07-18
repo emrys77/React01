@@ -16,35 +16,28 @@
         margin: 0 auto;
         width: 80%;
         max-width: 1000px;
-        min-height: 664px;
+        height: 680px;
         //max-height: 664px;
         
         background: $SAR-white;
         
         &.Survive-Armed-Robbery.Intro.Q1 {
             background-image: url(/images/title-survive-armed-robbery.jpg);
-            height: 100%;
         }
         &.The-Offender.Intro.Q1 {
-            background: url(/images/title-the-offender.jpg) right top no-repeat; 
-            height: 100%;
+            background: url(/images/title-the-offender.jpg) right top no-repeat;   
         }
         &.New-Crims-new-ways.Intro.Q1 {
             background: url(/images/title-the-robbery.jpg) right top no-repeat; 
-            height: 100%;
         }
         &.The-Robbery.Intro.Q1 {
             background: url(/images/title-the-robbery.jpg) right top no-repeat; 
-            height: 100%;
         }
         &.Conclusion.Intro.Q1 {
             background: url(/images/title-conclusion.jpg) right top no-repeat; 
-            height: 100%;
         }
         &.Video {
-            background: url(/images/VideoImg_01.jpg) right top no-repeat; 
-            height: 100%;
-            
+            background: url(/images/VideoImg_01.jpg) right 54px no-repeat;     
         }
 
         &.bg.Text.Q2,

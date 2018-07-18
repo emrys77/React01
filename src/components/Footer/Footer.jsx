@@ -9,15 +9,13 @@ export default class Footer extends React.Component {
         var bbState = (this.props.step!==1) ? "disabled" : "active" 
         var fbState = (this.props.step === this.props.totalSteps)  ? "disabled" : "active" 
         
-        console.log('bbState' + bbState)
+        //console.log('bbState' + bbState)
             return (
                 <footer className={this.props.className}>
                     <nav>
-                    
                         <Button bState={bbState} direction="backward" onChange={ this.props.onChange } />
                         <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>
                         <Button bState={fbState} direction="forward" onChange={ this.props.onChange } />
-
                     </nav>
                 </footer>
             )
