@@ -4,7 +4,10 @@ import ListItem from './ListItem.jsx'
 export default class MultipleChoice extends React.Component {
     constructor(props) {
       super(props);
-      this.state = { selected: -1 }
+      this.state = { 
+          emrys: 'emrys',
+          selected: -1 
+        }
     }
 
 /* handleClick: remove class add class add selected , show submit button
@@ -21,13 +24,15 @@ do we need state? yes so we can re-render on change */
 
     render() {
 
-        var onChange = (e,select) => {
+        var onChange = (e,clicked) => {
             //console.log('Clicked: ' + e.target.value);
             e.preventDefault();
-            console.log('Clicked: ' + select)
+            //console.log('Clicked: ' + select)
+            console.log('onChange in MC fired')
+            console.log( clicked + ' was clicked')
+           // console.log('event.target.id: ' + event.target.id)
             this.setState({
-                //selected: item
-                selected: select
+                selected: clicked
             });
 
         }
@@ -40,7 +45,7 @@ do we need state? yes so we can re-render on change */
         })
 */
         var itemsList = this.props.options.map((item,i) => {
-            return <ListItem key={i} value={item} activeItem={ this.state.selected } onChange={ onChange }/>
+            return <ListItem key={i} itemID={i} activeItem={ this.state.selected } value={item} onChange={ onChange }/>
         }, this);
 
 

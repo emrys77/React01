@@ -11,9 +11,12 @@ export default class ListItem extends React.Component {
       // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
     }
+    // ****** this never fires ********* //
     handleClick = (e,item) => {
         e.preventDefault();
-        console.log(  item + 'was clicked.');
+        //console.log(  item + 'was clicked.');
+        
+        console.log('handle click was fired')
         this.setState({
             selected: item
             //selected: 'selected'
@@ -34,13 +37,16 @@ export default class ListItem extends React.Component {
         var label = this.jsUcfirst(this.props.value);
         
         return (
-            <li onClick={(e) => this.props.onChange(e,this.props.i)}><label className={this.props.activeItem === this.props.i ? ' radiobox' : 'radiobox'} key={this.props.i}><input type="radio" name="Q3" value={this.props.value} />{label}</label></li>
+            <li><label className={this.props.activeItem === this.props.itemID ? 'selected radiobox' : 'radiobox'} onClick={(e) => this.props.onChange(e,this.props.itemID)}><input type="radio" name="Q3" value={this.props.value} />{label}</label></li>
         )
     }
 
 }
 
 /** 
+ * 
+ * onClick={() => handler(index)}
+
  * className={this.props.activeItem === index ? 'selected' : ''}
  * 
  * 
