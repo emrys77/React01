@@ -68,7 +68,7 @@ class Question extends Component {
       var myQuestionArray = Object.entries(myQuestion);
 
 //      console.log('myQuestionArray: ');
-//      console.log(myQuestionArray);
+      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
@@ -139,22 +139,25 @@ class Question extends Component {
       if (this.QType==='Multiple Choice') {
         var question_text = myQuestionArray[10][1]['rendered']
         var options = myQuestionArray[16][1]['multiple_choice_question']
+        var incorrect_response = myQuestionArray[16][1]['incorrect_answer_response']
         // create an array for the question options list
         var rOptions = [];
+        // and the answer
+        var theAnswer;
         options.forEach(function(element) {
           rOptions.push(element.choice);
 
           for (let [index, val] of options.entries()) {
-            //console.log('index: ' + index)
-            //console.log('val: ' + val.is_this_the_correct_answer)
             if ( val.is_this_the_correct_answer === true ) {
-              console.log('correct: ' + index)
-              // var a = index 
+              theAnswer = index 
             }
           }
-        });
+        }
+      );
+
+      console.log( 'theAnswer: ' + theAnswer)
         
-        QRender = <MultipleChoice question={question_text} options={rOptions} correct={'a'}  />
+      QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer }  />
 
       }
 

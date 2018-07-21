@@ -14,9 +14,9 @@
         left:50%;
         margin-left: -500px;*/
         margin: 0 auto;
-        width: 80%;
+        /*width: 80%;*/
         max-width: 1000px;
-        height: 680px;
+        height: 665px;
         //max-height: 664px;
         
         background: $SAR-white;
@@ -49,7 +49,7 @@
             display: inline-block;
             vertical-align: top;
             padding: 4%;
-            width: 96%;
+            width: 92%;
         
         }
         &.bg:not(.Video) {

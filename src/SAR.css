@@ -22,9 +22,9 @@ h1 {
         left:50%;
         margin-left: -500px;*/
     margin: 0 auto;
-    width: 80%;
+    /*width: 80%;*/
     max-width: 1000px;
-    height: 680px;
+    height: 665px;
     background: white;
     /* &.Intro {
             .QContent {
@@ -49,7 +49,7 @@ h1 {
       display: inline-block;
       vertical-align: top;
       padding: 4%;
-      width: 96%; }
+      width: 92%; }
     .App .content.bg:not(.Video) .QContent {
       width: 50%; }
     .App .content.Video .QContent {
@@ -72,6 +72,7 @@ header {
 
 ol.alpha {
   list-style: none;
+  margin-top: 2rem;
   padding-left: 0; }
   ol.alpha li {
     counter-increment: item;
@@ -85,7 +86,7 @@ ol.alpha {
     width: 1.2em;
     text-align: center;
     display: inline-block;
-    border-radius: 4px; }
+    border-radius: 5px; }
   ol.alpha input {
     position: absolute;
     left: -10000px; }
@@ -93,9 +94,9 @@ ol.alpha {
     color: white;
     background: #ce0000;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 2%;
     width: 86%;
-    border-radius: 4px; }
+    border-radius: 5px; }
     ol.alpha label.selected {
       background: #002b54; }
     ol.alpha label:hover {
@@ -114,7 +115,7 @@ ol.alpha {
     background: #ce0000;
     padding: 5px 0;
     color: white;
-    border-radius: 4px; }
+    border-radius: 5px; }
     .video button:focus, .video button:active {
       background: #002b54; }
     .video button .fa {
@@ -151,3 +152,9 @@ button {
   button.disabled {
     pointer-events: none;
     opacity: 0.4; }
+  button.submit {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px; }

@@ -15,4 +15,11 @@ button {
         pointer-events: none;
         opacity: 0.4;
     }
+    &.submit {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-top: 1rem;
+        padding: 0.5rem 1.5rem;
+        @include round-corners;
+    }
 }

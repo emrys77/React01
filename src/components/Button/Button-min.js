@@ -25,18 +25,24 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Button = function (_Component) {
   _inherits(Button, _Component);
 
-  function Button(props) {
+  function Button() {
     _classCallCheck(this, Button);
 
-    var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
-
-    _this.state = { disabled: _this.props.bState };
-
-    return _this;
+    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
   }
 
   _createClass(Button, [{
     key: 'render',
+
+    /*constructor(props) {
+      super(props);
+      this.state = { disabled: this.props.bState }
+      
+    }
+    */
+    // stateless
+    // props: direction, active
+
     value: function render() {
       var _this2 = this;
 
@@ -53,7 +59,7 @@ var Button = function (_Component) {
 
       return _react2.default.createElement(
         'button',
-        { className: this.state.disabled + ' ' + direction, direction: direction, onClick: function onClick(e) {
+        { className: this.props.active + ' ' + direction, direction: direction, onClick: function onClick(e) {
             return _this2.props.onChange(e, step);
           } },
         _react2.default.createElement(_reactFontawesome2.default, { name: fa, size: '2x' })

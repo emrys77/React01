@@ -1,5 +1,7 @@
+
 ol.alpha {
     list-style: none;
+    margin-top: 2rem; 
     padding-left: 0;
     li {
         counter-increment: item;
@@ -24,7 +26,7 @@ ol.alpha {
           color: white;
           background: $SAR-burnt-orange;
           display: inline-block;
-          padding: 8px 16px;
+          padding: 8px 2%;
           width: 86%;
           @include round-corners;
           &.selected {

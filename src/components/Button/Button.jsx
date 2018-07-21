@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 
 class Button extends Component {
-  constructor(props) {
+  /*constructor(props) {
     super(props);
     this.state = { disabled: this.props.bState }
     
   }
+*/
+// stateless
+// props: direction, active
 
   render() { 
 
@@ -22,7 +25,7 @@ class Button extends Component {
     }
 
     return  (
-      <button className={this.state.disabled + ' ' + direction} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
+      <button className={this.props.active + ' ' + direction} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
         <FontAwesome name={fa} size="2x" />
       </button>
     );

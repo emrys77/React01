@@ -5,76 +5,72 @@ export default class MultipleChoice extends React.Component {
     constructor(props) {
       super(props);
       this.state = { 
-          emrys: 'emrys',
           selected: -1 
         }
     }
 
-/* handleClick: remove class add class add selected , show submit button
-handle submit: compare answer and show appropriate message 
-do we need state? yes so we can re-render on change */ 
+    // on submit enable forward button regardless if answer is correct
+
     submitButton = (s) => {
-        if (s != -1) {
-            return <span>submit</span>
-            console.log('show submit')
+        if (s !== -1) {
+            return <button className="submit active">Submit</button>
         }
-        return <span>no me submit</span>
-        console.log('no show submit')
+        return <button className="submit disabled">Submit</button>
     };
+
+    
+
+//    Q3: That’s not right. Increased risk of apprehension is the major reason armed robbers avoid banks.
+//      That's right.
+//
+//
+//
+//
+//
+
+
 
     render() {
 
         var onChange = (e,clicked) => {
-            //console.log('Clicked: ' + e.target.value);
             e.preventDefault();
-            //console.log('Clicked: ' + select)
-            console.log('onChange in MC fired')
-            console.log( clicked + ' was clicked')
-           // console.log('event.target.id: ' + event.target.id)
+        //    console.log('onChange in MC fired')
+        //    console.log( clicked + ' was clicked')
             this.setState({
                 selected: clicked
             });
 
         }
-        
-       /* var selKey = this.state.selected; // hoisted var
 
-        var itemsList = this.props.options.map(function(item,i){
-            //return <li><label className="radioBox" key={i}><input type="radio" name="Q3" value={item}  />{item}</label></li>
-            return <ListItem i={i} value={item} activeItem={ selKey } onChange={ onChange }/>
-        })
-*/
         var itemsList = this.props.options.map((item,i) => {
             return <ListItem key={i} itemID={i} activeItem={ this.state.selected } value={item} onChange={ onChange }/>
         }, this);
 
-
         var selected = this.state.selected;
         console.log ('selected: ' + selected );
-        var submitButton = this.submitButton(selected);
+        var submitButton = this.submitButton(selected); 
         
-    
+        // incorrectResponse, theAnswer
+        var message = (props) => {
+            if (this.state.selected == -1) {
+                return null
+            } else if ( this.state.selected == this.props.theAnswer) {
+                return  <text>That's right</text> 
+            } else {
+                return <text>{ this.props.incorrectResponse}</text>
+            }
+        
+        };
+
         return  (
             <div className="multipleChoice wrapper">
                 <p className="question">{this.props.question}</p>
                 <ol className="alpha">
                 { itemsList }
                 </ol>
+                { message( selected ) }
                 { submitButton }
             </div>
         );
     }
 }
-/*
-MultipleChoice.propTypes = {
-  question: PropTypes.string.isRequired,
-  options: PropTypes.array,
-  correct: PropTypes.string
-}
-have a submit button appear when an item is selected
-submit button component
-onClick test answer
-2 functions to show messages
-and make forward button active
-
-*/
