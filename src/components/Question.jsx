@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 import Video from './Video/Video.jsx'
 import Text from './Text/Text.js'
-import Header from './Header/Header.js'
+import InformationBoxes from './InformationBoxes/InformationBoxes.jsx'
+//import Header from './Header/Header.js'
 import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.jsx'
 
@@ -68,7 +69,7 @@ class Question extends Component {
       var myQuestionArray = Object.entries(myQuestion);
 
 //      console.log('myQuestionArray: ');
-//      console.log(myQuestionArray);
+      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
@@ -159,6 +160,14 @@ class Question extends Component {
         
       QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer }  />
 
+      }
+
+      if (this.QType==='Information Boxes') {
+        const intro = myQuestionArray[16][1]['further_information_intro'];
+        const box1 = myQuestionArray[16][1]['further_information_1'];
+        const box2 = myQuestionArray[16][1]['further_information_2'];
+
+        QRender = <InformationBoxes intro={intro} box1={box1} box2={box2} />
       }
 
     } else {
