@@ -68,7 +68,7 @@ class Question extends Component {
       var myQuestionArray = Object.entries(myQuestion);
 
 //      console.log('myQuestionArray: ');
-      console.log(myQuestionArray);
+//      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];

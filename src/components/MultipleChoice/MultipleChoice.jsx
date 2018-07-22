@@ -5,7 +5,8 @@ export default class MultipleChoice extends React.Component {
     constructor(props) {
       super(props);
       this.state = { 
-          selected: -1 
+          selected: -1,
+          messageHidden: true
         }
     }
 
@@ -13,25 +14,19 @@ export default class MultipleChoice extends React.Component {
 
     submitButton = (s) => {
         if (s !== -1) {
-            return <button className="submit active">Submit</button>
+            return <button onClick={this.unHide.bind(this)} className="submit active">Submit</button>
         }
         return <button className="submit disabled">Submit</button>
     };
 
-    
-
-//    Q3: That’s not right. Increased risk of apprehension is the major reason armed robbers avoid banks.
-//      That's right.
-//
-//
-//
-//
-//
-
-
+    unHide () {
+        this.setState({
+          messageHidden: false
+        })
+    }
 
     render() {
-
+        //var message;
         var onChange = (e,clicked) => {
             e.preventDefault();
         //    console.log('onChange in MC fired')
@@ -39,7 +34,7 @@ export default class MultipleChoice extends React.Component {
             this.setState({
                 selected: clicked
             });
-
+            
         }
 
         var itemsList = this.props.options.map((item,i) => {
@@ -51,16 +46,17 @@ export default class MultipleChoice extends React.Component {
         var submitButton = this.submitButton(selected); 
         
         // incorrectResponse, theAnswer
-        var message = (props) => {
+        
+        var Message = () => {
             if (this.state.selected == -1) {
                 return null
             } else if ( this.state.selected == this.props.theAnswer) {
-                return  <text>That's right</text> 
+                return  <p>That's right</p> 
             } else {
-                return <text>{ this.props.incorrectResponse}</text>
+                return <div>{ this.props.incorrectResponse}</div>
             }
-        
         };
+        
 
         return  (
             <div className="multipleChoice wrapper">
@@ -68,7 +64,7 @@ export default class MultipleChoice extends React.Component {
                 <ol className="alpha">
                 { itemsList }
                 </ol>
-                { message( selected ) }
+                {!this.state.messageHidden && <Message />}
                 { submitButton }
             </div>
         );
