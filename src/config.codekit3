@@ -278,6 +278,26 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/components\/InformationBoxes\/InformationBoxes-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/InformationBoxes\/InformationBoxes-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/InformationBoxes\/InformationBoxes.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/InformationBoxes\/InformationBoxes-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
 	"\/components\/LearningCheck\/LearningCheck-min.css": {
 		"aP": 1,
 		"bl": 0,

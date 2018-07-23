@@ -13,6 +13,9 @@ class Question extends Component {
     this.state = { step: 1 }
     this.QType = 'qwe'
   }
+  
+  // utility to strip commas and spaces
+  className = (w) => w.replace(/\s/g,'-').replace(/,/g,''); 
 
   moveQuestion = (e,move) => {
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
@@ -74,7 +77,8 @@ class Question extends Component {
       // work out which section we are in
       var section = myQuestionArray[16][1]['section'];
       // strip the spaces and commas so we can use it as a class name 
-      var sectionClass = section.replace(/\s/g,'-').replace(/,/g,''); 
+      //var sectionClass = section.replace(/\s/g,'-').replace(/,/g,''); 
+      var sectionClass = this.className(section);
       // get how many steps in this section
       var sectionCount = accumulatedTotals[section];
       // and where we are in that section to pass to the footer
@@ -91,6 +95,7 @@ class Question extends Component {
 
       // what kind of question are we? intro/text/video/multiple choice/
       this.QType = myQuestionArray[16][1]['type'];
+      var QTypeClass = this.className(this.QType);
       
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
@@ -105,7 +110,7 @@ class Question extends Component {
             height: '100%'
           }
     } */
-      
+
       // console.log(QType)
       var Header
       if (this.QType !== 'Intro'){
@@ -124,9 +129,6 @@ class Question extends Component {
         var QContent = myQuestionArray[16][1]['content'];
         QRender = <Text content={QContent} />
       }
-/* <div className='video-papa'>
-          <ReactPlayer url={video_url} /> 
-        </div> */
 
       if (this.QType==='Video') {
         var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
@@ -135,8 +137,8 @@ class Question extends Component {
         
         QRender = 
         <Video video_intro_text={video_intro_text} video_url={video_url} />
-        
       }
+
       if (this.QType==='Multiple Choice') {
         var question_text = myQuestionArray[10][1]['rendered']
         var options = myQuestionArray[16][1]['multiple_choice_question']
@@ -162,12 +164,31 @@ class Question extends Component {
 
       }
 
+          /*
+
+information_modal
+:
+Array(2)
+0
+:
+{heading: "‘Soft targets’", information: "<p>Soft targets for armed robbery include:</p>↵<ul…uor stores</li>↵<li>Fast food outlets</li>↵</ul>↵"}
+1
+:
+{heading: "Hard targets", information: "<p>Hard targets for armed robbery include:</p>↵<ul…er large cash-handling organisations.</li>↵</ul>↵"}
+length
+:
+2
+
+pass this data to information boxes; do a loop
+*/
+
       if (this.QType==='Information Boxes') {
         const intro = myQuestionArray[16][1]['further_information_intro'];
-        const box1 = myQuestionArray[16][1]['further_information_1'];
-        const box2 = myQuestionArray[16][1]['further_information_2'];
+        const modals = myQuestionArray[16][1]['information_modal'];
+       // const box1 = myQuestionArray[16][1]['further_information_1'];
+       // const box2 = myQuestionArray[16][1]['further_information_2'];
 
-        QRender = <InformationBoxes intro={intro} box1={box1} box2={box2} />
+        QRender = <InformationBoxes intro={intro} modals={modals} />
       }
 
     } else {
@@ -176,7 +197,7 @@ class Question extends Component {
 
     return  (
     
-      <div className={ bgClass + ' content ' + this.QType + ' Q' + QNumber + ' ' + sectionClass}>
+      <div className={ bgClass + ' content ' + QTypeClass + ' Q' + QNumber + ' ' + sectionClass}>
         {Header}
         <div style={styles}>
           <div className={ "QContent Step" + this.state.step } >

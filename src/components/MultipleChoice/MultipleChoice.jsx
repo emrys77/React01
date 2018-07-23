@@ -19,8 +19,6 @@ export default class MultipleChoice extends React.Component {
         return <button className="submit disabled">Submit</button>
     };
 
-    
-
     unHide = () => {
         this.setState({
           messageHidden: false
@@ -28,7 +26,6 @@ export default class MultipleChoice extends React.Component {
     }
 
     render() {
-        
 
         var onChange = (e,clicked) => {
             e.preventDefault();
@@ -37,8 +34,6 @@ export default class MultipleChoice extends React.Component {
             this.setState({
                 selected: clicked
             });
-            
-            
         }
 
         var itemsList = this.props.options.map((item,i) => {
@@ -47,6 +42,7 @@ export default class MultipleChoice extends React.Component {
 
         var selected = this.state.selected;
         console.log ('selected: ' + selected );
+        
         var submitButton = this.submitButton(selected); 
         
         // incorrectResponse, theAnswer

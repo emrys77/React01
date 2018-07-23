@@ -7,6 +7,9 @@ h1 {
   font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
   color: #ce0000; }
 
+h3 {
+  color: #ce0000; }
+
 .App {
   position: relative;
   width: 100%;
