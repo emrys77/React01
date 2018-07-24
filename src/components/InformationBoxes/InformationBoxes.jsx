@@ -2,19 +2,17 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import InformationModal from './InformationModal.jsx';
 
+const modals = props.modals.map((heading, information, i) => <InformationModal heading={heading} information={information} number={i} key={i} />)
 
-const InformationModals = (boxes) => {
+const InformationModals = (props) => {
     return  (
         <div>
-            {boxes.map((box, i) => <InformationModal obj={box} key={i} />)}
+            <div dangerouslySetInnerHTML={{ __html: props.intro }}></div>
+            <div>{modals}</div>
         </div>
     );
   }
-  
-  InformationModals.propTypes = {
-    content: PropTypes.string.isRequired
-  };
-  
+  //             
   export default InformationModals;
 
   

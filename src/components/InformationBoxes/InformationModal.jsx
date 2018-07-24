@@ -22,7 +22,8 @@ export default class InformationModal extends React.Component {
             <div>
                 <button onClick={this.onOpenModal}>Open modal</button>
                 <Modal open={open} onClose={this.onCloseModal} center>
-                    <h2>Simple centered modal</h2>
+                    <h2>{this.props.heading}</h2>
+                    <div>{this.props.information}</div>
                 </Modal>
             </div>
         );
