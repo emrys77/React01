@@ -1,0 +1,28 @@
+ul {
+    list-style-type: none;
+    margin: 0px auto;
+    li {
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        background-color: $SAR-burnt-orange;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+    &.Soft-targets {
+        background-image: url(/images/BoxButtonIcons_SoftTarget.png);     
+    }
+    &.Hard-targets {
+        background-image: url(/images/BoxButtonIcons_HardTarget.png);     
+    }
+        .modal-button {
+            width: 100%;
+            height: 100%;
+            text-indent: -99999px;
+            border: 1px solid #bbbbbb;
+            background: none;
+        }
+    }   
+    
+}

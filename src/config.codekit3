@@ -129,6 +129,46 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/components\/01 unused\/PopUp\/PopUp.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/PopUp\/PopUp-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/01 unused\/PopUp\/PopUp.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/PopUp\/PopUp.css.map",
+		"oF": 0
+		},
+	"\/components\/01 unused\/PopUp\/PopUp.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/PopUp\/PopUp-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/01 unused\/PopUp\/PopUp.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/PopUp\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/components\/01 unused\/Question.1.js": {
 		"ft": 64,
 		"ma": 0,
@@ -272,9 +312,9 @@
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/components\/Header\/SAR.css",
-		"oF": 0,
+		"oF": 1,
 		"oS": 0,
 		"uL": 1
 		},
@@ -297,6 +337,29 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
+		},
+	"\/components\/InformationBoxes\/InformationModal.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/InformationBoxes\/InformationModal-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/InformationBoxes\/InformationModal.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/components\/InformationBoxes\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/components\/LearningCheck\/LearningCheck-min.css": {
 		"aP": 1,
@@ -464,46 +527,6 @@
 		"oA": 0,
 		"oAP": "\/components\/notepad",
 		"oF": 0
-		},
-	"\/components\/PopUp\/PopUp.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/PopUp\/PopUp-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/PopUp\/PopUp.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/PopUp\/PopUp.css.map",
-		"oF": 0
-		},
-	"\/components\/PopUp\/PopUp.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/PopUp\/PopUp-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/PopUp\/PopUp.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/PopUp\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
 		},
 	"\/components\/Question.css": {
 		"aP": 1,

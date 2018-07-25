@@ -105,6 +105,28 @@ ol.alpha {
     ol.alpha label:hover {
       background: #002b54; }
 
+ul {
+  list-style-type: none;
+  margin: 0px auto; }
+  ul li {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-color: #ce0000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    ul li.Soft-targets {
+      background-image: url(/images/BoxButtonIcons_SoftTarget.png); }
+    ul li.Hard-targets {
+      background-image: url(/images/BoxButtonIcons_HardTarget.png); }
+    ul li .modal-button {
+      width: 100%;
+      height: 100%;
+      text-indent: -99999px;
+      border: 1px solid #bbbbbb;
+      background: none; }
+
 .video {
   width: 50%;
   margin: 0px auto;

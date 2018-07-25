@@ -1,6 +1,10 @@
 import React from 'react'
 import InformationModal from './InformationModal.jsx';
 
+
+// https://www.npmjs.com/package/react-center
+
+
 export default class InformationModals extends React.Component {
     
     render() {
@@ -14,7 +18,7 @@ export default class InformationModals extends React.Component {
         return  (
                 <div>
                     <div dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
-                    <div>{mBoxes}</div>
+                    <ul>{mBoxes}</ul>
                 </div>
             );
 
