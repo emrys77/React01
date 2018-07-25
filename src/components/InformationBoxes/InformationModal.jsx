@@ -14,13 +14,16 @@ export default class InformationModal extends React.Component {
     onCloseModal = () => {
       this.setState({ open: false });
     };
+
     // classNames
+    // utility function to make a neat classname
+    className = (w) => w.replace(/\s/g,'-').replace(/,|’|‘/g,''); 
   
     render() {
         const { open } = this.state;
         // <div dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         return (
-            <div>
+            <div className={this.className(this.props.heading)}>
                 <button onClick={this.onOpenModal}>Open modal</button>
                 <Modal open={open} onClose={this.onCloseModal} center>
                     <h2 dangerouslySetInnerHTML={{ __html: this.props.heading }}></h2>      

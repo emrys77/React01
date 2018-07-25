@@ -164,24 +164,6 @@ class Question extends Component {
 
       }
 
-          /*
-
-information_modal
-:
-Array(2)
-0
-:
-{heading: "‘Soft targets’", information: "<p>Soft targets for armed robbery include:</p>↵<ul…uor stores</li>↵<li>Fast food outlets</li>↵</ul>↵"}
-1
-:
-{heading: "Hard targets", information: "<p>Hard targets for armed robbery include:</p>↵<ul…er large cash-handling organisations.</li>↵</ul>↵"}
-length
-:
-2
-
-pass this data to information boxes; do a loop
-*/
-
       if (this.QType==='Information Boxes') {
         const intro = myQuestionArray[16][1]['further_information_intro'];
         const modals = myQuestionArray[16][1]['information_modal'];
