@@ -185,8 +185,7 @@ pass this data to information boxes; do a loop
       if (this.QType==='Information Boxes') {
         const intro = myQuestionArray[16][1]['further_information_intro'];
         const modals = myQuestionArray[16][1]['information_modal'];
-       // const box1 = myQuestionArray[16][1]['further_information_1'];
-       // const box2 = myQuestionArray[16][1]['further_information_2'];
+        
 
         QRender = <InformationBoxes intro={intro} modals={modals} />
       }

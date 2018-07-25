@@ -18,12 +18,13 @@ export default class InformationModal extends React.Component {
   
     render() {
         const { open } = this.state;
+        // <div dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         return (
             <div>
                 <button onClick={this.onOpenModal}>Open modal</button>
                 <Modal open={open} onClose={this.onCloseModal} center>
-                    <h2>{this.props.heading}</h2>
-                    <div>{this.props.information}</div>
+                    <h2 dangerouslySetInnerHTML={{ __html: this.props.heading }}></h2>      
+                    <div dangerouslySetInnerHTML={{ __html: this.props.information }}></div>
                 </Modal>
             </div>
         );
