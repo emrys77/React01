@@ -96,20 +96,14 @@ class Question extends Component {
       // what kind of question are we? intro/text/video/multiple choice/
       this.QType = myQuestionArray[16][1]['type'];
       var QTypeClass = this.className(this.QType);
+
+      console.log( this.QType )
       
       // get the background image if there is one
       var bg = myQuestionArray[16][1]['image'];
       //var bgClass = 'nobg'
 
       var bgClass = bg ? 'bg' : 'nobg' 
-
-     /* if (bg) {
-           bgClass = 'bg'
-          styles = {
-            background: 'url(' + bg + ') no-repeat right top',
-            height: '100%'
-          }
-    } */
 
       // console.log(QType)
       var Header
@@ -158,7 +152,7 @@ class Question extends Component {
         }
       );
 
-      console.log( 'theAnswer: ' + theAnswer)
+     // console.log( 'theAnswer: ' + theAnswer)
         
       QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer }  />
 
@@ -167,9 +161,13 @@ class Question extends Component {
       if (this.QType==='Information Boxes') {
         const intro = myQuestionArray[16][1]['further_information_intro'];
         const modals = myQuestionArray[16][1]['information_modal'];
-        
-
         QRender = <InformationBoxes intro={intro} modals={modals} />
+      }
+
+      if (this.QType==='Learning Check') {
+        const intro = myQuestionArray[16][1]['further_information_intro'];
+        const modals = myQuestionArray[16][1]['information_modal'];
+        console.log("hey bo");
       }
 
     } else {

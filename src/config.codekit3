@@ -119,12 +119,62 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/components\/01 unused\/ListItem-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/ListItem-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/01 unused\/ListItem.1.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/ListItem.1-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
 	"\/components\/01 unused\/LogData.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
 		"oAP": "\/components\/01 unused\/LogData-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/01 unused\/MultipleChoice-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/MultipleChoice-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/01 unused\/MultipleChoice.1.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/MultipleChoice.1-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/01 unused\/MultipleChoice.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/01 unused\/MultipleChoice-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
