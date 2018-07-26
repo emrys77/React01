@@ -10,53 +10,54 @@ h1 {
 h3 {
   color: #ce0000; }
 
-.App {
-  position: relative;
-  width: 100%;
-  height: 90%;
+body {
   background-image: url(/images/Background_01.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 5%; }
-  .App .content {
+  background-size: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  body .App {
     position: relative;
-    /*top:25%;
-        left:50%;
-        margin-left: -500px;*/
-    margin: 0 auto;
-    /*width: 80%;*/
-    max-width: 1000px;
-    height: 665px;
-    background: white;
-    /* &.Intro {
-            .QContent {
-                padding: 0;
-            }
-        }*/ }
-    .App .content.Survive-Armed-Robbery.Intro.Q1 {
-      background-image: url(/images/title-survive-armed-robbery.jpg); }
-    .App .content.The-Offender.Intro.Q1 {
-      background: url(/images/title-the-offender.jpg) right top no-repeat; }
-    .App .content.New-Crims-new-ways.Intro.Q1 {
-      background: url(/images/title-the-robbery.jpg) right top no-repeat; }
-    .App .content.The-Robbery.Intro.Q1 {
-      background: url(/images/title-the-robbery.jpg) right top no-repeat; }
-    .App .content.Conclusion.Intro.Q1 {
-      background: url(/images/title-conclusion.jpg) right top no-repeat; }
-    .App .content.Video {
-      background: url(/images/VideoImg_01.jpg) right 54px no-repeat; }
-    .App .content.bg.Text.Q2, .App .content.bg.Text.Q3 {
-      background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
-    .App .content .QContent {
-      display: inline-block;
-      vertical-align: top;
-      padding: 4%;
-      width: 92%; }
-    .App .content.bg:not(.Video) .QContent {
-      width: 50%; }
-    .App .content.Video .QContent {
-      padding: 0; }
+    width: 100%;
+    padding-top: 5%; }
+    body .App .content {
+      /*top:25%;
+            left:50%;
+            margin-left: -500px;*/
+      width: 100%;
+      max-width: 1000px;
+      height: 665px;
+      background: white;
+      /* &.Intro {
+                .QContent {
+                    padding: 0;
+                }
+            }*/ }
+      body .App .content.Survive-Armed-Robbery.Intro.Q1 {
+        background-image: url(/images/title-survive-armed-robbery.jpg); }
+      body .App .content.The-Offender.Intro.Q1 {
+        background: url(/images/title-the-offender.jpg) right top no-repeat; }
+      body .App .content.New-Crims-new-ways.Intro.Q1 {
+        background: url(/images/title-the-robbery.jpg) right top no-repeat; }
+      body .App .content.The-Robbery.Intro.Q1 {
+        background: url(/images/title-the-robbery.jpg) right top no-repeat; }
+      body .App .content.Conclusion.Intro.Q1 {
+        background: url(/images/title-conclusion.jpg) right top no-repeat; }
+      body .App .content.Video {
+        background: url(/images/VideoImg_01.jpg) right 54px no-repeat; }
+      body .App .content.bg.Text.Q2, body .App .content.bg.Text.Q3 {
+        background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
+      body .App .content .QContent {
+        display: inline-block;
+        vertical-align: top;
+        padding: 4%;
+        width: 92%; }
+      body .App .content.bg:not(.Video) .QContent {
+        width: 50%; }
+      body .App .content.Video .QContent {
+        padding: 0; }
 
 header {
   font-size: 1.1rem;
