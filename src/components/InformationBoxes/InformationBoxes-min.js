@@ -50,7 +50,7 @@ var InformationModals = function (_React$Component) {
                 _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: this.props.intro } }),
                 _react2.default.createElement(
                     'ul',
-                    null,
+                    { className: 'buttons' },
                     mBoxes
                 )
             );

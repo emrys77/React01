@@ -23,6 +23,7 @@ export default class InformationModal extends React.Component {
         const { open } = this.state;
         return (
             <li className={this.className(this.props.heading)}>
+                <div className={"tick " + this.state.clicked}></div>
                 <button className="modal-button" onClick={this.onOpenModal} dangerouslySetInnerHTML={{ __html: this.props.heading }} />
                 <Modal open={open} onClose={this.onCloseModal} center>
                     <h2 dangerouslySetInnerHTML={{ __html: this.props.heading }}></h2>      

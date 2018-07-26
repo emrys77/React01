@@ -7,8 +7,12 @@
     url("fonts/AachenStd-Bold.ttf") format("truetype"),
 }
 
-h1 {
+@mixin SAR-font {
     font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
     color: $SAR-burnt-orange;
+}
+
+h1 {
+    @include SAR-font;
 }
 h3 {    color: $SAR-burnt-orange;   }

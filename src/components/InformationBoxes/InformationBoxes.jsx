@@ -18,7 +18,7 @@ export default class InformationModals extends React.Component {
         return  (
                 <div>
                     <div dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
-                    <ul>{mBoxes}</ul>
+                    <ul className="buttons">{mBoxes}</ul>
                 </div>
             );
 

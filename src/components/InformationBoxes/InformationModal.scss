@@ -1,28 +1,54 @@
-ul {
+ul.buttons {
     list-style-type: none;
-    margin: 0px auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     li {
-        display: inline-block;
+        position: relative;
         width: 150px;
         height: 150px;
         background-color: $SAR-burnt-orange;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-    
-    &.Soft-targets {
-        background-image: url(/images/BoxButtonIcons_SoftTarget.png);     
-    }
-    &.Hard-targets {
-        background-image: url(/images/BoxButtonIcons_HardTarget.png);     
-    }
+        @include round-corners;
+        margin: 20px;
+        &:hover, &:focus { background-color: $SAR-dark-blue; }
+        &.Soft-targets {
+            background-image: url(/images/BoxButtonIcons_SoftTarget.png);     
+        }
+        &.Hard-targets {
+            background-image: url(/images/BoxButtonIcons_HardTarget.png);     
+        }
+        .tick {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 30px;
+            &.true {
+                background-image: url(/images/tick_white.png);
+                background-position: top right;
+                background-repeat: no-repeat;
+            }
+            
+        }
         .modal-button {
             width: 100%;
             height: 100%;
             text-indent: -99999px;
-            border: 1px solid #bbbbbb;
-            background: none;
+            background: transparent;
         }
     }   
     
+}
+/* flashy selector eh? */
+
+div[class^="styles_modal__"] {
+    padding: 1em 3em;
+    h2 {
+        @include SAR-font;
+    }
 }

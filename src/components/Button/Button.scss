@@ -8,6 +8,7 @@ button {
     outline: none;
     
     &:hover,
+    &:focus,
     &:active {
         color: $SAR-light-orange;
     }
