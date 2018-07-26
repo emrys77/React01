@@ -4,73 +4,80 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .App {
-        position: relative;
-        width: 100%;
-        //height: 90%;
+    
+    #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        padding-top: 5%;
-
-        .content {
-            //position: relative;
-            /*top:25%;
-            left:50%;
-            margin-left: -500px;*/
-            //margin: 0 auto;
+        .App {
+            display: block;
+            position: relative;
+            
             width: 100%;
             max-width: 1000px;
-            height: 665px;
-            //max-height: 664px;
-            
-            background: $SAR-white;
-            
-            &.Survive-Armed-Robbery.Intro.Q1 {
-                background-image: url(/images/title-survive-armed-robbery.jpg);
-            }
-            &.The-Offender.Intro.Q1 {
-                background: url(/images/title-the-offender.jpg) right top no-repeat;   
-            }
-            &.New-Crims-new-ways.Intro.Q1 {
-                background: url(/images/title-the-robbery.jpg) right top no-repeat; 
-            }
-            &.The-Robbery.Intro.Q1 {
-                background: url(/images/title-the-robbery.jpg) right top no-repeat; 
-            }
-            &.Conclusion.Intro.Q1 {
-                background: url(/images/title-conclusion.jpg) right top no-repeat; 
-            }
-            &.Video {
-                background: url(/images/VideoImg_01.jpg) right 54px no-repeat;     
-            }
+            height: 90%;
+            max-height: 665px;
+            padding-top: 5%;
 
-            &.bg.Text.Q2,
-            &.bg.Text.Q3 {
-                background: url(/images/378x572_Image.jpg) right 53px no-repeat white; 
+            .content {
+                //position: relative;
+                /*top:25%;
+                left:50%;
+                margin-left: -500px;*/
+                //margin: 0 auto;
+                width: 100%;
+                max-width: 1000px;
+                height: 665px;
+                //max-height: 664px;
                 
-            }
-            .QContent {
-                display: inline-block;
-                vertical-align: top;
-                padding: 4%;
-                width: 92%;
-            
-            }
-            &.bg:not(.Video) {
-                .QContent {
-                    width: 50%;
+                background: $SAR-white;
+                
+                &.Survive-Armed-Robbery.Intro.Q1 {
+                    background-image: url(/images/title-survive-armed-robbery.jpg);
                 }
-            }   
-        /* &.Intro {
-                .QContent {
-                    padding: 0;
+                &.The-Offender.Intro.Q1 {
+                    background: url(/images/title-the-offender.jpg) right top no-repeat;   
                 }
-            }*/
-            &.Video {
+                &.New-Crims-new-ways.Intro.Q1 {
+                    background: url(/images/title-the-robbery.jpg) right top no-repeat; 
+                }
+                &.The-Robbery.Intro.Q1 {
+                    background: url(/images/title-the-robbery.jpg) right top no-repeat; 
+                }
+                &.Conclusion.Intro.Q1 {
+                    background: url(/images/title-conclusion.jpg) right top no-repeat; 
+                }
+                &.Video {
+                    background: url(/images/VideoImg_01.jpg) right 54px no-repeat;     
+                }
+
+                &.bg.Text.Q2,
+                &.bg.Text.Q3 {
+                    background: url(/images/378x572_Image.jpg) right 53px no-repeat white; 
+                    
+                }
                 .QContent {
-                    padding: 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding: 4%;
+                    width: 92%;
+                
+                }
+                &.bg:not(.Video) {
+                    .QContent {
+                        width: 50%;
+                    }
+                }   
+            /* &.Intro {
+                    .QContent {
+                        padding: 0;
+                    }
+                }*/
+                &.Video {
+                    .QContent {
+                        padding: 0;
+                    }
                 }
             }
         }
