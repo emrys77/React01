@@ -6,6 +6,7 @@ import InformationBoxes from './InformationBoxes/InformationBoxes.jsx'
 //import Header from './Header/Header.js'
 import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.jsx'
+import LearningCheck from './LearningCheck/LearningCheck.jsx'
 
 class Question extends Component {
   constructor(props) {
@@ -165,9 +166,10 @@ class Question extends Component {
       }
 
       if (this.QType==='Learning Check') {
-        const intro = myQuestionArray[16][1]['further_information_intro'];
+        const intro = myQuestionArray[16][1]['learning_check_intro_text'];
         const modals = myQuestionArray[16][1]['information_modal'];
         console.log("hey bo");
+        QRender = <LearningCheck intro={intro} />
       }
 
     } else {
