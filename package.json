@@ -6,6 +6,7 @@
     "ajv": "^6.5.2",
     "font-awesome": "^4.7.0",
     "react": "^16.4.1",
+    "react-beautiful-dnd": "^8.0.5",
     "react-center": "^1.1.1",
     "react-dom": "^16.4.1",
     "react-fontawesome": "^1.6.1",
