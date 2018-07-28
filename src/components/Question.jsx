@@ -12,7 +12,6 @@ class Question extends Component {
   constructor(props) {
     super(props);
     this.state = { step: 1 }
-    this.QType = 'qwe'
   }
   
   // utility to strip commas and spaces
@@ -76,16 +75,16 @@ class Question extends Component {
       console.log(myQuestionArray);
 
       // work out which section we are in
-      var section = myQuestionArray[16][1]['section'];
+      var section = myQuestionArray[17][1]['section'];
       // strip the spaces and commas so we can use it as a class name 
       //var sectionClass = section.replace(/\s/g,'-').replace(/,/g,''); 
       var sectionClass = this.className(section);
       // get how many steps in this section
       var sectionCount = accumulatedTotals[section];
       // and where we are in that section to pass to the footer
-      var QNumber = myQuestionArray[16][1]['question_number'];
+      var QNumber = myQuestionArray[17][1]['question_number'];
       // big fat h1 tag if it exists
-      var title = myQuestionArray[16][1]['title']
+      var title = myQuestionArray[17][1]['title']
       var QTitle
       //console.log('title: ' + title)
       if (title) {
@@ -95,13 +94,14 @@ class Question extends Component {
       }
 
       // what kind of question are we? intro/text/video/multiple choice/
-      this.QType = myQuestionArray[16][1]['type'];
+      this.QType = myQuestionArray[17][1]['type'];
+
       var QTypeClass = this.className(this.QType);
 
       console.log( this.QType )
       
       // get the background image if there is one
-      var bg = myQuestionArray[16][1]['image'];
+      var bg = myQuestionArray[17][1]['image'];
       //var bgClass = 'nobg'
 
       var bgClass = bg ? 'bg' : 'nobg' 
@@ -121,13 +121,13 @@ class Question extends Component {
       }
 
       if ( this.QType === 'Text') {
-        var QContent = myQuestionArray[16][1]['content'];
+        var QContent = myQuestionArray[17][1]['content'];
         QRender = <Text content={QContent} />
       }
 
       if (this.QType==='Video') {
-        var video_intro_text = myQuestionArray[16][1]['video_intro_text'];
-        var vimeo_code = myQuestionArray[16][1]['vimeo_code']
+        var video_intro_text = myQuestionArray[17][1]['video_intro_text'];
+        var vimeo_code = myQuestionArray[17][1]['vimeo_code']
         var video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
         
         QRender = 
@@ -136,8 +136,8 @@ class Question extends Component {
 
       if (this.QType==='Multiple Choice') {
         var question_text = myQuestionArray[10][1]['rendered']
-        var options = myQuestionArray[16][1]['multiple_choice_question']
-        var incorrect_response = myQuestionArray[16][1]['incorrect_answer_response']
+        var options = myQuestionArray[17][1]['multiple_choice_question']
+        var incorrect_response = myQuestionArray[17][1]['incorrect_answer_response']
         // create an array for the question options list
         var rOptions = [];
         // and the answer
@@ -160,16 +160,19 @@ class Question extends Component {
       }
 
       if (this.QType==='Information Boxes') {
-        const intro = myQuestionArray[16][1]['further_information_intro'];
-        const modals = myQuestionArray[16][1]['information_modal'];
+        const intro = myQuestionArray[17][1]['further_information_intro'];
+        const modals = myQuestionArray[17][1]['information_modal'];
         QRender = <InformationBoxes intro={intro} modals={modals} />
       }
 
       if (this.QType==='Learning Check') {
-        const intro = myQuestionArray[16][1]['learning_check_intro_text'];
-        const modals = myQuestionArray[16][1]['information_modal'];
-        console.log("hey bo");
-        QRender = <LearningCheck intro={intro} />
+        const intro = myQuestionArray[17][1]['learning_check_intro_text'];
+        const boxes = myQuestionArray[17][1]['learning_check_drop_boxes']; // array
+        //const box1heading = myQuestionArray[17][1]['box_1_heading'];
+        //const box2heading = myQuestionArray[17][1]['box_2_heading'];
+        // 
+        const learning_check = myQuestionArray[17][1]['learning_check'];
+        QRender = <LearningCheck intro={intro} boxes={boxes} items={learning_check} />
       }
 
     } else {

@@ -1,28 +1,34 @@
 import React, { Component } from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
+import ReactDOM from 'react-dom';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 class LearningCheck extends React.Component {
-  onDragStart = () => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: null,
+            selected: null
+        };
+      }
+    
+    onDragStart = () => {
     /*...*/
-  };
-  onDragUpdate = () => {
+    };
+    onDragUpdate = () => {
     /*...*/
-  };
-  onDragEnd = () => {
+    };
+    onDragEnd = () => {
     // the only one that is required
-  };
+    };
 
-  render() {
-    return (
-      <DragDropContext
-        onDragStart={this.onDragStart}
-        onDragUpdate={this.onDragUpdate}
-        onDragEnd={this.onDragEnd}
-      >
-        <div>Hello world</div>
-      </DragDropContext>
-    );
-  }
+    render() {
+        return (
+            <DragDropContext onDragStart={this.onDragStart} onDragUpdate={this.onDragUpdate} onDragEnd={this.onDragEnd} >
+                <div dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
+
+            </DragDropContext>
+        );
+    }
 }
 
 export default LearningCheck;

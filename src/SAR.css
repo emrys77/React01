@@ -5,7 +5,8 @@
 
 h1 {
   font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
-  color: #ce0000; }
+  color: #ce0000;
+  margin-top: 0; }
 
 h3 {
   color: #ce0000; }
