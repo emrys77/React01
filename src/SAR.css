@@ -3,13 +3,10 @@
   src: url("fonts/AachenStd-Bold.eot");
   src: url("fonts/AachenStd-Bold.woff") format("woff"), url("fonts/AachenStd-Bold.ttf") format("truetype"); }
 
-h1 {
+h1, h2, h3 {
   font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
   color: #ce0000;
   margin-top: 0; }
-
-h3 {
-  color: #ce0000; }
 
 body {
   background-image: url(/images/Background_01.jpg);
@@ -71,8 +68,33 @@ header {
   background: #002b54;
   color: white; }
 
-.container {
-  display: inline-block; }
+.learning-check-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+  .learning-check-container .container {
+    display: inline-block; }
+    .learning-check-container .container h2 {
+      text-align: center;
+      padding: 8px;
+      font-weight: normal;
+      color: white;
+      background: #333333; }
+    .learning-check-container .container .draggableItem {
+      display: inline-block;
+      background: #ce0000;
+      color: white;
+      border-radius: 5px;
+      outline: none;
+      width: 300px;
+      userSelect: 'none';
+      padding: 6px 12px;
+      margin: 0 4px 4px 0; }
+    .learning-check-container .container.finish {
+      height: 200px;
+      width: 300px;
+      border: 1px solid #000;
+      margin: 0 16px 16px 0; }
 
 ol.alpha {
   list-style: none;

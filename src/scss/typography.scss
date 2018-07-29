@@ -12,8 +12,4 @@
     color: $SAR-burnt-orange;
 }
 
-h1 {
-    @include SAR-font;
-    margin-top: 0;
-}
-h3 {    color: $SAR-burnt-orange;   }
+h1, h2, h3 {    @include title; }
