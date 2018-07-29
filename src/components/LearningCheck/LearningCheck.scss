@@ -7,7 +7,7 @@
         h2 {
             text-align: center;
             padding: 8px;
-            font-weight: normal;
+            font-weight: 200;
             color: $SAR-white;
             background: $SAR-dark-gray;
         }
@@ -18,7 +18,7 @@
             color: $SAR-white;
             @include round-corners;
             outline: none;
-            width: 300px;
+            width: 276px;
             userSelect: 'none';
             padding: 6px 12px;
             margin: 0 4px 4px 0;
