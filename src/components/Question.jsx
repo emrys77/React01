@@ -97,8 +97,6 @@ class Question extends Component {
       this.QType = myQuestionArray[17][1]['type'];
 
       var QTypeClass = this.className(this.QType);
-
-      console.log( this.QType )
       
       // get the background image if there is one
       var bg = myQuestionArray[17][1]['image'];

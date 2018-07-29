@@ -32,7 +32,7 @@ class App extends Component {
          response.json().then(function(data) {
             // console.log('json response fired');
              currentComponent.setState({data:data});
-            console.log( 'data v1: ' + data);
+            //console.log( 'data v1: ' + data);
          });
          }
      )
@@ -43,14 +43,11 @@ class App extends Component {
   
     render() {
       return (  
-
         <div className="App">
-
-            <Question data={this.state.data} />
-          
+            <Question data={this.state.data} />    
         </div>
       );
-  }
+    }
 }
 
 export default App;

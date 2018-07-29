@@ -71,14 +71,8 @@ header {
   background: #002b54;
   color: white; }
 
-#first,
-#second {
-  width: 40%; }
-
-#first div,
-#second div {
-  padding: 4px;
-  border: 1px solid #bbbbbb; }
+.container {
+  display: inline-block; }
 
 ol.alpha {
   list-style: none;
@@ -188,8 +182,7 @@ footer {
   height: 2.4rem; }
   footer nav {
     position: absolute;
-    right: 0;
-    margin-right: 1rem; }
+    right: 0; }
     footer nav .progress {
       display: inline-block;
       position: relative;
@@ -202,7 +195,8 @@ button {
   border: none;
   color: white;
   background: #ce0000;
-  outline: none; }
+  outline: none;
+  margin: 0 1rem; }
   button:hover, button:focus, button:active {
     color: #ffa64c; }
   button.disabled {

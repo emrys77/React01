@@ -68,7 +68,7 @@ class App extends Component {
      * source arrays stored in the state.
      */
     id2List = {
-        droppable: 'items',
+        droppable: 'items', // this is the "holding pen"
         droppable2: 'selected'
     };
 
