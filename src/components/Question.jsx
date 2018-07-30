@@ -170,6 +170,60 @@ class Question extends Component {
         //const box2heading = myQuestionArray[17][1]['box_2_heading'];
         // 
         const learning_check = myQuestionArray[17][1]['learning_check'];
+
+        console.log(learning_check);
+/* 1: {group: "1", content: "Pharmacies", order: "0"}*/
+
+console.log('learning_check: ', learning_check, typeof learning_check, Array.isArray(learning_check));
+
+/*
+        var items = learning_check.map(function(i) {
+          return (
+            Element.push({index : i})
+          )
+        });*/
+        var items = learning_check.map(function(el,i) {
+          var o = Object.assign({}, el);
+          o.index = i;
+          return o;
+        })
+
+        console.log(items);
+
+
+/*
+var itemsList = this.props.options.map((item,i) => {
+            return <ListItem key={i} itemID={i} activeItem={ this.state.selected } value={item} onChange={ onChange }/>
+        }, this);
+var task_names = tasks.map(function (task, index, array) {
+ 
+    return task.name; 
+ 
+});
+group content order
+
+console.log(materials.map(material => material.length));
+
+(8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+{
+content : "Service stations"
+group : "1"
+order : "0"
+      }
+
+      
+Array[8]
+0:
+{…}
+content:"Service stations"
+group:"1"
+order:"0"
+*/
+        
+      /*  const items = learning_check.map(i, group, content, order) => {
+            return [index, group,content, order]
+        }*/
+
         QRender = <LearningCheck intro={intro} boxes={boxes} items={learning_check} />
       }
 

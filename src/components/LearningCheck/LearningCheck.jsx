@@ -2,23 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-/*
-our props:
-intro 
-boxes: [group,title]
-items: [group,item,order]
-
-const getItems = (count, offset = 0) =>
-    Array.from({ length: count }, (v, k) => k).map(k => ({
-        id: `item-${k + offset}`,
-        content: `item ${k + offset}`
-    }));
-    
-    */
-
-    //define a few colours
-    const SARBurntOrange = 'rgb(206,0,0)';
-
+//define a few colours
+const SARBurntOrange = 'rgb(206,0,0)';
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
@@ -65,6 +50,8 @@ const getListStyle = isDraggingOver => ({
     background: isDraggingOver ? 'lightblue' : 'lightgrey',
     //padding: grid
 });
+
+
 
 class LearningCheck extends React.Component {
     constructor(props) {
