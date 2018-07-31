@@ -8,14 +8,40 @@ import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.jsx'
 import LearningCheck from './LearningCheck/LearningCheck.jsx'
 
+
+// utility to strip commas and spaces
+const className = (w) => w.replace(/\s/g,'-').replace(/,/g,'');
+
+// utility to add an index to array elements
+
+const addIndex = (a) => {
+  a.map = (el,i) => {
+    var o = Object.assign({}, el);
+    o.index = i;
+    return o;
+  }
+}
+
+
+/*
+const addIndex = function(a) {
+  a.map(function(el,i) {
+    var o = Object.assign({}, el);
+    o.index = i;
+    return o;
+  });
+
+} 
+*/
+
+
 class Question extends Component {
   constructor(props) {
     super(props);
     this.state = { step: 1 }
   }
   
-  // utility to strip commas and spaces
-  className = (w) => w.replace(/\s/g,'-').replace(/,/g,''); 
+  
 
   moveQuestion = (e,move) => {
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
@@ -78,7 +104,7 @@ class Question extends Component {
       var section = myQuestionArray[17][1]['section'];
       // strip the spaces and commas so we can use it as a class name 
       //var sectionClass = section.replace(/\s/g,'-').replace(/,/g,''); 
-      var sectionClass = this.className(section);
+      var sectionClass = className(section);
       // get how many steps in this section
       var sectionCount = accumulatedTotals[section];
       // and where we are in that section to pass to the footer
@@ -96,7 +122,7 @@ class Question extends Component {
       // what kind of question are we? intro/text/video/multiple choice/
       this.QType = myQuestionArray[17][1]['type'];
 
-      var QTypeClass = this.className(this.QType);
+      var QTypeClass = className(this.QType);
       
       // get the background image if there is one
       var bg = myQuestionArray[17][1]['image'];
@@ -176,19 +202,17 @@ class Question extends Component {
 
 console.log('learning_check: ', learning_check, typeof learning_check, Array.isArray(learning_check));
 
-/*
-        var items = learning_check.map(function(i) {
-          return (
-            Element.push({index : i})
-          )
-        });*/
+        //add an index to each element
         var items = learning_check.map(function(el,i) {
           var o = Object.assign({}, el);
-          o.index = i;
+          o.key = i;
           return o;
-        })
+        });
 
-        console.log(items);
+/*         
+        const items = addIndex(learning_check);
+*/
+        console.log('items: ' + items);
 
 
 /*
@@ -224,7 +248,7 @@ order:"0"
             return [index, group,content, order]
         }*/
 
-        QRender = <LearningCheck intro={intro} boxes={boxes} items={learning_check} />
+        QRender = <LearningCheck intro={intro} boxes={boxes} items={items} />
       }
 
     } else {
