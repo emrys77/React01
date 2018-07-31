@@ -20,7 +20,7 @@ const className = (w) => w.replace(/\s/g,'-').replace(/,/g,'');
     o.index = i;
     return o;
   }
-}*/
+}
 
 const addIndex = (a) => {
   console.log('addIndex initiated');
@@ -30,6 +30,13 @@ const addIndex = (a) => {
     o.key = i;
     return o;
   });
+}
+*/
+const addIndex = (a) => {
+  console.log('addIndex initiated')
+  return a.map((el, i) => Object.assign({
+    key: i
+  }, el));
 }
 
 
