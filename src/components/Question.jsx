@@ -14,12 +14,22 @@ const className = (w) => w.replace(/\s/g,'-').replace(/,/g,'');
 
 // utility to add an index to array elements
 
-const addIndex = (a) => {
+/*const addIndex = (a) => {
   a.map = (el,i) => {
     var o = Object.assign({}, el);
     o.index = i;
     return o;
   }
+}*/
+
+const addIndex = (a) => {
+  console.log('addIndex initiated');
+  // Notice the return
+  return a.map((el, i) => { // See how we call map here
+    var o = Object.assign({}, el);
+    o.key = i;
+    return o;
+  });
 }
 
 
@@ -33,7 +43,6 @@ const addIndex = function(a) {
 
 } 
 */
-
 
 class Question extends Component {
   constructor(props) {
@@ -89,10 +98,10 @@ class Question extends Component {
 /*    console.log( accumulatedTotals)
 {Survive Armed Robbery: 3, The Offender: 10, New Crims, new ways: 9, The Robbery: 14, Conclusion: 12}
 */
-    let step = this.state.step;
+    var step = this.state.step;
     
     // get the data for the question we are on
-    let myQuestion = findObjectByKey(myData,'menu_order',step);
+    const myQuestion = findObjectByKey(myData,'menu_order',step);
 
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
@@ -125,7 +134,7 @@ class Question extends Component {
       var QTypeClass = className(this.QType);
       
       // get the background image if there is one
-      var bg = myQuestionArray[17][1]['image'];
+      const bg = myQuestionArray[17][1]['image'];
       //var bgClass = 'nobg'
 
       var bgClass = bg ? 'bg' : 'nobg' 
@@ -145,23 +154,23 @@ class Question extends Component {
       }
 
       if ( this.QType === 'Text') {
-        var QContent = myQuestionArray[17][1]['content'];
+        const QContent = myQuestionArray[17][1]['content'];
         QRender = <Text content={QContent} />
       }
 
       if (this.QType==='Video') {
-        var video_intro_text = myQuestionArray[17][1]['video_intro_text'];
-        var vimeo_code = myQuestionArray[17][1]['vimeo_code']
-        var video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
+        const video_intro_text = myQuestionArray[17][1]['video_intro_text'];
+        const vimeo_code = myQuestionArray[17][1]['vimeo_code']
+        const video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
         
         QRender = 
         <Video video_intro_text={video_intro_text} video_url={video_url} />
       }
 
       if (this.QType==='Multiple Choice') {
-        var question_text = myQuestionArray[10][1]['rendered']
-        var options = myQuestionArray[17][1]['multiple_choice_question']
-        var incorrect_response = myQuestionArray[17][1]['incorrect_answer_response']
+        const question_text = myQuestionArray[10][1]['rendered']
+        const options = myQuestionArray[17][1]['multiple_choice_question']
+        const incorrect_response = myQuestionArray[17][1]['incorrect_answer_response']
         // create an array for the question options list
         var rOptions = [];
         // and the answer
@@ -176,8 +185,6 @@ class Question extends Component {
           }
         }
       );
-
-     // console.log( 'theAnswer: ' + theAnswer)
         
       QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer }  />
 
@@ -192,61 +199,8 @@ class Question extends Component {
       if (this.QType==='Learning Check') {
         const intro = myQuestionArray[17][1]['learning_check_intro_text'];
         const boxes = myQuestionArray[17][1]['learning_check_drop_boxes']; // array
-        //const box1heading = myQuestionArray[17][1]['box_1_heading'];
-        //const box2heading = myQuestionArray[17][1]['box_2_heading'];
-        // 
         const learning_check = myQuestionArray[17][1]['learning_check'];
-
-        console.log(learning_check);
-/* 1: {group: "1", content: "Pharmacies", order: "0"}*/
-
-console.log('learning_check: ', learning_check, typeof learning_check, Array.isArray(learning_check));
-
-        //add an index to each element
-        var items = learning_check.map(function(el,i) {
-          var o = Object.assign({}, el);
-          o.key = i;
-          return o;
-        });
-
-/*         
         const items = addIndex(learning_check);
-*/
-        console.log('items: ' + items);
-
-
-/*
-var itemsList = this.props.options.map((item,i) => {
-            return <ListItem key={i} itemID={i} activeItem={ this.state.selected } value={item} onChange={ onChange }/>
-        }, this);
-var task_names = tasks.map(function (task, index, array) {
- 
-    return task.name; 
- 
-});
-group content order
-
-console.log(materials.map(material => material.length));
-
-(8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-{
-content : "Service stations"
-group : "1"
-order : "0"
-      }
-
-      
-Array[8]
-0:
-{…}
-content:"Service stations"
-group:"1"
-order:"0"
-*/
-        
-      /*  const items = learning_check.map(i, group, content, order) => {
-            return [index, group,content, order]
-        }*/
 
         QRender = <LearningCheck intro={intro} boxes={boxes} items={items} />
       }
