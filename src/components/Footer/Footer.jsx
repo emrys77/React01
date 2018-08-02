@@ -1,6 +1,10 @@
 import React from 'react'
 import Button from '../Button/Button.jsx'
+import ProgressBar from './progess'
 
+//var progress =  Math.round((this.props.step/ this.props.myDataCount) * 100);
+
+//console.log('Progress: ' + progress + '%' )
 export default class Footer extends React.Component {
 // pass 2 props to handle the two buttons: fbState bbState
     
@@ -12,6 +16,9 @@ export default class Footer extends React.Component {
         //console.log('bbState' + bbState)
             return (
                 <footer className={this.props.className}>
+
+                    <ProgressBar step={this.props.step} totalSteps={this.props.totalSteps} />
+
                     <nav>
                         <Button active={bbState} direction="backward" onChange={ this.props.onChange } />
                         <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>

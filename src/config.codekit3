@@ -345,6 +345,26 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/components\/Footer\/progess-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Footer\/progess-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/Footer\/progess.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Footer\/progess-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
 	"\/components\/Header\/Header.js": {
 		"ft": 64,
 		"ma": 0,

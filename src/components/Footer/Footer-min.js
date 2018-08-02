@@ -14,6 +14,10 @@ var _Button = require('../Button/Button.jsx');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _progess = require('./progess');
+
+var _progess2 = _interopRequireDefault(_progess);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22,6 +26,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+//var progress =  Math.round((this.props.step/ this.props.myDataCount) * 100);
+
+//console.log('Progress: ' + progress + '%' )
 var Footer = function (_React$Component) {
     _inherits(Footer, _React$Component);
 
@@ -45,6 +52,7 @@ var Footer = function (_React$Component) {
             return _react2.default.createElement(
                 'footer',
                 { className: this.props.className },
+                _react2.default.createElement(_progess2.default, { step: this.props.step, totalSteps: this.props.totalSteps }),
                 _react2.default.createElement(
                     'nav',
                     null,

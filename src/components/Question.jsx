@@ -91,6 +91,7 @@ class Question extends Component {
 
     // all the data
     const myData = this.props.data;
+    // this is how many steps we have in total
     const myDataCount = myData.length;
 
     //console.log(myData)
