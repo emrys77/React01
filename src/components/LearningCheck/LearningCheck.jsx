@@ -44,7 +44,20 @@ const getListStyle = isDraggingOver => ({
 });
 
 
-
+// 
+/* a little ternary to draw a title (if there is one)
+const Title(props) {
+    if (!props.title) {
+      return null;
+    }
+  
+    return (
+      <div className="warning">
+        Warning!
+      </div>
+    );
+}
+*/
 class LearningCheck extends React.Component {
     constructor(props) {
         super(props);
@@ -154,7 +167,9 @@ class LearningCheck extends React.Component {
                                 className="container finish" 
                                 ref={provided.innerRef}
                                 >
-                               <h2 dangerouslySetInnerHTML={{ __html: this.props.boxes[0]['title']}} />
+                                { (this.props.boxes[0].title) ? <h2 dangerouslySetInnerHTML={{ __html: this.props.boxes[0]['title']}} /> : null }
+
+                               
                                 {this.state.box1.map((item, index) => (
                                     <Draggable
                                         key={item.id}

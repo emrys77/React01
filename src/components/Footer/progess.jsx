@@ -6,7 +6,7 @@ we need two props:
 we have an outer boder with a bg colour
 and a progress meter with a width we calculate from the props
 */
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 
 //var width = Math.round((props.step/props.totalSteps) * 100)
