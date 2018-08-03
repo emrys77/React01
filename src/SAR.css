@@ -151,6 +151,10 @@ ul.buttons {
       background-image: url(/images/BoxButtonIcons_SoftTarget.png); }
     ul.buttons li.Hard-targets {
       background-image: url(/images/BoxButtonIcons_HardTarget.png); }
+    ul.buttons li.Factors-motivating-crime {
+      background-image: url(/images/BoxButtonIcons_Factors.png); }
+    ul.buttons li.Reasons-for-violent-behaviour {
+      background-image: url(/images/BoxButtonIcons_Violent.png); }
     ul.buttons li .tick {
       position: absolute;
       top: 0;

@@ -66,7 +66,10 @@ class LearningCheck extends React.Component {
             box1: [],
             box2: []
         };
-        /*
+        
+        
+        console.log('number of boxes: ' + this.props.boxes.length)
+    /*
         function getRows() {
     const {tableRows} = this.props;
 
