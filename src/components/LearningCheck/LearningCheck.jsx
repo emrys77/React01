@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+LearningCheck.propTypes = {
+    intro: PropTypes.string,
+    boxes: PropTypes.array, // title, group
+    items: PropTypes.array // group, content, order
+};
+/* ok we need some code re factoring:
+a for each to render the droppable boxes
+if it is the first it needs to have all the items and flex order last
+if is the 2nd or third it gets flex order -1 and the target flag
+
+
+a clean function to draw the box give it props
+
+
+*/
+
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
@@ -267,10 +283,6 @@ class LearningCheck extends React.Component {
     }
 }
 
-LearningCheck.propTypes = {
-    intro: PropTypes.string,
-    boxes: PropTypes.array,
-    items: PropTypes.array
-};
+
 
 export default LearningCheck;
