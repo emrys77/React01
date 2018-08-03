@@ -28,6 +28,12 @@ ul.buttons {
         &.Reasons-for-violent-behaviour {
             background-image: url(/images/BoxButtonIcons_Violent.png);
         }
+        &.What-the-victim-experiences {
+            background-image: url(/images/BoxButtonIcons_Victim.png);
+        }
+        &.The-offenders-behaviour {
+            background-image: url(/images/BoxButtonIcons_Offender.png);
+        }
         .tick {
             position: absolute;
             top: 0;

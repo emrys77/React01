@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     .container {
-        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
         h2 {
             text-align: center;
             padding: 8px;
@@ -15,6 +16,8 @@
         .draggableItem {
             display: inline-block;
             background: $SAR-burnt-orange;
+            vertical-align: top;
+
             color: $SAR-white;
             @include round-corners;
             outline: none;

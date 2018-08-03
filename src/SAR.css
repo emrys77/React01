@@ -73,7 +73,8 @@ header {
   flex-wrap: wrap;
   justify-content: flex-start; }
   .learning-check-container .container {
-    display: inline-block; }
+    display: flex;
+    flex-wrap: wrap; }
     .learning-check-container .container h2 {
       text-align: center;
       padding: 8px;
@@ -83,6 +84,7 @@ header {
     .learning-check-container .container .draggableItem {
       display: inline-block;
       background: #ce0000;
+      vertical-align: top;
       color: white;
       border-radius: 5px;
       outline: none;
@@ -155,6 +157,10 @@ ul.buttons {
       background-image: url(/images/BoxButtonIcons_Factors.png); }
     ul.buttons li.Reasons-for-violent-behaviour {
       background-image: url(/images/BoxButtonIcons_Violent.png); }
+    ul.buttons li.What-the-victim-experiences {
+      background-image: url(/images/BoxButtonIcons_Victim.png); }
+    ul.buttons li.The-offenders-behaviour {
+      background-image: url(/images/BoxButtonIcons_Offender.png); }
     ul.buttons li .tick {
       position: absolute;
       top: 0;
