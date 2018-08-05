@@ -431,6 +431,16 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/components\/LearningCheck\/3-lists-example.jsx": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/LearningCheck\/3-lists-example-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
 	"\/components\/LearningCheck\/LearningCheck-min.css": {
 		"aP": 1,
 		"bl": 0,

@@ -119,8 +119,7 @@ class Question extends Component {
 
       // work out which section we are in
       var section = myQuestionArray[17][1]['section'];
-      // strip the spaces and commas so we can use it as a class name 
-      //var sectionClass = section.replace(/\s/g,'-').replace(/,/g,''); 
+      // strip the spaces, commas and backticks so we can use it as a class name 
       var sectionClass = className(section);
       // get how many steps in this section
       var sectionCount = accumulatedTotals[section];

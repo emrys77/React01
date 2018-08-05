@@ -2,19 +2,47 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-LearningCheck.propTypes = {
-    intro: PropTypes.string,
-    boxes: PropTypes.array, // title, group
-    items: PropTypes.array // group, content, order
-};
+
 /* ok we need some code re factoring:
 a for each to render the droppable boxes
 if it is the first it needs to have all the items and flex order last
 if is the 2nd or third it gets flex order -1 and the target flag
 
+LearningCheck.propTypes = {
+    intro: PropTypes.string,
+    boxes: PropTypes.array, // title, group
+    items: PropTypes.array // group, content, order
+};
 
 a clean function to draw the box give it props
-
+export default class Column extends React.Component {
+    render() {
+        return (
+            <Container>
+                <Title>{this.props....}</title>
+                <Droppable droppableId={this.props...}
+                <Draggable
+                    key={item.id}
+                    draggableId={item.id}
+                    index={index}>
+                    {(provided, snapshot) => (
+                        <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            style={getItemStyle(
+                                snapshot.isDragging,
+                                provided.draggableProps.style
+                            )}
+                            className="draggableItem">
+                            {item.content}
+                        </div>
+                    )}
+                </Draggable>
+            </Container>
+        )
+    }
+}
 
 */
 
@@ -174,7 +202,7 @@ class LearningCheck extends React.Component {
         return (
             <div className="learning-check-container">
                 <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
-
+                
                 <DragDropContext onDragEnd={this.onDragEnd}>
 
                     <Droppable droppableId="droppable1">
@@ -283,6 +311,11 @@ class LearningCheck extends React.Component {
     }
 }
 
+LearningCheck.propTypes = {
+    intro: PropTypes.string,
+    boxes: PropTypes.array, // title, group
+    items: PropTypes.array // group, content, order
+};
 
 
 export default LearningCheck;
