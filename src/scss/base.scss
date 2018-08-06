@@ -1,4 +1,10 @@
 
+ @mixin thinQContent {
+     .QContent {
+        width: 50%;
+     }
+}
+
 body {
     background-image: url(/images/Background_01.jpg);
     background-position: center;
@@ -51,24 +57,35 @@ body {
                 &.Video {
                     background: url(/images/VideoImg_01.jpg) right 54px no-repeat;     
                 }
-
-                &.bg.Text.Q2,
-                &.bg.Text.Q3 {
-                    background: url(/images/378x572_Image.jpg) right 53px no-repeat white; 
-                    
-                }
                 .QContent {
                     display: inline-block;
                     vertical-align: top;
                     padding: 4%;
                     width: 92%;
+                   
                 
                 }
-                &.bg:not(.Video) {
-                    .QContent {
-                        width: 50%;
-                    }
-                }   
+                &.Text.Q2 { 
+                    background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+                    @include thinQContent;
+                }
+                
+                &.Text.Q3 {
+                    background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
+                    @include thinQContent;
+                }
+                
+                &.Text.Q6 {
+                    background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
+                    @include thinQContent;
+                }
+                &.Text.Q11 {
+                    background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+                    @include thinQContent;
+                }
+                
+                
+                
             /* &.Intro {
                     .QContent {
                         padding: 0;

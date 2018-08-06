@@ -50,15 +50,27 @@ body {
           background: url(/images/title-conclusion.jpg) right top no-repeat; }
         body #root .App .content.Video {
           background: url(/images/VideoImg_01.jpg) right 54px no-repeat; }
-        body #root .App .content.bg.Text.Q2, body #root .App .content.bg.Text.Q3 {
-          background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
         body #root .App .content .QContent {
           display: inline-block;
           vertical-align: top;
           padding: 4%;
           width: 92%; }
-        body #root .App .content.bg:not(.Video) .QContent {
-          width: 50%; }
+        body #root .App .content.Text.Q2 {
+          background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
+          body #root .App .content.Text.Q2 .QContent {
+            width: 50%; }
+        body #root .App .content.Text.Q3 {
+          background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
+          body #root .App .content.Text.Q3 .QContent {
+            width: 50%; }
+        body #root .App .content.Text.Q6 {
+          background: url(/images/378x572_Trish.jpg) right 53px no-repeat white; }
+          body #root .App .content.Text.Q6 .QContent {
+            width: 50%; }
+        body #root .App .content.Text.Q11 {
+          background: url(/images/378x572_Door.jpg) right 53px no-repeat white; }
+          body #root .App .content.Text.Q11 .QContent {
+            width: 50%; }
         body #root .App .content.Video .QContent {
           padding: 0; }
 
@@ -151,6 +163,16 @@ ul.buttons {
       background-image: url(/images/BoxButtonIcons_SoftTarget.png); }
     ul.buttons li.Hard-targets {
       background-image: url(/images/BoxButtonIcons_HardTarget.png); }
+    ul.buttons li.Factors-motivating-crime {
+      background-image: url(/images/BoxButtonIcons_Factors.png); }
+    ul.buttons li.Reasons-for-violent-behaviour {
+      background-image: url(/images/BoxButtonIcons_Violent.png); }
+    ul.buttons li.The-typical-armed-robber-of-today {
+      background-image: url(/images/BoxButtonIcons_Robber.png); }
+    ul.buttons li.What-the-victim-experiences {
+      background-image: url(/images/BoxButtonIcons_Victim.png); }
+    ul.buttons li.The-offenders-behaviour {
+      background-image: url(/images/BoxButtonIcons_Offender.png); }
     ul.buttons li .tick {
       position: absolute;
       top: 0;
