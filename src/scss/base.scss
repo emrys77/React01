@@ -83,7 +83,10 @@ body {
                     background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
                     @include thinQContent;
                 }
-                
+                &.Text.Q12.Conclusion { 
+                    background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+                    @include thinQContent;
+                }
                 
                 
             /* &.Intro {
