@@ -2,6 +2,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    .draggableItem {
+        display: inline-block;
+        //background: $SAR-burnt-orange;
+        color: $SAR-white;
+        @include round-corners;
+        outline: none;
+        width: 276px;
+        userSelect: 'none';
+        padding: 6px 12px;
+        margin: 0 4px 4px 0;
+    }
     .container {
         display: inline-block;
         h2 {
@@ -12,17 +23,7 @@
             background: $SAR-dark-gray;
         }
 
-        .draggableItem {
-            display: inline-block;
-            background: $SAR-burnt-orange;
-            color: $SAR-white;
-            @include round-corners;
-            outline: none;
-            width: 276px;
-            userSelect: 'none';
-            padding: 6px 12px;
-            margin: 0 4px 4px 0;
-        }
+        
 
         &.finish {
             height: 200px;

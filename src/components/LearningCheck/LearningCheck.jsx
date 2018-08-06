@@ -37,6 +37,12 @@ const move = (source, destination, droppableSource, droppableDestination) => {
 
 const grid = 4
 
+/*
+$SAR-burnt-orange: rgb(206,0,0);
+$SAR-light-orange: rgb(255,166,76);
+$SAR-dark-blue: rgb(0,43,84);
+
+*/
 const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: 'none',
@@ -54,7 +60,7 @@ const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'lightblue' : '#eee',
   padding: grid,
   margin: '3px',
-  width: 250
+  
 })
 
 class LearningCheck extends Component {
@@ -137,17 +143,17 @@ so test for order; create 1 or 3 lists
       {
         droppableId: 'droppable1',
         listId: 'list1',
-        title: 'List A'
+        title:''
       },
       {
         droppableId: 'droppable2',
         listId: 'list2',
-        title: 'List B'
+        title: this.props.boxes[0]['title']
       },
       {
         droppableId: 'droppable3',
         listId: 'list3',
-        title: 'List C'
+        title: this.props.boxes[1]['title']
       },
     ]
     return (
@@ -158,19 +164,19 @@ so test for order; create 1 or 3 lists
           {lists.map((list, listIndex) =>
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
-                <div
+                <div 
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}>
-                  <h4>
-                    {list.title}
-                  </h4>
+                  <h2 dangerouslySetInnerHTML={{ __html: list.title}} />
                   {this.state[list.listId] && this.state[list.listId].map((item, index) => (
                     <Draggable
+                      
                       key={item.key}
                       draggableId={item.key}
                       index={index}>
                       {(provided, snapshot) => (
                         <div
+                          className='draggableItem' 
                           ref={provided.innerRef}
                           { ...provided.draggableProps }
                           { ...provided.dragHandleProps }
@@ -178,9 +184,9 @@ so test for order; create 1 or 3 lists
                             snapshot.isDragging,
                             provided.draggableProps.style
                           )}>
-                          <div style={{ background: item.color }}>
+                          
                             {item.content}
-                          </div>
+                          
                         </div>
                       )}
                     </Draggable>
