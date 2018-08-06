@@ -151,7 +151,8 @@ so test for order; create 1 or 3 lists
       },
     ]
     return (
-      <div style={{ display: 'flex' }}>
+        <div className="learning-check-container">
+        <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         <DragDropContext onDragEnd={this.onDragEnd}>
 
           {lists.map((list, listIndex) =>
