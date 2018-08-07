@@ -60,7 +60,7 @@ const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'lightblue' : '#eee',
   padding: grid,
   margin: '3px',
-  
+  border: '1px solid #010101',
 })
 
 class LearningCheck extends Component {
@@ -71,6 +71,8 @@ class LearningCheck extends Component {
             list2: [],
             list3: []
         };
+
+        console.log(this.props.items.order)
     }   
     
 /* possible:
@@ -79,6 +81,8 @@ class LearningCheck extends Component {
 3. re-order 
 
 so test for order; create 1 or 3 lists
+
+
 */
 
   /**
@@ -143,7 +147,7 @@ so test for order; create 1 or 3 lists
       {
         droppableId: 'droppable1',
         listId: 'list1',
-        title:''
+        title: null
       },
       {
         droppableId: 'droppable2',
@@ -156,18 +160,24 @@ so test for order; create 1 or 3 lists
         title: this.props.boxes[1]['title']
       },
     ]
+    
     return (
         <div className="learning-check-container">
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         <DragDropContext onDragEnd={this.onDragEnd}>
 
           {lists.map((list, listIndex) =>
+           
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
-                <div 
+
+                <div className="container">
+                 { //Check if there is a title
+                  (list.title) ? <h2 dangerouslySetInnerHTML={{ __html: list.title}} /> : null }
+                  <div 
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}>
-                  <h2 dangerouslySetInnerHTML={{ __html: list.title}} />
+                  
                   {this.state[list.listId] && this.state[list.listId].map((item, index) => (
                     <Draggable
                       
@@ -192,6 +202,7 @@ so test for order; create 1 or 3 lists
                     </Draggable>
                   ))}
                   {provided.placeholder}
+                </div>
                 </div>
               )}
             </Droppable>

@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    .intro { width: 100% }
     .draggableItem {
         display: inline-block;
         //background: $SAR-burnt-orange;
