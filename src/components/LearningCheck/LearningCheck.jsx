@@ -72,29 +72,29 @@ class LearningCheck extends Component {
             list3: []
         };
 
-        console.log(this.props.items.order)
+        console.log('number of boxes: ' + this.props.boxes.length)
     }   
-    
-/* possible:
-1. T/F empty boxes and 1 list to drop 
-2. S/H targets with list (same logic)
-3. re-order 
-
-so test for order; create 1 or 3 lists
-
-
-*/
 
   /**
    * A semi-generic way to handle multiple lists. Matches
    * the IDs of the droppable container to the names of the
    * source arrays stored in the state.
    */
+  noDroppables = this.props.boxes.length;
+/*  boxes: title, group 
+  var doubles = numbers.map(function(num) {
+    return num * 2;
+  });
+
   droppableIds = {
     droppable1: 'list1',
     droppable2: 'list2',
     droppable3: 'list3'
   }
+*/
+  droppableIds = this.props.boxes.map(function(index) {
+    return 'droppable' + index + ':' + 'list' + index
+  });
 
   getList = id => this.state[this.droppableIds[id]]
 
@@ -142,8 +142,48 @@ so test for order; create 1 or 3 lists
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
 
+  /*
+renderContent(){
+    const contents = []
+    this.props.myContent.forEach((content)=>{
+      contents.push(
+        (<div key={content.id} style={contentStyles().item}>
+            {content.text}
+          </div>)
+      )
+    })
+    return contents
+} 
+*/
+
+    renderLists(){
+        const dLists = []
+        this.props.boxes.forEach((index,title)=>{
+        dLists.push(
+            ('droppableId:' + 'droppable' + index,
+            'listId:' + 'list' + index,
+            'title:' + title)
+        )
+        })
+        return dLists
+    }
+
   render() {
-    const lists = [
+    
+    /*const lists = this.renderLists();*/
+    const lists = [];
+    lists.push(this.props.boxes.map(function(index,title) {
+        return 'droppableId:' + 'droppable' + index,
+        'listId:' + 'list' + index,
+        'title:' + title
+      }));
+ /*     const lists = this.props.boxes.map(function(index,title) {
+        return 'droppableId:' + 'droppable' + index,
+        'listId:' + 'list' + index,
+        'title:' + title
+      });
+
+  const lists = [
       {
         droppableId: 'droppable1',
         listId: 'list1',
@@ -160,7 +200,7 @@ so test for order; create 1 or 3 lists
         title: this.props.boxes[1]['title']
       },
     ]
-    
+    */
     return (
         <div className="learning-check-container">
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
