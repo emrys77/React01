@@ -93,8 +93,11 @@ class LearningCheck extends Component {
   }
 */
   droppableIds = this.props.boxes.map(function(index) {
-    return 'droppable' + index + ':' + 'list' + index
+    const n = '' + index; //convert to string
+    return (droppable + n + ':' + 'list' + n)
   });
+
+  
 
   getList = id => this.state[this.droppableIds[id]]
 
@@ -169,14 +172,22 @@ renderContent(){
     }
 
   render() {
-    
-    /*const lists = this.renderLists();*/
+
+    console.log('droppableIds: ' + this.droppableIds)
+
+    const lists = this.renderLists();
+    console.log('lists: ' + lists);
+    /*
     const lists = [];
     lists.push(this.props.boxes.map(function(index,title) {
         return 'droppableId:' + 'droppable' + index,
         'listId:' + 'list' + index,
         'title:' + title
       }));
+      console.log(lists);
+
+    */
+
  /*     const lists = this.props.boxes.map(function(index,title) {
         return 'droppableId:' + 'droppable' + index,
         'listId:' + 'list' + index,

@@ -14,7 +14,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//var width = Math.round((props.step/props.totalSteps) * 100)
+//console.log( 'width: ' + Math.round((this.props.step/this.props.totalSteps) * 100) );
 
 /*
  stateless component to show progress in the course
@@ -28,7 +28,7 @@ var ProgressBar = function ProgressBar(props) {
     return _react2.default.createElement(
         'div',
         { className: 'bar-container' },
-        _react2.default.createElement('div', { style: { width: Math.round(props.step / props.totalSteps * 100) } })
+        _react2.default.createElement('div', { style: { width: Math.round(props.step / props.totalSteps * 100) + '%' } })
     );
 };
 
