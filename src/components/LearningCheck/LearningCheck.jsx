@@ -72,6 +72,7 @@ class LearningCheck extends Component {
             list1: [],
             list2: []
         };
+
     }
        
     
@@ -149,15 +150,14 @@ class LearningCheck extends Component {
     {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
 */
     console.log('droppableIds.length ' + droppableIds.length)
-    var lists = [];
-
-    //for (var i = 0; i < arraytosearch.length; i++) {
+    
+    this.lists = [];
     var x = 0;
     for (var key in droppableIds) {
         
         if (droppableIds.hasOwnProperty(key)) {
             console.log(x + ' ' + key + " -> " + droppableIds[key]);
-            lists.push({
+            this.lists.push({
                 droppableId: `droppable${x}`,
                 listId: `list${x}`,
                 title: null  
@@ -165,8 +165,7 @@ class LearningCheck extends Component {
         x++ 
         }
     }
-    console.log('lists: ' + lists); 
-    console.log
+    console.log('lists: ' + this.lists); 
 /*
     this.droppableIds.forEach(function(index) {
         this.lists.push({
@@ -205,30 +204,30 @@ class LearningCheck extends Component {
 
   render() {
 
-  const lists = [
+ /* const lists = [
+      {
+        droppableId: 'droppable0',
+        listId: 'list0',
+        title: null
+      },
       {
         droppableId: 'droppable1',
         listId: 'list1',
-        title: null
+        title: this.props.boxes[0]['title']
       },
       {
         droppableId: 'droppable2',
         listId: 'list2',
-        title: this.props.boxes[0]['title']
-      },
-      {
-        droppableId: 'droppable3',
-        listId: 'list3',
         title: this.props.boxes[1]['title']
       },
     ]
-    
+    */
     return (
         <div className="learning-check-container">
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         <DragDropContext onDragEnd={this.onDragEnd}>
 
-          {lists.map((list, listIndex) =>
+          {this.lists.map((list, listIndex) =>
            
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
