@@ -66,15 +66,15 @@ const getListStyle = isDraggingOver => ({
 class LearningCheck extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            list1: this.props.items, // content, group, key, order
-            list2: [],
-            list3: []
+            list0: this.props.items, // content, group, key, order
+            list1: [],
+            list2: []
         };
-
-        //const droppableIds = this.props.boxes.map((x, i) => ({ [`droppable${i+1}`]: x }));
-
-    }   
+    }
+       
+    
 
   /**
    * A semi-generic way to handle multiple lists. Matches
@@ -82,12 +82,15 @@ class LearningCheck extends Component {
    * source arrays stored in the state.
    */
 /*  boxes: title, group */
-
+/*
   droppableIds = {
     droppable1: 'list1',
     droppable2: 'list2',
     droppable3: 'list3'
   }
+*/
+  
+  
 
  getList = id => this.state[this.droppableIds[id]]
 
@@ -132,6 +135,71 @@ class LearningCheck extends Component {
     }
   }
 
+  componentWillMount() {
+    const droppableIds = {};
+    this.props.boxes.forEach(function(box , index) {
+        const n = '' + index; 
+        droppableIds['droppable'+n] = 'list'+n;
+    });
+    console.log(droppableIds)
+    console.log('droppableIds: ', droppableIds, typeof droppableIds, Array.isArray(droppableIds)); 
+
+    /*
+    returns:
+    {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
+*/
+    console.log('droppableIds.length ' + droppableIds.length)
+    var lists = [];
+
+    //for (var i = 0; i < arraytosearch.length; i++) {
+    var x = 0;
+    for (var key in droppableIds) {
+        
+        if (droppableIds.hasOwnProperty(key)) {
+            console.log(x + ' ' + key + " -> " + droppableIds[key]);
+            lists.push({
+                droppableId: `droppable${x}`,
+                listId: `list${x}`,
+                title: null  
+            });
+        x++ 
+        }
+    }
+    console.log('lists: ' + lists); 
+    console.log
+/*
+    this.droppableIds.forEach(function(index) {
+        this.lists.push({
+            droppableId: `droppable${index}`,
+            listId: `list${index}`,
+            title: null  
+        });
+    });
+    console.log('lists: ' + lists); 
+*/
+    //const lists = boxes.map((x, i) => ({ [`droppable${i+1}`]: x }))
+
+    /*const lists = [
+        {
+          droppableId: 'droppable1',
+          listId: 'list1',
+          title: null
+        },
+        {
+          droppableId: 'droppable2',
+          listId: 'list2',
+          title: this.props.boxes[0]['title']
+        },
+        {
+          droppableId: 'droppable3',
+          listId: 'list3',
+          title: this.props.boxes[1]['title']
+        },
+      ]
+      */
+  }
+  
+  
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
 
