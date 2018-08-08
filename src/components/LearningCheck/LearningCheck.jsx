@@ -110,12 +110,12 @@ class LearningCheck extends Component {
 
       let copiedState = Object.assign({}, this.state)
 
-      if (source.droppableId === 'droppable1') {
+      if (source.droppableId === 'droppable0') {
+        copiedState.list0 = items
+      } else if (source.droppableId === 'droppable1') {
         copiedState.list1 = items
       } else if (source.droppableId === 'droppable2') {
         copiedState.list2 = items
-      } else if (source.droppableId === 'droppable3') {
-        copiedState.list3 = items
       }
 
       this.setState(copiedState)
@@ -129,9 +129,9 @@ class LearningCheck extends Component {
 
       console.warn('result', result)
       this.setState({
-        list1: result.droppable1 ? result.droppable1 : this.state.list1,
-        list2: result.droppable2 ? result.droppable2 : this.state.list2,
-        list3: result.droppable3 ? result.droppable3 : this.state.list3
+        list1: result.droppable0 ? result.droppable0 : this.state.list0,
+        list2: result.droppable1 ? result.droppable1 : this.state.list1,
+        list3: result.droppable2 ? result.droppable2 : this.state.list2
       })
     }
   }
