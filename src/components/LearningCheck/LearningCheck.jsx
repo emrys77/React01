@@ -72,7 +72,8 @@ class LearningCheck extends Component {
             list3: []
         };
 
-        console.log('number of boxes: ' + this.props.boxes.length)
+        //const droppableIds = this.props.boxes.map((x, i) => ({ [`droppable${i+1}`]: x }));
+
     }   
 
   /**
@@ -80,26 +81,15 @@ class LearningCheck extends Component {
    * the IDs of the droppable container to the names of the
    * source arrays stored in the state.
    */
-  noDroppables = this.props.boxes.length;
-/*  boxes: title, group 
-  var doubles = numbers.map(function(num) {
-    return num * 2;
-  });
+/*  boxes: title, group */
 
   droppableIds = {
     droppable1: 'list1',
     droppable2: 'list2',
     droppable3: 'list3'
   }
-*/
-  droppableIds = this.props.boxes.map(function(index) {
-    const n = '' + index; //convert to string
-    return (droppable + n + ':' + 'list' + n)
-  });
 
-  
-
-  getList = id => this.state[this.droppableIds[id]]
+ getList = id => this.state[this.droppableIds[id]]
 
   onDragEnd = result => {
     const { source, destination } = result
@@ -145,54 +135,7 @@ class LearningCheck extends Component {
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
 
-  /*
-renderContent(){
-    const contents = []
-    this.props.myContent.forEach((content)=>{
-      contents.push(
-        (<div key={content.id} style={contentStyles().item}>
-            {content.text}
-          </div>)
-      )
-    })
-    return contents
-} 
-*/
-
-    renderLists(){
-        const dLists = []
-        this.props.boxes.forEach((index,title)=>{
-        dLists.push(
-            ('droppableId:' + 'droppable' + index,
-            'listId:' + 'list' + index,
-            'title:' + title)
-        )
-        })
-        return dLists
-    }
-
   render() {
-
-    console.log('droppableIds: ' + this.droppableIds)
-
-    const lists = this.renderLists();
-    console.log('lists: ' + lists);
-    /*
-    const lists = [];
-    lists.push(this.props.boxes.map(function(index,title) {
-        return 'droppableId:' + 'droppable' + index,
-        'listId:' + 'list' + index,
-        'title:' + title
-      }));
-      console.log(lists);
-
-    */
-
- /*     const lists = this.props.boxes.map(function(index,title) {
-        return 'droppableId:' + 'droppable' + index,
-        'listId:' + 'list' + index,
-        'title:' + title
-      });
 
   const lists = [
       {
@@ -211,7 +154,7 @@ renderContent(){
         title: this.props.boxes[1]['title']
       },
     ]
-    */
+    
     return (
         <div className="learning-check-container">
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
