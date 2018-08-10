@@ -46,18 +46,18 @@ $SAR-dark-blue: rgb(0,43,84);
 const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: 'none',
-  padding: grid * 2,
+  padding: `${grid}px ${grid *2}px`,
   margin: `0 ${grid}px ${grid}px 0`,
 
   // change background colour if dragging
-  background: isDragging ? 'rgb(0,43,84)' : 'rgb(206,0,0)',
+  background: isDragging ? 'rgb(0,43,84)' : null,
 
   // styles we need to apply on draggables
   ...draggableStyle
 })
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'lightblue' : '#eee',
+  background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent',
   padding: grid,
   margin: '3px',
 })
@@ -73,26 +73,21 @@ class LearningCheck extends Component {
         };
 
     }
-       
-    
 
-  /**
+/**
    * A semi-generic way to handle multiple lists. Matches
    * the IDs of the droppable container to the names of the
    * source arrays stored in the state.
    */
 /*  boxes: title, group */
-/*
-  droppableIds = {
-    droppable1: 'list1',
-    droppable2: 'list2',
-    droppable3: 'list3'
-  }
-*/
-  
-  
 
- getList = id => this.state[this.droppableIds[id]]
+droppableIds = {
+    droppable0: 'list0',
+    droppable1: 'list1',
+    droppable2: 'list2'
+  }
+  
+  getList = id => this.state[this.droppableIds[id]]
 
   onDragEnd = result => {
     const { source, destination } = result
@@ -109,12 +104,12 @@ class LearningCheck extends Component {
 
       let copiedState = Object.assign({}, this.state)
 
-      if (source.droppableId === 'droppable1') {
+      if (source.droppableId === 'droppable0') {
+        copiedState.list0 = items
+      } else if (source.droppableId === 'droppable1') {
         copiedState.list1 = items
       } else if (source.droppableId === 'droppable2') {
         copiedState.list2 = items
-      } else if (source.droppableId === 'droppable3') {
-        copiedState.list3 = items
       }
 
       this.setState(copiedState)
@@ -128,9 +123,9 @@ class LearningCheck extends Component {
 
       console.warn('result', result)
       this.setState({
-        list1: result.droppable0 ? result.droppable0 : this.state.list0,
-        list2: result.droppable1 ? result.droppable1 : this.state.list1,
-        list3: result.droppable2 ? result.droppable2 : this.state.list2
+        list0: result.droppable0 ? result.droppable0 : this.state.list0,
+        list1: result.droppable1 ? result.droppable1 : this.state.list1,
+        list2: result.droppable2 ? result.droppable2 : this.state.list2
       })
     }
   }
@@ -191,12 +186,12 @@ class LearningCheck extends Component {
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}>
                   
-                  {this.state[list.listId] && this.state[list.listId].map((item, index) => (
+                  {this.state[list.listId] && this.state[list.listId].map((item, key) => (
                     <Draggable
                       
                       key={item.key}
                       draggableId={item.key}
-                      index={index}>
+                      index={item.key}>
                       {(provided, snapshot) => (
                         <div
                           className='draggableItem' 

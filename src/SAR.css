@@ -54,7 +54,8 @@ body {
           display: inline-block;
           vertical-align: top;
           padding: 4%;
-          width: 92%; }
+          width: 92%;
+          height: 420px; }
         body #root .App .content.Text.Q2 {
           background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
           body #root .App .content.Text.Q2 .QContent {
@@ -91,26 +92,36 @@ header {
 .learning-check-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  height: 100%; }
   .learning-check-container .intro {
     width: 100%; }
   .learning-check-container .draggableItem {
     display: inline-block;
+    background: #002b54;
     color: white;
     border-radius: 5px;
     outline: none;
-    width: 276px;
+    width: 272px;
     userSelect: 'none';
     padding: 6px 12px;
     margin: 0 4px 4px 0; }
   .learning-check-container .container {
-    display: inline-block; }
+    display: inline-block;
+    width: 40%;
+    margin-right: 20px; }
     .learning-check-container .container h2 {
       text-align: center;
       padding: 8px;
       font-weight: 200;
       color: white;
       background: #333333; }
+    .learning-check-container .container.c0 {
+      order: 1;
+      align-self: flex-end;
+      width: 100%; }
+      .learning-check-container .container.c0 .draggableItem {
+        background: #ce0000; }
     .learning-check-container .container:not(.c0) {
       border: 1px solid #000000; }
     .learning-check-container .container.finish {

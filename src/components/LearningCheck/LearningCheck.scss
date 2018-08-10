@@ -2,26 +2,37 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    height: 100%;
     .intro { width: 100% }
     .draggableItem {
         display: inline-block;
-        //background: $SAR-burnt-orange;
+        background: $SAR-dark-blue;
         color: $SAR-white;
         @include round-corners;
         outline: none;
-        width: 276px;
+        width: 272px;
         userSelect: 'none';
         padding: 6px 12px;
         margin: 0 4px 4px 0;
     }
     .container {
         display: inline-block;
+        width: 40%;
+        margin-right: 20px;
         h2 {
             text-align: center;
             padding: 8px;
             font-weight: 200;
             color: $SAR-white;
             background: $SAR-dark-gray;
+        }
+        &.c0 {
+            order: 1;
+            align-self: flex-end;
+            width: 100%;
+            .draggableItem {
+                background: $SAR-burnt-orange;
+            }
         }
         &:not(.c0) {
             border: 1px solid #000000;
