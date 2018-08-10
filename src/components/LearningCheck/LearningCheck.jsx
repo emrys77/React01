@@ -47,10 +47,10 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: 'none',
   padding: grid * 2,
-  margin: `0 0 ${grid}px 0`,
+  margin: `0 ${grid}px ${grid}px 0`,
 
   // change background colour if dragging
-  background: isDragging ? 'lightgreen' : 'lightgrey',
+  background: isDragging ? 'rgb(0,43,84)' : 'rgb(206,0,0)',
 
   // styles we need to apply on draggables
   ...draggableStyle
@@ -60,7 +60,6 @@ const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? 'lightblue' : '#eee',
   padding: grid,
   margin: '3px',
-  border: '1px solid #010101',
 })
 
 class LearningCheck extends Component {
@@ -140,7 +139,7 @@ class LearningCheck extends Component {
     const droppableIds = {};
     this.props.boxes.forEach(function(box , index) {
         const n = '' + index; 
-        droppableIds['droppable'+n] = 'list'+n;
+        droppableIds['droppable'+n] = 'list'+n
     });
     console.log(droppableIds)
     console.log('droppableIds: ', droppableIds, typeof droppableIds, Array.isArray(droppableIds)); 
@@ -166,36 +165,7 @@ class LearningCheck extends Component {
         }
     }
     console.log('lists: ' + this.lists); 
-/*
-    this.droppableIds.forEach(function(index) {
-        this.lists.push({
-            droppableId: `droppable${index}`,
-            listId: `list${index}`,
-            title: null  
-        });
-    });
-    console.log('lists: ' + lists); 
-*/
-    //const lists = boxes.map((x, i) => ({ [`droppable${i+1}`]: x }))
 
-    /*const lists = [
-        {
-          droppableId: 'droppable1',
-          listId: 'list1',
-          title: null
-        },
-        {
-          droppableId: 'droppable2',
-          listId: 'list2',
-          title: this.props.boxes[0]['title']
-        },
-        {
-          droppableId: 'droppable3',
-          listId: 'list3',
-          title: this.props.boxes[1]['title']
-        },
-      ]
-      */
   }
   
   
@@ -204,24 +174,6 @@ class LearningCheck extends Component {
 
   render() {
 
- /* const lists = [
-      {
-        droppableId: 'droppable0',
-        listId: 'list0',
-        title: null
-      },
-      {
-        droppableId: 'droppable1',
-        listId: 'list1',
-        title: this.props.boxes[0]['title']
-      },
-      {
-        droppableId: 'droppable2',
-        listId: 'list2',
-        title: this.props.boxes[1]['title']
-      },
-    ]
-    */
     return (
         <div className="learning-check-container">
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
@@ -232,7 +184,7 @@ class LearningCheck extends Component {
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
 
-                <div className="container">
+                <div className={'container'+' c'+listIndex}>
                  { //Check if there is a title
                   (list.title) ? <h2 dangerouslySetInnerHTML={{ __html: list.title}} /> : null }
                   <div 

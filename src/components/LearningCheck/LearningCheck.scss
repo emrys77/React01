@@ -23,7 +23,9 @@
             color: $SAR-white;
             background: $SAR-dark-gray;
         }
-
+        &:not(.c0) {
+            border: 1px solid #000000;
+        }
         
 
         &.finish {
@@ -32,5 +34,6 @@
             border: 1px solid #000;
             margin: 0 16px 16px 0;
         }
+
     }
 }
