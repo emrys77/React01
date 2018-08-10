@@ -110,12 +110,12 @@ class LearningCheck extends Component {
 
       let copiedState = Object.assign({}, this.state)
 
-      if (source.droppableId === 'droppable0') {
-        copiedState.list0 = items
-      } else if (source.droppableId === 'droppable1') {
+      if (source.droppableId === 'droppable1') {
         copiedState.list1 = items
       } else if (source.droppableId === 'droppable2') {
         copiedState.list2 = items
+      } else if (source.droppableId === 'droppable3') {
+        copiedState.list3 = items
       }
 
       this.setState(copiedState)
