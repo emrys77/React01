@@ -86,19 +86,24 @@ class LearningCheck extends Component {
 
     // pass this an array of lists from the props
     createDroppableIds = (a) => {
+        console.log('createDroppableIds init')
         var droppableIds = {};
         // boxes: array, 3 elements: { group,title }
         a.forEach(function(box,index) {
            // console.log(index + ': title: ' + box.title);
-            var myKey = 'list' + index.toString();
             //console.log('myKey: ' + myKey);
-            droppableIds.myKey = `droppable${index}`;
+            var myKey = index.toString();
+        //    droppableIds.`droppable${index}` = `list${index}`;
+            droppableIds[`droppable${index}`] = `list${index}`;
         });
+        console.log(droppableIds)
         return droppableIds;
+        
     }
  
     // give this a droppable list set it returns list array to render
     createLists = (droppable) => {
+        console.log('createLists init')
         var lists = [];
         var x = 0;
         for (var key in droppable) {
@@ -111,8 +116,9 @@ class LearningCheck extends Component {
                     listId: `list${x}`,
                     title: null  // <------- fix!
                 });
-                x++ 
+                 
             }
+            x++
         }
         return lists;
     }
@@ -160,54 +166,6 @@ class LearningCheck extends Component {
         }
     }
 
-    componentWillMount() {
-        
-        this.showDroppableIds()
-        /*
-        {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
-        */
-
-        var MydroppableIds = {};
-        // boxes: array, 3 elements: { group,title }
-       
-
-        this.props.boxes.forEach(function(box,index) {
-            console.log(index + ': title: ' + box.title);
-            
-            var myKey = 'list' + index.toString();
-            console.log('myKey: ' + myKey);
-            MydroppableIds.myKey = `droppable${index}`;
-            
-
-            // `list${x}`,
-           // MydroppableIds['droppable'+n] = 'list'+n
-           //droppableId: `droppable${x}`
-           // MydroppableIds.push(`droppable${index}` = `list${index}`)
-        //    console.log('droppable+n: ' + `droppable${n}`)
-        //    MydroppableIds[`droppable${i}`] = `list${i}`;
-        });
-        
-    
-/*
-var obj = {key1: "value1", key2: "value2"};
-var pair = {key3: "value3"};
-obj = {...obj, ...pair};
-*/
-
-
-        //console.log('MydroppableIds: ' + MydroppableIds)
-        //console.log('MydroppableIds: ', droppableIds, typeof droppableIds, Array.isArray(droppableIds)); 
-
-        this.getList = id => this.state[this.droppableIds[id]]
-
-    /*
-    returns:
-    {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
-*/
-   // console.log('droppableIds.length ' + droppableIds.length)
-         
-
-    }
   
   
   // Normally you would want to split things out into separate components.
@@ -234,7 +192,7 @@ obj = {...obj, ...pair};
       ]
       */
     var droppableIds = this.createDroppableIds(this.props.boxes);
-   var lists = this.createLists(droppableIds);
+    var lists = this.createLists(droppableIds);
 
     //console.log('droppableIds: ' + droppableIds);
 
