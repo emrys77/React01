@@ -99,14 +99,14 @@ class LearningCheck extends Component {
  
     // give this a droppable list set it returns list array to render
     createLists = (droppable) => {
-        this.lists = [];
+        var lists = [];
         var x = 0;
         for (var key in droppable) {
         
             if (droppable.hasOwnProperty(key)) {
                 console.log(x + ' ' + key + " -> " + droppable[key]);
 
-                this.lists.push({
+                lists.push({
                     droppableId: `droppable${x}`,
                     listId: `list${x}`,
                     title: null  // <------- fix!
@@ -114,6 +114,7 @@ class LearningCheck extends Component {
                 x++ 
             }
         }
+        return lists;
     }
 
     getList = id => this.state[this.droppableIds[id]];
@@ -204,8 +205,7 @@ obj = {...obj, ...pair};
     {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
 */
    // console.log('droppableIds.length ' + droppableIds.length)
-    
-        
+         
 
     }
   
@@ -214,9 +214,27 @@ obj = {...obj, ...pair};
   // But in this example everything is just done in one place for simplicity
 
   render() {
-
+    /*
+    const lists = [
+        {
+          droppableId: 'droppable1',
+          listId: 'list1',
+          title: 'List A'
+        },
+        {
+          droppableId: 'droppable2',
+          listId: 'list2',
+          title: 'List B'
+        },
+        {
+          droppableId: 'droppable3',
+          listId: 'list3',
+          title: 'List C'
+        },
+      ]
+      */
     var droppableIds = this.createDroppableIds(this.props.boxes);
-    var lists = this.createLists(droppableIds);
+   var lists = this.createLists(droppableIds);
 
     //console.log('droppableIds: ' + droppableIds);
 
@@ -225,7 +243,7 @@ obj = {...obj, ...pair};
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         <DragDropContext onDragEnd={this.onDragEnd}>
 
-          {this.lists.map((list, listIndex) =>
+          {lists.map((list, listIndex) =>
            
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
