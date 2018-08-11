@@ -96,20 +96,24 @@ header {
   height: 100%; }
   .learning-check-container .intro {
     width: 100%; }
-  .learning-check-container .draggableItem {
-    display: inline-block;
-    background: #002b54;
-    color: white;
-    border-radius: 5px;
-    outline: none;
-    width: 272px;
-    userSelect: 'none';
-    padding: 6px 12px;
-    margin: 0 4px 4px 0; }
   .learning-check-container .container {
-    display: inline-block;
-    width: 40%;
-    margin-right: 20px; }
+    display: flex;
+    width: 34%;
+    margin-right: 10px; }
+    .learning-check-container .container .dropzone {
+      width: 100%; }
+      .learning-check-container .container .dropzone .draggableItem {
+        display: inline-block;
+        flex-direction: column;
+        background: #002b54;
+        color: white;
+        border-radius: 5px;
+        vertical-align: top;
+        outline: none;
+        width: 272px;
+        userSelect: 'none';
+        padding: 6px 12px;
+        margin: 0 4px 4px 0; }
     .learning-check-container .container h2 {
       text-align: center;
       padding: 8px;

@@ -72,6 +72,7 @@ class LearningCheck extends Component {
             list2: []
         };
 
+        var getList
     }
 
 /**
@@ -81,93 +82,134 @@ class LearningCheck extends Component {
    */
 /*  boxes: title, group */
 
-droppableIds = {
-    droppable0: 'list0',
-    droppable1: 'list1',
-    droppable2: 'list2'
-  }
-  
-  getList = id => this.state[this.droppableIds[id]]
-
-  onDragEnd = result => {
-    const { source, destination } = result
-
-    // dropped outside the list
-    if (!destination) { return }
-
-    if (source.droppableId === destination.droppableId) {
-      const items = reorder(
-        this.getList(source.droppableId),
-        source.index,
-        destination.index
-      )
-
-      let copiedState = Object.assign({}, this.state)
-
-      if (source.droppableId === 'droppable0') {
-        copiedState.list0 = items
-      } else if (source.droppableId === 'droppable1') {
-        copiedState.list1 = items
-      } else if (source.droppableId === 'droppable2') {
-        copiedState.list2 = items
-      }
-
-      this.setState(copiedState)
-    } else {
-      const result = move(
-        this.getList(source.droppableId),
-        this.getList(destination.droppableId),
-        source,
-        destination
-      )
-
-      console.warn('result', result)
-      this.setState({
-        list0: result.droppable0 ? result.droppable0 : this.state.list0,
-        list1: result.droppable1 ? result.droppable1 : this.state.list1,
-        list2: result.droppable2 ? result.droppable2 : this.state.list2
-      })
+/**/
+    droppableIds = {
+        droppable0: 'list0',
+        droppable1: 'list1',
+        droppable2: 'list2'
     }
-  }
 
-  componentWillMount() {
-    const droppableIds = {};
-    this.props.boxes.forEach(function(box , index) {
-        const n = '' + index; 
-        droppableIds['droppable'+n] = 'list'+n
-    });
-    console.log(droppableIds)
-    console.log('droppableIds: ', droppableIds, typeof droppableIds, Array.isArray(droppableIds)); 
+    showDroppableIds() {
+        console.log(this.droppableIds)
+    }
+
+ 
+  
+    getList = id => this.state[this.droppableIds[id]]
+
+    onDragEnd = result => {
+        const { source, destination } = result
+
+        // dropped outside the list
+        if (!destination) { return }
+
+        if (source.droppableId === destination.droppableId) {
+        const items = reorder(
+            this.getList(source.droppableId),
+            source.index,
+            destination.index
+        )
+
+        let copiedState = Object.assign({}, this.state)
+
+        if (source.droppableId === 'droppable0') {
+            copiedState.list0 = items
+        } else if (source.droppableId === 'droppable1') {
+            copiedState.list1 = items
+        } else if (source.droppableId === 'droppable2') {
+            copiedState.list2 = items
+        }
+
+            this.setState(copiedState)
+        } else {
+            const result = move(
+                this.getList(source.droppableId),
+                this.getList(destination.droppableId),
+                source,
+                destination
+            )
+
+            console.warn('result', result)
+            this.setState({
+                list0: result.droppable0 ? result.droppable0 : this.state.list0,
+                list1: result.droppable1 ? result.droppable1 : this.state.list1,
+                list2: result.droppable2 ? result.droppable2 : this.state.list2
+            })
+        }
+    }
+
+    componentWillMount() {
+        
+        this.showDroppableIds()
+        /*
+        {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
+        */
+
+        var MydroppableIds = {};
+        // boxes: array, 3 elements: { group,title }
+       
+
+        this.props.boxes.forEach(function(box,index) {
+            console.log(index + ': title: ' + box.title);
+            
+            var myKey = 'list' + index.toString();
+            console.log('myKey: ' + myKey);
+            MydroppableIds.myKey = `droppable${index}`;
+            
+
+            // `list${x}`,
+           // MydroppableIds['droppable'+n] = 'list'+n
+           //droppableId: `droppable${x}`
+           // MydroppableIds.push(`droppable${index}` = `list${index}`)
+        //    console.log('droppable+n: ' + `droppable${n}`)
+        //    MydroppableIds[`droppable${i}`] = `list${i}`;
+        });
+        
+    
+/*
+var obj = {key1: "value1", key2: "value2"};
+var pair = {key3: "value3"};
+obj = {...obj, ...pair};
+*/
+
+
+        //console.log('MydroppableIds: ' + MydroppableIds)
+        //console.log('MydroppableIds: ', droppableIds, typeof droppableIds, Array.isArray(droppableIds)); 
+
+        this.getList = id => this.state[this.droppableIds[id]]
 
     /*
     returns:
     {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
 */
-    console.log('droppableIds.length ' + droppableIds.length)
+   // console.log('droppableIds.length ' + droppableIds.length)
     
-    this.lists = [];
-    var x = 0;
-    for (var key in droppableIds) {
+        this.lists = [];
+        var x = 0;
+        for (var key in MydroppableIds) {
         
-        if (droppableIds.hasOwnProperty(key)) {
-            console.log(x + ' ' + key + " -> " + droppableIds[key]);
-            this.lists.push({
-                droppableId: `droppable${x}`,
-                listId: `list${x}`,
-                title: null  
-            });
-        x++ 
-        }
-    }
-    console.log('lists: ' + this.lists); 
+            if (MydroppableIds.hasOwnProperty(key)) {
+                console.log(x + ' ' + key + " -> " + MydroppableIds[key]);
 
-  }
+                this.lists.push({
+                    droppableId: `droppable${x}`,
+                    listId: `list${x}`,
+                    title: null  
+                });
+                x++ 
+            }
+        }
+        console.log('lists: ' + this.lists); 
+
+    }
   
   
   // Normally you would want to split things out into separate components.
   // But in this example everything is just done in one place for simplicity
 
   render() {
+
+    //console.log('droppableIds: ' + droppableIds);
 
     return (
         <div className="learning-check-container">
@@ -182,7 +224,7 @@ droppableIds = {
                 <div className={'container'+' c'+listIndex}>
                  { //Check if there is a title
                   (list.title) ? <h2 dangerouslySetInnerHTML={{ __html: list.title}} /> : null }
-                  <div 
+                  <div className='dropzone'
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}>
                   

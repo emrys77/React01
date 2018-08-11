@@ -4,21 +4,27 @@
     justify-content: flex-start;
     height: 100%;
     .intro { width: 100% }
-    .draggableItem {
-        display: inline-block;
-        background: $SAR-dark-blue;
-        color: $SAR-white;
-        @include round-corners;
-        outline: none;
-        width: 272px;
-        userSelect: 'none';
-        padding: 6px 12px;
-        margin: 0 4px 4px 0;
-    }
+    
     .container {
-        display: inline-block;
-        width: 40%;
-        margin-right: 20px;
+        display: flex;
+        width: 34%;
+        margin-right: 10px;
+        .dropzone {
+            width: 100%;
+            .draggableItem {
+                display: inline-block;
+                flex-direction: column;
+                background: $SAR-dark-blue;
+                color: $SAR-white;
+                @include round-corners;
+                vertical-align: top;
+                outline: none;
+                width: 272px;
+                userSelect: 'none';
+                padding: 6px 12px;
+                margin: 0 4px 4px 0;
+            }
+        }
         h2 {
             text-align: center;
             padding: 8px;
