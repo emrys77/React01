@@ -2,14 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-// fake data generator
-const getItems = (count, offset = 0) =>
-  Array.from({ length: count }, (v, k) => k).map(k => ({
-    id: `item-${k + offset}`,
-    content: `Item: ${k + offset}, Random value: ${Math.round(Math.random() * 100)}`,
-    color: Math.random () > 0.66 ? 'pink': Math.random() > 0.5 ? 'lightgreen' : 'beige'
-  }))
-
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list)
@@ -72,7 +64,6 @@ class LearningCheck extends Component {
             list2: []
         };
 
-        var getList
     }
 
 /**
@@ -82,20 +73,50 @@ class LearningCheck extends Component {
    */
 /*  boxes: title, group */
 
-/**/
+/*
     droppableIds = {
         droppable0: 'list0',
         droppable1: 'list1',
         droppable2: 'list2'
     }
-
+*/
     showDroppableIds() {
         console.log(this.droppableIds)
     }
 
+    // pass this an array of lists from the props
+    createDroppableIds = (a) => {
+        var droppableIds = {};
+        // boxes: array, 3 elements: { group,title }
+        a.forEach(function(box,index) {
+           // console.log(index + ': title: ' + box.title);
+            var myKey = 'list' + index.toString();
+            //console.log('myKey: ' + myKey);
+            droppableIds.myKey = `droppable${index}`;
+        });
+        return droppableIds;
+    }
  
-  
-    getList = id => this.state[this.droppableIds[id]]
+    // give this a droppable list set it returns list array to render
+    createLists = (droppable) => {
+        this.lists = [];
+        var x = 0;
+        for (var key in droppable) {
+        
+            if (droppable.hasOwnProperty(key)) {
+                console.log(x + ' ' + key + " -> " + droppable[key]);
+
+                this.lists.push({
+                    droppableId: `droppable${x}`,
+                    listId: `list${x}`,
+                    title: null  // <------- fix!
+                });
+                x++ 
+            }
+        }
+    }
+
+    getList = id => this.state[this.droppableIds[id]];
 
     onDragEnd = result => {
         const { source, destination } = result
@@ -184,22 +205,7 @@ obj = {...obj, ...pair};
 */
    // console.log('droppableIds.length ' + droppableIds.length)
     
-        this.lists = [];
-        var x = 0;
-        for (var key in MydroppableIds) {
         
-            if (MydroppableIds.hasOwnProperty(key)) {
-                console.log(x + ' ' + key + " -> " + MydroppableIds[key]);
-
-                this.lists.push({
-                    droppableId: `droppable${x}`,
-                    listId: `list${x}`,
-                    title: null  
-                });
-                x++ 
-            }
-        }
-        console.log('lists: ' + this.lists); 
 
     }
   
@@ -208,6 +214,9 @@ obj = {...obj, ...pair};
   // But in this example everything is just done in one place for simplicity
 
   render() {
+
+    var droppableIds = this.createDroppableIds(this.props.boxes);
+    var lists = this.createLists(droppableIds);
 
     //console.log('droppableIds: ' + droppableIds);
 
