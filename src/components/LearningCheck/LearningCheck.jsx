@@ -215,12 +215,13 @@ class LearningCheck extends Component {
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}>
                   
-                  {this.state[list.listId] && this.state[list.listId].map((item, key) => (
+                  {this.state[list.listId] && this.state[list.listId].map((item, i) => (
+                    
                     <Draggable
                       
-                      key={item.key}
-                      draggableId={item.key}
-                      index={item.key}>
+                      key={i}
+                      draggableId={i}
+                      index={i}>
                       {(provided, snapshot) => (
                         <div
                           className='draggableItem' 
@@ -231,7 +232,7 @@ class LearningCheck extends Component {
                             snapshot.isDragging,
                             provided.draggableProps.style
                           )}>
-                          
+                         
                             {item.content}
                           
                         </div>
