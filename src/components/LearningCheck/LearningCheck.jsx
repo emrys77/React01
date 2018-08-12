@@ -79,7 +79,10 @@ class LearningCheck extends Component {
         droppable1: 'list1',
         droppable2: 'list2'
     }
-*/
+{droppable0: "list0", droppable1: "list1", droppable2: "list2"}
+
+
+    */
     showDroppableIds() {
         console.log(this.droppableIds)
     }
@@ -91,9 +94,6 @@ class LearningCheck extends Component {
         // boxes: array, 3 elements: { group,title }
         a.forEach(function(box,index) {
            // console.log(index + ': title: ' + box.title);
-            //console.log('myKey: ' + myKey);
-            var myKey = index.toString();
-        //    droppableIds.`droppable${index}` = `list${index}`;
             droppableIds[`droppable${index}`] = `list${index}`;
         });
         console.log(droppableIds)
@@ -124,6 +124,8 @@ class LearningCheck extends Component {
     }
 
     getList = id => this.state[this.droppableIds[id]];
+
+   // getList = id => this.state.list+id;
 
     onDragEnd = result => {
         const { source, destination } = result
