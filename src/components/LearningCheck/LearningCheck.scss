@@ -75,6 +75,14 @@
 }
 // this one is a re-order: only 1 list
 .QContent {
+    &.Step13 {
+        .c0 {
+            height: 180px;
+        }
+    }
+}
+
+.QContent {
     &.Step36 {
         .learning-check-container {
             height: auto;
