@@ -235,6 +235,8 @@ class LearningCheck extends Component {
               {(provided, snapshot) => (
 
                 <div className={'container'+' c'+listIndex}>
+
+                <p>list title: {list.title}</p>
                  { //Check if there is a title
                   (list.title) ? <h2 dangerouslySetInnerHTML={{ __html: list.title}} /> : null }
                   <div className='dropzone'
@@ -244,7 +246,6 @@ class LearningCheck extends Component {
                   {this.state[list.listId] && this.state[list.listId].map((item, i) => (
                     
                     <Draggable
-                    
                       key={item.id}
                       draggableId={item.id}
                       index={i}>

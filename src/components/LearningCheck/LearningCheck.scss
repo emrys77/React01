@@ -54,3 +54,17 @@
 
     }
 }
+// this one is a re-order: only 1 list
+.QContent {
+    &.Step36 {
+        .c0 {
+            order: 0;
+            width: 60%;
+            .draggableItem {
+                display: block;
+                width: auto;
+            }
+        }
+
+    }
+}
