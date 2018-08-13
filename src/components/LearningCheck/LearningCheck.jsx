@@ -10,6 +10,14 @@ const reorder = (list, startIndex, endIndex) => {
   return result
 }
 
+// function to add an index to make the drag'n'drop work
+const addIndex = (a) => {
+    console.log('addIndex initiated')
+    return a.map((el, i) => Object.assign({
+      id: i
+    }, el));
+}
+
 /**
  * Moves an item from one list to another list.
  */
@@ -54,12 +62,50 @@ const getListStyle = isDraggingOver => ({
   margin: '3px',
 })
 
+// pass this an array of lists from the props
+const createDroppableIds = (a) => {
+    console.log('createDroppableIds init')
+    var droppableIds = {};
+    // boxes: array, 3 elements: { group,title }
+    a.forEach(function(box,index) {
+       // console.log(index + ': title: ' + box.title);
+        droppableIds[`droppable${index}`] = `list${index}`;
+    });
+    console.log(droppableIds)
+    return droppableIds;
+    
+}
+
+// give this a droppable list set it returns list array to render
+const createLists = (droppable) => {
+    console.log('createLists init')
+    var lists = [];
+    var x = 0;
+    for (var key in droppable) {
+    
+        if (droppable.hasOwnProperty(key)) {
+            console.log(x + ' ' + key + " -> " + droppable[key]);
+
+            lists.push({
+                droppableId: `droppable${x}`,
+                listId: `list${x}`,
+                title: null  // <------- fix!
+            });
+             
+        }
+        x++
+    }
+    return lists;
+}
+
 class LearningCheck extends Component {
     constructor(props) {
         super(props);
 
+        const elements = addIndex(this.props.items);
+
         this.state = {
-            list0: this.props.items, // content, group, key, order
+            list0: elements, // content, group, key, order
             list1: [],
             list2: []
         };
@@ -87,45 +133,10 @@ class LearningCheck extends Component {
         console.log(this.droppableIds)
     }
 
-    // pass this an array of lists from the props
-    createDroppableIds = (a) => {
-        console.log('createDroppableIds init')
-        var droppableIds = {};
-        // boxes: array, 3 elements: { group,title }
-        a.forEach(function(box,index) {
-           // console.log(index + ': title: ' + box.title);
-            droppableIds[`droppable${index}`] = `list${index}`;
-        });
-        console.log(droppableIds)
-        return droppableIds;
-        
-    }
- 
-    // give this a droppable list set it returns list array to render
-    createLists = (droppable) => {
-        console.log('createLists init')
-        var lists = [];
-        var x = 0;
-        for (var key in droppable) {
-        
-            if (droppable.hasOwnProperty(key)) {
-                console.log(x + ' ' + key + " -> " + droppable[key]);
-
-                lists.push({
-                    droppableId: `droppable${x}`,
-                    listId: `list${x}`,
-                    title: null  // <------- fix!
-                });
-                 
-            }
-            x++
-        }
-        return lists;
-    }
+    droppableIds = createDroppableIds(this.props.boxes);
+    lists = createLists(this.droppableIds);
 
     getList = id => this.state[this.droppableIds[id]];
-
-   // getList = id => this.state.list+id;
 
     onDragEnd = result => {
         const { source, destination } = result
@@ -174,6 +185,7 @@ class LearningCheck extends Component {
   // But in this example everything is just done in one place for simplicity
 
   render() {
+      
     /*
     const lists = [
         {
@@ -192,18 +204,32 @@ class LearningCheck extends Component {
           title: 'List C'
         },
       ]
-      */
-    var droppableIds = this.createDroppableIds(this.props.boxes);
-    var lists = this.createLists(droppableIds);
+      [
+          0: {droppableId: "droppable0", listId: "list0", title: null}
+          1: {droppableId: "droppable1", listId: "list1", title: null}
+          2: {droppableId: "droppable2", listId: "list2", title: null}
+      ]
 
-    //console.log('droppableIds: ' + droppableIds);
+      droppableIds = {
+        droppable0: 'list0',
+        droppable1: 'list1',
+        droppable2: 'list2'
+    }
+      {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
+
+
+      key={item.id}
+                    draggableId={item.id}
+                    index={i}>
+      */
+    
 
     return (
         <div className="learning-check-container">
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         <DragDropContext onDragEnd={this.onDragEnd}>
 
-          {lists.map((list, listIndex) =>
+          {this.lists.map((list, listIndex) =>
            
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
@@ -218,9 +244,9 @@ class LearningCheck extends Component {
                   {this.state[list.listId] && this.state[list.listId].map((item, i) => (
                     
                     <Draggable
-                      
-                      key={i}
-                      draggableId={i}
+                    
+                      key={item.id}
+                      draggableId={item.id}
                       index={i}>
                       {(provided, snapshot) => (
                         <div
