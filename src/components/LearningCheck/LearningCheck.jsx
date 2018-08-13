@@ -44,11 +44,6 @@ $SAR-dark-blue: rgb(0,43,84);
 
 */
 const getItemStyle = (isDragging, draggableStyle) => ({
-  // some basic styles to make the items look a bit nicer
-  userSelect: 'none',
-  padding: `${grid}px ${grid *2}px`,
-  margin: `0 ${grid}px ${grid}px 0`,
-
   // change background colour if dragging
   background: isDragging ? 'rgb(0,43,84)' : null,
 
@@ -62,7 +57,7 @@ const getListStyle = isDraggingOver => ({
   margin: '3px',
 })
 
-// pass this an array of lists from the props
+// pass this an array of lists from the props; creates a key value array like object
 const createDroppableIds = (a) => {
     console.log('createDroppableIds init')
     var droppableIds = {};
@@ -98,10 +93,13 @@ const createLists = (droppable) => {
     return lists;
 }
 
+
+
 class LearningCheck extends Component {
     constructor(props) {
         super(props);
 
+        // drag'n'drop items
         const elements = addIndex(this.props.items);
 
         this.state = {
@@ -137,6 +135,9 @@ class LearningCheck extends Component {
     lists = createLists(this.droppableIds);
 
     getList = id => this.state[this.droppableIds[id]];
+
+    // returns a title for the droppable box, if there is one
+    title = x => this.props.boxes[x].title;
 
     onDragEnd = result => {
         const { source, destination } = result
@@ -186,44 +187,6 @@ class LearningCheck extends Component {
 
   render() {
       
-    /*
-    const lists = [
-        {
-          droppableId: 'droppable1',
-          listId: 'list1',
-          title: 'List A'
-        },
-        {
-          droppableId: 'droppable2',
-          listId: 'list2',
-          title: 'List B'
-        },
-        {
-          droppableId: 'droppable3',
-          listId: 'list3',
-          title: 'List C'
-        },
-      ]
-      [
-          0: {droppableId: "droppable0", listId: "list0", title: null}
-          1: {droppableId: "droppable1", listId: "list1", title: null}
-          2: {droppableId: "droppable2", listId: "list2", title: null}
-      ]
-
-      droppableIds = {
-        droppable0: 'list0',
-        droppable1: 'list1',
-        droppable2: 'list2'
-    }
-      {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
-
-
-      key={item.id}
-                    draggableId={item.id}
-                    index={i}>
-      */
-    
-
     return (
         <div className="learning-check-container">
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
@@ -235,10 +198,8 @@ class LearningCheck extends Component {
               {(provided, snapshot) => (
 
                 <div className={'container'+' c'+listIndex}>
-
-                <p>list title: {list.title}</p>
-                 { //Check if there is a title
-                  (list.title) ? <h2 dangerouslySetInnerHTML={{ __html: list.title}} /> : null }
+                
+                  { this.title(listIndex) ? <h2 dangerouslySetInnerHTML={{ __html: this.title(listIndex)}} /> : null }
                   <div className='dropzone'
                   ref={provided.innerRef}
                   style={getListStyle(snapshot.isDraggingOver)}>

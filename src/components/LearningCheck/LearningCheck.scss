@@ -2,42 +2,61 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    height: 100%;
+    min-height: 80%;
+    justify-content: center;
     .intro { width: 100% }
     
     .container {
         display: flex;
-        width: 34%;
+        flex-direction: column;
+        width: 320px;
         margin-right: 10px;
-        .dropzone {
-            width: 100%;
-            .draggableItem {
-                display: inline-block;
-                flex-direction: column;
-                background: $SAR-dark-blue;
-                color: $SAR-white;
-                @include round-corners;
-                vertical-align: top;
-                outline: none;
-                width: 272px;
-                userSelect: 'none';
-                padding: 6px 12px;
-                margin: 0 4px 4px 0;
-            }
-        }
+        min-height: 200px;
         h2 {
             text-align: center;
             padding: 8px;
+            margin-bottom: 4px;
             font-weight: 200;
             color: $SAR-white;
             background: $SAR-dark-gray;
         }
+        .dropzone {
+            //align-items: stretch;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+           // justify-content: center;
+            .draggableItem {
+                
+                background: $SAR-dark-blue;
+                color: $SAR-white;
+                @include round-corners;
+                
+                outline: none;
+                width: 272px;
+                userSelect: 'none';
+                padding: 4px 8px;
+                margin: 3px;
+            }
+        }
+        
         &.c0 {
             order: 1;
             align-self: flex-end;
-            width: 100%;
-            .draggableItem {
-                background: $SAR-burnt-orange;
+            justify-content: center;
+            display: flex;
+            min-height: 200px;
+            height: 220px;
+            width: 660px;
+            .dropzone {
+                width: 666px;
+                align-content: baseline;
+                .draggableItem {
+                    background: $SAR-burnt-orange;
+                    padding: 8px 16px;
+                    width: 276px;
+                }
             }
         }
         &:not(.c0) {
@@ -57,12 +76,24 @@
 // this one is a re-order: only 1 list
 .QContent {
     &.Step36 {
-        .c0 {
-            order: 0;
-            width: 60%;
-            .draggableItem {
-                display: block;
-                width: auto;
+        .learning-check-container {
+            height: auto;
+            .c0 {
+                order: 0;
+                align-items: center;
+                height: auto;
+                align-self: flex-start;
+                
+                .dropzone {
+                    width: 84%;
+                    
+                    justify-content: center;
+                    .draggableItem {
+                        display: block;
+                        width: auto;
+                        padding: 8px 16px;
+                    }
+                }
             }
         }
 

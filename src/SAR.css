@@ -93,39 +93,52 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  height: 100%; }
+  min-height: 80%;
+  justify-content: center; }
   .learning-check-container .intro {
     width: 100%; }
   .learning-check-container .container {
     display: flex;
-    width: 34%;
-    margin-right: 10px; }
-    .learning-check-container .container .dropzone {
-      width: 100%; }
-      .learning-check-container .container .dropzone .draggableItem {
-        display: inline-block;
-        flex-direction: column;
-        background: #002b54;
-        color: white;
-        border-radius: 5px;
-        vertical-align: top;
-        outline: none;
-        width: 272px;
-        userSelect: 'none';
-        padding: 6px 12px;
-        margin: 0 4px 4px 0; }
+    flex-direction: column;
+    width: 320px;
+    margin-right: 10px;
+    min-height: 200px; }
     .learning-check-container .container h2 {
       text-align: center;
       padding: 8px;
+      margin-bottom: 4px;
       font-weight: 200;
       color: white;
       background: #333333; }
+    .learning-check-container .container .dropzone {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap; }
+      .learning-check-container .container .dropzone .draggableItem {
+        background: #002b54;
+        color: white;
+        border-radius: 5px;
+        outline: none;
+        width: 272px;
+        userSelect: 'none';
+        padding: 4px 8px;
+        margin: 3px; }
     .learning-check-container .container.c0 {
       order: 1;
       align-self: flex-end;
-      width: 100%; }
-      .learning-check-container .container.c0 .draggableItem {
-        background: #ce0000; }
+      justify-content: center;
+      display: flex;
+      min-height: 200px;
+      height: 220px;
+      width: 660px; }
+      .learning-check-container .container.c0 .dropzone {
+        width: 666px;
+        align-content: baseline; }
+        .learning-check-container .container.c0 .dropzone .draggableItem {
+          background: #ce0000;
+          padding: 8px 16px;
+          width: 276px; }
     .learning-check-container .container:not(.c0) {
       border: 1px solid #000000; }
     .learning-check-container .container.finish {
@@ -133,6 +146,21 @@ header {
       width: 300px;
       border: 1px solid #000;
       margin: 0 16px 16px 0; }
+
+.QContent.Step36 .learning-check-container {
+  height: auto; }
+  .QContent.Step36 .learning-check-container .c0 {
+    order: 0;
+    align-items: center;
+    height: auto;
+    align-self: flex-start; }
+    .QContent.Step36 .learning-check-container .c0 .dropzone {
+      width: 84%;
+      justify-content: center; }
+      .QContent.Step36 .learning-check-container .c0 .dropzone .draggableItem {
+        display: block;
+        width: auto;
+        padding: 8px 16px; }
 
 ol.alpha {
   list-style: none;
