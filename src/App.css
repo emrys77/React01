@@ -4,73 +4,519 @@
   src: url("fonts/AachenStd-Bold.woff") format("woff"), url("fonts/AachenStd-Bold.ttf") format("truetype");
 }
 
-h1 {
+h1, h2, h3 {
   font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
+  color: #ce0000;
+  margin-top: 0;
 }
 
-.App {
-  position: relative;
-  width: 100%;
-  height: 100%;
+body {
   background-image: url(/images/Background_01.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 }
 
-.App .content {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  margin-left: -500px;
-  width: 80%;
+body #root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #root .App {
+  display: block;
+  position: relative;
+  width: 100%;
   max-width: 1000px;
-  background: white;
+  height: 90%;
+  max-height: 665px;
+  padding-top: 5%;
 }
 
-.App .content header {
+body #root .App .content {
+  /*top:25%;
+                left:50%;
+                margin-left: -500px;*/
+  width: 100%;
+  max-width: 1000px;
+  height: 665px;
+  background: white;
+  /* &.Intro {
+                    .QContent {
+                        padding: 0;
+                    }
+                }*/
+}
+
+body #root .App .content.Survive-Armed-Robbery.Intro.Q1 {
+  background-image: url(/images/title-survive-armed-robbery.jpg);
+}
+
+body #root .App .content.The-Offender.Intro.Q1 {
+  background: url(/images/title-the-offender.jpg) right top no-repeat;
+}
+
+body #root .App .content.New-Crims-new-ways.Intro.Q1 {
+  background: url(/images/title-the-robbery.jpg) right top no-repeat;
+}
+
+body #root .App .content.The-Robbery.Intro.Q1 {
+  background: url(/images/title-the-robbery.jpg) right top no-repeat;
+}
+
+body #root .App .content.Conclusion.Intro.Q1 {
+  background: url(/images/title-conclusion.jpg) right top no-repeat;
+}
+
+body #root .App .content.Video {
+  background: url(/images/VideoImg_01.jpg) right 54px no-repeat;
+}
+
+body #root .App .content .QContent {
+  display: inline-block;
+  vertical-align: top;
+  padding: 4%;
+  width: 92%;
+  height: 420px;
+}
+
+body #root .App .content.Text.Q2 {
+  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+}
+
+body #root .App .content.Text.Q2 .QContent {
+  width: 50%;
+}
+
+body #root .App .content.Text.Q3 {
+  background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
+}
+
+body #root .App .content.Text.Q3 .QContent {
+  width: 50%;
+}
+
+body #root .App .content.Text.Q6 {
+  background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
+}
+
+body #root .App .content.Text.Q6 .QContent {
+  width: 50%;
+}
+
+body #root .App .content.Text.Q11 {
+  background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+}
+
+body #root .App .content.Text.Q11 .QContent {
+  width: 50%;
+}
+
+body #root .App .content.Text.Q4.Conclusion {
+  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+}
+
+body #root .App .content.Text.Q4.Conclusion .QContent {
+  width: 50%;
+}
+
+body #root .App .content.Text.Q12.Conclusion {
+  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+}
+
+body #root .App .content.Text.Q12.Conclusion .QContent {
+  width: 50%;
+}
+
+body #root .App .content.Video .QContent {
+  padding: 0;
+}
+
+header {
   font-size: 1.1rem;
   padding: 1rem 1rem;
   background: #002b54;
   color: white;
 }
 
-.App .content div img {
-  float: right;
+.learning-check-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 80%;
 }
 
-.App .content div .QContent {
-  padding: 40px;
+.learning-check-container .intro {
+  width: 100%;
 }
 
-.App .content div .QContent.bg {
-  width: 50%;
+.learning-check-container .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 318px;
+  margin-right: 10px;
+  min-height: 200px;
 }
 
-.App .content div footer {
-  font-size: 1.1rem;
-  padding: 1rem 1rem;
+.learning-check-container .container h2 {
+  text-align: center;
+  padding: 8px;
+  margin-bottom: 4px;
+  font-weight: 200;
+  color: white;
+  background: #333333;
+}
+
+.learning-check-container .container .dropzone {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.learning-check-container .container .dropzone .draggableItem {
+  background: #002b54;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  width: 272px;
+  userSelect: 'none';
+  padding: 4px 8px;
+  margin: 3px;
+}
+
+.learning-check-container .container.c0 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 200px;
+  height: 220px;
+  width: 660px;
+}
+
+.learning-check-container .container.c0 .dropzone {
+  width: 666px;
+  -ms-flex-line-pack: baseline;
+      align-content: baseline;
+}
+
+.learning-check-container .container.c0 .dropzone .draggableItem {
+  background: #ce0000;
+  padding: 8px 8px;
+  width: 274px;
+}
+
+.learning-check-container .container:not(.c0) {
+  border: 1px solid #000000;
+}
+
+.learning-check-container .container.finish {
+  height: 200px;
+  width: 300px;
+  border: 1px solid #000;
+  margin: 0 16px 16px 0;
+}
+
+.QContent.Step13 .c0 {
+  height: 180px;
+}
+
+.QContent.Step36 .learning-check-container {
+  height: auto;
+}
+
+.QContent.Step36 .learning-check-container .c0 {
+  -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+          order: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.QContent.Step36 .learning-check-container .c0 .dropzone {
+  width: 84%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.QContent.Step36 .learning-check-container .c0 .dropzone .draggableItem {
+  display: block;
+  width: auto;
+  padding: 8px 16px;
+}
+
+ol.alpha {
+  list-style: none;
+  margin-top: 2rem;
+  padding-left: 0;
+}
+
+ol.alpha li {
+  counter-increment: item;
+  margin-bottom: 5px;
+}
+
+ol.alpha li:before {
+  margin-right: 10px;
+  content: counter(item, upper-latin);
+  background: #002b54;
+  padding: 8px;
+  color: white;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+ol.alpha input {
+  position: absolute;
+  left: -10000px;
+}
+
+ol.alpha label {
   color: white;
   background: #ce0000;
+  display: inline-block;
+  padding: 8px 2%;
+  width: 86%;
+  border-radius: 5px;
 }
 
-.App .content div footer nav button {
+ol.alpha label.selected {
+  background: #002b54;
+}
+
+ol.alpha label:hover {
+  background: #002b54;
+}
+
+ul.buttons {
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+ul.buttons li {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: #ce0000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+ul.buttons li:hover, ul.buttons li:focus {
+  background-color: #002b54;
+}
+
+ul.buttons li.Soft-targets {
+  background-image: url(/images/BoxButtonIcons_SoftTarget.png);
+}
+
+ul.buttons li.Hard-targets {
+  background-image: url(/images/BoxButtonIcons_HardTarget.png);
+}
+
+ul.buttons li.Factors-motivating-crime {
+  background-image: url(/images/BoxButtonIcons_Factors.png);
+}
+
+ul.buttons li.Reasons-for-violent-behaviour {
+  background-image: url(/images/BoxButtonIcons_Violent.png);
+}
+
+ul.buttons li.The-typical-armed-robber-of-today {
+  background-image: url(/images/BoxButtonIcons_Robber.png);
+}
+
+ul.buttons li.What-the-victim-experiences {
+  background-image: url(/images/BoxButtonIcons_Victim.png);
+}
+
+ul.buttons li.The-offenders-behaviour {
+  background-image: url(/images/BoxButtonIcons_Offender.png);
+}
+
+ul.buttons li .tick {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 30px;
+}
+
+ul.buttons li .tick.true {
+  background-image: url(/images/tick_white.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+ul.buttons li .modal-button {
+  width: 100%;
+  height: 100%;
+  text-indent: -99999px;
+  background: transparent;
+}
+
+/* flashy selector eh? */
+div[class^="styles_modal__"] {
+  padding: 1em 3em;
+}
+
+div[class^="styles_modal__"] h2 {
+  font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
+  color: #ce0000;
+}
+
+.video {
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 10%;
+  background: white;
+  padding: 0.4rem 1rem 1rem 1rem;
+}
+
+.video button {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  background: #ce0000;
+  padding: 5px 0;
+  color: white;
+  border-radius: 5px;
+}
+
+.video button:focus, .video button:active {
+  background: #002b54;
+}
+
+.video button .fa {
+  background: inherit;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  color: white;
+  background: #ce0000;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.4rem;
+}
+
+footer .bar-container {
+  margin-left: 2rem;
+  width: 140px;
+  background: #111111;
+  height: 10px;
+  border: 2px solid #111111;
+  border-radius: 5px;
+}
+
+footer .bar-container div {
+  background: white;
+  height: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+footer nav {
+  position: absolute;
+  right: 0;
+}
+
+footer nav .progress {
+  display: inline-block;
+  position: relative;
+  bottom: 5px;
+}
+
+button {
+  display: inline-block;
   font-size: 1.2rem;
   font-weight: 500;
   border: none;
   color: white;
   background: #ce0000;
   outline: none;
+  margin: 0 1rem;
 }
 
-#first,
-#second {
-  width: 40%;
+button:hover, button:focus, button:active {
+  color: #ffa64c;
 }
 
-#first div,
-#second div {
-  padding: 4px;
-  border: 1px solid #bbbbbb;
+button.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+button.submit {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=App.css.map */

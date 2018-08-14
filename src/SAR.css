@@ -93,8 +93,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  min-height: 80%;
-  justify-content: center; }
+  min-height: 80%; }
   .learning-check-container .intro {
     width: 100%; }
   .learning-check-container .container {
