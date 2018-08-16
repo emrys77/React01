@@ -156,22 +156,16 @@ class Question extends Component {
       
       var styles, QRender; 
 
-      if ( this.QType === 'Intro') {
-       // QRender = <img src={bg} alt={section} />
-      }
-
       if ( this.QType === 'Text') {
         const QContent = myQuestionArray[17][1]['content'];
         QRender = <Text content={QContent} />
       }
 
-      if (this.QType==='Video') {
+      if (this.QType === 'Video') {
         const video_intro_text = myQuestionArray[17][1]['video_intro_text'];
-        const vimeo_code = myQuestionArray[17][1]['vimeo_code']
-        const video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
-        
+        const vimeo_code = myQuestionArray[17][1]['vimeo_code'];        
         QRender = 
-        <Video video_intro_text={video_intro_text} video_url={video_url} />
+        <Video videoIntroText={video_intro_text} vimeoCode={vimeo_code} />
       }
 
       if (this.QType==='Multiple Choice') {
