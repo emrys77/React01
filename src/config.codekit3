@@ -59,205 +59,31 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/components\/01 unused\/Button-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Button-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/Button.2.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Button.2-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/Footer.01.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Footer.01-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/Footer.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Footer-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/GetData.1.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/GetData.1-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/GetData.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/GetData-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/ListItem-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/ListItem-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/ListItem.1.jsx": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/ListItem.1-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/LogData.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/LogData-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/MultipleChoice-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/MultipleChoice-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/MultipleChoice.1.jsx": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/MultipleChoice.1-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/MultipleChoice.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/MultipleChoice-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/PopUp\/PopUp.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/PopUp\/PopUp-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/01 unused\/PopUp\/PopUp.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/PopUp\/PopUp.css.map",
-		"oF": 0
-		},
-	"\/components\/01 unused\/PopUp\/PopUp.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/PopUp\/PopUp-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/PopUp\/PopUp.scss": {
+	"\/components\/_Question.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/PopUp\/SAR.css",
+		"oA": 1,
+		"oAP": "\/components\/SAR.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
-	"\/components\/01 unused\/Question.1.js": {
-		"ft": 64,
+	"\/components\/Button\/_Button.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
 		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Question.1-min.js",
+		"oA": 1,
+		"oAP": "\/components\/Button\/SAR.css",
 		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/Question.2-min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Question.2-min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/Question.2.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Question.2-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/01 unused\/Video.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/01 unused\/Video-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
+		"oS": 0,
+		"uL": 1
 		},
 	"\/components\/Button\/Button-min.js": {
 		"ft": 64,
@@ -279,19 +105,6 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/Button\/Button.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/Button\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/components\/Button\/SAR.css": {
 		"aP": 1,
 		"bl": 0,
@@ -301,6 +114,19 @@
 		"oAP": "\/components\/Button\/SAR-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"\/components\/Footer\/_Footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/components\/Footer\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/components\/Footer\/Footer-min.js": {
 		"ft": 64,
@@ -332,19 +158,6 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/Footer\/Footer.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/Footer\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/components\/Footer\/progess-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -365,6 +178,19 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/components\/Header\/_Header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/Header\/SAR.css",
+		"oF": 1,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/components\/Header\/Header.js": {
 		"ft": 64,
 		"ma": 0,
@@ -375,16 +201,16 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/Header\/Header.scss": {
+	"\/components\/InformationBoxes\/_InformationModal.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/Header\/SAR.css",
-		"oF": 1,
+		"oA": 1,
+		"oAP": "\/components\/InformationBoxes\/SAR.css",
+		"oF": 0,
 		"oS": 0,
 		"uL": 1
 		},
@@ -418,19 +244,6 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/InformationBoxes\/InformationModal.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/InformationBoxes\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/components\/LearningCheck\/3-lists-example.jsx": {
 		"ft": 64,
 		"ma": 0,
@@ -440,6 +253,19 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
+		},
+	"\/components\/LearningCheck\/_LearningCheck.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/components\/LearningCheck\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/components\/LearningCheck\/LearningCheck-min.css": {
 		"aP": 1,
@@ -498,19 +324,6 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/LearningCheck\/LearningCheck.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/LearningCheck\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/components\/LearningCheck\/react-beautiful-dnd.example.jsx": {
 		"ft": 64,
 		"ma": 0,
@@ -520,6 +333,19 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
+		},
+	"\/components\/MultipleChoice\/_MultipleChoice.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/components\/MultipleChoice\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/components\/MultipleChoice\/ListItem-min.js": {
 		"ft": 64,
@@ -618,25 +444,42 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/MultipleChoice\/MultipleChoice.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/MultipleChoice\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/components\/notepad": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/components\/notepad",
 		"oF": 0
+		},
+	"\/components\/Question.1.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Question.1-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/Question.2-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Question.2-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
+		},
+	"\/components\/Question.2.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/Question.2-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 1
 		},
 	"\/components\/Question.css": {
 		"aP": 1,
@@ -664,238 +507,6 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
-		},
-	"\/components\/Question.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"\/components\/react-dragula-master\/.editorconfig": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/.editorconfig",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/.gitignore": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/.gitignore",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/.jshintignore": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/.jshintignore",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/.jshintrc": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/.jshintrc",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/bower.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/components\/react-dragula-master\/bower-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/components\/react-dragula-master\/changelog.markdown": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/changelog.markdown",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/contributing.markdown": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/contributing.markdown",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/dist\/dragula.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/dist\/dragula-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/react-dragula-master\/dist\/dragula.min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/dist\/dragula.min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/react-dragula-master\/dist\/react-dragula.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/dist\/react-dragula-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/react-dragula-master\/dist\/react-dragula.min.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/dist\/react-dragula.min-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/react-dragula-master\/example\/example.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/example\/example-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/components\/react-dragula-master\/example\/example.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/example\/example-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/react-dragula-master\/example\/example.jsx": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/example\/example-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/react-dragula-master\/favicon.ico": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/favicon.ico",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/index.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/index.html",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/license": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/license",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/package.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/components\/react-dragula-master\/package-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
-	"\/components\/react-dragula-master\/react-dragula.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/react-dragula-min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 1
-		},
-	"\/components\/react-dragula-master\/readme.markdown": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/readme.markdown",
-		"oF": 0
-		},
-	"\/components\/react-dragula-master\/resources\/demo.png": {
-		"ft": 32768,
-		"iS": 511071,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/resources\/demo.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/components\/react-dragula-master\/resources\/eyes.png": {
-		"ft": 32768,
-		"iS": 51877,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/resources\/eyes.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/components\/react-dragula-master\/resources\/icon.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/components\/react-dragula-master\/resources\/icon.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
-		},
-	"\/components\/react-dragula-master\/resources\/logo.png": {
-		"ft": 32768,
-		"iS": 25642,
-		"oA": 0,
-		"oAP": "\/components\/react-dragula-master\/resources\/logo.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"q": 100
-		},
-	"\/components\/react-dragula-master\/resources\/logo.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "\/components\/react-dragula-master\/resources\/logo.svg",
-		"oF": 0,
-		"opt": 0,
-		"plM": 3758088159,
-		"prP": 0
 		},
 	"\/components\/react-list-select\/.circleci\/config.yml": {
 		"cB": 0,
@@ -1094,6 +705,19 @@
 		"sC": 3,
 		"tS": 1
 		},
+	"\/components\/Text\/_Text.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/components\/Text\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/components\/Text\/Text-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1131,7 +755,7 @@
 		"sC": 3,
 		"tS": 1
 		},
-	"\/components\/Text\/Text.scss": {
+	"\/components\/Video\/_Video.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -1139,7 +763,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/components\/Text\/SAR.css",
+		"oAP": "\/components\/Video\/SAR.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1170,19 +794,6 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
-		},
-	"\/components\/Video\/Video.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/components\/Video\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
 		},
 	"\/fonts\/AachenStd-Bold.eot": {
 		"cB": 0,
@@ -1338,7 +949,33 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"\/scss\/base.scss": {
+	"\/scss\/_base.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_typography.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/SAR.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/_vars.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -1368,19 +1005,6 @@
 		"oAP": "\/scss\/typography.css.map",
 		"oF": 0
 		},
-	"\/scss\/typography.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/scss\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"\/scss\/vars.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1397,19 +1021,6 @@
 		"oA": 0,
 		"oAP": "\/scss\/vars.css.map",
 		"oF": 0
-		},
-	"\/scss\/vars.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "\/scss\/SAR.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
 		}
 	},
 "hooks": [

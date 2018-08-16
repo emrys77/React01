@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './SAR.css';
+import './App.css';
 import 'font-awesome/css/font-awesome.css';
 import Question from './components/Question.jsx';
 

@@ -1,108 +1,98 @@
-
- @mixin thinQContent {
+@mixin thinQContent {
      .QContent {
-        width: 50%;
+        width: 56%;
+        @include padding;     
      }
 }
 
-body {
+
+.container {
     background-image: url(/images/Background_01.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
-    
-    #root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    .App {
+        /* display: block; 
+        position: relative;
+        padding-top: 5%;
+        */
         display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .App {
-            display: block;
-            position: relative;
-            
-            width: 100%;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1000px;
+        height: 90%;
+        max-height: 665px;
+ 
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background: $SAR-white;
             max-width: 1000px;
-            height: 90%;
-            max-height: 665px;
-            padding-top: 5%;
-
-            .content {
-                //position: relative;
-                /*top:25%;
-                left:50%;
-                margin-left: -500px;*/
-                //margin: 0 auto;
-                width: 100%;
-                max-width: 1000px;
-                height: 665px;
-                //max-height: 664px;
-                
-                background: $SAR-white;
-                
-                &.Survive-Armed-Robbery.Intro.Q1 {
-                    background-image: url(/images/title-survive-armed-robbery.jpg);
-                }
-                &.The-Offender.Intro.Q1 {
-                    background: url(/images/title-the-offender.jpg) right top no-repeat;   
-                }
-                &.New-Crims-new-ways.Intro.Q1 {
-                    background: url(/images/title-the-robbery.jpg) right top no-repeat; 
-                }
-                &.The-Robbery.Intro.Q1 {
-                    background: url(/images/title-the-robbery.jpg) right top no-repeat; 
-                }
-                &.Conclusion.Intro.Q1 {
-                    background: url(/images/title-conclusion.jpg) right top no-repeat; 
-                }
-                &.Video {
-                    background: url(/images/VideoImg_01.jpg) right 54px no-repeat;     
-                }
-                .QContent {
-                    display: inline-block;
-                    vertical-align: top;
-                    padding: 4%;
-                    width: 92%;
-                    height: 420px;
-                }
-                &.Text.Q2 { 
-                    background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-                    @include thinQContent;
-                }
-                
-                &.Text.Q3 {
-                    background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
-                    @include thinQContent;
-                }
-                
-                &.Text.Q6 {
-                    background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
-                    @include thinQContent;
-                }
-                &.Text.Q11 {
-                    background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
-                    @include thinQContent;
-                }
-                &.Text.Q4.Conclusion { 
-                    background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-                    @include thinQContent;
-                }
-                &.Text.Q12.Conclusion { 
-                    background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-                    @include thinQContent;
-                }
-                
-                
-            /* &.Intro {
-                    .QContent {
-                        padding: 0;
-                    }
-                }*/
-                &.Video {
-                    .QContent {
-                        padding: 0;
-                    }
-                }
+            height: 665px;
+            &.Survive-Armed-Robbery.Intro.Q1 {
+                background-image: url(/images/title-survive-armed-robbery.jpg);
             }
-        }
+            &.The-Offender.Intro.Q1 {
+                background: url(/images/title-the-offender.jpg) right top no-repeat;   
+            }
+            &.New-Crims-new-ways.Intro.Q1 {
+                background: url(/images/title-the-robbery.jpg) right top no-repeat; 
+            }
+            &.The-Robbery.Intro.Q1 {
+                background: url(/images/title-the-robbery.jpg) right top no-repeat; 
+            }
+            &.Conclusion.Intro.Q1 {
+                background: url(/images/title-conclusion.jpg) right top no-repeat; 
+            }
+            &.Video {
+                background: url(/images/VideoImg_01.jpg) right 54px no-repeat;     
+            }
+            .QContent {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                /*
+                vertical-align: top;
+                padding: 4%;
+                width: 92%;
+                */
+                
+            }
+            
+            &.Text.Q2 { 
+                background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+                @include thinQContent;
+            }
+            
+            &.Text.Q3 {
+                background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
+                @include thinQContent;
+            }
+            
+            &.Text.Q6 {
+                background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
+                @include thinQContent;
+            }
+            &.Text.Q11 {
+                background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+                @include thinQContent;
+            }
+            &.Text.Q4.Conclusion { 
+                background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+                @include thinQContent;
+            }
+            &.Text.Q12.Conclusion { 
+                background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+                @include thinQContent;
+            }
+            
+        }        
+
     }
 }
+    

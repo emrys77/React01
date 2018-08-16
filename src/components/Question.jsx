@@ -214,13 +214,12 @@ class Question extends Component {
     
       <div className={ bgClass + ' content ' + QTypeClass + ' Q' + QNumber + ' ' + sectionClass}>
         {Header}
-        <div style={styles}>
           <div className={ "QContent Step" + this.state.step } >
             {QTitle}
             {QRender}
           </div>
-          <Footer className={'Step'+this.state.step} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
-        </div>
+        <Footer className={'footer Step'+this.state.step} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
+
       </div>
 
     );

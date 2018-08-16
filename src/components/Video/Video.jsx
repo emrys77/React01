@@ -20,7 +20,7 @@ export default class Video extends React.Component {
         const step = this.state.step==='intro'; 
         return (
              step ?
-               ( <div className="video">
+               ( <div className="intro">
                     <div className="VideoIntro" dangerouslySetInnerHTML={{ __html: this.props.videoIntroText }}></div>  
                     <button onClick={() => this.showVideo()}>
                         <FontAwesome name="play" size="2x" />

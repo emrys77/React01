@@ -13,18 +13,25 @@ export default class Footer extends React.Component {
         var bbState = (this.props.step!==1) ? "active" : "disabled" 
         var fbState = (this.props.step === this.props.totalSteps)  ? "disabled" : "active" 
         
+        const step = this.props.step===1; 
+
         //console.log('bbState' + bbState)
             return (
-                <footer className={this.props.className}>
-
-                    <ProgressBar step={this.props.step} totalSteps={this.props.totalSteps} />
-
-                    <nav>
-                        <Button active={bbState} direction="backward" onChange={ this.props.onChange } />
-                        <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>
-                        <Button active={fbState} direction="forward" onChange={ this.props.onChange } />
-                    </nav>
-                </footer>
+                step ? 
+                (
+                    <footer className={this.props.className}>
+                        <Button active={fbState} type="initial" direction="forward" onChange={ this.props.onChange } />
+                    </footer>
+                ) : (
+                    <footer className={this.props.className}>
+                        <ProgressBar step={this.props.step} totalSteps={this.props.totalSteps} />
+                        <nav>
+                            <Button active={bbState} direction="backward" onChange={ this.props.onChange } />
+                            <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>
+                            <Button active={fbState} direction="forward" onChange={ this.props.onChange } />
+                        </nav>
+                    </footer>
+                )
             )
         
     }

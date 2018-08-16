@@ -1,84 +1,89 @@
-.learning-check-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    min-height: 80%;
-    //justify-content: center;
-    .intro { width: 100% }
-    .container {
-        display: flex;
-        flex-direction: column;
-        width: 318px;
-        margin-right: 10px;
-        min-height: 200px;
-        
-        h2 {
-            text-align: center;
-            padding: 8px;
-            margin-bottom: 4px;
-            font-weight: 200;
-            color: $SAR-white;
-            background: $SAR-dark-gray;
-        }
-        .dropzone {
-            //align-items: stretch;
-            height: 100%;
+.Learning-Check {
+    .QContent {
+        @include padding;
+        .learning-check-container {
             display: flex;
-            flex-direction: column;
             flex-wrap: wrap;
-           // justify-content: center;
-            .draggableItem {
+            justify-content: flex-start;
+            flex: 1;
+            /*justify-content: center; */
+            .intro { width: 100% }
+            .container {
+                display: flex;
+                flex-direction: column;
+                width: 318px;
+                margin-right: 10px;
+                min-height: 200px;
+                background: #ffffff;
+                h2 {
+                    width: 100%;
+                    text-align: center;
+                    padding: 8px 0;
+                    margin-bottom: 4px;
+                    font-weight: 200;
+                    color: $SAR-white;
+                    background: $SAR-dark-gray;
+                }
+                .dropzone {
+                    /*align-items: stretch;*/
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    /* justify-content: center; */
+                    .draggableItem {
+                        background: $SAR-dark-blue;
+                        color: $SAR-white;
+                        @include round-corners;
+                        outline: none;
+                        width: 272px;
+                        userSelect: 'none';
+                        padding: 4px 8px;
+                        margin: 3px;
+                    }
+                }
                 
-                background: $SAR-dark-blue;
-                color: $SAR-white;
-                @include round-corners;
+                &.c0 {
+                    order: 1;
+                    align-self: flex-end;
+                    
+                    display: flex;
+                    min-height: 140px;
+                    height: 130px;
+                    width: 100%;
+                    .dropzone {
+                        display: flex;
+                        justify-content: flex-start;
+                        width: 100%;
+                        align-content: baseline;
+                        .draggableItem {
+                            background: $SAR-burnt-orange;
+                            padding: 8px 8px;
+                            width: 254px;
+                        }
+                    }
+                }
+                &:not(.c0) {
+                    border: 1px solid #000000;
+                }
                 
-                outline: none;
-                width: 272px;
-                userSelect: 'none';
-                padding: 4px 8px;
-                margin: 3px;
-            }
-        }
-        
-        &.c0 {
-            order: 1;
-            align-self: flex-end;
-            justify-content: center;
-            display: flex;
-            min-height: 200px;
-            height: 220px;
-            width: 660px;
-            .dropzone {
-                width: 666px;
-                align-content: baseline;
-                .draggableItem {
-                    background: $SAR-burnt-orange;
-                    padding: 8px 8px;
-                    width: 274px;
+
+                &.finish {
+                    height: 200px;
+                    width: 300px;
+                    border: 1px solid #000;
+                    margin: 0 16px 16px 0;
                 }
             }
         }
-        &:not(.c0) {
-            border: 1px solid #000000;
-        }
-        
-
-        &.finish {
-            height: 200px;
-            width: 300px;
-            border: 1px solid #000;
-            margin: 0 16px 16px 0;
-        }
-
     }
 }
-// this one is a re-order: only 1 list
+    
+
+/* this one is a re-order: only 1 list */
 .QContent {
     &.Step13 {
-        .c0 {
-            height: 180px;
-        }
+        .c0 {   height: 180px;  }
     }
 }
 
@@ -93,8 +98,7 @@
                 align-self: flex-start;
                 
                 .dropzone {
-                    width: 84%;
-                    
+                    width: 84%; 
                     justify-content: center;
                     .draggableItem {
                         display: block;
@@ -104,6 +108,5 @@
                 }
             }
         }
-
     }
 }
