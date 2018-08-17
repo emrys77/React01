@@ -1,44 +1,49 @@
 .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
-    /*padding: 0.5rem 0;*/
-    color: $SAR-white;
-    background: $SAR-burnt-orange;
-    height: 50px;
-    justify-content: space-between;
     &.Step1 {
+        display: flex;
         background: transparent;
         justify-content: flex-end;
         height: 70px;
     }
-    .bar-container {
-        margin-left: 2rem;
-        width: 140px;
-        background: #111111;
-        height: 10px;
-        border: 2px solid #111111;
-        @include round-corners;
-        div {
-            background: $SAR-white;
-            height: 100%;
-            border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
-        }
-    }
-
-    nav {
-        /*position: absolute;
-        right: 0;
-        margin-right: 1rem;
-        */
-        .progress {
-            display: inline-block;
-            position: relative;
-            bottom: 5px;
-        }
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        /*padding: 0.5rem 0;*/
+        color: $SAR-white;
+        background: $SAR-burnt-orange;
+       /* height: 50px; */
+        justify-content: space-between;
         
+        .bar-container {
+            margin-left: 2rem;
+            width: 140px;
+            background: #111111;
+            height: 10px;
+            border: 2px solid #111111;
+            @include round-corners;
+            div {
+                background: $SAR-white;
+                height: 100%;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+        }
+
+        nav {
+            /*position: absolute;
+            right: 0;
+            margin-right: 1rem;
+            */
+            
+            .progress {
+                display: inline-block;
+                position: relative;
+                bottom: 5px;
+            }
+            
+        }
     }
 }

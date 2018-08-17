@@ -19,6 +19,7 @@ export default class MultipleChoice extends React.Component {
         return <button className="submit disabled">Submit</button>
     };
 
+    // shows the message
     unHide = () => {
         this.setState({
           messageHidden: false
@@ -41,22 +42,8 @@ export default class MultipleChoice extends React.Component {
         }, this);
 
         var selected = this.state.selected;
-        console.log ('selected: ' + selected );
-        
         var submitButton = this.submitButton(selected); 
-        
-        // incorrectResponse, theAnswer
-        
-        var Message = (clicked) => {
-            console.log('this.props.correct: ' + this.props.correct )
-            console.log('clicked: ' + clicked )
-            console.log('this.state.selected: ' + this.state.selected )
-            if ( this.state.selected === this.props.correct) {
-                return  <p>That's right</p> 
-            } else {
-                return <div>{ this.props.incorrectResponse}</div>
-            }
-        };
+        var clicked = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
         
         return  (
             <div className="multipleChoice wrapper">
@@ -64,7 +51,7 @@ export default class MultipleChoice extends React.Component {
                 <ol className="alpha">
                 { itemsList }
                 </ol>
-                {!this.state.messageHidden && <Message />}
+                {!this.state.messageHidden && clicked }
                 { submitButton }
             </div>
         );
