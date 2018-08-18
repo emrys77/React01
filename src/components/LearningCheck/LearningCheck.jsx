@@ -133,7 +133,7 @@ class LearningCheck extends Component {
     }
 
     submitButton = (s) => {
-        if (s === 0) {
+        if ((s === 0) || (this.lists.length === 1)) {
             return <div className="container submitContainer"><button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button></div>
         }
         return null;
@@ -142,13 +142,24 @@ class LearningCheck extends Component {
     checkAnswer = () => {
         // how many lists?
         console.log ('no of lists: ' + this.lists.length)
-        
-        /*  if there are multiple lists:
-                construct arrays containing the answer types
-                OR test there are no things in the wrong place for each
-            if there is one we compare the order
-        
+        if (this.lists.length === 1) {
+            // this is a drag'n'drop scenario: we compare the order
+
+        } else {
+            /* loop through list1 make sure there are no out of place stuff
+            list1:
+            Array[2]
+            0:{…}
+            content: "Criminals 20 years ago robbed soft targets for lots of cash."
+            group: "2"
+            id: 0
+            key: 0
+            order: "0"
             */
+            console.log('list1: ' +this.state.list1['title']);
+        }
+        
+        
     }
 
     
@@ -220,7 +231,7 @@ class LearningCheck extends Component {
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
 
-                <div className={'container'+' c'+listIndex}>
+                <div className={'container c'+listIndex}>
                 
                   { this.title(listIndex) ? <h2 dangerouslySetInnerHTML={{ __html: this.title(listIndex)}} /> : null }
                   <div className='dropzone'

@@ -130,6 +130,15 @@ h1, h2, h3 {
   padding: 26px;
 }
 
+.container .App .content.Text.Q8 .QContent {
+  width: 56%;
+  padding: 26px;
+}
+
+.container .App .content.Text.Q8 .QContent {
+  width: 90%;
+}
+
 .container .App .content.Text.Q11 {
   background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
 }
@@ -275,11 +284,15 @@ header {
   min-height: auto;
 }
 
+.Learning-Check .QContent .learning-check-container .container:not(.c0) {
+  border: 1px solid #000000;
+}
+
 .Learning-Check .QContent .learning-check-container .container.submitContainer {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  border: none !important;
+  border: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,10 +302,6 @@ header {
   width: 100%;
 }
 
-.Learning-Check .QContent .learning-check-container .container:not(.c0) {
-  border: 1px solid #000000;
-}
-
 .Learning-Check .QContent .learning-check-container .container.finish {
   height: 200px;
   width: 300px;
@@ -300,16 +309,15 @@ header {
   margin: 0 16px 16px 0;
 }
 
-/* this one is a re-order: only 1 list */
-.QContent.Step13 .c0 .dropzone {
+.Learning-Check .QContent.Step13 .learning-check-container .c0 .dropzone {
   height: 180px;
 }
 
-.QContent.Step36 .learning-check-container {
+.Learning-Check .QContent.Step36 .learning-check-container {
   height: auto;
 }
 
-.QContent.Step36 .learning-check-container .c0 {
+.Learning-Check .QContent.Step36 .learning-check-container .c0 {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
@@ -321,14 +329,15 @@ header {
       align-self: flex-start;
 }
 
-.QContent.Step36 .learning-check-container .c0 .dropzone {
+.Learning-Check .QContent.Step36 .learning-check-container .c0 .dropzone {
   width: 84%;
+  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.QContent.Step36 .learning-check-container .c0 .dropzone .draggableItem {
+.Learning-Check .QContent.Step36 .learning-check-container .c0 .dropzone .draggableItem {
   display: block;
   width: auto;
   padding: 8px 16px;
