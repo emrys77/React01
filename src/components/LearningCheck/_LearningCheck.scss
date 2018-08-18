@@ -13,7 +13,7 @@
                 flex-direction: column;
                 width: 318px;
                 margin-right: 10px;
-                min-height: 200px;
+                min-height: auto;
                 background: #ffffff;
                 h2 {
                     width: 100%;
@@ -26,7 +26,9 @@
                 }
                 .dropzone {
                     /*align-items: stretch;*/
+                    min-height: 150px;
                     height: 100%;
+                    
                     display: flex;
                     flex-direction: column;
                     flex-wrap: wrap;
@@ -43,30 +45,46 @@
                     }
                 }
                 
+                
                 &.c0 {
                     order: 1;
                     align-self: flex-end;
-                    
                     display: flex;
-                    min-height: 140px;
-                    height: 130px;
                     width: 100%;
                     .dropzone {
                         display: flex;
                         justify-content: flex-start;
                         width: 100%;
+                        min-height: 140px;
+                        height: 130px;
                         align-content: baseline;
                         .draggableItem {
                             background: $SAR-burnt-orange;
                             padding: 8px 8px;
                             width: 254px;
                         }
+                        &:empty {
+                            height: auto;
+                            min-height: auto;
+                        }
                     }
+                    
                 }
+                
+                &.submitContainer {
+                    order: 1;
+                    border: none !important;
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 100%;
+                }
+
                 &:not(.c0) {
                     border: 1px solid #000000;
                 }
-                
+                &.submitContainer {
+
+                }
 
                 &.finish {
                     height: 200px;
@@ -83,7 +101,9 @@
 /* this one is a re-order: only 1 list */
 .QContent {
     &.Step13 {
-        .c0 {   height: 180px;  }
+        .c0 {
+            .dropzone {   height: 180px;  }
+        }
     }
 }
 

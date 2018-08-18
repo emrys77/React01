@@ -4,11 +4,17 @@ import Button from '../Button/Button.jsx'
 import ProgressBar from './progess'
 var Footer;
 // function to work out if the forward button works
+/* when is the forward button disabled?
+multiple choice initial
+modals not both done
+learning check not complete
 
+*/
 export default Footer = ( props ) => {
     
     const bbState = (props.step!==1) ? "active" : "disabled";
     const fbState = (props.step === props.totalSteps)  ? "disabled" : "active";
+    //if ((props.step === props.totalSteps) || ()
     var step = props.step===1; 
     const type = step ? 'initial' : null
 

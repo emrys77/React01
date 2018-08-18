@@ -22,17 +22,17 @@ const addIndex = (a) => {
  * Moves an item from one list to another list.
  */
 const move = (source, destination, droppableSource, droppableDestination) => {
-  const sourceClone = Array.from(source)
-  const destClone = Array.from(destination)
-  const [removed] = sourceClone.splice(droppableSource.index, 1)
+    const sourceClone = Array.from(source)
+    const destClone = Array.from(destination)
+    const [removed] = sourceClone.splice(droppableSource.index, 1)
 
-  destClone.splice(droppableDestination.index, 0, removed)
+    destClone.splice(droppableDestination.index, 0, removed)
 
-  const result = {}
-  result[droppableSource.droppableId] = sourceClone
-  result[droppableDestination.droppableId] = destClone
+    const result = {}
+    result[droppableSource.droppableId] = sourceClone
+    result[droppableDestination.droppableId] = destClone
 
-  return result
+    return result
 }
 
 const grid = 4
@@ -52,9 +52,9 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 })
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent',
-  padding: grid,
-  margin: '3px',
+    background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent',
+    padding: grid,
+    margin: '3px',
 })
 
 // pass this an array of lists from the props; creates a key value array like object
@@ -94,6 +94,8 @@ const createLists = (droppable) => {
 }
 
 
+//submitButton = (s !== -1) ? <button onClick={this.unHide.bind(this)} className="submit active">Submit</button> : null
+
 
 class LearningCheck extends Component {
     constructor(props) {
@@ -125,11 +127,31 @@ class LearningCheck extends Component {
     }
 {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
 
-
     */
     showDroppableIds() {
         console.log(this.droppableIds)
     }
+
+    submitButton = (s) => {
+        if (s === 0) {
+            return <div className="container submitContainer"><button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button></div>
+        }
+        return null;
+    };
+
+    checkAnswer = () => {
+        // how many lists?
+        console.log ('no of lists: ' + this.lists.length)
+        
+        /*  if there are multiple lists:
+                construct arrays containing the answer types
+                OR test there are no things in the wrong place for each
+            if there is one we compare the order
+        
+            */
+    }
+
+    
 
     droppableIds = createDroppableIds(this.props.boxes);
     lists = createLists(this.droppableIds);
@@ -186,9 +208,10 @@ class LearningCheck extends Component {
   // But in this example everything is just done in one place for simplicity
 
   render() {
-      
+    console.log ('no of lists: ' + this.lists.length)
     return (
         <div className="learning-check-container">
+        
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         <DragDropContext onDragEnd={this.onDragEnd}>
 
@@ -234,6 +257,7 @@ class LearningCheck extends Component {
             </Droppable>
           )}
         </DragDropContext>
+        {this.submitButton(this.state.list0.length)}
       </div>
     )
   }
