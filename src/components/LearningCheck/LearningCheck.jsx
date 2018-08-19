@@ -12,11 +12,30 @@ const reorder = (list, startIndex, endIndex) => {
 
 // function to add an index to make the drag'n'drop work
 const addIndex = (a) => {
-    console.log('addIndex initiated')
     return a.map((el, i) => Object.assign({
       id: i
     }, el));
 }
+
+// function to shuffle an array
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
 
 /**
  * Moves an item from one list to another list.
@@ -73,13 +92,12 @@ const createDroppableIds = (a) => {
 
 // give this a droppable list set it returns list array to render
 const createLists = (droppable) => {
-    console.log('createLists init')
     var lists = [];
     var x = 0;
     for (var key in droppable) {
     
         if (droppable.hasOwnProperty(key)) {
-            console.log(x + ' ' + key + " -> " + droppable[key]);
+          //  console.log(x + ' ' + key + " -> " + droppable[key]);
 
             lists.push({
                 droppableId: `droppable${x}`,
@@ -93,16 +111,12 @@ const createLists = (droppable) => {
     return lists;
 }
 
-
-//submitButton = (s !== -1) ? <button onClick={this.unHide.bind(this)} className="submit active">Submit</button> : null
-
-
 class LearningCheck extends Component {
     constructor(props) {
         super(props);
 
         // drag'n'drop items
-        const elements = addIndex(this.props.items);
+        const elements = shuffle(addIndex(this.props.items));
 
         this.state = {
             list0: elements, // content, group, key, order
@@ -144,6 +158,7 @@ class LearningCheck extends Component {
         console.log ('no of lists: ' + this.lists.length)
         if (this.lists.length === 1) {
             // this is a drag'n'drop scenario: we compare the order
+            //alert('i am a reorder list');
 
         } else {
             /* loop through list1 make sure there are no out of place stuff
@@ -156,7 +171,21 @@ class LearningCheck extends Component {
             key: 0
             order: "0"
             */
-            console.log('list1: ' +this.state.list1['title']);
+            console.log('list1: ' + this.state.list1[1]['content']+ ' '+this.state.list1[1]['group']);
+            // loop through list 1 check for group 2
+            var found = this.state.list1.findIndex(p => p.group == "2");
+            // and vice versa
+            var found2 = this.state.list2.findIndex(p => p.group == "1");
+            if ((found !== -1) || (found2 !== -1)) {
+                alert('found: ' + found)
+            }
+              
+              console.log(found);
+              // expected output: 
+            
+            // if
+            // this.state.list1.group !== 2
+            // do something
         }
         
         
@@ -241,6 +270,7 @@ class LearningCheck extends Component {
                   {this.state[list.listId] && this.state[list.listId].map((item, i) => (
                     
                     <Draggable
+                      group={item.group}
                       key={item.id}
                       draggableId={item.id}
                       index={i}>
