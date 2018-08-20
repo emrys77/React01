@@ -41,6 +41,11 @@ function shuffle(array) {
  * Moves an item from one list to another list.
  */
 const move = (source, destination, droppableSource, droppableDestination) => {
+    console.log('move underway. ' );
+    console.log('source: ' + source );
+    console.log('destination: ' + destination);
+    console.log('droppableSource: '+droppableSource );
+    console.log('droppableDestination: '+droppableDestination );
     const sourceClone = Array.from(source)
     const destClone = Array.from(destination)
     const [removed] = sourceClone.splice(droppableSource.index, 1)
@@ -146,6 +151,11 @@ class LearningCheck extends Component {
         console.log(this.droppableIds)
     }
 
+    wrongMessage = () => {
+        return <div className="container submitContainer">
+            <p>That's not right.</p><button onClick={this.reOrder.bind(this)} className="submit active">How me the correct blah</button></div>
+    }
+    
     submitButton = (s) => {
         if ((s === 0) || (this.lists.length === 1)) {
             return <div className="container submitContainer"><button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button></div>
@@ -155,7 +165,7 @@ class LearningCheck extends Component {
 
     checkAnswer = () => {
         // how many lists?
-        console.log ('no of lists: ' + this.lists.length)
+        // console.log ('no of lists: ' + this.lists.length)
         if (this.lists.length === 1) {
             // this is a drag'n'drop scenario: we compare the order
             //alert('i am a reorder list');
@@ -173,14 +183,20 @@ class LearningCheck extends Component {
             */
             console.log('list1: ' + this.state.list1[1]['content']+ ' '+this.state.list1[1]['group']);
             // loop through list 1 check for group 2
-            var found = this.state.list1.findIndex(p => p.group == "2");
+            var found = this.state.list1.findIndex(p => p.group === "2");
             // and vice versa
-            var found2 = this.state.list2.findIndex(p => p.group == "1");
+            var found2 = this.state.list2.findIndex(p => p.group === "1");
+            // if there is nothing found we are all in the right place; 
+            // if not show a button and fix it
+            console.log('found: ' + found);
             if ((found !== -1) || (found2 !== -1)) {
-                alert('found: ' + found)
+                return this.wrongMessage();
+
+            } else {
+                return <p>That's right.</p>
             }
               
-              console.log(found);
+              
               // expected output: 
             
             // if
@@ -189,6 +205,10 @@ class LearningCheck extends Component {
         }
         
         
+    }
+
+    reOrder = () => {
+        alert('reorder')
     }
 
     

@@ -7,7 +7,7 @@
         {
             "label": "Sass Compile",
             "type": "shell",
-            "command": "node-sass src/app.scss src/SAR.css",
+            "command": "node-sass src/app.scss src/app.css",
             "group": "build"
         }
     ]
