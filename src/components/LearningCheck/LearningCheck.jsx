@@ -12,27 +12,46 @@ const reorder = (list, startIndex, endIndex) => {
 
 // function to add an index to make the drag'n'drop work
 const addIndex = (a) => {
-    console.log('addIndex initiated')
     return a.map((el, i) => Object.assign({
       id: i
     }, el));
 }
 
+// function to shuffle an array
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+
 /**
  * Moves an item from one list to another list.
  */
 const move = (source, destination, droppableSource, droppableDestination) => {
-  const sourceClone = Array.from(source)
-  const destClone = Array.from(destination)
-  const [removed] = sourceClone.splice(droppableSource.index, 1)
+    const sourceClone = Array.from(source)
+    const destClone = Array.from(destination)
+    const [removed] = sourceClone.splice(droppableSource.index, 1)
 
-  destClone.splice(droppableDestination.index, 0, removed)
+    destClone.splice(droppableDestination.index, 0, removed)
 
-  const result = {}
-  result[droppableSource.droppableId] = sourceClone
-  result[droppableDestination.droppableId] = destClone
+    const result = {}
+    result[droppableSource.droppableId] = sourceClone
+    result[droppableDestination.droppableId] = destClone
 
-  return result
+    return result
 }
 
 const grid = 4
@@ -52,9 +71,9 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 })
 
 const getListStyle = isDraggingOver => ({
-  background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent',
-  padding: grid,
-  margin: '3px',
+    background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent',
+    padding: grid,
+    margin: '3px',
 })
 
 // pass this an array of lists from the props; creates a key value array like object
@@ -73,13 +92,12 @@ const createDroppableIds = (a) => {
 
 // give this a droppable list set it returns list array to render
 const createLists = (droppable) => {
-    console.log('createLists init')
     var lists = [];
     var x = 0;
     for (var key in droppable) {
     
         if (droppable.hasOwnProperty(key)) {
-            console.log(x + ' ' + key + " -> " + droppable[key]);
+          //  console.log(x + ' ' + key + " -> " + droppable[key]);
 
             lists.push({
                 droppableId: `droppable${x}`,
@@ -93,14 +111,12 @@ const createLists = (droppable) => {
     return lists;
 }
 
-
-
 class LearningCheck extends Component {
     constructor(props) {
         super(props);
 
         // drag'n'drop items
-        const elements = addIndex(this.props.items);
+        const elements = shuffle(addIndex(this.props.items));
 
         this.state = {
             list0: elements, // content, group, key, order
@@ -125,11 +141,57 @@ class LearningCheck extends Component {
     }
 {droppable0: "list0", droppable1: "list1", droppable2: "list2"}
 
-
     */
     showDroppableIds() {
         console.log(this.droppableIds)
     }
+
+    submitButton = (s) => {
+        if ((s === 0) || (this.lists.length === 1)) {
+            return <div className="container submitContainer"><button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button></div>
+        }
+        return null;
+    };
+
+    checkAnswer = () => {
+        // how many lists?
+        console.log ('no of lists: ' + this.lists.length)
+        if (this.lists.length === 1) {
+            // this is a drag'n'drop scenario: we compare the order
+            //alert('i am a reorder list');
+
+        } else {
+            /* loop through list1 make sure there are no out of place stuff
+            list1:
+            Array[2]
+            0:{…}
+            content: "Criminals 20 years ago robbed soft targets for lots of cash."
+            group: "2"
+            id: 0
+            key: 0
+            order: "0"
+            */
+            console.log('list1: ' + this.state.list1[1]['content']+ ' '+this.state.list1[1]['group']);
+            // loop through list 1 check for group 2
+            var found = this.state.list1.findIndex(p => p.group == "2");
+            // and vice versa
+            var found2 = this.state.list2.findIndex(p => p.group == "1");
+            if ((found !== -1) || (found2 !== -1)) {
+                alert('found: ' + found)
+            }
+              
+              console.log(found);
+              // expected output: 
+            
+            // if
+            // this.state.list1.group !== 2
+            // do something
+        }
+        
+        
+    }
+
+    
 
     droppableIds = createDroppableIds(this.props.boxes);
     lists = createLists(this.droppableIds);
@@ -186,9 +248,10 @@ class LearningCheck extends Component {
   // But in this example everything is just done in one place for simplicity
 
   render() {
-      
+    console.log ('no of lists: ' + this.lists.length)
     return (
         <div className="learning-check-container">
+        
         <div className="intro" dangerouslySetInnerHTML={{ __html: this.props.intro }}></div>
         <DragDropContext onDragEnd={this.onDragEnd}>
 
@@ -197,7 +260,7 @@ class LearningCheck extends Component {
             <Droppable key={'list-droppable-' + listIndex} droppableId={list.droppableId}>
               {(provided, snapshot) => (
 
-                <div className={'container'+' c'+listIndex}>
+                <div className={'container c'+listIndex}>
                 
                   { this.title(listIndex) ? <h2 dangerouslySetInnerHTML={{ __html: this.title(listIndex)}} /> : null }
                   <div className='dropzone'
@@ -207,6 +270,7 @@ class LearningCheck extends Component {
                   {this.state[list.listId] && this.state[list.listId].map((item, i) => (
                     
                     <Draggable
+                      group={item.group}
                       key={item.id}
                       draggableId={item.id}
                       index={i}>
@@ -234,6 +298,7 @@ class LearningCheck extends Component {
             </Droppable>
           )}
         </DragDropContext>
+        {this.submitButton(this.state.list0.length)}
       </div>
     )
   }

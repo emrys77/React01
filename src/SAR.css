@@ -8,80 +8,93 @@ h1, h2, h3 {
   color: #ce0000;
   margin-top: 0; }
 
-body {
+.container {
   background-image: url(/images/Background_01.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto; }
-  body #root {
+  background-size: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .container .App {
+    /* display: block; 
+           position: relative;
+            padding-top: 5%;
+           */
     display: flex;
-    align-items: center;
-    justify-content: center; }
-    body #root .App {
-      display: block;
-      position: relative;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    height: 90%;
+    max-height: 665px; }
+    .container .App footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      color: white;
+      background: #ce0000;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2.4rem;
       width: 100%;
       max-width: 1000px;
-      height: 90%;
-      max-height: 665px;
-      padding-top: 5%; }
-      body #root .App .content {
-        /*top:25%;
-                left:50%;
-                margin-left: -500px;*/
-        width: 100%;
-        max-width: 1000px;
-        height: 665px;
-        background: white;
-        /* &.Intro {
+      height: 665px;
+      background: white;
+      /* &.Intro {
                     .QContent {
                         padding: 0;
                     }
                 }*/ }
-        body #root .App .content.Survive-Armed-Robbery.Intro.Q1 {
-          background-image: url(/images/title-survive-armed-robbery.jpg); }
-        body #root .App .content.The-Offender.Intro.Q1 {
-          background: url(/images/title-the-offender.jpg) right top no-repeat; }
-        body #root .App .content.New-Crims-new-ways.Intro.Q1 {
-          background: url(/images/title-the-robbery.jpg) right top no-repeat; }
-        body #root .App .content.The-Robbery.Intro.Q1 {
-          background: url(/images/title-the-robbery.jpg) right top no-repeat; }
-        body #root .App .content.Conclusion.Intro.Q1 {
-          background: url(/images/title-conclusion.jpg) right top no-repeat; }
-        body #root .App .content.Video {
-          background: url(/images/VideoImg_01.jpg) right 54px no-repeat; }
-        body #root .App .content .QContent {
-          display: inline-block;
-          vertical-align: top;
-          padding: 4%;
-          width: 92%;
-          height: 420px; }
-        body #root .App .content.Text.Q2 {
-          background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
-          body #root .App .content.Text.Q2 .QContent {
-            width: 50%; }
-        body #root .App .content.Text.Q3 {
-          background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
-          body #root .App .content.Text.Q3 .QContent {
-            width: 50%; }
-        body #root .App .content.Text.Q6 {
-          background: url(/images/378x572_Trish.jpg) right 53px no-repeat white; }
-          body #root .App .content.Text.Q6 .QContent {
-            width: 50%; }
-        body #root .App .content.Text.Q11 {
-          background: url(/images/378x572_Door.jpg) right 53px no-repeat white; }
-          body #root .App .content.Text.Q11 .QContent {
-            width: 50%; }
-        body #root .App .content.Text.Q4.Conclusion {
-          background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
-          body #root .App .content.Text.Q4.Conclusion .QContent {
-            width: 50%; }
-        body #root .App .content.Text.Q12.Conclusion {
-          background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
-          body #root .App .content.Text.Q12.Conclusion .QContent {
-            width: 50%; }
-        body #root .App .content.Video .QContent {
-          padding: 0; }
+      .container .App footer.Survive-Armed-Robbery.Intro.Q1 {
+        background-image: url(/images/title-survive-armed-robbery.jpg); }
+      .container .App footer.The-Offender.Intro.Q1 {
+        background: url(/images/title-the-offender.jpg) right top no-repeat; }
+      .container .App footer.New-Crims-new-ways.Intro.Q1 {
+        background: url(/images/title-the-robbery.jpg) right top no-repeat; }
+      .container .App footer.The-Robbery.Intro.Q1 {
+        background: url(/images/title-the-robbery.jpg) right top no-repeat; }
+      .container .App footer.Conclusion.Intro.Q1 {
+        background: url(/images/title-conclusion.jpg) right top no-repeat; }
+      .container .App footer.Video {
+        background: url(/images/VideoImg_01.jpg) right 54px no-repeat; }
+      .container .App footer .QContent {
+        display: inline-block;
+        vertical-align: top;
+        padding: 4%;
+        width: 92%;
+        height: 420px; }
+      .container .App footer.Text.Q2 {
+        background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
+        .container .App footer.Text.Q2 .QContent {
+          width: 50%; }
+      .container .App footer.Text.Q3 {
+        background: url(/images/378x572_Image.jpg) right 53px no-repeat white; }
+        .container .App footer.Text.Q3 .QContent {
+          width: 50%; }
+      .container .App footer.Text.Q6 {
+        background: url(/images/378x572_Trish.jpg) right 53px no-repeat white; }
+        .container .App footer.Text.Q6 .QContent {
+          width: 50%; }
+      .container .App footer.Text.Q11 {
+        background: url(/images/378x572_Door.jpg) right 53px no-repeat white; }
+        .container .App footer.Text.Q11 .QContent {
+          width: 50%; }
+      .container .App footer.Text.Q4.Conclusion {
+        background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
+        .container .App footer.Text.Q4.Conclusion .QContent {
+          width: 50%; }
+      .container .App footer.Text.Q12.Conclusion {
+        background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white; }
+        .container .App footer.Text.Q12.Conclusion .QContent {
+          width: 50%; }
+      .container .App footer.Video .QContent {
+        padding: 0;
+        width: 100%;
+        height: 100%; }
 
 header {
   font-size: 1.1rem;
@@ -93,14 +106,13 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  min-height: 80%;
-  justify-content: center; }
+  min-height: 80%; }
   .learning-check-container .intro {
     width: 100%; }
   .learning-check-container .container {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    width: 318px;
     margin-right: 10px;
     min-height: 200px; }
     .learning-check-container .container h2 {
@@ -137,8 +149,8 @@ header {
         align-content: baseline; }
         .learning-check-container .container.c0 .dropzone .draggableItem {
           background: #ce0000;
-          padding: 8px 16px;
-          width: 276px; }
+          padding: 8px 8px;
+          width: 274px; }
     .learning-check-container .container:not(.c0) {
       border: 1px solid #000000; }
     .learning-check-container .container.finish {
@@ -271,39 +283,37 @@ div[class^="styles_modal__"] {
       background: #002b54; }
     .video button .fa {
       background: inherit; }
+  .video .player-wrapper {
+    position: relative;
+    padding-top: calc(100% /  (640 / 480));
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #cccccc; }
+    .video .player-wrapper .react-player {
+      position: absolute;
+      top: 0;
+      left: 0; }
 
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.1rem;
-  padding: 0.5rem 0;
-  color: white;
-  background: #ce0000;
+.bar-container {
+  margin-left: 2rem;
+  width: 140px;
+  background: #111111;
+  height: 10px;
+  border: 2px solid #111111;
+  border-radius: 5px; }
+  .bar-container div {
+    background: white;
+    height: 100%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px; }
+
+nav {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.4rem; }
-  footer .bar-container {
-    margin-left: 2rem;
-    width: 140px;
-    background: #111111;
-    height: 10px;
-    border: 2px solid #111111;
-    border-radius: 5px; }
-    footer .bar-container div {
-      background: white;
-      height: 100%;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px; }
-  footer nav {
-    position: absolute;
-    right: 0; }
-    footer nav .progress {
-      display: inline-block;
-      position: relative;
-      bottom: 5px; }
+  right: 0; }
+  nav .progress {
+    display: inline-block;
+    position: relative;
+    bottom: 5px; }
 
 button {
   display: inline-block;

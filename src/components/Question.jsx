@@ -3,35 +3,14 @@ import React, { Component } from 'react'
 import Video from './Video/Video.jsx'
 import Text from './Text/Text.js'
 import InformationBoxes from './InformationBoxes/InformationBoxes.jsx'
-//import Header from './Header/Header.js'
 import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.jsx'
 import LearningCheck from './LearningCheck/LearningCheck.jsx'
-
 
 // utility to strip commas and spaces
 const className = (w) => w.replace(/\s/g,'-').replace(/,/g,'');
 
 // utility to add an index to array elements
-
-/*const addIndex = (a) => {
-  a.map = (el,i) => {
-    var o = Object.assign({}, el);
-    o.index = i;
-    return o;
-  }
-}
-
-const addIndex = (a) => {
-  console.log('addIndex initiated');
-  // Notice the return
-  return a.map((el, i) => { // See how we call map here
-    var o = Object.assign({}, el);
-    o.key = i;
-    return o;
-  });
-}
-*/
 const addIndex = (a) => {
   console.log('addIndex initiated')
   return a.map((el, i) => Object.assign({
@@ -39,55 +18,28 @@ const addIndex = (a) => {
   }, el));
 }
 
-
-/*
-const addIndex = function(a) {
-  a.map(function(el,i) {
-    var o = Object.assign({}, el);
-    o.index = i;
-    return o;
-  });
-
-} 
-*/
-
 class Question extends Component {
   constructor(props) {
     super(props);
     this.state = { step: 1 }
   }
   
-  
-
+  // function to move us backwards and forwards through the course
   moveQuestion = (e,move) => {
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
     this.setState({step: nStep})
   }
 
-  introPause = wait => {
-    var nStep = this.state.step+1
-      setTimeout(() => {
-        this.setState({step: nStep})
-      }, {wait});
-  }
-
-  componentDidMount() {
-   // console.log('componentDidMount fired, QTYPE: ' + this.QType)
-    if ( this.QType === 'Intro' ) {
-        this.introPause(5000)
+  findObjectByKey = (array, key, value) => {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i][key] === value) {
+        return array[i];
+      }
     }
+    return null;
   }
 
   render() {
-
-    const findObjectByKey = (array, key, value) => {
-      for (var i = 0; i < array.length; i++) {
-          if (array[i][key] === value) {
-              return array[i];
-          }
-      }
-      return null;
-    }
 
     // all the data
     const myData = this.props.data;
@@ -109,7 +61,7 @@ class Question extends Component {
     var step = this.state.step;
     
     // get the data for the question we are on
-    const myQuestion = findObjectByKey(myData,'menu_order',step);
+    const myQuestion = this.findObjectByKey(myData,'menu_order',step);
 
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
@@ -127,51 +79,28 @@ class Question extends Component {
       var QNumber = myQuestionArray[17][1]['question_number'];
       // big fat h1 tag if it exists
       var title = myQuestionArray[17][1]['title']
-      var QTitle
       //console.log('title: ' + title)
-      if (title) {
-        QTitle = <h1 dangerouslySetInnerHTML={{ __html: title }}></h1>
-      } else {
-        QTitle = null
-      }
+      var QTitle = title ? <h1 dangerouslySetInnerHTML={{ __html: title }}></h1> : null
 
       // what kind of question are we? intro/text/video/multiple choice/
       this.QType = myQuestionArray[17][1]['type'];
 
       var QTypeClass = className(this.QType);
       
-      // get the background image if there is one
-      const bg = myQuestionArray[17][1]['image'];
-      //var bgClass = 'nobg'
+      var Header = (this.QType !== 'Intro') ? <header>Survive Armed Robbery | {section}</header> : null
 
-      var bgClass = bg ? 'bg' : 'nobg' 
-
-      // console.log(QType)
-      var Header
-      if (this.QType !== 'Intro'){
-        Header = <header>Survive Armed Robbery | {section}</header>
-      } else {
-        Header = null
-      }
-      
-      var styles, QRender; 
-
-      if ( this.QType === 'Intro') {
-       // QRender = <img src={bg} alt={section} />
-      }
+      var QRender; 
 
       if ( this.QType === 'Text') {
         const QContent = myQuestionArray[17][1]['content'];
         QRender = <Text content={QContent} />
       }
 
-      if (this.QType==='Video') {
+      if (this.QType === 'Video') {
         const video_intro_text = myQuestionArray[17][1]['video_intro_text'];
-        const vimeo_code = myQuestionArray[17][1]['vimeo_code']
-        const video_url = 'https://player.vimeo.com/video/' + vimeo_code + 'playing'
-        
+        const vimeo_code = myQuestionArray[17][1]['vimeo_code'];        
         QRender = 
-        <Video video_intro_text={video_intro_text} video_url={video_url} />
+        <Video videoIntroText={video_intro_text} vimeoCode={vimeo_code} />
       }
 
       if (this.QType==='Multiple Choice') {
@@ -218,15 +147,14 @@ class Question extends Component {
 
     return  (
     
-      <div className={ bgClass + ' content ' + QTypeClass + ' Q' + QNumber + ' ' + sectionClass}>
+      <div className={ 'content ' + QTypeClass + ' Q' + QNumber + ' ' + sectionClass}>
         {Header}
-        <div style={styles}>
           <div className={ "QContent Step" + this.state.step } >
             {QTitle}
             {QRender}
           </div>
-          <Footer className={'Step'+this.state.step} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
-        </div>
+        <Footer className={'footer Step'+this.state.step} QType={this.QType} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
+
       </div>
 
     );

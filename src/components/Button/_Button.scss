@@ -12,9 +12,15 @@ button {
     &:active {
         color: $SAR-light-orange;
     }
+    &.initial {
+        font-size: 1.5rem;
+        background: transparent;
+        margin-right: 21px;
+        margin-bottom: 14px;
+    }
     &.disabled {
         pointer-events: none;
-        opacity: 0.4;
+        opacity: 0;
     }
     &.submit {
         font-size: 1rem;

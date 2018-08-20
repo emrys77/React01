@@ -1,31 +1,52 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import Button from '../Button/Button.jsx'
 import ProgressBar from './progess'
+var Footer;
+// function to work out if the forward button works
+/* when is the forward button disabled?
+multiple choice initial
+modals not both done
+learning check not complete
 
-//var progress =  Math.round((this.props.step/ this.props.myDataCount) * 100);
-
-//console.log('Progress: ' + progress + '%' )
-export default class Footer extends React.Component {
-// pass 2 props to handle the two buttons: fbState bbState
+*/
+export default Footer = ( props ) => {
     
-    render() {
+    const bbState = (props.step!==1) ? "active" : "disabled";
+    const fbState = (props.step === props.totalSteps)  ? "disabled" : "active";
+    //if ((props.step === props.totalSteps) || ()
+    var step = props.step===1; 
+    const type = step ? 'initial' : null
 
-        var bbState = (this.props.step!==1) ? "active" : "disabled" 
-        var fbState = (this.props.step === this.props.totalSteps)  ? "disabled" : "active" 
-        
-        //console.log('bbState' + bbState)
-            return (
-                <footer className={this.props.className}>
+    const footer = step ? 
+    (
+        <Button active={fbState} type={type} direction="forward" onChange={ props.onChange } />
+    ) : (
+        <div>
+        <ProgressBar step={props.step} totalSteps={props.totalSteps} />
+        <nav>
+            <Button active={bbState} type={type} direction="backward" onChange={ props.onChange } />
+            <div className="progress">{props.sectionStep} / {props.sectionCount}</div>
+            <Button active={fbState} type={type} direction="forward" onChange={ props.onChange } />
+        </nav>
+        </div>
+    )
 
-                    <ProgressBar step={this.props.step} totalSteps={this.props.totalSteps} />
-
-                    <nav>
-                        <Button active={bbState} direction="backward" onChange={ this.props.onChange } />
-                        <div className="progress">{this.props.sectionStep} / {this.props.sectionCount}</div>
-                        <Button active={fbState} direction="forward" onChange={ this.props.onChange } />
-                    </nav>
-                </footer>
-            )
-        
-    }
+    return (
+        <footer className={props.className}>
+            { footer }
+        </footer>
+    )
+    
 }
+
+Footer.propTypes = {
+    step: PropTypes.number, // which step of the course
+    className: PropTypes.string, //if we are on the first page this is initial
+    onChange: PropTypes.any,  // move forward/backward through the course
+    sectionStep: PropTypes.string, // where we are in the section
+    sectionCount: PropTypes.number, // total steps in the section
+    QType: PropTypes.string // Question type
+};
+
+

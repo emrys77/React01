@@ -1,35 +1,47 @@
-import React from 'react'
-import ReactPlayer from 'react-player'
-import FontAwesome from 'react-fontawesome'
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReactPlayer from 'react-player';
+/*import VimeoPlayer from 'react-player/lib/players/Vimeo';*/
+
+import FontAwesome from 'react-fontawesome';
 
 export default class Video extends React.Component {
+    
     constructor(props) {
       super(props);
-      this.state = { step: 1 }
-      // 1=intro 2=video
+      this.state = { step: 'intro' }
     }
     
     showVideo = () => {
-        this.setState({step: 2})
+        this.setState({step: 'video'})
     }
 
     render() {
-
-        const step = this.state.step;
-
-        if (step===1) {
-            return (
-                <div className="video">
-                    <div className="VideoIntro" dangerouslySetInnerHTML={{ __html: this.props.video_intro_text }}></div>  
-                    <button onClick={(e) => this.showVideo()}>
+        const step = this.state.step==='intro'; 
+        return (
+             step ?
+               ( <div className="intro">
+                    <div className="VideoIntro" dangerouslySetInnerHTML={{ __html: this.props.videoIntroText }}></div>  
+                    <button onClick={() => this.showVideo()}>
                         <FontAwesome name="play" size="2x" />
                     </button>
                 </div>
-            )
-        } else if (step===2) {
-            return (
-                <ReactPlayer url={this.props.video_url} width="1000px" height="555px" /> 
-            )
-        }
+              ) : (
+                <div className="player-wrapper">
+                    <ReactPlayer 
+                        url={'https://player.vimeo.com/video/' + this.props.vimeoCode } className="react-player"
+                        width='100%'
+                        height='100%' 
+                    />
+                </div>
+              )
+            
+        )
+
     }
 }
+
+Video.propTypes = {
+    videoIntroText: PropTypes.string,
+    vimeoCode: PropTypes.string
+};

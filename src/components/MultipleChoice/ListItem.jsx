@@ -1,12 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 
 export default class ListItem extends React.Component {
     constructor(props) {
       super(props);
       this.state = { selected: '' }
-      var value = props.item;
-      var liN = props.i;
 
       // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
@@ -14,20 +11,11 @@ export default class ListItem extends React.Component {
     // ****** this never fires ********* //
     handleClick = (e,item) => {
         e.preventDefault();
-        //console.log(  item + 'was clicked.');
         
-        console.log('handle click was fired')
         this.setState({
             selected: item
-            //selected: 'selected'
         });
     }
-
-    // <button type="submit" onClick={() => { this.props.removeTaskFunction(todo) }}>Submit</button>
-    // <button onClick={(e) => this.showVideo()}>
-
-    // onClick={(e) => this.handleDelete(e, i)}
-
 
     // capitalize
     jsUcfirst = (string) => {

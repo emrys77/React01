@@ -25,7 +25,7 @@ class Button extends Component {
     }
 
     return  (
-      <button className={this.props.active + ' ' + direction} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
+      <button className={this.props.type + ' ' + this.props.active + ' ' + direction} direction={direction} onClick={(e) => this.props.onChange(e,step)}>
         <FontAwesome name={fa} size="2x" />
       </button>
     );
