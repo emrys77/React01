@@ -26,7 +26,7 @@
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-           // justify-content: center;
+           // justify-content: center;  
             .draggableItem {
                 
                 background: $SAR-dark-blue;
@@ -49,12 +49,13 @@
             min-height: 200px;
             height: 220px;
             width: 660px;
+            width: 100%;
             .dropzone {
-                width: 666px;
+                width: 100%;
                 align-content: baseline;
                 .draggableItem {
                     background: $SAR-burnt-orange;
-                    padding: 8px 16px;
+                    padding: 8px;
                     width: 276px;
                 }
             }

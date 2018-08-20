@@ -1,12 +1,13 @@
-@import './scss/vars.scss';
-@import './scss/typography.scss';
-@import './scss/base.scss';
-@import './components/Header/Header.scss', 
-'./components/Question.scss',
-'./components/LearningCheck/LearningCheck.scss',
-'./components/MultipleChoice/MultipleChoice.scss',
-'./components/InformationBoxes/InformationModal.scss',
-'./components/Text/Text.scss',
-'./components/Video/Video.scss',
-'./components/Footer/Footer.scss',
-'./components/Button/Button.scss';
+@import './scss/_vars.scss';
+@import './scss/_typography.scss';
+@import './scss/_base.scss';
+@import './components/Button/_Button.scss',
+'./components/Footer/_Footer.scss',
+'./components/Header/_Header.scss', 
+'./components/InformationBoxes/_InformationModal.scss',
+'./components/LearningCheck/_LearningCheck.scss',
+'./components/MultipleChoice/_MultipleChoice.scss',
+'./components/_Question.scss',
+'./components/Text/_Text.scss',
+'./components/Video/_Video.scss';
+
