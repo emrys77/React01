@@ -11,7 +11,7 @@
             .container {
                 display: flex;
                 flex-direction: column;
-                width: 318px;
+                width: 302px;
                 margin-right: 10px;
                 min-height: auto;
                 background: #ffffff;
@@ -39,7 +39,6 @@
                         @include round-corners;
                         outline: none;
                         width: 272px;
-                        userSelect: 'none';
                         padding: 4px 8px;
                         margin: 3px;
                     }

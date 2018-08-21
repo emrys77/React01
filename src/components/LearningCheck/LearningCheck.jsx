@@ -73,7 +73,6 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 const getListStyle = isDraggingOver => ({
     background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent',
     padding: grid,
-    margin: '3px',
 })
 
 // pass this an array of lists from the props; creates a key value array like object
