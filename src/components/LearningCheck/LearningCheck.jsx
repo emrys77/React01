@@ -71,8 +71,8 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 })
 
 const getListStyle = isDraggingOver => ({
-    background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent',
-    padding: grid,
+    background: isDraggingOver ? 'rgb(255,166,76)' : 'transparent'
+    
 })
 
 // pass this an array of lists from the props; creates a key value array like object
@@ -145,12 +145,7 @@ class LearningCheck extends Component {
         console.log(this.droppableIds)
     }
 
-    submitButton = (s) => {
-        if ((s === 0) || (this.lists.length === 1)) {
-            return <div className="container submitContainer"><button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button></div>
-        }
-        return null;
-    };
+    
 
     checkAnswer = () => {
         // how many lists?
@@ -169,17 +164,20 @@ class LearningCheck extends Component {
             id: 0
             key: 0
             order: "0"
-            */
+            
             console.log('list1: ' + this.state.list1[1]['content']+ ' '+this.state.list1[1]['group']);
+            */
             // loop through list 1 check for group 2
-            var found = this.state.list1.findIndex(p => p.group == "2");
+            var found = this.state.list1.findIndex(p => p.group === "2");
             // and vice versa
-            var found2 = this.state.list2.findIndex(p => p.group == "1");
+            var found2 = this.state.list2.findIndex(p => p.group === "1");
             if ((found !== -1) || (found2 !== -1)) {
-                alert('found: ' + found)
+                return <p>That's not right. </p>
+            } else {
+                return <p>That's right.</p>
             }
               
-              console.log(found);
+            
               // expected output: 
             
             // if
@@ -190,6 +188,12 @@ class LearningCheck extends Component {
         
     }
 
+    submitButton = (s) => {
+        if ((s === 0) || (this.lists.length === 1)) {
+            return <div className="container submitContainer"><button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button></div>
+        }
+        return null;
+    };
     
 
     droppableIds = createDroppableIds(this.props.boxes);
