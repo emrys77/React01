@@ -245,7 +245,7 @@ header {
   border-radius: 5px;
   outline: none;
   width: 272px;
-  padding: 4px 8px;
+  padding: 6px 8px;
   margin: 3px;
 }
 
@@ -259,6 +259,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  padding-top: 34px;
+  max-height: 130px;
 }
 
 .Learning-Check .QContent .learning-check-container .container.c0 .dropzone {
@@ -319,23 +321,37 @@ header {
 }
 
 .Learning-Check .QContent.Step36 .learning-check-container {
-  height: auto;
+  height: 100%;
 }
 
 .Learning-Check .QContent.Step36 .learning-check-container .c0 {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: auto;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 400px;
+  max-height: none;
+  padding-top: 0;
 }
 
 .Learning-Check .QContent.Step36 .learning-check-container .c0 .dropzone {
-  width: 84%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -344,7 +360,10 @@ header {
 
 .Learning-Check .QContent.Step36 .learning-check-container .c0 .dropzone .draggableItem {
   display: block;
-  width: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 600px;
   padding: 8px 16px;
 }
 

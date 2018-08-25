@@ -54,9 +54,9 @@ const move = (source, destination, droppableSource, droppableDestination) => {
     return result
 }
 
+/*
 const grid = 4
 
-/*
 $SAR-burnt-orange: rgb(206,0,0);
 $SAR-light-orange: rgb(255,166,76);
 $SAR-dark-blue: rgb(0,43,84);
@@ -118,6 +118,7 @@ class LearningCheck extends Component {
         const elements = shuffle(addIndex(this.props.items));
 
         this.state = {
+            messageHidden: true,
             list0: elements, // content, group, key, order
             list1: [],
             list2: []
@@ -149,7 +150,9 @@ class LearningCheck extends Component {
 
     checkAnswer = () => {
         // how many lists?
+        console.log ('checkAnswer init');
         console.log ('no of lists: ' + this.lists.length)
+        var response;
         if (this.lists.length === 1) {
             // this is a drag'n'drop scenario: we compare the order
             //alert('i am a reorder list');
@@ -166,18 +169,31 @@ class LearningCheck extends Component {
             order: "0"
             
             console.log('list1: ' + this.state.list1[1]['content']+ ' '+this.state.list1[1]['group']);
+
+            var clicked = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
+
+            {!this.state.messageHidden && clicked }
+            message not hidden + 
+            
             */
             // loop through list 1 check for group 2
             var found = this.state.list1.findIndex(p => p.group === "2");
             // and vice versa
             var found2 = this.state.list2.findIndex(p => p.group === "1");
             if ((found !== -1) || (found2 !== -1)) {
-                return <p>That's not right. </p>
+                console.log('that\'s not right fired');
+                response = <p>That's not right. </p>
+                
             } else {
-                return <p>That's right.</p>
+                console.log('that\'s right fired');
+                response = <p>That's right.</p>
             }
-              
             
+            
+            return response
+            /*
+            var clicked = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
+            */
               // expected output: 
             
             // if
@@ -195,6 +211,12 @@ class LearningCheck extends Component {
         return null;
     };
     
+    // shows the message
+    unHide = () => {
+        this.setState({
+          messageHidden: false
+        })
+    }
 
     droppableIds = createDroppableIds(this.props.boxes);
     lists = createLists(this.droppableIds);
@@ -244,11 +266,6 @@ class LearningCheck extends Component {
             })
         }
     }
-
-  
-  
-  // Normally you would want to split things out into separate components.
-  // But in this example everything is just done in one place for simplicity
 
   render() {
     console.log ('no of lists: ' + this.lists.length)
