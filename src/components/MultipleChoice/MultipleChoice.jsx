@@ -25,9 +25,14 @@ export default class MultipleChoice extends React.Component {
           messageHidden: false
         })
     }
+    reset = () => {
+        this.setState({
+            messageHidden: true,
+            selected: -1
+          })
+    }
 
     render() {
-
         var onChange = (e,clicked) => {
             e.preventDefault();
         //    console.log('onChange in MC fired')

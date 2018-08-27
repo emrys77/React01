@@ -22,12 +22,16 @@ class Question extends Component {
   constructor(props) {
     super(props);
     this.state = { step: 1 }
+    
   }
   
+  update = 0;
+
   // function to move us backwards and forwards through the course
   moveQuestion = (e,move) => {
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
-    this.setState({step: nStep})
+    this.setState({step: nStep});
+    this.update = 1;
   }
 
   findObjectByKey = (array, key, value) => {
@@ -122,7 +126,7 @@ class Question extends Component {
         }
       );
         
-      QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer }  />
+      QRender = <MultipleChoice update={this.update} question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer }  />
 
       }
 

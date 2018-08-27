@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button/Button.jsx'
-import ProgressBar from './progess'
+import Button from '../Button/Button.jsx';
+import ProgressBar from './progess';
 var Footer;
 // function to work out if the forward button works
 /* when is the forward button disabled?
