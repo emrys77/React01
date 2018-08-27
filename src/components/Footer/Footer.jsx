@@ -43,7 +43,7 @@ export default Footer = ( props ) => {
 Footer.propTypes = {
     step: PropTypes.number, // which step of the course
     className: PropTypes.string, //if we are on the first page this is initial
-    onChange: PropTypes.any,  // move forward/backward through the course
+    onChange: PropTypes.any,  // function to move forward/backward through the course
     sectionStep: PropTypes.string, // where we are in the section
     sectionCount: PropTypes.number, // total steps in the section
     QType: PropTypes.string // Question type

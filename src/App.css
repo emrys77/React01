@@ -109,6 +109,8 @@ h1, h2, h3 {
 
 .container .App .content.Text.Q2 .QContent {
   width: 56%;
+  height: 100%;
+  background: white;
   padding: 26px;
 }
 
@@ -118,6 +120,8 @@ h1, h2, h3 {
 
 .container .App .content.Text.Q3 .QContent {
   width: 56%;
+  height: 100%;
+  background: white;
   padding: 26px;
 }
 
@@ -127,11 +131,15 @@ h1, h2, h3 {
 
 .container .App .content.Text.Q6 .QContent {
   width: 56%;
+  height: 100%;
+  background: white;
   padding: 26px;
 }
 
 .container .App .content.Text.Q8 .QContent {
   width: 56%;
+  height: 100%;
+  background: white;
   padding: 26px;
 }
 
@@ -145,6 +153,8 @@ h1, h2, h3 {
 
 .container .App .content.Text.Q11 .QContent {
   width: 56%;
+  height: 100%;
+  background: white;
   padding: 26px;
 }
 
@@ -154,6 +164,8 @@ h1, h2, h3 {
 
 .container .App .content.Text.Q4.Conclusion .QContent {
   width: 56%;
+  height: 100%;
+  background: white;
   padding: 26px;
 }
 
@@ -163,6 +175,8 @@ h1, h2, h3 {
 
 .container .App .content.Text.Q12.Conclusion .QContent {
   width: 56%;
+  height: 100%;
+  background: white;
   padding: 26px;
 }
 
@@ -339,7 +353,6 @@ header {
       align-self: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  width: 400px;
   max-height: none;
   padding-top: 0;
 }
@@ -348,6 +361,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 620px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -360,11 +374,11 @@ header {
 
 .Learning-Check .QContent.Step36 .learning-check-container .c0 .dropzone .draggableItem {
   display: block;
+  width: 100%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  width: 600px;
-  padding: 8px 16px;
+  padding: 12px 16px;
 }
 
 .Multiple-Choice .QContent {
@@ -375,6 +389,8 @@ header {
   list-style: none;
   margin-top: 2rem;
   padding-left: 0;
+  width: 80%;
+  margin-bottom: 30px;
 }
 
 .Multiple-Choice .QContent ol.alpha li {

@@ -1,17 +1,25 @@
-import React from 'react'
-import ListItem from './ListItem.jsx'
+import React from 'react';
+import PropTypes from 'prop-types';
+import ListItem from './ListItem.jsx';
 
 export default class MultipleChoice extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = { 
-          selected: -1,
-          messageHidden: true
+        super(props);
+
+        this.state = { 
+            selected: this.props.initialSelection,
+            messageHidden: this.props.initialMessageHidden
         }
     }
 
+    componentWillReceiveProps({initialSelection}) {
+        this.setState({
+            selected: initialSelection,
+            messageHidden: true
+        })
+    }
+ 
     // on submit enable forward button regardless if answer is correct
-
     submitButton = (s) => {
         if (s !== -1) {
             return <button onClick={this.unHide.bind(this)} className="submit active">Submit</button>
@@ -27,7 +35,7 @@ export default class MultipleChoice extends React.Component {
     }
 
     render() {
-
+        
         var onChange = (e,clicked) => {
             e.preventDefault();
         //    console.log('onChange in MC fired')
@@ -35,6 +43,7 @@ export default class MultipleChoice extends React.Component {
             this.setState({
                 selected: clicked
             });
+            
         }
 
         var itemsList = this.props.options.map((item,i) => {
@@ -42,8 +51,8 @@ export default class MultipleChoice extends React.Component {
         }, this);
 
         var selected = this.state.selected;
-        var submitButton = this.submitButton(selected); 
-        var clicked = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
+        var submitButton = this.submitButton(selected);
+        this.message = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
         
         return  (
             <div className="multipleChoice wrapper">
@@ -51,9 +60,17 @@ export default class MultipleChoice extends React.Component {
                 <ol className="alpha">
                 { itemsList }
                 </ol>
-                {!this.state.messageHidden && clicked }
+                {!this.state.messageHidden && this.message }
                 { submitButton }
             </div>
         );
     }
 }
+
+MultipleChoice.propTypes = {
+    initialSelection: PropTypes.number,
+    messageHidden: PropTypes.bool,
+    correct: PropTypes.number,
+    options: PropTypes.array,
+    question: PropTypes.string
+};

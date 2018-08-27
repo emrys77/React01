@@ -18,16 +18,24 @@ const addIndex = (a) => {
   }, el));
 }
 
+var rerender = 0;
+
 class Question extends Component {
   constructor(props) {
     super(props);
     this.state = { step: 1 }
   }
   
+  
+  
   // function to move us backwards and forwards through the course
   moveQuestion = (e,move) => {
+    console.log('moveQuestion fired. Rerender: ' + rerender);
+    rerender = 1;
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
     this.setState({step: nStep})
+    console.log(' Rerender: ' + rerender);
+
   }
 
   findObjectByKey = (array, key, value) => {
@@ -104,9 +112,10 @@ class Question extends Component {
       }
 
       if (this.QType==='Multiple Choice') {
-        const question_text = myQuestionArray[10][1]['rendered']
-        const options = myQuestionArray[17][1]['multiple_choice_question']
-        const incorrect_response = myQuestionArray[17][1]['incorrect_answer_response']
+        const question_text = myQuestionArray[10][1]['rendered'];
+        const options = myQuestionArray[17][1]['multiple_choice_question'];
+        const incorrect_response = myQuestionArray[17][1]['incorrect_answer_response'];
+        
         // create an array for the question options list
         var rOptions = [];
         // and the answer
@@ -122,7 +131,7 @@ class Question extends Component {
         }
       );
         
-      QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer }  />
+      QRender = <MultipleChoice rerender={rerender} question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer } initialSelection={-1} initialMessageHidden={true} />
 
       }
 
