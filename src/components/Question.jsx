@@ -18,24 +18,16 @@ const addIndex = (a) => {
   }, el));
 }
 
-var rerender = 0;
-
 class Question extends Component {
   constructor(props) {
     super(props);
     this.state = { step: 1 }
   }
-  
-  
-  
+    
   // function to move us backwards and forwards through the course
   moveQuestion = (e,move) => {
-    console.log('moveQuestion fired. Rerender: ' + rerender);
-    rerender = 1;
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
     this.setState({step: nStep})
-    console.log(' Rerender: ' + rerender);
-
   }
 
   findObjectByKey = (array, key, value) => {
@@ -101,7 +93,7 @@ class Question extends Component {
 
       if ( this.QType === 'Text') {
         const QContent = myQuestionArray[17][1]['content'];
-        QRender = <Text content={QContent} />
+        QRender = <Text content={QContent} step={this.state.step} />
       }
 
       if (this.QType === 'Video') {
@@ -131,7 +123,7 @@ class Question extends Component {
         }
       );
         
-      QRender = <MultipleChoice rerender={rerender} question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer } initialSelection={-1} initialMessageHidden={true} />
+      QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer } initialSelection={-1} initialMessageHidden={true} />
 
       }
 
