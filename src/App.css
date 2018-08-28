@@ -526,6 +526,66 @@ header {
   color: #ce0000;
 }
 
+.rc-checkbox {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+
+.rc-checkbox .rc-checkbox-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.rc-checkbox .rc-checkbox-inner {
+  border: 1px solid #333333;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+}
+
+.rc-checkbox .rc-checkbox-inner:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.rc-checkbox .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
+  display: block;
+}
+
+.rc-checkbox .rc-checkbox-inner:after {
+  left: 14px;
+  top: 5px;
+  width: 10px;
+  height: 20px;
+  border: solid #333333;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .Video .QContent {
   padding: 0;
   -webkit-box-flex: 1;

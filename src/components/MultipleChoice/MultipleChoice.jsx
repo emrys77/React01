@@ -11,8 +11,7 @@ export default class MultipleChoice extends React.Component {
             messageHidden: this.props.initialMessageHidden
         }
     }
-
-    componentWillReceiveProps({initialSelection}) {
+    UNSAFE_ccomponentWillReceiveProps({initialSelection}) {
         this.setState({
             selected: initialSelection,
             messageHidden: true

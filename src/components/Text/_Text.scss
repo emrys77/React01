@@ -1,0 +1,53 @@
+.rc-checkbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    .rc-checkbox-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+
+    }
+    .rc-checkbox-inner {
+        border: 1px solid $SAR-dark-gray;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        background-color: #eee;
+    }
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .rc-checkbox-inner:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    /* Show the checkmark when checked */
+    .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
+        display: block;
+    }
+  
+  
+  /* Style the checkmark/indicator */
+  .rc-checkbox-inner:after {
+        left: 14px;
+        top: 5px;
+        width: 10px;
+        height: 20px;
+        border: solid $SAR-dark-gray;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+  }
+
+    
+}

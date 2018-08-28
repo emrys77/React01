@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Video from './Video/Video.jsx'
-import Text from './Text/Text.js'
+import Text from './Text/Text.jsx'
 import InformationBoxes from './InformationBoxes/InformationBoxes.jsx'
 import Footer from './Footer/Footer.jsx'
 import MultipleChoice from './MultipleChoice/MultipleChoice.jsx'
