@@ -39,19 +39,21 @@ class Question extends Component {
     return null;
   }
 
+  
   enableForwardButton = () => {
-
+    console.log('enableForwardButton fired');
+    const fbState = true;
+    return fbState;
   }
-
-  // all the data
-  myData = this.props.data;
-
-  // this is how many steps we have in total
-  myDataCount = this.props.data.length;
+  
 
   render() {
+    // all the data
+    const myData = this.props.data;
 
-    console.log(this.myData)
+    // this is how many steps we have in total
+    const myDataCount = this.props.data.length;
+    console.log(myData)
 
     //count the number in each section bung them in an array
     const accumulatedTotals = {}
@@ -132,7 +134,7 @@ class Question extends Component {
         }
       );
         
-      QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer } initialSelection={-1} initialMessageHidden={true} />
+      QRender = <MultipleChoice onChange={this.enableForwardButton} question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={theAnswer} initialSelection={-1} initialMessageHidden={true} />
 
       }
 
