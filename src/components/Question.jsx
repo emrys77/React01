@@ -18,16 +18,22 @@ const addIndex = (a) => {
   }, el));
 }
 
+var efbFired = false;
+
 class Question extends Component {
   constructor(props) {
     super(props);
-    this.state = { step: 1 }
+    this.state = { 
+      step: 1
+    }
   }
     
   // function to move us backwards and forwards through the course
   moveQuestion = (e,move) => {
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
-    this.setState({step: nStep})
+    this.setState({
+      step: nStep
+    })
   }
 
   findObjectByKey = (array, key, value) => {
@@ -38,22 +44,23 @@ class Question extends Component {
     }
     return null;
   }
-
   
   enableForwardButton = () => {
     console.log('enableForwardButton fired');
-    const fbState = true;
-    return fbState;
+    efbFired = true
   }
   
 
   render() {
+
+    console.log('efbFired: ' + efbFired);
+
     // all the data
     const myData = this.props.data;
 
     // this is how many steps we have in total
     const myDataCount = this.props.data.length;
-    console.log(myData)
+    //console.log(myData)
 
     //count the number in each section bung them in an array
     const accumulatedTotals = {}
@@ -74,7 +81,7 @@ class Question extends Component {
       var myQuestionArray = Object.entries(myQuestion);
 
 //      console.log('myQuestionArray: ');
-      console.log(myQuestionArray);
+//      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[17][1]['section'];
@@ -98,8 +105,9 @@ class Question extends Component {
 
       // footer navigation initial state
       var bbState = myQuestionArray[17][1]['backward'];
-      var fbState = myQuestionArray[17][1]['forward'];
-
+      // if our funky function fires move on.....
+      var fbState = (efbFired) ? true : myQuestionArray[17][1]['forward'];
+      
       var QRender; 
 
       if ( this.QType === 'Text') {
