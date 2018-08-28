@@ -12,8 +12,9 @@ learning check not complete
 */
 export default Footer = ( props ) => {
     
-    const bbState = (props.step!==1) ? "active" : "disabled";
-    const fbState = (props.step === props.totalSteps)  ? "disabled" : "active";
+    const bbState = (props.bbState) ? "active" : "disabled";
+    const fbState = (props.fbState)  ? "active" : "disabled";
+
     //if ((props.step === props.totalSteps) || ()
     var step = props.step===1; 
     const type = step ? 'initial' : null
@@ -46,7 +47,9 @@ Footer.propTypes = {
     onChange: PropTypes.any,  // function to move forward/backward through the course
     sectionStep: PropTypes.string, // where we are in the section
     sectionCount: PropTypes.number, // total steps in the section
-    QType: PropTypes.string // Question type
+    QType: PropTypes.string, // Question type
+    bbState: PropTypes.bool, // backward button initial
+    fbState: PropTypes.bool, // forward button initial
 };
 
 

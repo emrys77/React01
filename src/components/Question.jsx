@@ -39,14 +39,19 @@ class Question extends Component {
     return null;
   }
 
+  enableForwardButton = () => {
+
+  }
+
+  // all the data
+  myData = this.props.data;
+
+  // this is how many steps we have in total
+  myDataCount = this.props.data.length;
+
   render() {
 
-    // all the data
-    const myData = this.props.data;
-    // this is how many steps we have in total
-    const myDataCount = myData.length;
-
-    //console.log(myData)
+    console.log(this.myData)
 
     //count the number in each section bung them in an array
     const accumulatedTotals = {}
@@ -67,7 +72,7 @@ class Question extends Component {
       var myQuestionArray = Object.entries(myQuestion);
 
 //      console.log('myQuestionArray: ');
-//      console.log(myQuestionArray);
+      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[17][1]['section'];
@@ -88,6 +93,10 @@ class Question extends Component {
       var QTypeClass = className(this.QType);
       
       var Header = (this.QType !== 'Intro') ? <header>Survive Armed Robbery | {section}</header> : null
+
+      // footer navigation initial state
+      var bbState = myQuestionArray[17][1]['backward'];
+      var fbState = myQuestionArray[17][1]['forward'];
 
       var QRender; 
 
@@ -154,7 +163,7 @@ class Question extends Component {
             {QTitle}
             {QRender}
           </div>
-        <Footer className={'footer Step'+this.state.step} QType={this.QType} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
+        <Footer className={'footer Step'+this.state.step} QType={this.QType} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} bbState={bbState} fbState={fbState} />
 
       </div>
 
