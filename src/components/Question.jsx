@@ -19,6 +19,7 @@ const addIndex = (a) => {
 }
 
 var efbFired = false;
+var messageHidden = true;
 
 class Question extends Component {
   constructor(props) {
@@ -48,6 +49,8 @@ class Question extends Component {
   enableForwardButton = () => {
     console.log('enableForwardButton fired');
     efbFired = true
+    messageHidden = false
+    console.log('efbFired: ' + efbFired);
   }
   
 
@@ -142,7 +145,7 @@ class Question extends Component {
         }
       );
         
-      QRender = <MultipleChoice onChange={this.enableForwardButton} question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={theAnswer} initialSelection={-1} initialMessageHidden={true} />
+      QRender = <MultipleChoice onChange={this.enableForwardButton} question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={theAnswer} initialSelection={-1} messageHidden={messageHidden} />
 
       }
 

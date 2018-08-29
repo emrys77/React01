@@ -7,8 +7,8 @@ export default class MultipleChoice extends React.Component {
         super(props);
 
         this.state = { 
-            selected: this.props.initialSelection,
-            messageHidden: this.props.initialMessageHidden
+            selected: -1,
+            messageHidden: true
         }
     }
 
