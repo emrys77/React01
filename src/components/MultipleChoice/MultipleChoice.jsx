@@ -11,12 +11,8 @@ export default class MultipleChoice extends React.Component {
             messageHidden: true
         }
     }
-<<<<<<< HEAD
-    UNSAFE_ccomponentWillReceiveProps({initialSelection}) {
-=======
 
     UNSAFE_componentWillReceiveProps({initialSelection}) {
->>>>>>> footer-navigation
         this.setState({
             selected: initialSelection,
             messageHidden: true
