@@ -542,40 +542,43 @@ header {
       -ms-flex: 1;
           flex: 1;
   position: relative;
+}
+
+.rc-checkbox label {
   /* Create the checkmark/indicator (hidden when not checked) */
   /* Show the checkmark when checked */
   /* Style the checkmark/indicator */
 }
 
-.rc-checkbox .rc-checkbox-input {
-  position: absolute;
-  top: 0;
-  left: 0;
+.rc-checkbox label .rc-checkbox-input {
+  /*position: absolute;
+            top: 0;
+            left: 0;*/
   opacity: 0;
   cursor: pointer;
 }
 
-.rc-checkbox .rc-checkbox-inner {
+.rc-checkbox label .rc-checkbox-inner {
   border: 1px solid #333333;
   width: 40px;
   height: 40px;
-  position: absolute;
-  top: 0;
-  left: 0;
+  /*position: absolute;
+            top: 0;
+            left: 0;*/
   background-color: #eee;
 }
 
-.rc-checkbox .rc-checkbox-inner:after {
+.rc-checkbox label .rc-checkbox-inner:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-.rc-checkbox .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
+.rc-checkbox label .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
   display: block;
 }
 
-.rc-checkbox .rc-checkbox-inner:after {
+.rc-checkbox label .rc-checkbox-inner:after {
   left: 14px;
   top: 5px;
   width: 10px;

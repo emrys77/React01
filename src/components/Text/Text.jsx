@@ -5,7 +5,7 @@ import Checkbox from 'rc-checkbox';
 // if his is the second to last  question show a checkbox
 const checkbox = (s) => {
   if (s === 47) {
-      return <div className="checkboxContainer"><Checkbox /></div>
+      return <div className="checkboxContainer"><label><Checkbox /><span>I agree</span></label></div>
   }
   return null;
 };
