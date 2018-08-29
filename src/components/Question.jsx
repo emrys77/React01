@@ -18,16 +18,23 @@ const addIndex = (a) => {
   }, el));
 }
 
+var efbFired = false;
+var messageHidden = true;
+
 class Question extends Component {
   constructor(props) {
     super(props);
-    this.state = { step: 1 }
+    this.state = { 
+      step: 1
+    }
   }
     
   // function to move us backwards and forwards through the course
   moveQuestion = (e,move) => {
     var nStep = (move === 1) ? this.state.step+1 : this.state.step-1;
-    this.setState({step: nStep})
+    this.setState({
+      step: nStep
+    })
   }
 
   findObjectByKey = (array, key, value) => {
@@ -38,14 +45,24 @@ class Question extends Component {
     }
     return null;
   }
+  
+  enableForwardButton = () => {
+    console.log('enableForwardButton fired');
+    efbFired = true
+    messageHidden = false
+    console.log('efbFired: ' + efbFired);
+  }
+  
 
   render() {
 
+    console.log('efbFired: ' + efbFired);
+
     // all the data
     const myData = this.props.data;
-    // this is how many steps we have in total
-    const myDataCount = myData.length;
 
+    // this is how many steps we have in total
+    const myDataCount = this.props.data.length;
     //console.log(myData)
 
     //count the number in each section bung them in an array
@@ -89,6 +106,11 @@ class Question extends Component {
       
       var Header = (this.QType !== 'Intro') ? <header>Survive Armed Robbery | {section}</header> : null
 
+      // footer navigation initial state
+      var bbState = myQuestionArray[17][1]['backward'];
+      // if our funky function fires move on.....
+      var fbState = (efbFired) ? true : myQuestionArray[17][1]['forward'];
+      
       var QRender; 
 
       if ( this.QType === 'Text') {
@@ -123,7 +145,7 @@ class Question extends Component {
         }
       );
         
-      QRender = <MultipleChoice question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={ theAnswer } initialSelection={-1} initialMessageHidden={true} />
+      QRender = <MultipleChoice onChange={this.enableForwardButton} question={question_text} incorrectResponse={incorrect_response} options={rOptions} correct={theAnswer} initialSelection={-1} messageHidden={messageHidden} />
 
       }
 
@@ -154,7 +176,7 @@ class Question extends Component {
             {QTitle}
             {QRender}
           </div>
-        <Footer className={'footer Step'+this.state.step} QType={this.QType} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} />
+        <Footer className={'footer Step'+this.state.step} QType={this.QType} QNumber={QNumber} onChange={this.moveQuestion} section={section} sectionStep={QNumber} sectionCount={sectionCount} step={this.state.step} totalSteps={myDataCount} bbState={bbState} fbState={fbState} />
 
       </div>
 

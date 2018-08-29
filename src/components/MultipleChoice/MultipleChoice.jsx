@@ -7,11 +7,16 @@ export default class MultipleChoice extends React.Component {
         super(props);
 
         this.state = { 
-            selected: this.props.initialSelection,
-            messageHidden: this.props.initialMessageHidden
+            selected: -1,
+            messageHidden: true
         }
     }
+<<<<<<< HEAD
     UNSAFE_ccomponentWillReceiveProps({initialSelection}) {
+=======
+
+    UNSAFE_componentWillReceiveProps({initialSelection}) {
+>>>>>>> footer-navigation
         this.setState({
             selected: initialSelection,
             messageHidden: true
@@ -31,6 +36,7 @@ export default class MultipleChoice extends React.Component {
         this.setState({
           messageHidden: false
         })
+        this.props.onChange();
     }
 
     render() {
@@ -71,5 +77,6 @@ MultipleChoice.propTypes = {
     messageHidden: PropTypes.bool,
     correct: PropTypes.number,
     options: PropTypes.array,
-    question: PropTypes.string
+    question: PropTypes.string,
+    onChange: PropTypes.func
 };
