@@ -69,38 +69,7 @@
                 
             }
             
-            &.Text.Q2 { 
-                background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-                @include thinQContent;
-            }
             
-            &.Text.Q3 {
-                background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
-                @include thinQContent;
-            }
-            
-            &.Text.Q6 {
-                background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
-                @include thinQContent;
-            }
-            &.Text.Q8 {
-                @include thinQContent;
-                .QContent {
-                    width: 90%;
-                }
-            }
-            &.Text.Q11 {
-                background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
-                @include thinQContent;
-            }
-            &.Text.Q4.Conclusion { 
-                background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-                @include thinQContent;
-            }
-            &.Text.Q12.Conclusion { 
-                background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-                @include thinQContent;
-            }
             
         }        
 

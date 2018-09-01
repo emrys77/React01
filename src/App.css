@@ -103,83 +103,6 @@ h1, h2, h3 {
                 */
 }
 
-.container .App .content.Text.Q2 {
-  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-}
-
-.container .App .content.Text.Q2 .QContent {
-  width: 56%;
-  height: 100%;
-  background: white;
-  padding: 26px;
-}
-
-.container .App .content.Text.Q3 {
-  background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
-}
-
-.container .App .content.Text.Q3 .QContent {
-  width: 56%;
-  height: 100%;
-  background: white;
-  padding: 26px;
-}
-
-.container .App .content.Text.Q6 {
-  background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
-}
-
-.container .App .content.Text.Q6 .QContent {
-  width: 56%;
-  height: 100%;
-  background: white;
-  padding: 26px;
-}
-
-.container .App .content.Text.Q8 .QContent {
-  width: 56%;
-  height: 100%;
-  background: white;
-  padding: 26px;
-}
-
-.container .App .content.Text.Q8 .QContent {
-  width: 90%;
-}
-
-.container .App .content.Text.Q11 {
-  background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
-}
-
-.container .App .content.Text.Q11 .QContent {
-  width: 56%;
-  height: 100%;
-  background: white;
-  padding: 26px;
-}
-
-.container .App .content.Text.Q4.Conclusion {
-  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-}
-
-.container .App .content.Text.Q4.Conclusion .QContent {
-  width: 56%;
-  height: 100%;
-  background: white;
-  padding: 26px;
-}
-
-.container .App .content.Text.Q12.Conclusion {
-  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
-}
-
-.container .App .content.Text.Q12.Conclusion .QContent {
-  width: 56%;
-  height: 100%;
-  background: white;
-  padding: 26px;
-}
-
 header {
   font-size: 1.1rem;
   padding: 1rem 1rem;
@@ -526,9 +449,90 @@ header {
   color: #ce0000;
 }
 
-.rc-checkbox {
-  width: 100%;
+.Text.Text.Q2 {
+  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+}
+
+.Text.Text.Q2 .QContent {
+  width: 56%;
   height: 100%;
+  background: white;
+  padding: 26px;
+}
+
+.Text.Text.Q3 {
+  background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
+}
+
+.Text.Text.Q3 .QContent {
+  width: 56%;
+  height: 100%;
+  background: white;
+  padding: 26px;
+}
+
+.Text.Text.Q6 {
+  background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
+}
+
+.Text.Text.Q6 .QContent {
+  width: 56%;
+  height: 100%;
+  background: white;
+  padding: 26px;
+}
+
+.Text.Text.Q8 .QContent {
+  width: 56%;
+  height: 100%;
+  background: white;
+  padding: 26px;
+}
+
+.Text.Text.Q8 .QContent {
+  width: 90%;
+}
+
+.Text.Text.Q4.Conclusion {
+  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+}
+
+.Text.Text.Q4.Conclusion .QContent {
+  width: 56%;
+  height: 100%;
+  background: white;
+  padding: 26px;
+}
+
+.Text.Text.Q11.Conclusion {
+  background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+}
+
+.Text.Text.Q11.Conclusion .QContent {
+  width: 56%;
+  height: 100%;
+  background: white;
+  padding: 26px;
+}
+
+.Text.Text.Q11.Conclusion .textContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50%;
+}
+
+.Text.Text.Q11.Conclusion .textContent div {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -538,47 +542,54 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  position: relative;
 }
 
-.rc-checkbox label {
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer label .rc-checkbox {
   /* Create the checkmark/indicator (hidden when not checked) */
   /* Show the checkmark when checked */
   /* Style the checkmark/indicator */
 }
 
-.rc-checkbox label .rc-checkbox-input {
-  /*position: absolute;
-            top: 0;
-            left: 0;*/
-  opacity: 0;
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer label .rc-checkbox .rc-checkbox-input {
+  display: none;
   cursor: pointer;
 }
 
-.rc-checkbox label .rc-checkbox-inner {
-  border: 1px solid #333333;
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer label .rc-checkbox .rc-checkbox-inner {
+  display: block;
+  position: relative;
+  border: 1px solid #ffa64c;
   width: 40px;
   height: 40px;
-  /*position: absolute;
-            top: 0;
-            left: 0;*/
   background-color: #eee;
+  margin-right: 1em;
 }
 
-.rc-checkbox label .rc-checkbox-inner:after {
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer label .rc-checkbox .rc-checkbox-inner:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-.rc-checkbox label .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer label .rc-checkbox .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
   display: block;
 }
 
-.rc-checkbox label .rc-checkbox-inner:after {
+.Text.Text.Q11.Conclusion .textContent .checkboxContainer label .rc-checkbox .rc-checkbox-inner:after {
   left: 14px;
   top: 5px;
   width: 10px;
@@ -587,6 +598,17 @@ header {
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.Text.Text.Q12.Conclusion {
+  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+}
+
+.Text.Text.Q12.Conclusion .QContent {
+  width: 56%;
+  height: 100%;
+  background: white;
+  padding: 26px;
 }
 
 .Video .QContent {

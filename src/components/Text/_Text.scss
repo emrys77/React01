@@ -1,54 +1,95 @@
-.rc-checkbox {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    position: relative;
-    label {
-            .rc-checkbox-input {
-            /*position: absolute;
-            top: 0;
-            left: 0;*/
-            opacity: 0;
-            cursor: pointer;
-
-        }
-        .rc-checkbox-inner {
-            border: 1px solid $SAR-dark-gray;
-            width: 40px;
-            height: 40px;
-            /*position: absolute;
-            top: 0;
-            left: 0;*/
-            
-            background-color: #eee;
-        }
-        /* Create the checkmark/indicator (hidden when not checked) */
-        .rc-checkbox-inner:after {
-            content: "";
-            position: absolute;
-            display: none;
-        }
-        /* Show the checkmark when checked */
-        .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
-            display: block;
-        }
-  
-  
-        /* Style the checkmark/indicator */
-        .rc-checkbox-inner:after {
-                left: 14px;
-                top: 5px;
-                width: 10px;
-                height: 20px;
-                border: solid $SAR-dark-gray;
-                border-width: 0 3px 3px 0;
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-        }
+.Text {
+    .QContent {
 
     }
+    &.Text.Q2 { 
+        background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+        @include thinQContent;
+    }
+
+    &.Text.Q3 {
+        background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
+        @include thinQContent;
+    }
+
+    &.Text.Q6 {
+        background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
+        @include thinQContent;
+    }
+    &.Text.Q8 {
+        @include thinQContent;
+        .QContent {
+            width: 90%;
+        }
+    }
+    
+    &.Text.Q4.Conclusion { 
+        background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+        @include thinQContent;
+    }
+    &.Text.Q11.Conclusion {
+        background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+        @include thinQContent;
+        .textContent {
+            display: flex;
+            flex-direction: column;
+            height: 50%;
+            div {
+                flex-grow: 1;
+            }
+            .checkboxContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+               label {
+                    display: flex;
+                    justify-content: flex-start; 
+                    align-items: center;
+                    font-size: 1.6em;
+                    font-weight: 400;
+                    .rc-checkbox  {
+                        .rc-checkbox-input {
+                            display: none;
+                            cursor: pointer;
+                        }
+                        .rc-checkbox-inner {
+                            display: block;
+                            position: relative;
+                            border: 1px solid $SAR-light-orange;
+                            width: 40px;
+                            height: 40px;
+                            background-color: #eee;
+                            margin-right: 1em;
+                        }
+                        /* Create the checkmark/indicator (hidden when not checked) */
+                        .rc-checkbox-inner:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                        }
+                        /* Show the checkmark when checked */
+                        .rc-checkbox-input:checked ~ .rc-checkbox-inner:after {
+                            display: block;
+                        }
+                        /* Style the checkmark/indicator */
+                        .rc-checkbox-inner:after {
+                            left: 14px;
+                            top: 5px;
+                            width: 10px;
+                            height: 20px;
+                            border: solid $SAR-dark-gray;
+                            border-width: 0 3px 3px 0;
+                            -webkit-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.Text.Q12.Conclusion { 
+        background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+        @include thinQContent;
+    }   
 }

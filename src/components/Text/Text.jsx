@@ -12,7 +12,7 @@ const checkbox = (s) => {
 
 function Text(props) {
   return  (
-    <div>
+    <div className="textContent">
         <div dangerouslySetInnerHTML={{ __html: props.content }}></div>
         {checkbox(props.step)}    
     </div>
