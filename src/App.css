@@ -594,7 +594,7 @@ header {
   top: 5px;
   width: 10px;
   height: 20px;
-  border: solid #333333;
+  border: solid #ce0000;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
