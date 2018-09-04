@@ -243,6 +243,8 @@ header {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -ms-flex-preferred-size: inherit;
+      flex-basis: inherit;
   width: 100%;
 }
 
@@ -304,6 +306,14 @@ header {
   padding: 12px 16px;
 }
 
+.Learning-Check .QContent.Step36 .learning-check-container.submitContainer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-preferred-size: initial;
+      flex-basis: initial;
+}
+
 .Multiple-Choice .QContent {
   padding: 26px;
 }
@@ -357,7 +367,6 @@ header {
 
 .Information-Boxes .QContent {
   padding: 26px;
-  /* flashy selector eh? */
 }
 
 .Information-Boxes .QContent ul.buttons {
@@ -440,13 +449,22 @@ header {
   background: transparent;
 }
 
-.Information-Boxes .QContent div[class^="styles_modal__"] {
-  padding: 1em 3em;
+/* flashy selector eh? */
+div[class^="styles_modal__"] {
+  padding: 1em 2em;
 }
 
-.Information-Boxes .QContent div[class^="styles_modal__"] h2 {
+div[class^="styles_modal__"] h2 {
   font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
   color: #ce0000;
+}
+
+div[class^="styles_modal__"] button[class^='styles_close'] {
+  top: -8px;
+  right: -28px;
+  background-color: #ffffff;
+  color: #002b54;
+  border-radius: 50%;
 }
 
 .Text.Text.Q2 {
@@ -491,6 +509,17 @@ header {
 
 .Text.Text.Q8 .QContent {
   width: 90%;
+}
+
+.Text.Text.Q11 {
+  background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+}
+
+.Text.Text.Q11 .QContent {
+  width: 56%;
+  height: 100%;
+  background: white;
+  padding: 26px;
 }
 
 .Text.Text.Q4.Conclusion {
@@ -662,7 +691,6 @@ header {
 }
 
 .footer {
-  height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -761,7 +789,8 @@ button.disabled {
 button.submit {
   font-size: 1rem;
   font-weight: 300;
-  margin-top: 1rem;
+  margin: 0;
+  margin-bottom: 2rem;
   padding: 0.5rem 1.5rem;
   border-radius: 5px;
 }

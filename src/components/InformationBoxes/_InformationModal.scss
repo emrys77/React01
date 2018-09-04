@@ -63,13 +63,26 @@
             }   
             
         }
-        /* flashy selector eh? */
+        
+        
+    }
+}
 
-        div[class^="styles_modal__"] {
-            padding: 1em 3em;
-            h2 {
-                @include SAR-font;
-            }
-        }
+/* flashy selector eh? */
+
+div[class^="styles_modal__"] {
+            
+    padding: 1em 2em;
+    h2 {
+        @include SAR-font;
+    }
+    
+    
+    button[class^='styles_close'] {
+        top: -8px;
+        right: -28px;
+        background-color: #ffffff;
+        color: $SAR-dark-blue;
+        border-radius: 50%;
     }
 }

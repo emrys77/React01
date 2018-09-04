@@ -22,6 +22,11 @@
             width: 90%;
         }
     }
+
+    &.Text.Q11 {
+        background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+        @include thinQContent;
+    }
     
     &.Text.Q4.Conclusion { 
         background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;

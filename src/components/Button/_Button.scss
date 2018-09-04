@@ -25,7 +25,8 @@ button {
     &.submit {
         font-size: 1rem;
         font-weight: 300;
-        margin-top: 1rem;
+        margin: 0;
+        margin-bottom: 2rem;
         padding: 0.5rem 1.5rem;
         @include round-corners;
     }

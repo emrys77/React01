@@ -37,6 +37,34 @@ function shuffle(array) {
     return array;
   }
 
+// function to compare two arrays 
+// Warn if overriding existing method
+if(Array.prototype.equals)
+    console.warn("Overriding existing Array.prototype.equals. Possible causes: New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
+    // attach the .equals method to Array's prototype to call it on any array
+    Array.prototype.equals = function (array) {
+        // if the other array is a falsy value, return
+        if (!array)
+            return false;
+            // compare lengths - can save a lot of time 
+            if (this.length != array.length)
+            return false;
+
+            for (var i = 0, l=this.length; i < l; i++) {
+                // Check if we have nested arrays
+                if (this[i] instanceof Array && array[i] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[i].equals(array[i]))
+                    return false;       
+            }           
+            else if (this[i] != array[i]) { 
+                // Warning - two different object instances will never be equal: {x:20} != {x:20}
+                return false;   
+            }           
+        }       
+        return true;
+    }
+
 /**
  * Moves an item from one list to another list.
  */
@@ -119,6 +147,7 @@ class LearningCheck extends Component {
 
         this.state = {
             messageHidden: true,
+            message: '',
             list0: elements, // content, group, key, order
             list1: [],
             list2: []
@@ -156,6 +185,7 @@ class LearningCheck extends Component {
         if (this.lists.length === 1) {
             // this is a drag'n'drop scenario: we compare the order
             //alert('i am a reorder list');
+            // compare the order
 
         } else {
             /* loop through list1 make sure there are no out of place stuff
@@ -180,13 +210,22 @@ class LearningCheck extends Component {
             var found = this.state.list1.findIndex(p => p.group === "2");
             // and vice versa
             var found2 = this.state.list2.findIndex(p => p.group === "1");
-            if ((found !== -1) || (found2 !== -1)) {
-                console.log('that\'s not right fired');
-                response = <p>That's not right. </p>
+            //if ((found !== -1) || (found2 !== -1)) {
+            if ((found === 1) || (found2 === 1)) {
+                this.setState(
+                    {
+                        messageHidden: false,
+                        message: 'That\'s not right.'
+                    }
+                ) 
                 
             } else {
-                console.log('that\'s right fired');
-                response = <p>That's right.</p>
+                this.setState(
+                    {
+                        messageHidden: false,
+                        message: 'That\'s right.'
+                    }
+                )
             }
             
             
@@ -206,7 +245,7 @@ class LearningCheck extends Component {
 
     submitButton = (s) => {
         if ((s === 0) || (this.lists.length === 1)) {
-            return <div className="container submitContainer"><button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button></div>
+            return <button onClick={this.checkAnswer.bind(this)} className="submit active">Submit</button>
         }
         return null;
     };
@@ -216,6 +255,7 @@ class LearningCheck extends Component {
         this.setState({
           messageHidden: false
         })
+        this.props.onChange();
     }
 
     droppableIds = createDroppableIds(this.props.boxes);
@@ -318,7 +358,10 @@ class LearningCheck extends Component {
             </Droppable>
           )}
         </DragDropContext>
-        {this.submitButton(this.state.list0.length)}
+        <div className='container submitContainer'>
+            {this.submitButton(this.state.list0.length)}
+            {!this.state.messageHidden && <p>{this.state.message}</p> }
+        </div>
       </div>
     )
   }

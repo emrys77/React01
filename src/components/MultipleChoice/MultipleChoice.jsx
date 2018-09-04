@@ -61,8 +61,9 @@ export default class MultipleChoice extends React.Component {
                 <ol className="alpha">
                 { itemsList }
                 </ol>
-                {!this.state.messageHidden && this.message }
                 { submitButton }
+                {!this.state.messageHidden && this.message }
+                
             </div>
         );
     }
