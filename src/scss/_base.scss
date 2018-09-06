@@ -36,26 +36,29 @@
             background: $SAR-white;
             max-width: 1000px;
             height: 665px;
-            &.Intro {
-                
-            }
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgb(138,138,138);
+            background-position: right top;
+            
             &.Survive-Armed-Robbery.Intro.Q1 {
                 background-image: url(/images/title-survive-armed-robbery.jpg);
             }
             &.The-Offender.Intro.Q1 {
-                background: url(/images/title-the-offender.jpg) right top no-repeat;   
+                background-image: url(/images/title-the-offender.jpg);   
             }
             &.New-Crims-new-ways.Intro.Q1 {
-                background: url(/images/title-the-robbery.jpg) right top no-repeat; 
+                background-image: url(/images/title-the-robbery.jpg); 
             }
             &.The-Robbery.Intro.Q1 {
-                background: url(/images/title-the-robbery.jpg) right top no-repeat; 
+                background-image: url(/images/title-the-robbery.jpg); 
             }
             &.Conclusion.Intro.Q1 {
-                background: url(/images/title-conclusion.jpg) right top no-repeat; 
+                background-image: url(/images/title-conclusion.jpg); 
             }
             &.Video {
-                background: url(/images/VideoImg_01.jpg) right 54px no-repeat;     
+                background-image: url(/images/VideoImg_01.jpg);
+                background-position: right 54px;     
             }
             .QContent {
                 display: flex;

@@ -1,5 +1,6 @@
 {
-  "name": "react01",
+  "name": "SAR",
+  "homepage": "http://survivearmedrobbery.com/newcourse",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
