@@ -12,7 +12,6 @@ const className = (w) => w.replace(/\s/g,'-').replace(/,/g,'');
 
 // utility to add an index to array elements
 const addIndex = (a) => {
-  console.log('addIndex initiated')
   return a.map((el, i) => Object.assign({
     key: i
   }, el));
@@ -82,9 +81,6 @@ class Question extends Component {
 
     if ( myQuestion) {
       var myQuestionArray = Object.entries(myQuestion);
-
-//      console.log('myQuestionArray: ');
-//      console.log(myQuestionArray);
 
       // work out which section we are in
       var section = myQuestionArray[17][1]['section'];

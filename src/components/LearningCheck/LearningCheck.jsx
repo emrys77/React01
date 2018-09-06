@@ -47,7 +47,7 @@ if(Array.prototype.equals)
         if (!array)
             return false;
             // compare lengths - can save a lot of time 
-            if (this.length != array.length)
+            if (this.length !== array.length)
             return false;
 
             for (var i = 0, l=this.length; i < l; i++) {
@@ -57,7 +57,7 @@ if(Array.prototype.equals)
                 if (!this[i].equals(array[i]))
                     return false;       
             }           
-            else if (this[i] != array[i]) { 
+            else if (this[i] !== array[i]) { 
                 // Warning - two different object instances will never be equal: {x:20} != {x:20}
                 return false;   
             }           
@@ -105,14 +105,12 @@ const getListStyle = isDraggingOver => ({
 
 // pass this an array of lists from the props; creates a key value array like object
 const createDroppableIds = (a) => {
-    console.log('createDroppableIds init')
     var droppableIds = {};
     // boxes: array, 3 elements: { group,title }
     a.forEach(function(box,index) {
        // console.log(index + ': title: ' + box.title);
         droppableIds[`droppable${index}`] = `list${index}`;
     });
-    console.log(droppableIds)
     return droppableIds;
     
 }
@@ -155,92 +153,39 @@ class LearningCheck extends Component {
 
     }
 
-/**
-   * A semi-generic way to handle multiple lists. Matches
-   * the IDs of the droppable container to the names of the
-   * source arrays stored in the state.
-   */
-/*  boxes: title, group */
-
-/*
-    droppableIds = {
-        droppable0: 'list0',
-        droppable1: 'list1',
-        droppable2: 'list2'
-    }
-{droppable0: "list0", droppable1: "list1", droppable2: "list2"}
-
-    */
-    showDroppableIds() {
-        console.log(this.droppableIds)
-    }
-
-    
-
     checkAnswer = () => {
-        // how many lists?
-        console.log ('checkAnswer init');
-        console.log ('no of lists: ' + this.lists.length)
-        var response;
+        var response = (a) => {
+            (a===1) ? this.setState({   messageHidden: false, message: 'That\'s right.' }) :
+            this.setState({ messageHidden: false, message: 'That\'s not right.' })
+        }
+
         if (this.lists.length === 1) {
-            // this is a drag'n'drop scenario: we compare the order
-            //alert('i am a reorder list');
-            // compare the order
+            // grab list1 , clone it, and order it
+            const clone = this.state.list0.slice(0);
+
+            const compare = (a,b) => {
+                if (a.order < b.order)
+                  return -1;
+                if (a.order > b.order)
+                  return 1;
+                return 0;
+            }
+            clone.sort(compare);
+
+           if (JSON.stringify(clone) === JSON.stringify(this.state.list0)) {
+                response(1)
+            } else {
+                response(-1)
+            }
 
         } else {
-            /* loop through list1 make sure there are no out of place stuff
-            list1:
-            Array[2]
-            0:{…}
-            content: "Criminals 20 years ago robbed soft targets for lots of cash."
-            group: "2"
-            id: 0
-            key: 0
-            order: "0"
-            
-            console.log('list1: ' + this.state.list1[1]['content']+ ' '+this.state.list1[1]['group']);
+            /* loop through list1 make sure there are no out of place stuff */            
 
-            var clicked = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
+           var found = ( (this.state.list1.findIndex(p => p.group === "2")) || (this.state.list2.findIndex(p => p.group === "1")) );
 
-            {!this.state.messageHidden && clicked }
-            message not hidden + 
-            
-            */
-            // loop through list 1 check for group 2
-            var found = this.state.list1.findIndex(p => p.group === "2");
-            // and vice versa
-            var found2 = this.state.list2.findIndex(p => p.group === "1");
-            //if ((found !== -1) || (found2 !== -1)) {
-            if ((found === 1) || (found2 === 1)) {
-                this.setState(
-                    {
-                        messageHidden: false,
-                        message: 'That\'s not right.'
-                    }
-                ) 
-                
-            } else {
-                this.setState(
-                    {
-                        messageHidden: false,
-                        message: 'That\'s right.'
-                    }
-                )
-            }
-            
-            
-            return response
-            /*
-            var clicked = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
-            */
-              // expected output: 
-            
-            // if
-            // this.state.list1.group !== 2
-            // do something
+           console.log('found: ' + found);
+           (found===-1) ? response(1) : response(-1);
         }
-        
-        
     }
 
     submitButton = (s) => {
@@ -298,7 +243,7 @@ class LearningCheck extends Component {
                 destination
             )
 
-            console.warn('result', result)
+//            console.warn('result', result)
             this.setState({
                 list0: result.droppable0 ? result.droppable0 : this.state.list0,
                 list1: result.droppable1 ? result.droppable1 : this.state.list1,
@@ -308,7 +253,6 @@ class LearningCheck extends Component {
     }
 
   render() {
-    console.log ('no of lists: ' + this.lists.length)
     return (
         <div className="learning-check-container">
         

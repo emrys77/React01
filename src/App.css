@@ -236,6 +236,9 @@ header {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   border: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -286,7 +289,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 620px;
+  width: 600px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -300,10 +303,11 @@ header {
 .Learning-Check .QContent.Step36 .learning-check-container .c0 .dropzone .draggableItem {
   display: block;
   width: 100%;
+  background: #002b54;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  padding: 12px 16px;
+  padding: 8px 12px;
 }
 
 .Learning-Check .QContent.Step36 .learning-check-container.submitContainer {
@@ -778,7 +782,7 @@ button.initial {
   font-size: 1.5rem;
   background: transparent;
   margin-right: 21px;
-  margin-bottom: 14px;
+  margin-bottom: 17px;
 }
 
 button.disabled {

@@ -35,12 +35,18 @@ export default class Footer extends React.Component {
         
         //const bbState = (this.state.bbState) ? "active" : "disabled";
         //const fbState = (this.state.fbState)  ? "active" : "disabled";
-        const bbState = true;
-        const fbState = true;
+        
+        var fbState = true;
 
         //if ((props.step === props.totalSteps) || ()
         var step = this.props.step===1; 
         const type = step ? 'initial' : null
+
+        var lastStep = (this.props.step === 48);
+
+        var bbState = (step) ? "disabled" : "active";
+        var fbState = (lastStep) ? "disabled" : "active";
+
 
         const footer = step ? 
         (
