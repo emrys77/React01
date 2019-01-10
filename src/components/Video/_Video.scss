@@ -6,7 +6,11 @@
         .intro {
             width: 50%;
             margin: 0px auto;
-            margin-top: 10%;
+            margin-top: 5%;
+            @include lg {
+                margin-top: 10%;
+            }
+            
             background: $SAR-white;
             padding: 0.4rem 1rem 1rem 1rem;
             button {

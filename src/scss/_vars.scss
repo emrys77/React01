@@ -16,5 +16,8 @@ $SAR-dark-blue: rgb(0,43,84);
 }
 
 @mixin padding {
-    padding: 26px;
+    padding: 6px 16px;
+    @include lg {
+        padding: 26px;
+    }
 }

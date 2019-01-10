@@ -1,3 +1,10 @@
+/* usage:
+
+@include sm {
+    padding: 0 20px;
+}
+
+*/
 @font-face {
   font-family: "AachenStd Bold";
   src: url("fonts/AachenStd-Bold.eot");
@@ -8,6 +15,16 @@ h1, h2, h3 {
   font-family: "AachenStd Bold", 'Times New Roman', Times, serif;
   color: #ce0000;
   margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    margin-bottom: auto;
+  }
 }
 
 .container {
@@ -28,10 +45,6 @@ h1, h2, h3 {
 }
 
 .container .App {
-  /* display: block; 
-        position: relative;
-        padding-top: 5%;
-        */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,9 +53,16 @@ h1, h2, h3 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  max-width: 1000px;
-  height: 90%;
-  max-height: 665px;
+  height: 100vh;
+}
+
+@media (min-width: 992px) {
+  .container .App {
+    max-width: 1000px;
+    height: 90%;
+    height: 662px;
+    max-height: 665px;
+  }
 }
 
 .container .App .content {
@@ -58,36 +78,61 @@ h1, h2, h3 {
           flex: 1;
   background: white;
   max-width: 1000px;
-  height: 665px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #8a8a8a;
-  background-position: right top;
 }
 
-.container .App .content.Survive-Armed-Robbery.Intro.Q1 {
-  background-image: url(/images/title-survive-armed-robbery.jpg);
+.container .App .content.Intro.Q1 .QContent {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.container .App .content.The-Offender.Intro.Q1 {
-  background-image: url(/images/title-the-offender.jpg);
+.container .App .content.Intro.Q1 .QContent h1 {
+  text-align: center;
 }
 
-.container .App .content.New-Crims-new-ways.Intro.Q1 {
-  background-image: url(/images/title-the-robbery.jpg);
-}
-
-.container .App .content.The-Robbery.Intro.Q1 {
-  background-image: url(/images/title-the-robbery.jpg);
-}
-
-.container .App .content.Conclusion.Intro.Q1 {
-  background-image: url(/images/title-conclusion.jpg);
+@media (min-width: 992px) {
+  .container .App .content {
+    background-position: right 50px;
+  }
+  .container .App .content.Survive-Armed-Robbery.Intro.Q1 {
+    background-image: url(/images/title-survive-armed-robbery.jpg);
+    background-position: right top;
+  }
+  .container .App .content.The-Offender.Intro.Q1 {
+    background-image: url(/images/title-the-offender.jpg);
+    background-position: right top;
+  }
+  .container .App .content.New-Crims-new-ways.Intro.Q1 {
+    background-image: url(/images/title-the-robbery.jpg);
+    background-position: right top;
+  }
+  .container .App .content.The-Robbery.Intro.Q1 {
+    background-image: url(/images/title-the-robbery.jpg);
+    background-position: right top;
+  }
+  .container .App .content.Conclusion.Intro.Q1 {
+    background-image: url(/images/title-conclusion.jpg);
+    background-position: right top;
+  }
+  .container .App .content.Intro.Q1 h1 {
+    display: none;
+  }
 }
 
 .container .App .content.Video {
   background-image: url(/images/VideoImg_01.jpg);
-  background-position: right 54px;
+  background-position: right top;
+}
+
+@media (min-width: 992px) {
+  .container .App .content.Video {
+    background-position: right 50px;
+  }
 }
 
 .container .App .content .QContent {
@@ -101,22 +146,30 @@ h1, h2, h3 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  /*
-                vertical-align: top;
-                padding: 4%;
-                width: 92%;
-                */
 }
 
 header {
-  font-size: 1.1rem;
-  padding: 1rem 1rem;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
   background: #002b54;
   color: white;
 }
 
+@media (min-width: 992px) {
+  header {
+    font-size: 1.1rem;
+    padding: 1rem 1rem;
+  }
+}
+
 .Learning-Check .QContent {
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Learning-Check .QContent {
+    padding: 26px;
+  }
 }
 
 .Learning-Check .QContent .learning-check-container {
@@ -324,7 +377,13 @@ header {
 }
 
 .Multiple-Choice .QContent {
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Multiple-Choice .QContent {
+    padding: 26px;
+  }
 }
 
 .Multiple-Choice .QContent ol.alpha {
@@ -375,7 +434,13 @@ header {
 }
 
 .Information-Boxes .QContent {
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Information-Boxes .QContent {
+    padding: 26px;
+  }
 }
 
 .Information-Boxes .QContent ul.buttons {
@@ -477,43 +542,87 @@ div[class^="styles_modal__"] button[class^='styles_close'] {
 }
 
 .Text.Text.Q2 {
-  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+  background-image: url(/images/378x572_ArmedRobbery.jpg);
 }
 
 .Text.Text.Q2 .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q2 .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q2 .QContent {
+    padding: 26px;
+  }
 }
 
 .Text.Text.Q3 {
-  background: url(/images/378x572_Image.jpg) right 53px no-repeat white;
+  background-image: url(/images/378x572_Image.jpg);
 }
 
 .Text.Text.Q3 .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q3 .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q3 .QContent {
+    padding: 26px;
+  }
 }
 
 .Text.Text.Q6 {
-  background: url(/images/378x572_Trish.jpg) right 53px no-repeat white;
+  background-image: url(/images/378x572_Trish.jpg);
 }
 
 .Text.Text.Q6 .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q6 .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q6 .QContent {
+    padding: 26px;
+  }
 }
 
 .Text.Text.Q8 .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q8 .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q8 .QContent {
+    padding: 26px;
+  }
 }
 
 .Text.Text.Q8 .QContent {
@@ -521,36 +630,69 @@ div[class^="styles_modal__"] button[class^='styles_close'] {
 }
 
 .Text.Text.Q11 {
-  background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+  background-image: url(/images/378x572_Door.jpg);
 }
 
 .Text.Text.Q11 .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q11 .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q11 .QContent {
+    padding: 26px;
+  }
 }
 
 .Text.Text.Q4.Conclusion {
-  background: url(/images/378x572_ArmedRobbery.jpg) right 53px no-repeat white;
+  background-image: url(/images/378x572_ArmedRobbery.jpg);
 }
 
 .Text.Text.Q4.Conclusion .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q4.Conclusion .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q4.Conclusion .QContent {
+    padding: 26px;
+  }
 }
 
 .Text.Text.Q11.Conclusion {
-  background: url(/images/378x572_Door.jpg) right 53px no-repeat white;
+  background-image: url(/images/378x572_Door.jpg);
 }
 
 .Text.Text.Q11.Conclusion .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q11.Conclusion .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q11.Conclusion .QContent {
+    padding: 26px;
+  }
 }
 
 .Text.Text.Q11.Conclusion .textContent {
@@ -643,10 +785,21 @@ div[class^="styles_modal__"] button[class^='styles_close'] {
 }
 
 .Text.Text.Q12.Conclusion .QContent {
-  width: 56%;
   height: 100%;
   background: white;
-  padding: 26px;
+  padding: 6px 16px;
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q12.Conclusion .QContent {
+    width: 56%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Text.Text.Q12.Conclusion .QContent {
+    padding: 26px;
+  }
 }
 
 .Video .QContent {
@@ -662,9 +815,15 @@ div[class^="styles_modal__"] button[class^='styles_close'] {
 .Video .QContent .intro {
   width: 50%;
   margin: 0px auto;
-  margin-top: 10%;
+  margin-top: 5%;
   background: white;
   padding: 0.4rem 1rem 1rem 1rem;
+}
+
+@media (min-width: 992px) {
+  .Video .QContent .intro {
+    margin-top: 10%;
+  }
 }
 
 .Video .QContent .intro button {
@@ -738,7 +897,13 @@ div[class^="styles_modal__"] button[class^='styles_close'] {
   /*padding: 0.5rem 0;*/
   color: white;
   background: #ce0000;
-  height: 50px;
+  height: 40px;
+}
+
+@media (min-width: 992px) {
+  .footer div {
+    height: 50px;
+  }
 }
 
 .footer div .bar-container {

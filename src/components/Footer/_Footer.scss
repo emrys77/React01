@@ -4,7 +4,6 @@
     justify-content: flex-end;
     &.Step1 {
         flex-direction: row;
-
         background: transparent;
     }
     div {
@@ -16,8 +15,10 @@
         /*padding: 0.5rem 0;*/
         color: $SAR-white;
         background: $SAR-burnt-orange;
-        height: 50px;
-        
+        height: 40px;
+        @include lg {
+            height: 50px;
+        }
         .bar-container {
             margin-left: 2rem;
             width: 140px;

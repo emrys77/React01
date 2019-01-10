@@ -1,6 +1,8 @@
 @mixin thinQContent {
      .QContent {
-        width: 56%;
+        @include lg {
+            width: 56%;
+        }
         height: 100%;
         background: $SAR-white;
         @include padding;     
@@ -18,62 +20,80 @@
     justify-content: center;
     min-height: 100vh;
     .App {
-        /* display: block; 
-        position: relative;
-        padding-top: 5%;
-        */
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 1000px;
-        height: 90%;
-        max-height: 665px;
- 
+        height: 100vh;
+        @include lg {
+            max-width: 1000px;
+            height: 90%;
+            height: 662px;
+            max-height: 665px;
+        }
         .content {
             display: flex;
             flex-direction: column;
             flex: 1;
-            background: $SAR-white;
-            max-width: 1000px;
-            height: 665px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-color: rgb(138,138,138);
-            background-position: right top;
             
-            &.Survive-Armed-Robbery.Intro.Q1 {
-                background-image: url(/images/title-survive-armed-robbery.jpg);
+            background: $SAR-white; 
+            max-width: 1000px;
+            background-size: cover; 
+            background-repeat: no-repeat;
+            
+            &.Intro.Q1 {
+                .QContent {
+                    align-items: center;
+                    justify-content: center;
+                    h1 {
+                        text-align: center;
+                    }
+                }
             }
-            &.The-Offender.Intro.Q1 {
-                background-image: url(/images/title-the-offender.jpg);   
+
+            @include lg {
+                background-position: right 50px;
+                &.Survive-Armed-Robbery.Intro.Q1 {
+                    background-image: url(/images/title-survive-armed-robbery.jpg);
+                    background-position: right top;
+                }
+                &.The-Offender.Intro.Q1 {
+                    background-image: url(/images/title-the-offender.jpg);
+                    background-position: right top;
+                }
+                &.New-Crims-new-ways.Intro.Q1 {
+                    background-image: url(/images/title-the-robbery.jpg); 
+                    background-position: right top;
+                }
+                &.The-Robbery.Intro.Q1 {
+                    background-image: url(/images/title-the-robbery.jpg); 
+                    background-position: right top;
+                }
+                &.Conclusion.Intro.Q1 {
+                    background-image: url(/images/title-conclusion.jpg);
+                    background-position: right top;
+                }
+
+                &.Intro.Q1 {
+                    h1 {
+                        display: none;
+                    }
+                }
             }
-            &.New-Crims-new-ways.Intro.Q1 {
-                background-image: url(/images/title-the-robbery.jpg); 
-            }
-            &.The-Robbery.Intro.Q1 {
-                background-image: url(/images/title-the-robbery.jpg); 
-            }
-            &.Conclusion.Intro.Q1 {
-                background-image: url(/images/title-conclusion.jpg); 
-            }
+            
+            
             &.Video {
                 background-image: url(/images/VideoImg_01.jpg);
-                background-position: right 54px;     
+                background-position: right top;
+                @include lg {
+                    background-position: right 50px;
+                }
             }
             .QContent {
                 display: flex;
                 flex-direction: column;
                 flex: 1;
-                /*
-                vertical-align: top;
-                padding: 4%;
-                width: 92%;
-                */
                 
-            }
-            
-            
-            
+            }            
         }        
 
     }
