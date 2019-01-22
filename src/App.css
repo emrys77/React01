@@ -23,7 +23,7 @@ h1 {
 
 @media (min-width: 992px) {
   h1 {
-    margin-bottom: auto;
+    margin-bottom: 1rem;
   }
 }
 
@@ -76,10 +76,14 @@ h1 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background: white;
   max-width: 1000px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: right top;
+}
+
+.container .App .content:not(.Intro) {
+  background: white;
 }
 
 .container .App .content.Intro.Q1 .QContent {
@@ -387,20 +391,57 @@ header {
 }
 
 .Multiple-Choice .QContent ol.alpha {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
   list-style: none;
-  margin-top: 2rem;
+  margin: 1rem 0 2rem 0;
   padding-left: 0;
-  width: 80%;
-  margin-bottom: 30px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .Multiple-Choice .QContent ol.alpha {
+    margin: 1rem 0 1rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .Multiple-Choice .QContent ol.alpha {
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .Multiple-Choice .QContent ol.alpha li {
   counter-increment: item;
   margin-bottom: 5px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .Multiple-Choice .QContent ol.alpha li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .Multiple-Choice .QContent ol.alpha li {
+    width: 100%;
+  }
 }
 
 .Multiple-Choice .QContent ol.alpha li:before {
-  margin-right: 10px;
+  margin-right: 5px;
   content: counter(item, upper-latin);
   background: #002b54;
   padding: 8px;
@@ -421,7 +462,8 @@ header {
   background: #ce0000;
   display: inline-block;
   padding: 8px 2%;
-  width: 86%;
+  width: 70%;
+  vertical-align: top;
   border-radius: 5px;
 }
 
@@ -431,6 +473,10 @@ header {
 
 .Multiple-Choice .QContent ol.alpha label:hover {
   background: #002b54;
+}
+
+.Multiple-Choice .QContent .response {
+  margin: 0;
 }
 
 .Information-Boxes .QContent {
@@ -813,11 +859,17 @@ div[class^="styles_modal__"] button[class^='styles_close'] {
 }
 
 .Video .QContent .intro {
-  width: 50%;
+  width: 80%;
   margin: 0px auto;
   margin-top: 5%;
   background: white;
   padding: 0.4rem 1rem 1rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .Video .QContent .intro {
+    width: 50%;
+  }
 }
 
 @media (min-width: 992px) {

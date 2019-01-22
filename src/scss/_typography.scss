@@ -17,6 +17,6 @@ h1, h2, h3 {    @include title; }
 h1 {
     margin-bottom: 0;
     @include lg {
-        margin-bottom: auto;
+        margin-bottom: 1rem;
     }
 }

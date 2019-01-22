@@ -4,10 +4,11 @@
         flex: 1;
         display: flex;
         .intro {
-            width: 50%;
+            width: 80%;
             margin: 0px auto;
             margin-top: 5%;
-            @include lg {
+            @include md {   width: 50%; }
+            @include lg {   
                 margin-top: 10%;
             }
             

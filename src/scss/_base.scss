@@ -34,8 +34,10 @@
             display: flex;
             flex-direction: column;
             flex: 1;
+            &:not(.Intro) {
+                background: $SAR-white; 
+            }
             
-            background: $SAR-white; 
             max-width: 1000px;
             background-size: cover; 
             background-repeat: no-repeat;
@@ -49,6 +51,7 @@
                     }
                 }
             }
+            background-position: right top;
 
             @include lg {
                 background-position: right 50px;

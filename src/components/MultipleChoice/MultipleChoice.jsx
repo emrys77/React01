@@ -53,7 +53,7 @@ export default class MultipleChoice extends React.Component {
 
         var selected = this.state.selected;
         var submitButton = this.submitButton(selected);
-        this.message = ( this.state.selected === this.props.correct) ? <p>That's right</p>  : <div>{ this.props.incorrectResponse}</div>
+        this.message = ( this.state.selected === this.props.correct) ? <p class="response">That's right</p>  : <p class="response">{ this.props.incorrectResponse}</p>
         
         return  (
             <div className="multipleChoice wrapper">
